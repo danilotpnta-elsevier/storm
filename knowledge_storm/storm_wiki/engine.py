@@ -79,9 +79,18 @@ class STORMWikiLMConfigs(LMConfigs):
                 model="gpt-4o-2024-05-13", max_tokens=4000, **openai_kwargs
             )
         elif openai_type and openai_type == "azure":
-            self.conv_simulator_lm = OpenAIModel(
-                model="gpt-4o-mini-2024-07-18", max_tokens=500, **openai_kwargs
+
+            # self.conv_simulator_lm = OpenAIModel(
+            #     model="gpt-4o-mini-2024-07-18", max_tokens=500, **openai_kwargs
+            # )
+            
+            self.conv_simulator_lm = AzureOpenAIModel(  # Changed from OpenAIModel to AzureOpenAIModel
+                model="gpt-4o-mini-2024-07-18",
+                max_tokens=500,
+                **azure_kwargs,
+                model_type="chat"
             )
+            
             self.question_asker_lm = AzureOpenAIModel(
                 model="gpt-4o-mini-2024-07-18",
                 max_tokens=500,

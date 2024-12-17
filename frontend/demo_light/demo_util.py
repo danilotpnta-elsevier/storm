@@ -22,7 +22,7 @@ from knowledge_storm.lm import OpenAIModel
 from knowledge_storm.lm import AzureOpenAIModel
 
 # from knowledge_storm.rm import YouRM
-# from knowledge_storm.rm import DuckDuckGoSearchRM
+from knowledge_storm.rm import DuckDuckGoSearchRM
 from knowledge_storm.rm import SearXNG
 from knowledge_storm.storm_wiki.modules.callback import BaseCallbackHandler
 from knowledge_storm.utils import truncate_filename
@@ -579,7 +579,16 @@ def clear_other_page_session_state(page_index: Optional[int]):
         del st.session_state[key]
 
 
-def set_storm_runner():
+def set_storm_runner_():
+
+    import os
+
+    os.environ["OPENAI_API_TYPE"] = "azure"
+    os.environ["OPENAI_API_VERSION"] = st.secrets["OPENAI_API_VERSION"]
+    os.environ["OPENAI_API_BASE"] = st.secrets["AZURE_API_BASE"]
+    os.environ["OPENAI_API_KEY"] = st.secrets["AZURE_API_KEY"]
+    os.environ["AZURE_OPENAI_KEY"] = st.secrets["AZURE_API_KEY"]
+
     current_working_dir = os.path.join(get_demo_dir(), "DEMO_WORKING_DIR")
     if not os.path.exists(current_working_dir):
         os.makedirs(current_working_dir)
@@ -601,16 +610,19 @@ def set_storm_runner():
     #     )
     # )
 
+    import ssl
+
+    print(ssl.get_default_verify_paths().cafile)
+
+    print("here is Danilo")
+
     llm_configs.init_openai_model(
-        openai_api_key=st.secrets["OPENAI_API_KEY"],
+        openai_api_key=None,
         azure_api_key=st.secrets["AZURE_API_KEY"],
         openai_type="azure",
         api_base=st.secrets["AZURE_API_BASE"],
+        api_version=st.secrets["OPENAI_API_VERSION"],
     )
-    import ssl 
-    print(ssl.get_default_verify_paths().cafile)
-    
-    print("here is Danilo")
     llm_configs.set_question_asker_lm(
         AzureOpenAIModel(
             model=st.secrets["AZURE_DEPLOYMENT"],
@@ -620,6 +632,7 @@ def set_storm_runner():
             max_tokens=500,
             temperature=1.0,
             top_p=0.9,
+            model_type="chat",
         )
     )
 
@@ -634,6 +647,83 @@ def set_storm_runner():
     # rm = YouRM(ydc_api_key=st.secrets['YDC_API_KEY'], k=engine_args.search_top_k)
     # rm = DuckDuckGoSearchRM(k=engine_args.search_top_k)
     rm = SearXNG(searxng_api_url="https://priv.au/", k=engine_args.search_top_k)
+
+    runner = STORMWikiRunner(engine_args, llm_configs, rm)
+    st.session_state["runner"] = runner
+
+
+def set_storm_runner():
+
+    import os
+
+    current_working_dir = os.path.join(get_demo_dir(), "DEMO_WORKING_DIR")
+    if not os.path.exists(current_working_dir):
+        os.makedirs(current_working_dir)
+
+    # Set environment variables for OpenAI
+    os.environ["OPENAI_API_TYPE"] = "azure"
+    os.environ["OPENAI_API_VERSION"] = st.secrets["OPENAI_API_VERSION"]
+    os.environ["OPENAI_API_BASE"] = st.secrets["AZURE_API_BASE"]
+    os.environ["AZURE_OPENAI_API_KEY"] = st.secrets["AZURE_API_KEY"]
+    os.environ["OPENAI_API_KEY"] = st.secrets["AZURE_API_KEY"]
+
+    # Configure DSPy
+    import dspy
+
+    azure_config = {
+        "api_type": "azure",
+        "api_version": st.secrets["OPENAI_API_VERSION"],
+        "api_base": st.secrets["AZURE_API_BASE"],
+        "api_key": st.secrets["AZURE_API_KEY"],
+        "model": st.secrets["AZURE_DEPLOYMENT"],
+    }
+    dspy.configure(azure_config)
+
+    # configure STORM runner
+    llm_configs = STORMWikiLMConfigs()
+    llm_configs.init_openai_model(
+        openai_api_key=None,  # Set to None to avoid OpenAI direct usage
+        azure_api_key=st.secrets["AZURE_API_KEY"],
+        openai_type="azure",
+        api_base=st.secrets["AZURE_API_BASE"],
+        api_version=st.secrets["OPENAI_API_VERSION"],
+    )
+
+    for model_key in [
+        "conv_simulator_lm",
+        "question_asker_lm",
+        "outline_gen_lm",
+        "article_gen_lm",
+        "article_polish_lm",
+    ]:
+        setattr(
+            llm_configs,
+            model_key,
+            AzureOpenAIModel(
+                model=st.secrets["AZURE_DEPLOYMENT"],
+                api_key=st.secrets["AZURE_API_KEY"],
+                api_base=st.secrets["AZURE_API_BASE"],
+                api_version=st.secrets["OPENAI_API_VERSION"],
+                max_tokens=500,
+                temperature=1.0,
+                top_p=0.9,
+                model_type="chat",
+            ),
+        )
+
+    engine_args = STORMWikiRunnerArguments(
+        output_dir=current_working_dir,
+        max_conv_turn=3,
+        max_perspective=3,
+        search_top_k=3,
+        retrieve_top_k=5,
+    )
+
+    # rm = DuckDuckGoSearchRM(k=engine_args.search_top_k)
+    # rm = SearXNG(searxng_api_url="https://priv.au/", k=engine_args.search_top_k)
+    rm = SearXNG(
+        searxng_api_url="https://search.hbubli.cc/", k=engine_args.search_top_k
+    )
 
     runner = STORMWikiRunner(engine_args, llm_configs, rm)
     st.session_state["runner"] = runner

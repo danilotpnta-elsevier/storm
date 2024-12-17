@@ -716,8 +716,110 @@ class SearXNG(dspy.Retrieve):
 
         return collected_results
 
+# from duckduckgo_search import DDGS
+
+import logging
+from duckduckgo_search import DDGS, DuckDuckGoSearchException
+import backoff
+import dspy
+from typing import Callable, Union, List
+from .utils import WebPageHelper
 
 class DuckDuckGoSearchRM(dspy.Retrieve):
+    """Retrieve information from custom queries using DuckDuckGo."""
+
+    def __init__(
+        self,
+        k: int = 3,
+        is_valid_source: Callable = None,
+        min_char_count: int = 150,
+        snippet_chunk_size: int = 1000,
+        webpage_helper_max_threads=10,
+        safe_search: str = "On",
+        region: str = "us-en",
+    ):
+        super().__init__(k=k)
+        self.ddgs = DDGS(verify=False)  # Disable SSL verification
+        self.k = k
+        self.webpage_helper = WebPageHelper(
+            min_char_count=min_char_count,
+            snippet_chunk_size=snippet_chunk_size,
+            max_thread_num=webpage_helper_max_threads,
+        )
+        self.usage = 0
+        self.safe_search = safe_search
+        self.region = region
+        self.is_valid_source = is_valid_source or (lambda x: True)
+
+    def get_usage_and_reset(self):
+        usage = self.usage
+        self.usage = 0
+        return {"DuckDuckGoRM": usage}
+
+    @backoff.on_exception(
+        backoff.expo,
+        (DuckDuckGoSearchException, Exception),
+        max_time=1000,
+        max_tries=8,
+        on_backoff=lambda details: logging.warning(
+            f"Retrying due to: {str(details['exception'])}"
+        ),
+    )
+    def request(self, query: str):
+        try:
+            results = self.ddgs.text(query, max_results=self.k, backend="api")
+            return results
+        except DuckDuckGoSearchException as e:
+            logging.error(f"DuckDuckGoSearchException details: {e}")
+            logging.error(f"Exception attributes: {vars(e)}")  # Debug attributes
+            raise
+        except Exception as e:
+            logging.error(f"General exception occurred: {e}")
+            raise
+
+    def forward(
+        self, query_or_queries: Union[str, List[str]], exclude_urls: List[str] = []
+    ):
+        queries = (
+            [query_or_queries]
+            if isinstance(query_or_queries, str)
+            else query_or_queries
+        )
+        self.usage += len(queries)
+        collected_results = []
+
+        for query in queries:
+            try:
+                results = self.request(query)
+                for d in results:
+                    if not isinstance(d, dict):
+                        logging.warning(f"Invalid result format: {d}")
+                        continue
+
+                    url = d.get("href")
+                    title = d.get("title")
+                    description = d.get("body", "")
+                    snippets = [description]
+
+                    if not all([url, title, snippets]):
+                        logging.warning(f"Skipping incomplete result: {d}")
+                        continue
+
+                    if self.is_valid_source(url) and url not in exclude_urls:
+                        collected_results.append(
+                            {
+                                "url": url,
+                                "title": title,
+                                "description": description,
+                                "snippets": snippets,
+                            }
+                        )
+            except Exception as e:
+                logging.error(f"Error during search for query '{query}': {str(e)}")
+
+        return collected_results
+
+class DuckDuckGoSearchRM_(dspy.Retrieve):
     """Retrieve information from custom queries using DuckDuckGo."""
 
     def __init__(
@@ -738,12 +840,13 @@ class DuckDuckGoSearchRM(dspy.Retrieve):
             **kwargs: Additional parameters for the OpenAI API.
         """
         super().__init__(k=k)
-        try:
-            from duckduckgo_search import DDGS
-        except ImportError as err:
-            raise ImportError(
-                "Duckduckgo requires `pip install duckduckgo_search`."
-            ) from err
+        # try:
+        #     self.ddgs = DDGS(verify=False) 
+        # except ImportError as err:
+        #     raise ImportError(
+        #         "Duckduckgo requires `pip install duckduckgo_search`."
+        #     ) from err
+        self.ddgs = DDGS(verify=False) 
         self.k = k
         self.webpage_helper = WebPageHelper(
             min_char_count=min_char_count,
@@ -770,7 +873,7 @@ class DuckDuckGoSearchRM(dspy.Retrieve):
             self.is_valid_source = lambda x: True
 
         # Import the duckduckgo search library found here: https://github.com/deedy5/duckduckgo_search
-        self.ddgs = DDGS()
+        # self.ddgs = DDGS(verify=False)
 
     def get_usage_and_reset(self):
         usage = self.usage

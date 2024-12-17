@@ -8,3 +8,12 @@ langchain-huggingface
 qdrant-client
 langchain-qdrant
 numpy==1.26.4
+grpcio-tools<1.60.0
+protobuf<5.0,>=3.20
+selenium==4.15.2 
+webdriver-manager==4.0.1
+jupyter
+duckduckgo_search
+knowledge-storm
+msedge-selenium-tools
+pdfminer.six

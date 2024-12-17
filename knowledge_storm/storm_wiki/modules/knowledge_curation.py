@@ -214,6 +214,7 @@ class TopicExpert(dspy.Module):
             searched_results: List[Information] = self.retriever.retrieve(
                 list(set(queries)), exclude_urls=[ground_truth_url]
             )
+            # print(f'Entering here: {searched_results}')
             if len(searched_results) > 0:
                 # Evaluate: Simplify this part by directly using the top 1 snippet.
                 info = ""

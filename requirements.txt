@@ -15,5 +15,4 @@ webdriver-manager==4.0.1
 jupyter
 duckduckgo_search
 knowledge-storm
-msedge-selenium-tools
 pdfminer.six

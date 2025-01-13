@@ -14,5 +14,4 @@ selenium==4.15.2
 webdriver-manager==4.0.1
 jupyter
 duckduckgo_search
-knowledge-storm
-pdfminer.six
+# knowledge-storm # installed from sourcecode

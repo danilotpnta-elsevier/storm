@@ -89,10 +89,13 @@ class QdrantVectorStoreManager:
                 f"Collection {collection_name} does not exist. Creating the collection..."
             )
             # create the collection
+            from transformers import AutoConfig
+            config = AutoConfig.from_pretrained(model.model_name)
+            size = config.hidden_size
             client.create_collection(
                 collection_name=f"{collection_name}",
                 vectors_config=models.VectorParams(
-                    size=1024, distance=models.Distance.COSINE
+                    size=size, distance=models.Distance.COSINE
                 ),
             )
             return Qdrant(

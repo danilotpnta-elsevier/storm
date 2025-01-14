@@ -716,16 +716,14 @@ class SearXNG(dspy.Retrieve):
 
         return collected_results
 
-# from duckduckgo_search import DDGS
-
 import logging
-from duckduckgo_search import DDGS, DuckDuckGoSearchException
+from duckduckgo_search import DDGS  # Removed DuckDuckGoSearchException import
 import backoff
 import dspy
 from typing import Callable, Union, List
 from .utils import WebPageHelper
 
-class DuckDuckGoSearchRM(dspy.Retrieve):
+class DuckDuckGoSearchRM_mod(dspy.Retrieve):
     """Retrieve information from custom queries using DuckDuckGo."""
 
     def __init__(
@@ -758,7 +756,7 @@ class DuckDuckGoSearchRM(dspy.Retrieve):
 
     @backoff.on_exception(
         backoff.expo,
-        (DuckDuckGoSearchException, Exception),
+        Exception,  # Removed DuckDuckGoSearchException
         max_time=1000,
         max_tries=8,
         on_backoff=lambda details: logging.warning(
@@ -769,12 +767,8 @@ class DuckDuckGoSearchRM(dspy.Retrieve):
         try:
             results = self.ddgs.text(query, max_results=self.k, backend="api")
             return results
-        except DuckDuckGoSearchException as e:
-            logging.error(f"DuckDuckGoSearchException details: {e}")
-            logging.error(f"Exception attributes: {vars(e)}")  # Debug attributes
-            raise
-        except Exception as e:
-            logging.error(f"General exception occurred: {e}")
+        except Exception as e:  # Removed separate handling for DuckDuckGoSearchException
+            logging.error(f"Error occurred: {e}")
             raise
 
     def forward(
@@ -819,7 +813,7 @@ class DuckDuckGoSearchRM(dspy.Retrieve):
 
         return collected_results
 
-class DuckDuckGoSearchRM_(dspy.Retrieve):
+class DuckDuckGoSearchRM(dspy.Retrieve):
     """Retrieve information from custom queries using DuckDuckGo."""
 
     def __init__(

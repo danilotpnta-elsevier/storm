@@ -56,7 +56,8 @@ def load_api_key(toml_file_path):
     # Set environment variables
     for key, value in data.items():
         os.environ[key] = str(value)
-
+    
+    print("API Keys loaded successfully.")
 
 def makeStringRed(message):
     return f"\033[91m {message}\033[00m"

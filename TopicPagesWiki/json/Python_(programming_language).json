@@ -1,0 +1,1720 @@
+{
+  "title": "Python_(programming_language)",
+  "url": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+  "summary": "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.\nPython is dynamically type-checked and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming. It is often described as a \"batteries included\" language due to its comprehensive standard library.\nGuido van Rossum began working on Python in the late 1980s as a successor to the ABC programming language and first released it in 1991 as Python 0.9.0. Python 2.0 was released in 2000. Python 3.0, released in 2008, was a major revision not completely backward-compatible with earlier versions. Python 2.7.18, released in 2020, was the last release of Python 2.\nPython consistently ranks as one of the most popular programming languages, and has gained widespread use in the machine learning community.",
+  "content": [
+    {
+      "section_title": "History",
+      "section_content": [
+        {
+          "sentence": "Python was conceived in the late 1980s  by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to the ABC programming language, which was inspired by SETL,  capable of exception handling and interfacing with the Amoeba operating system",
+          "refs": [
+            "http://www.artima.com/intv/pythonP.html",
+            "https://mail.python.org/pipermail/python-dev/2000-August/008881.html"
+          ]
+        },
+        {
+          "sentence": "Its implementation began in December\u00a01989",
+          "refs": [
+            "https://docs.python.org/faq/general.html#why-was-python-created-in-the-first-place"
+          ]
+        },
+        {
+          "sentence": "Van Rossum shouldered sole responsibility for the project, as the lead developer, until 12 July 2018, when he announced his \"permanent vacation\" from his responsibilities as Python's \"benevolent dictator for life\" (BDFL), a title the Python community bestowed upon him to reflect his long-term commitment as the project's chief decision-maker  (he has since come out of retirement and is self-titled \"BDFL-emeritus\")",
+          "refs": [
+            "https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html",
+            "https://www.linuxjournal.com/content/guido-van-rossum-stepping-down-role-pythons-benevolent-dictator-life"
+          ]
+        },
+        {
+          "sentence": "In January\u00a02019, active Python core developers elected a five-member Steering Council to lead the project",
+          "refs": []
+        },
+        {
+          "sentence": "The name Python is said to come from the British comedy series Monty Python's Flying Circus",
+          "refs": []
+        },
+        {
+          "sentence": "Python 2.0 was released on 16 October 2000, with many major new features such as list comprehensions, cycle-detecting garbage collection, reference counting, and Unicode support",
+          "refs": []
+        },
+        {
+          "sentence": "Python 2.7's end-of-life was initially set for 2015, then postponed to 2020 out of concern that a large body of existing code could not easily be forward-ported to Python\u00a03",
+          "refs": [
+            "https://docs.python.org/whatsnew/2.0.html"
+          ]
+        },
+        {
+          "sentence": "No further security patches or other improvements will be released for it",
+          "refs": [
+            "https://legacy.python.org/dev/peps/pep-0373/",
+            "https://www.python.org/dev/peps/pep-0466/"
+          ]
+        },
+        {
+          "sentence": "While Python 2.7 and older versions are officially unsupported, a different unofficial Python implementation, PyPy, continues to support Python 2, i.e",
+          "refs": [
+            "https://www.python.org/doc/sunset-python-2/",
+            "https://www.python.org/dev/peps/pep-0373/"
+          ]
+        },
+        {
+          "sentence": "\"2.7.18+\" (plus 3.10), with the plus meaning (at least some) \"backported security updates\"",
+          "refs": []
+        },
+        {
+          "sentence": "Python\u00a03.0 was released on 3 December 2008, with some new semantics and changed syntax",
+          "refs": []
+        },
+        {
+          "sentence": "At least every Python release since (now unsupported) 3.5 has added some syntax to the language, and a few later releases have dropped outdated modules, or changed semantics, at least in a minor way.",
+          "refs": []
+        },
+        {
+          "sentence": "Since 7\u00a0October\u00a02024 [update], Python 3.13 is the latest stable release, and it and, for few more months, 3.12 are the only releases with active support including for bug fixes (as opposed to just for security) and Python 3.9,  is the oldest supported version of Python (albeit in the 'security support' phase), due to Python 3.8 reaching end-of-life",
+          "refs": [
+            "https://pythoninsider.blogspot.com/2022/05/python-3913-is-now-available.html"
+          ]
+        },
+        {
+          "sentence": "Starting with 3.13, it and later versions have 2 years of full support (up from one and a half), followed by 3 years of security support (for same total support as before).",
+          "refs": [
+            "https://devguide.python.org/versions/",
+            "https://endoflife.date/python"
+          ]
+        },
+        {
+          "sentence": "Security updates were expedited in 2021 (and again twice in 2022, and more fixed in 2023 and in September 2024 for Python 3.12.6 down to 3.8.20), since all Python versions were insecure (including 2.7 ) because of security issues leading to possible remote code execution  and web-cache poisoning",
+          "refs": [
+            "https://access.redhat.com/security/cve/cve-2021-3177",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3177"
+          ]
+        },
+        {
+          "sentence": "Python 3.10 added the | union type operator  and the match and case keywords (for structural pattern matching statements)",
+          "refs": [
+            "https://docs.python.org/3/library/stdtypes.html#types-union"
+          ]
+        },
+        {
+          "sentence": "3.11 expanded exception handling functionality",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.12 added the new keyword type",
+          "refs": []
+        },
+        {
+          "sentence": "Notable changes in 3.11 from 3.10 include increased program execution speed and improved error reporting",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.11 claims to be between 10 and 60% faster than Python 3.10, and Python 3.12 adds another 5% on top of that",
+          "refs": [
+            "https://lwn.net/Articles/912216/"
+          ]
+        },
+        {
+          "sentence": "It also has improved error messages (again improved in 3.14), and many other changes.",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.13 introduces more syntax for types, a new and improved interactive interpreter (REPL), featuring multi-line editing and color support; an incremental garbage collector (producing shorter pauses for collection in programs with a lot of objects, and addition to the improved speed in 3.11 and 3.12),  and an experimental just-in-time (JIT) compiler (such features, can/needs to be enabled specifically for the increase in speed),  and an experimental free-threaded build mode, which disables the global interpreter lock (GIL), allowing threads to run more concurrently, that latter feature enabled with python3.13t or python3.13t.exe.",
+          "refs": [
+            "https://docs.python.org/3.13/whatsnew/3.13.html#experimental-jit-compiler"
+          ]
+        },
+        {
+          "sentence": "Python 3.13 introduces some change in behavior, i.e",
+          "refs": []
+        },
+        {
+          "sentence": "new \"well-defined semantics\", fixing bugs (plus many removals of deprecated classes, functions and methods, and removed some of the C\u00a0API and outdated modules): \"The   [old] implementation of locals() and frame.f_locals is slow, inconsistent and buggy  [and it] has many corner cases and oddities",
+          "refs": []
+        },
+        {
+          "sentence": "Code that works around those may need to be changed",
+          "refs": []
+        },
+        {
+          "sentence": "Code that uses locals() for simple templating, or print debugging, will continue to work correctly.\"",
+          "refs": [
+            "https://peps.python.org/pep-0667/"
+          ]
+        },
+        {
+          "sentence": "Some (more) standard library modules and many deprecated classes, functions and methods, will be removed in Python 3.15 or 3.16",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.11 adds Sigstore digital verification signatures for all CPython artifacts (in addition to PGP)",
+          "refs": []
+        },
+        {
+          "sentence": "Since use of PGP has been criticized by security practitioners  Python is moving to Sigstore exclusively and dropping PGP from 3.14",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.14 is now in alpha 3; regarding possible change to annotations: \"In Python 3.14, from __future__ import annotations will continue to work as it did before, converting annotations into strings.\"",
+          "refs": [
+            "https://peps.python.org/pep-0749/"
+          ]
+        },
+        {
+          "sentence": "PEP 711 proposes PyBI: a standard format for distributing Python Binaries",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.15 will \"Make UTF-8 mode default\",  the mode exists in all current Python versions, but currently needs to be opted into",
+          "refs": [
+            "https://peps.python.org/pep-0686/"
+          ]
+        },
+        {
+          "sentence": "UTF-8 is already used, by default, on Windows (and elsewhere), for most things, but e.g",
+          "refs": []
+        },
+        {
+          "sentence": "to open files it's not and enabling also makes code fully cross-platform, i.e",
+          "refs": []
+        },
+        {
+          "sentence": "use UTF-8 for everything on all platforms.",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Design philosophy and features",
+      "section_content": [
+        {
+          "sentence": "Python is a multi-paradigm programming language",
+          "refs": []
+        },
+        {
+          "sentence": "Object-oriented programming and structured programming are fully supported, and many of their features support functional programming and aspect-oriented programming (including metaprogramming  and metaobjects)",
+          "refs": [
+            "https://web.archive.org/web/20090530030205/http://www.python.org/community/pycon/dc2004/papers/24/metaclasses-pycon.pdf"
+          ]
+        },
+        {
+          "sentence": "Many other paradigms are supported via extensions, including design by contract   and logic programming",
+          "refs": [
+            "https://docs.python.org/3.0/reference/datamodel.html#special-method-names",
+            "http://www.nongnu.org/pydbc/",
+            "http://www.wayforward.net/pycontract/"
+          ]
+        },
+        {
+          "sentence": "Python is known as a glue language,  able to work very well with many other languages with ease of access.",
+          "refs": [
+            "https://sites.google.com/site/pydatalog/",
+            "https://www.python.org/doc/essays/omg-darpa-mcc-position/"
+          ]
+        },
+        {
+          "sentence": "Python uses dynamic typing and a combination of reference counting and a cycle-detecting garbage collector for memory management",
+          "refs": []
+        },
+        {
+          "sentence": "It uses dynamic name resolution (late binding), which binds method and variable names during program execution.",
+          "refs": [
+            "https://docs.python.org/extending/extending.html#reference-counts"
+          ]
+        },
+        {
+          "sentence": "Its design offers some support for functional programming in the Lisp tradition",
+          "refs": []
+        },
+        {
+          "sentence": "It has filter,mapandreduce functions; list comprehensions, dictionaries, sets, and generator expressions",
+          "refs": []
+        },
+        {
+          "sentence": "The standard library has two modules (itertools and functools) that implement functional tools borrowed from Haskell and Standard ML",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0289/"
+          ]
+        },
+        {
+          "sentence": "Its core philosophy is summarized in the Zen of Python (PEP 20), which includes aphorisms such as:",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0020/"
+          ]
+        },
+        {
+          "sentence": "However, Python features regularly violate these principles and have received criticism for adding unnecessary language bloat",
+          "refs": []
+        },
+        {
+          "sentence": "Responses to these criticisms are that the Zen of Python is a guideline rather than a rule",
+          "refs": [
+            "https://learning-python.com/python-changes-2014-plus.html"
+          ]
+        },
+        {
+          "sentence": "The addition of some new features had been so controversial that Guido van Rossum resigned as Benevolent Dictator for Life following vitriol over the addition of the assignment expression operator in Python 3.8",
+          "refs": [
+            "https://discuss.python.org/t/confusion-regarding-a-rule-in-the-zen-of-python/15927"
+          ]
+        },
+        {
+          "sentence": "Nevertheless, rather than building all of its functionality into its core, Python was designed to be highly extensible via modules",
+          "refs": []
+        },
+        {
+          "sentence": "This compact modularity has made it particularly popular as a means of adding programmable interfaces to existing applications",
+          "refs": []
+        },
+        {
+          "sentence": "Van Rossum's vision of a small core language with a large standard library and easily extensible interpreter stemmed from his frustrations with ABC, which espoused the opposite approach",
+          "refs": []
+        },
+        {
+          "sentence": "Python claims to strive for a simpler, less-cluttered syntax and grammar while giving developers a choice in their coding methodology",
+          "refs": []
+        },
+        {
+          "sentence": "In contrast to Perl's \"there is more than one way to do it\" motto, Python embraces a \"there should be one\u2014and preferably only one\u2014obvious way to do it.\" philosophy",
+          "refs": []
+        },
+        {
+          "sentence": "In practice, however, Python provides many ways to achieve the same task",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0020/"
+          ]
+        },
+        {
+          "sentence": "There are, for example, at least three ways to format a string literal, with no certainty as to which one a programmer should use",
+          "refs": []
+        },
+        {
+          "sentence": "Alex Martelli, a Fellow at the Python Software Foundation and Python book author, wrote: \"To describe something as 'clever' is not considered a compliment in the Python culture.\"",
+          "refs": [
+            "https://realpython.com/python-string-formatting/",
+            "http://shop.oreilly.com/product/9780596007973.do"
+          ]
+        },
+        {
+          "sentence": "Python's developers usually strive to avoid premature optimization and reject patches to non-critical parts of the CPython reference implementation that would offer marginal increases in speed at the cost of clarity",
+          "refs": []
+        },
+        {
+          "sentence": "Execution speed can be improved by moving speed-critical functions to extension modules written in languages such as C, or by using a just-in-time compiler like PyPy",
+          "refs": [
+            "https://web.archive.org/web/20140130021902/http://ebeab.com/2014/01/21/python-culture/"
+          ]
+        },
+        {
+          "sentence": "It is also possible to cross-compile to other languages, but it either doesn't provide the full speed-up that might be expected, since Python is a very dynamic language, or a restricted subset of Python is compiled, and possibly semantics are slightly changed",
+          "refs": []
+        },
+        {
+          "sentence": "Python's developers aim for it to be fun to use",
+          "refs": []
+        },
+        {
+          "sentence": "This is reflected in its name\u2014a tribute to the British comedy group Monty Python \u2014and in occasionally playful approaches to tutorials and reference materials, such as the use of the terms \"spam\" and \"eggs\" (a reference to a Monty Python sketch) in examples, instead of the often-used \"foo\" and \"bar\"",
+          "refs": [
+            "https://docs.python.org/3/faq/general.html#why-is-it-called-python"
+          ]
+        },
+        {
+          "sentence": "A common neologism in the Python community is pythonic, which has a wide range of meanings related to program style",
+          "refs": [
+            "https://web.archive.org/web/20190511065650/http://insidetech.monster.com/training/articles/8114-15-ways-python-is-a-powerful-force-on-the-web",
+            "https://docs.python.org/3/library/pprint.html"
+          ]
+        },
+        {
+          "sentence": "\"Pythonic\" code may use Python idioms well, be natural or show fluency in the language, or conform with Python's minimalist philosophy and emphasis on readability",
+          "refs": []
+        },
+        {
+          "sentence": "Code that is difficult to understand or reads like a rough transcription from another programming language is called unpythonic",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Syntax and semantics",
+      "section_content": [
+        {
+          "sentence": "Python is meant to be an easily readable language",
+          "refs": []
+        },
+        {
+          "sentence": "Its formatting is visually uncluttered and often uses English keywords where other languages use punctuation",
+          "refs": []
+        },
+        {
+          "sentence": "Unlike many other languages, it does not use curly brackets to delimit blocks, and semicolons after statements are allowed but rarely used",
+          "refs": []
+        },
+        {
+          "sentence": "It has fewer syntactic exceptions and special cases than C or Pascal",
+          "refs": []
+        }
+      ],
+      "subsections": [
+        {
+          "section_title": "Indentation",
+          "section_content": [
+            {
+              "sentence": "Python uses whitespace indentation, rather than curly brackets or keywords, to delimit blocks",
+              "refs": []
+            },
+            {
+              "sentence": "An increase in indentation comes after certain statements; a decrease in indentation signifies the end of the current block",
+              "refs": []
+            },
+            {
+              "sentence": "Thus, the program's visual structure accurately represents its semantic structure",
+              "refs": [
+                "https://web.archive.org/web/20180218162410/http://www.secnetix.de/~olli/Python/block_indentation.hawk"
+              ]
+            },
+            {
+              "sentence": "This feature is sometimes termed the off-side rule",
+              "refs": [
+                "ISBN: 978-0-262-52962-4"
+              ]
+            },
+            {
+              "sentence": "Some other languages use indentation this way; but in most, indentation has no semantic meaning",
+              "refs": []
+            },
+            {
+              "sentence": "The recommended indent size is four spaces",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Statements and control flow",
+          "section_content": [
+            {
+              "sentence": "Python's statements include:",
+              "refs": []
+            },
+            {
+              "sentence": "The assignment statement (=) binds a name as a reference to a separate, dynamically allocated object",
+              "refs": []
+            },
+            {
+              "sentence": "Variables may subsequently be rebound at any time to any object",
+              "refs": []
+            },
+            {
+              "sentence": "In Python, a variable name is a generic reference holder without a fixed data type; however, it always refers to some object with a type",
+              "refs": []
+            },
+            {
+              "sentence": "This is called dynamic typing\u2014in contrast to statically-typed languages, where each variable may contain only a value of a certain type.",
+              "refs": []
+            },
+            {
+              "sentence": "Python does not support tail call optimization or first-class continuations, and, according to Van Rossum, it never will",
+              "refs": []
+            },
+            {
+              "sentence": "However, better support for coroutine-like functionality is provided by extending Python's generators",
+              "refs": [
+                "http://neopythonic.blogspot.be/2009/04/tail-recursion-elimination.html",
+                "http://www.artima.com/weblogs/viewpost.jsp?thread=147358"
+              ]
+            },
+            {
+              "sentence": "Before 2.5, generators were lazy iterators; data was passed unidirectionally out of the generator",
+              "refs": [
+                "https://www.python.org/dev/peps/pep-0342/"
+              ]
+            },
+            {
+              "sentence": "From Python\u00a02.5 on, it is possible to pass data back into a generator function; and from version 3.3, it can be passed through multiple stack levels",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Expressions",
+          "section_content": [
+            {
+              "sentence": "Python's expressions include:",
+              "refs": []
+            },
+            {
+              "sentence": "In Python, a distinction between expressions and statements is rigidly enforced, in contrast to languages such as Common Lisp, Scheme, or Ruby",
+              "refs": []
+            },
+            {
+              "sentence": "This leads to duplicating some functionality",
+              "refs": []
+            },
+            {
+              "sentence": "For example:",
+              "refs": []
+            },
+            {
+              "sentence": "Statements cannot be a part of an expression\u2014so list and other comprehensions or lambda expressions, all being expressions, cannot contain statements",
+              "refs": []
+            },
+            {
+              "sentence": "A particular case is that an assignment statement such as a = 1 cannot form part of the conditional expression of a conditional statement.",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Methods",
+          "section_content": [
+            {
+              "sentence": "Methods on objects are functions attached to the object's class; the syntax instance.method(argument) is, for normal methods and functions, syntactic sugar for Class.method(instance, argument)",
+              "refs": []
+            },
+            {
+              "sentence": "Python methods have an explicit self parameter to access instance data, in contrast to the implicit self (or this) in some other object-oriented programming languages (e.g., C++, Java, Objective-C, Ruby)",
+              "refs": []
+            },
+            {
+              "sentence": "Python also provides methods, often called dunder methods (due to their names beginning and ending with double-underscores), to allow user-defined classes to modify how they are handled by native operations including length, comparison, in arithmetic operations and type conversion",
+              "refs": [
+                "https://docs.python.org/faq/design.html#why-must-self-be-used-explicitly-in-method-definitions-and-calls"
+              ]
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Typing",
+          "section_content": [
+            {
+              "sentence": "Python uses duck typing and has typed objects but untyped variable names",
+              "refs": []
+            },
+            {
+              "sentence": "Type constraints are not checked at compile time; rather, operations on an object may fail, signifying that it is not of a suitable type",
+              "refs": []
+            },
+            {
+              "sentence": "Despite being dynamically typed, Python is strongly typed, forbidding operations that are not well-defined (for example, adding a number to a string) rather than silently attempting to make sense of them.",
+              "refs": []
+            },
+            {
+              "sentence": "Python allows programmers to define their own types using classes, most often used for object-oriented programming",
+              "refs": []
+            },
+            {
+              "sentence": "New instances of classes are constructed by calling the class (for example, SpamClass() or EggsClass()), and the classes are instances of the metaclass type (itself an instance of itself), allowing metaprogramming and reflection.",
+              "refs": []
+            },
+            {
+              "sentence": "Before version\u00a03.0, Python had two kinds of classes (both using the same syntax):  old-style and new-style;  current Python versions only support the semantics of the new style.",
+              "refs": [
+                "https://web.archive.org/web/20121026063834/http://docs.python.org/reference/datamodel.html#new-style-and-classic-classes"
+              ]
+            },
+            {
+              "sentence": "Python supports optional type annotations",
+              "refs": []
+            },
+            {
+              "sentence": "These annotations are not enforced by the language, but may be used by external tools such as mypy to catch errors",
+              "refs": [
+                "https://www.python.org/dev/peps/pep-0483/",
+                "https://peps.python.org/pep-0484/"
+              ]
+            },
+            {
+              "sentence": "Mypy also supports a Python compiler called mypyc, which leverages type annotations for optimization",
+              "refs": [
+                "https://docs.python.org/3/library/typing.html",
+                "http://mypy-lang.org/"
+              ]
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Arithmetic operations",
+          "section_content": [
+            {
+              "sentence": "Python has the usual symbols for arithmetic operators (+, -, *, /), the floor division operator // and the modulo operation % (where the remainder can be negative, e.g",
+              "refs": []
+            },
+            {
+              "sentence": "4\u00a0% -3 == -2)",
+              "refs": []
+            },
+            {
+              "sentence": "It also has ** for exponentiation, e.g",
+              "refs": []
+            },
+            {
+              "sentence": "5**3 == 125 and 9**0.5 == 3.0, and a matrix\u2011multiplication operator @",
+              "refs": []
+            },
+            {
+              "sentence": "These operators work like in traditional math; with the same precedence rules, the operators infix (+ and - can also be unary to represent positive and negative numbers respectively).",
+              "refs": [
+                "https://legacy.python.org/dev/peps/pep-0465/"
+              ]
+            },
+            {
+              "sentence": "The division between integers produces floating-point results",
+              "refs": []
+            },
+            {
+              "sentence": "The behavior of division has changed significantly over time:",
+              "refs": [
+                "https://www.python.org/dev/peps/pep-0238/"
+              ]
+            },
+            {
+              "sentence": "In Python terms, / is true division (or simply division), and // is floor division",
+              "refs": []
+            },
+            {
+              "sentence": "/ before version 3.0 is classic division",
+              "refs": []
+            },
+            {
+              "sentence": "Rounding towards negative infinity, though different from most languages, adds consistency",
+              "refs": []
+            },
+            {
+              "sentence": "For instance, it means that the equation (a + b)//b == a//b + 1 is always true",
+              "refs": []
+            },
+            {
+              "sentence": "It also means that the equation b*(a//b) + a%b == a is valid for both positive and negative values of a",
+              "refs": []
+            },
+            {
+              "sentence": "However, maintaining the validity of this equation means that while the result of a%b is, as expected, in the half-open interval  [0, b), where b is a positive integer, it has to lie in the interval (b, 0] when b is negative",
+              "refs": []
+            },
+            {
+              "sentence": "Python provides a round function for rounding a float to the nearest integer",
+              "refs": []
+            },
+            {
+              "sentence": "For tie-breaking, Python\u00a03 uses round to even: round(1.5) and round(2.5) both produce 2",
+              "refs": []
+            },
+            {
+              "sentence": "Versions before 3 used round-away-from-zero: round(0.5) is 1.0, round(-0.5) is \u22121.0",
+              "refs": [
+                "https://docs.python.org/py3k/library/functions.html#round"
+              ]
+            },
+            {
+              "sentence": "Python allows Boolean expressions with multiple equality relations in a manner that is consistent with general use in mathematics",
+              "refs": []
+            },
+            {
+              "sentence": "For example, the expression a < b < c tests whether a is less than b and b is less than c",
+              "refs": []
+            },
+            {
+              "sentence": "C-derived languages interpret this expression differently: in C, the expression would first evaluate a < b, resulting in 0 or 1, and that result would then be compared with c",
+              "refs": [
+                "https://archive.org/details/pythonessentialr00beaz_036"
+              ]
+            },
+            {
+              "sentence": "Python uses arbitrary-precision arithmetic for all integer operations",
+              "refs": []
+            },
+            {
+              "sentence": "The Decimal type/class in the decimal module provides decimal floating-point numbers to a pre-defined arbitrary precision and several rounding modes",
+              "refs": []
+            },
+            {
+              "sentence": "The Fraction class in the fractions module provides arbitrary precision for rational numbers",
+              "refs": [
+                "https://www.python.org/dev/peps/pep-0327/"
+              ]
+            },
+            {
+              "sentence": "Due to Python's extensive mathematics library, and the third-party library NumPy that further extends the native capabilities, it is frequently used as a scientific scripting language to aid in problems such as numerical data processing and manipulation",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Function syntax",
+          "section_content": [
+            {
+              "sentence": "Functions are created in Python using the def keyword",
+              "refs": []
+            },
+            {
+              "sentence": "In Python, you define the function as if you were calling it, by typing the function name and then the attributes required",
+              "refs": []
+            },
+            {
+              "sentence": "Here is an example of a function that will print whatever is given:",
+              "refs": []
+            },
+            {
+              "sentence": "If you want the attribute to have a set value if no value is given, use the variable-defining syntax inside the function definition.",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "section_title": "Programming examples",
+      "section_content": [
+        {
+          "sentence": "\"Hello, World!\" program:",
+          "refs": []
+        },
+        {
+          "sentence": "Program to calculate the factorial of a positive integer:",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Libraries",
+      "section_content": [
+        {
+          "sentence": "Python's large standard library  provides tools suited to many tasks and is commonly cited as one of its greatest strengths",
+          "refs": [
+            "http://www.oracle.com/technetwork/articles/piotrowski-pythoncore-084049.html"
+          ]
+        },
+        {
+          "sentence": "For Internet-facing applications, many standard formats and protocols such as MIME and HTTP are supported",
+          "refs": []
+        },
+        {
+          "sentence": "It includes modules for creating graphical user interfaces, connecting to relational databases, generating pseudorandom numbers, arithmetic with arbitrary-precision decimals,  manipulating regular expressions, and unit testing.",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0327/"
+          ]
+        },
+        {
+          "sentence": "Some parts of the standard library are covered by specifications\u2014for example, the Web Server Gateway Interface (WSGI) implementation wsgiref follows PEP 333 \u2014but most are specified by their code, internal documentation, and test suites",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0333/"
+          ]
+        },
+        {
+          "sentence": "However, because most of the standard library is cross-platform Python code, only a few modules need altering or rewriting for variant implementations.",
+          "refs": []
+        },
+        {
+          "sentence": "As of 17\u00a0March\u00a02024, [update] the Python Package Index (PyPI), the official repository for third-party Python software, contains over 523,000  packages with a wide range of functionality, including:",
+          "refs": [
+            "https://pypi.org/"
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Development environments",
+      "section_content": [
+        {
+          "sentence": "Most Python implementations (including CPython) include a read\u2013eval\u2013print loop (REPL), permitting them to function as a command line interpreter for which users enter statements sequentially and receive results immediately.",
+          "refs": []
+        },
+        {
+          "sentence": "Python also comes with an Integrated development environment (IDE) called IDLE, which is more beginner-oriented.",
+          "refs": []
+        },
+        {
+          "sentence": "Other shells, including IDLE and IPython, add further abilities such as improved auto-completion, session state retention, and syntax highlighting.",
+          "refs": []
+        },
+        {
+          "sentence": "As well as standard desktop integrated development environments including PyCharm, IntelliJ Idea, Visual Studio Code etc, there are web browser-based IDEs, including SageMath, for developing science- and math-related programs; PythonAnywhere, a browser-based IDE and hosting environment; and Canopy IDE, a commercial IDE emphasizing scientific computing",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Implementations",
+      "section_content": [],
+      "subsections": [
+        {
+          "section_title": "Reference implementation",
+          "section_content": [
+            {
+              "sentence": "CPython is the reference implementation of Python",
+              "refs": []
+            },
+            {
+              "sentence": "It is written in C, meeting the C89 standard (Python 3.11 uses C11 ) with several select C99 features",
+              "refs": [
+                "https://peps.python.org/pep-0007/"
+              ]
+            },
+            {
+              "sentence": "CPython includes its own C extensions, but third-party extensions are not limited to older C versions\u2014e.g",
+              "refs": []
+            },
+            {
+              "sentence": "they can be implemented with C11 or C++",
+              "refs": []
+            },
+            {
+              "sentence": "CPython compiles Python programs into an intermediate bytecode  which is then executed by its virtual machine",
+              "refs": [
+                "https://docs.python.org/3/extending/building.html",
+                "https://www.python.org/dev/peps/pep-0007/",
+                "https://docs.python.org/3/library/dis.html#python-bytecode-instructions"
+              ]
+            },
+            {
+              "sentence": "CPython is distributed with a large standard library written in a mixture of C and native Python, and is available for many platforms, including Windows (starting with Python\u00a03.9, the Python installer deliberately fails to install on Windows 7 and 8;   Windows XP was supported until Python\u00a03.5) and most modern Unix-like systems, including macOS (and Apple M1 Macs, since Python\u00a03.9.1, with experimental installer), with unofficial support for VMS",
+              "refs": [
+                "http://www.troeger.eu/teaching/pythonvm08.pdf",
+                "https://docs.python.org/release/3.9.0/whatsnew/changelog.html#changelog",
+                "https://www.python.org/downloads/release/python-391"
+              ]
+            },
+            {
+              "sentence": "Platform portability was one of its earliest priorities",
+              "refs": [
+                "https://www.vmspython.org/doku.php?id=history"
+              ]
+            },
+            {
+              "sentence": "(During Python\u00a01 and 2 development, even OS/2 and Solaris were supported,  but support has since been dropped for many platforms.)",
+              "refs": [
+                "http://www.oreilly.com/pub/a/oreilly/frank/rossum_1099.html",
+                "https://www.python.org/download/other/"
+              ]
+            },
+            {
+              "sentence": "All current Python versions (i.e",
+              "refs": []
+            },
+            {
+              "sentence": "since 3.7) only support operating systems with multi-threading support.",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Other implementations",
+          "section_content": [
+            {
+              "sentence": "All alternative implementations have at least slightly different semantics (e.g",
+              "refs": []
+            },
+            {
+              "sentence": "may have unordered dictionaries, unlike all current Python versions), e.g",
+              "refs": []
+            },
+            {
+              "sentence": "with the larger Python ecosystem, such as with supporting the C Python API of with PyPy:",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "No longer supported implementations",
+          "section_content": [
+            {
+              "sentence": "Other just-in-time Python compilers have been developed, but are now unsupported:",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Cross-compilers to other languages",
+          "section_content": [
+            {
+              "sentence": "There are several compilers/transpilers to high-level object languages, with either unrestricted Python, a restricted subset of Python, or a language similar to Python as the source language:",
+              "refs": []
+            },
+            {
+              "sentence": "Specialized:",
+              "refs": []
+            },
+            {
+              "sentence": "Older projects (or not to be used with Python 3.x and latest syntax):",
+              "refs": []
+            }
+          ],
+          "subsections": []
+        },
+        {
+          "section_title": "Performance",
+          "section_content": [
+            {
+              "sentence": "Performance comparison of various Python implementations on a non-numerical (combinatorial) workload was presented at EuroSciPy '13",
+              "refs": []
+            },
+            {
+              "sentence": "Python's performance compared to other programming languages is also benchmarked by The Computer Language Benchmarks Game",
+              "refs": [
+                "https://arxiv.org/abs/1404.6388"
+              ]
+            }
+          ],
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "section_title": "Development",
+      "section_content": [
+        {
+          "sentence": "Python's development is conducted largely through the Python Enhancement Proposal (PEP) process, the primary mechanism for proposing major new features, collecting community input on issues, and documenting Python design decisions",
+          "refs": []
+        },
+        {
+          "sentence": "Python coding style is covered in PEP\u00a08",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0001/"
+          ]
+        },
+        {
+          "sentence": "Outstanding PEPs are reviewed and commented on by the Python community and the steering council",
+          "refs": [
+            "https://www.python.org/dev/peps/pep-0008/"
+          ]
+        },
+        {
+          "sentence": "Enhancement of the language corresponds with the development of the CPython reference implementation",
+          "refs": []
+        },
+        {
+          "sentence": "The mailing list python-dev is the primary forum for the language's development",
+          "refs": []
+        },
+        {
+          "sentence": "Specific issues were originally discussed in the Roundup bug tracker hosted at by the foundation",
+          "refs": []
+        },
+        {
+          "sentence": "In 2022, all issues and discussions were migrated to GitHub",
+          "refs": [
+            "https://web.archive.org/web/20090601134342/http://www.python.org/dev/intro/"
+          ]
+        },
+        {
+          "sentence": "Development originally took place on a self-hosted source-code repository running Mercurial, until Python moved to GitHub in January 2017",
+          "refs": [
+            "https://lwn.net/Articles/885854/"
+          ]
+        },
+        {
+          "sentence": "CPython's public releases come in three types, distinguished by which part of the version number is incremented:",
+          "refs": []
+        },
+        {
+          "sentence": "Many alpha, beta, and release-candidates are also released as previews and for testing before final releases",
+          "refs": []
+        },
+        {
+          "sentence": "Although there is a rough schedule for each release, they are often delayed if the code is not ready",
+          "refs": []
+        },
+        {
+          "sentence": "Python's development team monitors the state of the code by running the large unit test suite during development",
+          "refs": []
+        },
+        {
+          "sentence": "The major academic conference on Python is PyCon",
+          "refs": []
+        },
+        {
+          "sentence": "There are also special Python mentoring programs, such as PyLadies.",
+          "refs": []
+        },
+        {
+          "sentence": "Python 3.12 removed wstr meaning Python extensions  need to be modified,  and 3.10 added pattern matching to the language",
+          "refs": [
+            "https://docs.python.org/3/extending/extending.html",
+            "https://www.python.org/dev/peps/pep-0623/"
+          ]
+        },
+        {
+          "sentence": "Python 3.12 dropped some outdated modules, and more will be dropped in the future, deprecated as of 3.13; already deprecated array 'u' format code will emit DeprecationWarning since 3.13 and will be removed in Python 3.16",
+          "refs": []
+        },
+        {
+          "sentence": "The 'w' format code should be used instead",
+          "refs": []
+        },
+        {
+          "sentence": "Part of ctypes is also deprecated and http.server.CGIHTTPRequestHandler will emit a DeprecationWarning, and will be removed in 3.15",
+          "refs": []
+        },
+        {
+          "sentence": "Using that code already has a high potential for both security and functionality bugs",
+          "refs": []
+        },
+        {
+          "sentence": "Parts of the typing module are deprecated, e.g",
+          "refs": []
+        },
+        {
+          "sentence": "creating a typing.NamedTuple class using keyword arguments to denote the fields and such (and more) will be disallowed in Python 3.15.",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "API documentation generators",
+      "section_content": [
+        {
+          "sentence": "Tools that can generate documentation for Python API include pydoc (available as part of the standard library), Sphinx, Pdoc and its forks, Doxygen and Graphviz, among others",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Naming",
+      "section_content": [
+        {
+          "sentence": "Python's name is derived from the British comedy group Monty Python, whom Python creator Guido van Rossum enjoyed while developing the language",
+          "refs": []
+        },
+        {
+          "sentence": "Monty Python references appear frequently in Python code and culture;  for example, the metasyntactic variables often used in Python literature are spam and eggs instead of the traditional foo and bar",
+          "refs": [
+            "https://docs.python.org/tutorial/appetite.html"
+          ]
+        },
+        {
+          "sentence": "The official Python documentation also contains various references to Monty Python routines",
+          "refs": [
+            "https://docs.python.org/tutorial/appetite.html",
+            "https://stackoverflow.com/questions/5033906/in-python-should-i-use-else-after-a-return-in-an-if-block"
+          ]
+        },
+        {
+          "sentence": "Users of Python are sometimes referred to as \"Pythonistas\"",
+          "refs": [
+            "https://books.google.com/books?id=1HxWGezDZcgC&pg=PA17",
+            "https://books.google.com/books?id=carqdIdfVlYC&pg=PR15"
+          ]
+        },
+        {
+          "sentence": "The prefix Py- is used to show that something is related to Python",
+          "refs": []
+        },
+        {
+          "sentence": "Examples of the use of this prefix in names of Python applications or libraries include Pygame, a binding of Simple DirectMedia Layer to Python (commonly used to create games); PyQt and PyGTK, which bind Qt and GTK to Python respectively; and PyPy, a Python implementation originally written in Python.",
+          "refs": []
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Popularity",
+      "section_content": [
+        {
+          "sentence": "Since 2003, Python has consistently ranked in the top ten most popular programming languages in the TIOBE Programming Community Index where as of December\u00a02022 [update] it was the most popular language (ahead of C, C++, and Java)",
+          "refs": []
+        },
+        {
+          "sentence": "It was selected as Programming Language of the Year (for \"the highest rise in ratings in a year\") in 2007, 2010, 2018, and 2020 (the only language to have done so four times as of 2020 [update] ).",
+          "refs": [
+            "https://www.tiobe.com/tiobe-index/",
+            "https://seniordba.wordpress.com/2021/01/18/tiobe-index-for-january-2021/"
+          ]
+        },
+        {
+          "sentence": "Large organizations that use Python include Wikipedia, Google,  Yahoo!,  CERN,  NASA,  Facebook,  Amazon, Instagram,  Spotify,  and some smaller entities like Industrial Light & Magic  and ITA",
+          "refs": [
+            "https://www.python.org/about/quotes/",
+            "https://wiki.python.org/moin/OrganizationsUsingPython",
+            "http://cdsweb.cern.ch/journal/CERNBulletin/2006/31/News%20Articles/974627?ln=en",
+            "https://www.python.org/about/success/usa/",
+            "https://developers.facebook.com/blog/post/301",
+            "https://instagram-engineering.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-adf2e22da2ad",
+            "https://labs.spotify.com/2013/03/20/how-we-use-python-at-spotify/",
+            "https://www.python.org/about/success/ilm/"
+          ]
+        },
+        {
+          "sentence": "The social news networking site Reddit was written mostly in Python",
+          "refs": [
+            "http://www.eweek.com/c/a/Application-Development/Python-Slithers-into-Systems/"
+          ]
+        },
+        {
+          "sentence": "Organizations that partially use Python include Discord  and Baidu",
+          "refs": [
+            "https://github.com/reddit-archive/reddit",
+            "https://elixir-lang.org/blog/2020/10/08/real-time-communication-at-scale-with-elixir-at-discord/"
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Uses",
+      "section_content": [
+        {
+          "sentence": "Python can serve as a scripting language for web applications, e.g",
+          "refs": []
+        },
+        {
+          "sentence": "via mod_wsgi for the Apache webserver",
+          "refs": []
+        },
+        {
+          "sentence": "With Web Server Gateway Interface, a standard API has evolved to facilitate these applications",
+          "refs": [
+            "http://w3techs.com/technologies/details/pl-python/all/all"
+          ]
+        },
+        {
+          "sentence": "Web frameworks like Django, Pylons, Pyramid, TurboGears, web2py, Tornado, Flask, Bottle, and Zope support developers in the design and maintenance of complex applications",
+          "refs": []
+        },
+        {
+          "sentence": "Pyjs and IronPython can be used to develop the client-side of Ajax-based applications",
+          "refs": []
+        },
+        {
+          "sentence": "SQLAlchemy can be used as a data mapper to a relational database",
+          "refs": []
+        },
+        {
+          "sentence": "Twisted is a framework to program communications between computers, and is used (for example) by Dropbox.",
+          "refs": []
+        },
+        {
+          "sentence": "Libraries such as NumPy, SciPy and Matplotlib allow the effective use of Python in scientific computing,   with specialized libraries such as Biopython and Astropy providing domain-specific functionality",
+          "refs": [
+            "https://www.h2desk.com/blog/python-scientific-computing/",
+            "http://www.computer.org/csdl/mags/cs/2011/02/mcs2011020009.html"
+          ]
+        },
+        {
+          "sentence": "SageMath is a computer algebra system with a notebook interface programmable in Python: its library covers many aspects of mathematics, including algebra, combinatorics, numerical mathematics, number theory, and calculus",
+          "refs": []
+        },
+        {
+          "sentence": "OpenCV has Python bindings with a rich set of features for computer vision and image processing",
+          "refs": [
+            "https://web.archive.org/web/20200615180428/http://visual.icse.us.edu.pl/methodology/why_Sage.html"
+          ]
+        },
+        {
+          "sentence": "Python is commonly used in artificial intelligence projects and machine learning projects with the help of libraries like TensorFlow, Keras, Pytorch, scikit-learn and the Logic language ProbLog",
+          "refs": []
+        },
+        {
+          "sentence": "As a scripting language with a modular architecture, simple syntax, and rich text processing tools, Python is often used for natural language processing",
+          "refs": [
+            "http://download.tensorflow.org/paper/whitepaper2015.pdf",
+            "https://www.kdnuggets.com/2018/05/poll-tools-analytics-data-science-machine-learning-results.html/2",
+            "https://scikit-learn.org/stable/testimonials/testimonials.html",
+            "https://cloudplatform.googleblog.com/2016/05/Google-supercharges-machine-learning-tasks-with-custom-chip.html",
+            "https://doi.org/10.1007%2Fs10994-015-5494-z"
+          ]
+        },
+        {
+          "sentence": "The combination of Python and Prolog has proved to be particularly useful for AI applications, with Prolog providing knowledge representation and reasoning capabilities",
+          "refs": []
+        },
+        {
+          "sentence": "The Janus system, in particular, exploits the similarities between these two languages,in part because of their use of dynamic typing, and the simple recursive nature of theirdata structures",
+          "refs": []
+        },
+        {
+          "sentence": "Typical applications of this combination include  natural language processing, visual queryanswering, geospatial reasoning, and handling of semantic web data",
+          "refs": []
+        },
+        {
+          "sentence": "The Natlog system, implemented in Python, uses Definite Clause Grammars (DCGs) as prompt generators for text-to-text generators like GPT3 and text-to-image generators like DALL-E or Stable Diffusion",
+          "refs": [
+            "[ERROR retrieving ref link]",
+            "https://www.swi-prolog.org/pldoc/doc_for?object=section(%27packages/janus.html%27)"
+          ]
+        },
+        {
+          "sentence": "Python can also be used for graphical user interface (GUI) by using libraries like Tkinter",
+          "refs": []
+        },
+        {
+          "sentence": "Python has been successfully embedded in many software products as a scripting language, including in finite element method software such as Abaqus, 3D parametric modelers like FreeCAD, 3D animation packages such as 3ds Max, Blender, Cinema 4D, Lightwave, Houdini, Maya, modo, MotionBuilder, Softimage, the visual effects compositor Nuke, 2D imaging programs like GIMP,  Inkscape, Scribus and Paint Shop Pro,  and musical notation programs like scorewriter and capella",
+          "refs": [
+            "https://web.archive.org/web/20130717070814/http://gimp-win.sourceforge.net/faq.html",
+            "https://web.archive.org/web/20080319061519/http://www.jasc.com/support/customercare/articles/psp9components.asp"
+          ]
+        },
+        {
+          "sentence": "GNU Debugger uses Python as a pretty printer to show complex structures such as C++ containers",
+          "refs": []
+        },
+        {
+          "sentence": "Esri promotes Python as the best choice for writing scripts in ArcGIS",
+          "refs": []
+        },
+        {
+          "sentence": "It has also been used in several video games,   and has been adopted as first of the three available programming languages in Google App Engine, the other two being Java and Go",
+          "refs": [
+            "http://webhelp.esri.com/arcgisdesktop/9.2/index.cfm?TopicName=About_getting_started_with_writing_geoprocessing_scripts",
+            "https://community.eveonline.com/news/dev-blogs/stackless-python-2.7/",
+            "https://web.archive.org/web/20101202164144/http://www.2kgames.com/civ4/blog_03.htm"
+          ]
+        },
+        {
+          "sentence": "Many operating systems include Python as a standard component",
+          "refs": []
+        },
+        {
+          "sentence": "It ships with most Linux distributions,  AmigaOS 4 (using Python\u00a02.7), FreeBSD (as a package), NetBSD, and OpenBSD (as a package) and can be used from the command line (terminal)",
+          "refs": [
+            "https://docs.python.org/3/using/unix.html"
+          ]
+        },
+        {
+          "sentence": "Many Linux distributions use installers written in Python: Ubuntu uses the Ubiquity installer, while Red Hat Linux and Fedora Linux use the Anaconda installer",
+          "refs": []
+        },
+        {
+          "sentence": "Gentoo Linux uses Python in its package management system, Portage.",
+          "refs": []
+        },
+        {
+          "sentence": "Python is used extensively in the information security industry, including in exploit development",
+          "refs": []
+        },
+        {
+          "sentence": "Most of the Sugar software for the One Laptop per Child XO, developed at Sugar Labs as of 2008 [update], is written in Python",
+          "refs": []
+        },
+        {
+          "sentence": "The Raspberry Pi single-board computer project has adopted Python as its main user-programming language.",
+          "refs": [
+            "http://sugarlabs.org/go/Sugar"
+          ]
+        },
+        {
+          "sentence": "LibreOffice includes Python and intends to replace Java with Python",
+          "refs": []
+        },
+        {
+          "sentence": "Its Python Scripting Provider is a core feature  since Version 4.0 from 7 February 2013.",
+          "refs": [
+            "http://www.libreoffice.org/download/4-0-new-features-and-fixes/"
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "Languages influenced by Python",
+      "section_content": [
+        {
+          "sentence": "Python's design and philosophy have influenced many other programming languages:",
+          "refs": []
+        },
+        {
+          "sentence": "Python's development practices have also been emulated by other languages",
+          "refs": []
+        },
+        {
+          "sentence": "For example, the practice of requiring a document describing the rationale for, and issues surrounding, a change to the language (in Python, a PEP) is also used in Tcl,  Erlang,  and Swift",
+          "refs": [
+            "http://www.tcl.tk/cgi-bin/tct/tip/3.html",
+            "http://www.erlang.org/eeps/eep-0001.html"
+          ]
+        }
+      ],
+      "subsections": []
+    },
+    {
+      "section_title": "See also",
+      "section_content": [],
+      "subsections": []
+    },
+    {
+      "section_title": "References",
+      "section_content": [],
+      "subsections": [
+        {
+          "section_title": "Sources",
+          "section_content": [],
+          "subsections": []
+        }
+      ]
+    },
+    {
+      "section_title": "Further reading",
+      "section_content": [],
+      "subsections": []
+    },
+    {
+      "section_title": "External links",
+      "section_content": [],
+      "subsections": []
+    }
+  ],
+  "references": {
+    "1": "https://docs.python.org/3/faq/general.html#what-is-python",
+    "2": "https://www.tuhs.org/Usenet/alt.sources/1991-February/001749.html",
+    "3": "https://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language",
+    "4": "https://www.python.org/dev/peps/pep-0483/",
+    "5": "https://peps.python.org/pep-0011/",
+    "6": "https://peps.python.org/pep-0738/",
+    "7": "https://www.python.org/download/other/",
+    "8": "https://docs.python.org/3.7/library/test.html?highlight=android#test.support.is_android",
+    "9": "https://docs.python.org/3/library/platform.html?highlight=android",
+    "10": "https://www.python.org/dev/peps/pep-0441/",
+    "11": "https://docs.bazel.build/versions/master/skylark/language.html",
+    "12": "https://docs.python.org/faq/general.html#why-was-python-created-in-the-first-place",
+    "13": "http://archive.adaic.com/standards/83lrm/html/lrm-11-03.html#11.3",
+    "14": "https://web.archive.org/web/20070501105422/http://www.amk.ca/python/writing/gvr-interview",
+    "15": "https://docs.python.org/3/library/itertools.html",
+    "16": "https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.38.2023",
+    "17": "https://docs.python.org/tutorial/classes.html",
+    "18": "http://effbot.org/zone/call-by-object.htm",
+    "19": "https://www.python.org/download/releases/2.3/mro/",
+    "20": "https://docs.python.org/howto/functional.html",
+    "21": "https://www.python.org/dev/peps/pep-0255/",
+    "22": "https://docs.python.org/3.2/tutorial/controlflow.html",
+    "23": "https://docs.python.org/3/library/re.html",
+    "24": "https://coffeescript.org/",
+    "25": "http://www.2ality.com/2013/02/javascript-influences.html",
+    "26": "http://speakingjs.com/es5/ch03.html",
+    "27": "https://julialang.org/blog/2012/02/why-we-created-julia",
+    "28": "https://www.infoworld.com/article/3695588/mojo-language-marries-python-and-mlir-for-ai-development.html",
+    "29": "http://ring-lang.sourceforge.net/doc1.6/introduction.html#ring-and-other-languages",
+    "30": "https://archive.org/details/practicaljrubyon0000bini/page/3",
+    "31": "http://nondot.org/sabre/",
+    "32": "https://github.com/vlang/v/blob/master/doc/docs.md#introduction",
+    "33": "https://web.archive.org/web/20120623165941/http://cutter.rexx.com/~dkuhlman/python_book_01.html",
+    "34": "https://www.python.org/about",
+    "35": "https://www.python.org/dev/peps/pep-0206/",
+    "36": "https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html",
+    "37": "https://pythoninsider.blogspot.com/2020/04/python-2718-last-release-of-python-2.html",
+    "38": "https://survey.stackoverflow.co/2022/",
+    "39": "https://www.jetbrains.com/lp/devecosystem-2020/",
+    "40": "https://www.tiobe.com/tiobe-index/",
+    "41": "https://pypl.github.io/PYPL.html",
+    "42": "http://www.artima.com/intv/pythonP.html",
+    "43": "https://mail.python.org/pipermail/python-dev/2000-August/008881.html",
+    "44": "https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html",
+    "45": "https://www.linuxjournal.com/content/guido-van-rossum-stepping-down-role-pythons-benevolent-dictator-life",
+    "46": "https://www.python.org/dev/peps/pep-8100/",
+    "47": "https://www.python.org/dev/peps/pep-0013/",
+    "48": "ISBN: 978-1-59327-407-8",
+    "49": "https://docs.python.org/whatsnew/2.0.html",
+    "50": "https://legacy.python.org/dev/peps/pep-0373/",
+    "51": "https://www.python.org/dev/peps/pep-0466/",
+    "52": "https://www.python.org/doc/sunset-python-2/",
+    "53": "https://www.python.org/dev/peps/pep-0373/",
+    "54": "https://www.pypy.org/posts/2023/12/pypy-v7314-release.html",
+    "55": "https://pythoninsider.blogspot.com/2022/05/python-3913-is-now-available.html",
+    "56": "https://devguide.python.org/versions/",
+    "57": "https://endoflife.date/python",
+    "58": "https://access.redhat.com/security/cve/cve-2021-3177",
+    "59": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3177",
+    "60": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-23336",
+    "61": "https://docs.python.org/3/library/stdtypes.html#types-union",
+    "62": "https://lwn.net/Articles/912216/",
+    "63": "https://docs.python.org/3.13/whatsnew/3.13.html#experimental-jit-compiler",
+    "64": "https://peps.python.org/pep-0667/",
+    "65": "https://pythoninsider.blogspot.com/2024/04/python-3123-and-3130a6-released.html",
+    "66": "https://peps.python.org/pep-0594/",
+    "67": "https://peps.python.org/pep-0761/",
+    "68": "https://peps.python.org/pep-0749/",
+    "69": "https://discuss.python.org/t/pep-711-pybi-a-standard-format-for-distributing-python-binaries/25547",
+    "70": "https://peps.python.org/pep-0686/",
+    "71": "https://web.archive.org/web/20090530030205/http://www.python.org/community/pycon/dc2004/papers/24/metaclasses-pycon.pdf",
+    "72": "https://docs.python.org/3.0/reference/datamodel.html#special-method-names",
+    "73": "http://www.nongnu.org/pydbc/",
+    "74": "http://www.wayforward.net/pycontract/",
+    "75": "https://sites.google.com/site/pydatalog/",
+    "76": "https://www.python.org/doc/essays/omg-darpa-mcc-position/",
+    "77": "https://docs.python.org/extending/extending.html#reference-counts",
+    "78": "https://www.python.org/dev/peps/pep-0289/",
+    "79": "https://docs.python.org/3/library/itertools.html",
+    "80": "https://www.python.org/dev/peps/pep-0020/",
+    "81": "https://learning-python.com/python-changes-2014-plus.html",
+    "82": "https://discuss.python.org/t/confusion-regarding-a-rule-in-the-zen-of-python/15927",
+    "83": "https://pythonsimplified.com/the-most-controversial-python-walrus-operator/",
+    "84": "https://therenegadecoder.com/code/the-controversy-behind-the-walrus-operator-in-python/",
+    "85": "https://realpython.com/python-string-formatting/",
+    "86": "http://shop.oreilly.com/product/9780596007973.do",
+    "87": "https://web.archive.org/web/20140130021902/http://ebeab.com/2014/01/21/python-culture/",
+    "88": "https://web.ist.utl.pt/antonio.menezes.leitao/ADA/documents/publications_docs/2022_TranspilingPythonToJuliaUsingPyJL.pdf",
+    "89": "https://docs.python.org/3/faq/general.html#why-is-it-called-python",
+    "90": "https://web.archive.org/web/20190511065650/http://insidetech.monster.com/training/articles/8114-15-ways-python-is-a-powerful-force-on-the-web",
+    "91": "https://docs.python.org/3/library/pprint.html",
+    "92": "https://docs.python-guide.org/writing/style",
+    "93": "https://docs.python.org/faq/general.html#is-python-a-good-language-for-beginning-programmers",
+    "94": "https://web.archive.org/web/20180218162410/http://www.secnetix.de/~olli/Python/block_indentation.hawk",
+    "95": "ISBN: 978-0-262-52962-4",
+    "96": "https://www.python.org/dev/peps/pep-0008/",
+    "97": "https://docs.python.org/3.11/tutorial/errors.html",
+    "98": "https://www.python.org/download/releases/2.5/highlights/",
+    "99": "http://neopythonic.blogspot.be/2009/04/tail-recursion-elimination.html",
+    "100": "http://www.artima.com/weblogs/viewpost.jsp?thread=147358",
+    "101": "https://www.python.org/dev/peps/pep-0342/",
+    "102": "https://www.python.org/dev/peps/pep-0380/",
+    "103": "https://docs.python.org",
+    "104": "https://www.python.org/dev/peps/pep-0465/",
+    "105": "https://www.python.org/downloads/release/python-351/",
+    "106": "https://docs.python.org/3.8/whatsnew/3.8.html",
+    "107": "https://www.python.org/dev/peps/pep-0308/",
+    "108": "https://docs.python.org/3/library/stdtypes.html#tuple",
+    "109": "https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences",
+    "110": "https://www.python.org/dev/peps/pep-0498/",
+    "111": "https://docs.python.org/faq/design.html#why-must-self-be-used-explicitly-in-method-definitions-and-calls",
+    "112": "https://books.google.com/books?id=7GUKEAAAQBAJ&pg=PA322",
+    "113": "https://web.archive.org/web/20121026063834/http://docs.python.org/reference/datamodel.html#new-style-and-classic-classes",
+    "114": "https://peps.python.org/pep-0484/",
+    "115": "https://docs.python.org/3/library/typing.html",
+    "116": "http://mypy-lang.org/",
+    "117": "https://mypyc.readthedocs.io/en/latest/introduction.html",
+    "118": "https://docs.python.org/3.8/tutorial/floatingpoint.html#representation-error",
+    "119": "https://www.python.org/dev/peps/pep-0237/",
+    "120": "https://docs.python.org/3/library/stdtypes.html#typesseq-range",
+    "121": "https://legacy.python.org/dev/peps/pep-0465/",
+    "122": "https://www.python.org/dev/peps/pep-0238/",
+    "123": "https://python-history.blogspot.com/2010/08/why-pythons-integer-division-floors.html",
+    "124": "https://docs.python.org/py3k/library/functions.html#round",
+    "125": "https://docs.python.org/library/functions.html#round",
+    "126": "https://archive.org/details/pythonessentialr00beaz_036",
+    "127": "https://archive.org/details/cprogramminglang00bria/page/206",
+    "128": "https://www.python.org/dev/peps/pep-0327/",
+    "129": "https://docs.python.org/2.6/whatsnew/2.6.html",
+    "130": "https://web.archive.org/web/20200531211840/https://www.stat.washington.edu/~hoytak/blog/whypython.html",
+    "131": "https://engineering.ucsb.edu/~shell/che210d/python.pdf",
+    "132": "http://www.oracle.com/technetwork/articles/piotrowski-pythoncore-084049.html",
+    "133": "https://www.python.org/dev/peps/pep-0333/",
+    "134": "https://pypi.org/",
+    "135": "https://web.archive.org/web/20170715151703/https://www.enthought.com/products/canopy/",
+    "136": "https://peps.python.org/pep-0007/",
+    "137": "https://docs.python.org/3/extending/building.html",
+    "138": "https://www.python.org/dev/peps/pep-0007/",
+    "139": "https://docs.python.org/3/library/dis.html#python-bytecode-instructions",
+    "140": "http://www.troeger.eu/teaching/pythonvm08.pdf",
+    "141": "https://docs.python.org/release/3.9.0/whatsnew/changelog.html#changelog",
+    "142": "https://www.python.org/downloads/release/python-391",
+    "143": "https://www.vmspython.org/doku.php?id=history",
+    "144": "http://www.oreilly.com/pub/a/oreilly/frank/rossum_1099.html",
+    "145": "https://www.python.org/download/other/",
+    "146": "https://pypy.org/compat.html",
+    "147": "https://www.pypy.org/download.html",
+    "148": "https://speed.pypy.org/",
+    "149": "https://docs.exaloop.io/codon/general/differences",
+    "150": "https://thenewstack.io/mit-created-compiler-speeds-up-python-code/",
+    "151": "http://doc.pypy.org/en/latest/stackless.html",
+    "152": "https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3",
+    "153": "https://www.infoworld.com/article/3587591/pyston-returns-from-the-dead-to-speed-python.html",
+    "154": "https://github.com/facebookincubator/cinder",
+    "155": "https://rafaelaroca.wordpress.com/2021/08/07/snek-lang-feels-like-python-on-arduinos/",
+    "156": "https://www.cnx-software.com/2020/01/16/snekboard-controls-lego-power-functions-with-circuitpython-or-snek-programming-languages/",
+    "157": "https://pythonbytes.fm/episodes/show/187/ready-to-find-out-if-youre-git-famous",
+    "158": "https://sneklang.org/doc/snek.pdf",
+    "159": "https://code.google.com/p/unladen-swallow/wiki/ProjectPlan",
+    "160": "http://www.stochasticgeometry.ie/2010/04/29/python-on-the-nokia-n900/",
+    "161": "https://brython.info/",
+    "162": "https://www.transcrypt.org",
+    "163": "https://www.infoq.com/articles/transcrypt-python-javascript-compiler/",
+    "164": "http://nuitka.net/",
+    "165": "https://doi.org/10.1088%2F1749-4680%2F8%2F1%2F014001",
+    "166": "https://11l-lang.org/transpiler",
+    "167": "https://github.com/google/grumpy",
+    "168": "https://opensource.google/projects/",
+    "169": "https://www.theregister.com/2017/01/05/googles_grumpy_makes_python_go/",
+    "170": "https://github.com/IronLanguages/ironpython3",
+    "171": "https://ironpython.net/",
+    "172": "https://www.jython.org/jython-old-sites/archive/22/userfaq.html",
+    "173": "https://arxiv.org/abs/1404.6388",
+    "174": "https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/python.html",
+    "175": "https://www.python.org/dev/peps/pep-0001/",
+    "176": "https://www.python.org/dev/peps/pep-0008/",
+    "177": "https://web.archive.org/web/20090601134342/http://www.python.org/dev/intro/",
+    "178": "https://lwn.net/Articles/885854/",
+    "179": "https://devguide.python.org/",
+    "180": "https://www.techrepublic.com/article/programming-languages-why-python-4-0-will-probably-never-arrive-according-to-its-creator/",
+    "181": "https://www.python.org/dev/peps/pep-0602/",
+    "182": "https://lwn.net/Articles/802777/",
+    "183": "https://mail.python.org/pipermail/python-dev/2002-April/022739.html",
+    "184": "https://www.python.org/dev/peps/pep-0006/",
+    "185": "https://www.python.org/dev/buildbot/",
+    "186": "https://docs.python.org/3/extending/extending.html",
+    "187": "https://www.python.org/dev/peps/pep-0623/",
+    "188": "https://www.python.org/dev/peps/pep-0634/",
+    "189": "https://wiki.python.org/moin/DocumentationTools",
+    "190": "https://docs.python.org/tutorial/appetite.html",
+    "191": "https://stackoverflow.com/questions/5033906/in-python-should-i-use-else-after-a-return-in-an-if-block",
+    "192": "https://books.google.com/books?id=1HxWGezDZcgC&pg=PA17",
+    "193": "https://books.google.com/books?id=carqdIdfVlYC&pg=PR15",
+    "194": "http://archive.org/details/introducingpytho0000luba",
+    "195": "https://seniordba.wordpress.com/2021/01/18/tiobe-index-for-january-2021/",
+    "196": "https://www.python.org/about/quotes/",
+    "197": "https://wiki.python.org/moin/OrganizationsUsingPython",
+    "198": "http://cdsweb.cern.ch/journal/CERNBulletin/2006/31/News%20Articles/974627?ln=en",
+    "199": "https://www.python.org/about/success/usa/",
+    "200": "https://developers.facebook.com/blog/post/301",
+    "201": "https://instagram-engineering.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-adf2e22da2ad",
+    "202": "https://labs.spotify.com/2013/03/20/how-we-use-python-at-spotify/",
+    "203": "https://www.python.org/about/success/ilm/",
+    "204": "http://www.eweek.com/c/a/Application-Development/Python-Slithers-into-Systems/",
+    "205": "https://github.com/reddit-archive/reddit",
+    "206": "https://elixir-lang.org/blog/2020/10/08/real-time-communication-at-scale-with-elixir-at-discord/",
+    "207": "https://www.freelancinggig.com/blog/2018/07/05/what-programming-language-is-baidu-built-in/#:~:text=Even%20though%20Baidu%20has%20used,part%20JavaScript%20has%20been%20applied",
+    "208": "http://w3techs.com/technologies/details/pl-python/all/all",
+    "209": "https://www.h2desk.com/blog/python-scientific-computing/",
+    "210": "http://www.computer.org/csdl/mags/cs/2011/02/mcs2011020009.html",
+    "211": "https://web.archive.org/web/20200615180428/http://visual.icse.us.edu.pl/methodology/why_Sage.html",
+    "212": "https://docs.opencv.org/3.4.9/d6/d00/tutorial_py_root.html",
+    "213": "http://download.tensorflow.org/paper/whitepaper2015.pdf",
+    "214": "https://www.kdnuggets.com/2018/05/poll-tools-analytics-data-science-machine-learning-results.html/2",
+    "215": "https://scikit-learn.org/stable/testimonials/testimonials.html",
+    "216": "https://cloudplatform.googleblog.com/2016/05/Google-supercharges-machine-learning-tasks-with-custom-chip.html",
+    "217": "https://doi.org/10.1007%2Fs10994-015-5494-z",
+    "218": "http://www.nltk.org/",
+    "219": "[ERROR retrieving ref link]",
+    "220": "https://www.swi-prolog.org/pldoc/doc_for?object=section(%27packages/janus.html%27)",
+    "221": "[ERROR retrieving ref link]",
+    "222": "https://docs.python.org/3/library/tkinter.html",
+    "223": "https://www.geeksforgeeks.org/python-tkinter-tutorial/",
+    "224": "https://web.archive.org/web/20130717070814/http://gimp-win.sourceforge.net/faq.html",
+    "225": "https://web.archive.org/web/20080319061519/http://www.jasc.com/support/customercare/articles/psp9components.asp",
+    "226": "http://webhelp.esri.com/arcgisdesktop/9.2/index.cfm?TopicName=About_getting_started_with_writing_geoprocessing_scripts",
+    "227": "https://community.eveonline.com/news/dev-blogs/stackless-python-2.7/",
+    "228": "https://web.archive.org/web/20101202164144/http://www.2kgames.com/civ4/blog_03.htm",
+    "229": "https://web.archive.org/web/20100715145616/http://code.google.com/apis/documents/docs/1.0/developers_guide_python.html",
+    "230": "https://docs.python.org/3/using/unix.html",
+    "231": "https://web.archive.org/web/20090216134332/http://immunitysec.com/products-immdbg.shtml",
+    "232": "https://www.coresecurity.com/",
+    "233": "http://sugarlabs.org/go/Sugar",
+    "234": "http://www.libreoffice.org/download/4-0-new-features-and-fixes/",
+    "235": "https://web.archive.org/web/20081211062108/http://boo.codehaus.org/Gotchas+for+Python+Users",
+    "236": "https://web.archive.org/web/20080208141002/http://cobra-language.com/docs/acknowledgements/",
+    "237": "https://web.archive.org/web/20071020082650/http://wiki.ecmascript.org/doku.php?id=proposals:iterators_and_generators",
+    "238": "https://docs.godotengine.org/en/stable/about/faq.html",
+    "239": "https://techcrunch.com/2009/11/10/google-go-language/",
+    "240": "https://web.archive.org/web/20070405085722/http://radio.weblogs.com/0112098/2003/08/29.html",
+    "241": "https://docs.modular.com/mojo/why-mojo.html",
+    "242": "https://datasciencelearningcenter.substack.com/p/what-is-mojo-programming-language",
+    "243": "https://www.infoworld.com/article/3157745/application-development/nim-language-draws-from-best-of-python-rust-go-and-lisp.html",
+    "244": "http://www.linuxdevcenter.com/pub/a/linux/2001/11/29/ruby.html",
+    "245": "http://nondot.org/sabre",
+    "246": "https://medium.com/codex/programming-in-kotlin-934bdb3659cf",
+    "247": "http://www.tcl.tk/cgi-bin/tct/tip/3.html",
+    "248": "http://www.erlang.org/eeps/eep-0001.html",
+    "249": "https://github.com/apple/swift-evolution/blob/master/process.md"
+  },
+  "flair_entities": [
+    "guido van rossum",
+    "sigstore",
+    "instagram",
+    "pep",
+    "api",
+    "windows xp",
+    "programming language of the year",
+    "astropy",
+    "pyjs",
+    "vms",
+    "pygtk",
+    "nasa",
+    "matplotlib",
+    "canopy ide",
+    "http",
+    "bottle",
+    "esri",
+    "fedora linux",
+    "janus",
+    "boolean",
+    "linux",
+    "typing  python",
+    "python software foundation",
+    "pgp",
+    "class.method",
+    "inkscape",
+    "maya",
+    "eggsclass",
+    "tiobe programming community index",
+    "version 4.0",
+    "mercurial",
+    "amazon",
+    "solaris",
+    "development  python",
+    "blender",
+    "erlang",
+    "setl",
+    "pypy",
+    "pyqt",
+    "ipython",
+    "alex martelli",
+    "sagemath",
+    "libreoffice",
+    "mypyc",
+    "cinema 4d",
+    "python 3.9",
+    "dropbox.",
+    "c",
+    "haskell",
+    "motionbuilder",
+    "sqlalchemy",
+    "python package index",
+    "unix-like",
+    "doxygen",
+    "go",
+    "scipy",
+    "python enhancement proposal",
+    "amigaos 4",
+    "abaqus",
+    "pep 711",
+    "raspberry pi",
+    "windows",
+    "most python",
+    "amoeba",
+    "ruby",
+    "pythonanywhere",
+    "arcgis",
+    "apple m1 macs",
+    "zope",
+    "opencv",
+    "tcl",
+    "red hat linux",
+    "pylons",
+    "in python",
+    "logic",
+    "qt",
+    "cpython",
+    "euroscipy",
+    "natlog",
+    "keras",
+    "common lisp",
+    "one laptop per child xo",
+    "python.",
+    "dall-e",
+    "problog",
+    "flask",
+    "windows 7",
+    "syntax",
+    "indentation  python",
+    "python binaries",
+    "pycon",
+    "lisp",
+    "pascal",
+    "hello, world!\"",
+    "pytorch",
+    "centrum wiskunde & informatica",
+    "deprecationwarning",
+    "pycharm",
+    "simple directmedia layer to python",
+    "gnu debugger",
+    "graphviz",
+    "pygame",
+    "facebook",
+    "cern",
+    "google app engine",
+    "benevolent dictator for life",
+    "web server gateway interface",
+    "zen of python",
+    "idle",
+    "definite clause grammars",
+    "van rossum",
+    "expressions  python",
+    "java",
+    "nuke",
+    "ita",
+    "monty python",
+    "paint shop pro",
+    "anaconda",
+    "industrial light & magic",
+    "python  python",
+    "netherlands",
+    "mypy",
+    "roundup",
+    "steering council",
+    "pythonistas",
+    "intellij idea",
+    "abc",
+    "ajax-based",
+    "portage.",
+    "bdfl",
+    "python",
+    "history  python",
+    "english",
+    "pybi",
+    "unicode",
+    "freecad",
+    "softimage",
+    "british",
+    "apache",
+    "houdini",
+    "tkinter",
+    "freebsd",
+    "netbsd",
+    "pep 8",
+    "biopython",
+    "mime",
+    "django",
+    "gentoo linux",
+    "pyramid",
+    "tornado",
+    "scribus",
+    "discord",
+    "python 2",
+    "python 3.0",
+    "numpy",
+    "spotify",
+    "ubuntu",
+    "utf-8",
+    "c python api",
+    "standard ml",
+    "wsgi",
+    "flying circus",
+    "baidu",
+    "perl",
+    "sphinx",
+    "openbsd",
+    "python 3.x",
+    "tensorflow",
+    "pdoc",
+    "stable diffusion",
+    "scheme",
+    "prolog",
+    "ironpython",
+    "lightwave",
+    "pyladies.",
+    "python api",
+    "cwi",
+    "wikipedia",
+    "swift",
+    "libraries  python",
+    "python scripting provider",
+    "gimp",
+    "3ds max",
+    "yahoo!",
+    "reddit",
+    "github",
+    "c api",
+    "python 2.0",
+    "the computer language benchmarks game",
+    "turbogears",
+    "google",
+    "sugar labs",
+    "pep 333",
+    "objective-c"
+  ]
+}

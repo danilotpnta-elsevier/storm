@@ -82,7 +82,7 @@ def main():
 
     print(f"Found {len([url for url in topic_urls.values() if url])} URLs out of {len(topic_urls)} topics.")
 
-    save_path = os.path.join(DATA_DIR, "topic_urls.json")
+    save_path = os.path.join(DATA_DIR, "topics_urls.json")
     dump_json(topic_urls, save_path)
     
 

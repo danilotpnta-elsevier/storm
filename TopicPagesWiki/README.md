@@ -1,18 +1,50 @@
-# FreshWiki Dataset
-The FreshWiki Dataset is a collection of high-quality Wikipedia articles focusing on the most-edited pages from February 2022 to September 2023. See Section 2.1 in [our paper](https://arxiv.org/abs/2402.14207) for more details.
+# Dataset Construction and Usage
 
-This dataset could be valuable for researchers working on tasks like report generation, knowledge curation, information retrieval, etc. The text data in this dataset is licensed under the Creative Commons Attribution-ShareAlike (CC BY-SA) license.  Please refer to the Wikipedia reuse guidelines for details: https://en.wikipedia.org/wiki/Wikipedia:Reusing_Wikipedia_content
+The `TopicPagesWiki` Dataset is a collection of high-quality Wikipedia articles exploring various categories derived from [ScienceDirect Topics](https://www.sciencedirect.com/topics).
 
-To ease data contamination issue, we provide the source code for the data construction pipeline that can be repeated at future dates. The code can be found in the following files:
-- `get_fresh_wiki_page.py`
-- `wikipage_extractor.py`
+This dataset contains **100 Wikipedia articles**, each corresponding to a ScienceDirect topic. It is designed to assist in writing Wikipedia-like articles from scratch using large language models.
 
-Please cite our paper if you found the dataset or data construction pipeline useful for your research.
-```bibtex
-@inproceedings{shao2024assisting,
-      title={{Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models}}, 
-      author={Yijia Shao and Yucheng Jiang and Theodore A. Kanell and Peter Xu and Omar Khattab and Monica S. Lam},
-      year={2024},
-      booktitle={Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)}
-}
-```
+## Scripts and Their Usage
+
+1. **`get_wikipedia_urls.py`**: Retrieves Wikipedia URLs for a list of ScienceDirect Topics.
+2. **`get_topics_ores_scores.py`**: Evaluates and filters articles based on quality using the ORES API.
+3. **`wikipedia_extractor.py`**: Parses Wikipedia articles and saves them in multiple formats for analysis.
+
+
+## How the Dataset Was Built?
+
+For reproducibility, the dataset was constructed using the following steps:
+
+### 1. Retrieving Wikipedia URLs
+- **Input**: A list of ScienceDirect Topics.
+- **Script**: `get_wikipedia_urls.py`.
+- **Output**: A JSON file mapping ScienceDirect topics to their corresponding Wikipedia URLs.
+
+### 2. Filtering High-Quality Articles
+- **Purpose**: To include only high-quality Wikipedia articles.
+- **Script**: `get_topics_ores_scores.py`.
+- **Process**:
+  - The script evaluates article quality using the **ORES API**.
+  - Articles are classified into the following quality categories: **Stub**, **Start**, **C**, **B**, **GA** (Good Article), and **FA** (Featured Article).
+  - Only articles with predicted classes **B**, **GA**, or **FA** are retained.
+- **Output**: A CSV and JSON file containing high-quality topics and their corresponding ORES scores.
+
+### 3. Fetching Wikipedia Articles
+- **Script**: `wikipedia_extractor.py`.
+- **Process**:
+  - Parses the Wikipedia pages for high-quality topics.
+  - Extracts the following content:
+    - **Structured JSON**: Organizes content into sections and subsections.
+    - **Plain Text**: Clean text content.
+    - **Markdown**: Formatted text for easy readability.
+    - **HTML**: A copy of the raw HTML content.
+  - Preserves references and named entities for further analysis.
+- **Output**: Multiple formats (`JSON`, `TXT`, `MD`, and `HTML`) for each Wikipedia article.
+
+
+
+## Important Links
+
+- [ScienceDirect Topics](https://www.sciencedirect.com/topics)
+- [ORES API](https://www.mediawiki.org/wiki/ORES)
+- [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page)

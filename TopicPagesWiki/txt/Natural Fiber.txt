@@ -1,0 +1,80 @@
+Natural_fiber
+
+Natural fibers or natural fibres (see spelling differences) are fibers that are produced by geological processes, or from the bodies of plants or animals. They can be used as a component of composite materials, where the orientation of fibers impacts the properties. Natural fibers can also be matted into sheets to make paper or felt.
+The earliest evidence of humans using fibers is the discovery of wool and dyed flax fibers found in a prehistoric cave in the Republic of Georgia that date back to 36,000 BP. Natural fibers can be used for high-tech applications, such as composite parts for automobiles and medical supplies. Compared to composites reinforced with glass fibers, composites with natural fibers have advantages such as lower density, better thermal insulation, and reduced skin irritation. Further, unlike glass fibers, natural fibers can be broken down by bacteria once they are no longer used.
+Natural fibers are good water absorbents and can be found in various textures. Cotton fibers made from the cotton plant, for example, produce fabrics that are light in weight, soft in texture, and which can be made in various sizes and colors. Clothes made of natural fibers such as cotton are often preferred over clothing made of synthetic fibers by people living in hot and humid climates.
+
+# Animal fibers
+
+Animal fibers generally comprise proteins such as collagen, keratin and fibroin; examples include silk, sinew, wool, catgut, angora, mohair and alpaca.. 
+
+# Chitin
+
+Chitin is the world's second most abundant natural polymer, with collagen being the first. It is a "linear polysaccharide of β-(1-4)-2-acetamido-2-deoxy-D-glucose". Chitin is highly crystalline and is usually composed of chains organized in a β sheet . Due to its high crystallinity and chemical structure, it is insoluble in many solvents. It also has low toxicity in the body and is inert in the intestines. Chitin also has antibacterial properties. Chitin forms crystals that make fibrils that become surrounded by proteins. These fibrils can bundle to make larger fibers that contribute to the hierarchical structure of many biological materials. These fibrils can form randomly oriented networks that provide the mechanical strength of the organic layer in different biological materials [12]. Chitin provides protection and structural support to many living organisms. It makes up the cell walls of fungi and yeast, the shells of mollusks, the exoskeletons of insects and arthropods. In shells and exoskeletons, the chitin fibers contribute to their hierarchical structure. In nature, pure chitin (100% acetylation) does not exist. It instead exists as a copolymer with chitin's deacetylated derivative, chitosan. When the acetylized composition of the copolymer is over 50% acetylated it is chitin. This copolymer of chitin and chitosan is a random or block copolymer [12]. 
+
+# Chitosan
+
+Chitosan is a deacetylated derivative of chitin. When the acetylated composition of the copolymer is below 50% it is chitosan. Chitosan is a semicrystalline "polymer of β-(1-4)-2-amino-2-deoxy-D-glucose" [12]. One difference between chitin and chitosan is that chitosan is soluble in acidic aqueous solutions . Chitosan is easier to process that chitin, but it is less stable because it is more hydrophilic and has pH sensitivity. Due to its ease of processing, chitosan is used in biomedical applications. 
+
+# Collagen
+
+Collagen is a structural protein, often referred to as "the steel of biological materials". There are multiple types of collagen: Type I (comprising skin, tendons and ligaments, vasculature and organs, as well as teeth and bone and artery walls); Type II (a component in cartilage); Type III (often found in reticular fibers); and others [14]. Collagen has a hierarchical structure, forming triple helices, fibrils, and fibers. Collagen are a family of protein that support and strengthen many tissues in the body.. 
+
+# Keratin
+
+Keratin is a structural protein located at the hard surfaces in many vertebrates. Keratin has two forms, α-keratin and β-keratin, that are found in different classes of chordates. The naming convention for these keratins follows that for protein structures: alpha keratin is helical and beta keratin is sheet-like. Alpha keratin is found in mammalian hair, skin, nails, horn and quills, while beta keratin can be found in avian and reptilian species in scales, feathers, and beaks. The two different structures of keratin have dissimilar mechanical properties, as seen in their dissimilar applications. The relative alignment of the keratin fibrils significantly impacts the mechanical properties. In human hair the filaments of alpha keratin are highly aligned, giving a tensile strength of approximately 200MPa. This tensile strength is an order of magnitude higher than human nails (20MPa), because human hair's keratin filaments are more aligned. 
+
+# Properties
+
+Natural fibers tend to have decreased stiffness and strength compared to synthetic fibers. Properties also decrease with the age of the fiber. Younger fibers tend to be stronger and more elastic than older ones. Many natural fibers exhibit strain rate sensitivity due to their viscoelastic nature . Bone contains collagen and exhibits strain rate sensitivity in that the stiffness increases with strain rate, also known as strain hardening [15]. Spider silk has hard and elastic regions that together contribute to its strain rate sensitivity, these cause the silk to exhibit strain hardening as well. Properties of natural fibers are also dependent on the moisture content in the fiber [12]. 
+
+## Moisture dependence
+
+The presence of water plays a crucial role in the mechanical behavior of natural fibers. Plants depend on water to help them grow. If the humidity was too high, then it would cause the plants to create mold and bacteria. Humidity would also increase the amount of pests around the plants. Hydrated, biopolymers generally have enhanced ductility and toughness. Water plays the role of a plasticizer, a small molecule easing passage of polymer chains and in doing so increasing ductility and toughness. When using natural fibers in applications outside of their native use, the original level of hydration must be taken into account. For example when hydrated, the Young's Modulus of collagen decreases from 3.26 to 0.6 GPa and becomes both more ductile and tougher. Additionally the density of collagen decreases from 1.34 to 1.18 g/cm3. 
+
+# Applications
+
+## Industrial use
+
+Of industrial value are four animal fibers: wool, silk, camel hair, and angora as well as four plant fibers: cotton, flax, hemp, and jute. Dominant in terms of scale of production and use is cotton for textiles. 
+
+## Natural fiber composites
+
+Natural fibers are also used in composite materials, much like synthetic or glass fibers. These composites, called biocomposites, are a natural fiber in a matrix of synthetic polymers. One of the first biofiber-reinforced plastics in use was a cellulose fiber in phenolics in 1908 [1]. Usage includes applications where energy absorption is important, such as insulation, noise absorbing panels, or collapsable areas in automobiles [1]. Natural fibers can have different advantages over synthetic reinforcing fibers. Most notably they are biodegradable and renewable. Additionally, they often have low densities and lower processing costs than synthetic materials. Design issues with natural fiber-reinforced composites include poor strength (natural fibers are not as strong as glass fibers) and difficulty with actually bonding the fibers and the matrix [17] [18]. Hydrophobic polymer matrices offer insufficient adhesion for hydrophilic fibers. 
+
+## Nanocomposites
+
+Nanocomposites are desirable for their mechanical properties. When fillers in a composite are at the nanometer length scale, the surface to volume ratio of the filler material is high, which influences the bulk properties of the composite more compared to traditional composites. The properties of these nanosized elements is markedly different from that of its bulk constituent.. In regards to natural fibers, some of the best example of nanocomposites appear in biology. Bone, abalone shell, nacre, and tooth enamel are all nanocomposites. As of 2010, most synthetic polymer nanocomposites exhibit inferior toughness and mechanical properties compared to biological nanocomposites. Completely synthetic nanocomposites do exist, however nanosized biopolymers are also being tested in synthetic matrices [19]. Several types of protein based, nanosized fibers are being used in nanocomposites. These include collagen, cellulose, chitin and tunican. These structural proteins must be processed before use in composites. [20]. To use cellulose as an example, semicrystalline microfibrils are sheared in the amorphous region, resulting in microcrystalline cellulose (MCC). These small, crystalline cellulose fibrils are at this points reclassified as a whisker and can be 2 to 20 nm in diameter with shapes ranging from spherical to cylindrical. Whiskers of collagen, chitin, and cellulose have all been used to make biological nanocomposites. The matrix of these composites are commonly hydrophobic synthetic polymers such as polyethylene, and polyvinyl chloride and copolymers of polystyrene and polyacrylate. Traditionally in composite science a strong interface between the matrix and filler is required to achieve favorable mechanical properties. If this is not the case, the phases tend to separate along the weak interface and makes for very poor mechanical properties. In a MCC composite however this is not the case, if the interaction between the filler and matrix is stronger than the filler-filler interaction the mechanical strength of the composite is noticeably decreased. Difficulties in natural fiber nanocomposites arise from dispersity and the tendency small fibers to aggregate in the matrix. Because of the high surface area to volume ratio the fibers have a tendency to aggregate, more so than in micro-scale composites. Additionally secondary processing of collagen sources to obtain sufficient purity collagen micro fibrils adds a degree of cost and challenge to creating a load bearing cellulose or other filler based nanocomposite. 
+
+## Biomaterial and biocompatibility
+
+Natural fibers often show promise as biomaterials in medical applications. Chitin is notable in particular and has been incorporated into a variety of uses. Chitin based materials have also been used to remove industrial pollutants from water, processed into fibers and films, and used as biosensors in the food industry. Chitin has also been used several of medical applications [21]. It has been incorporated as a bone filling material for tissue regeneration, a drug carrier and excipient, and as an antitumor agent. Insertion of foreign materials into the body often triggers an immune response, which can have a variety of positive or negative outcomes depending on the bodies response to the material . Implanting something made from naturally synthesized proteins, such as a keratin based implant, has the potential to be recognized as natural tissue by the body. This can lead either to integration in rare cases where the structure of the implant promotes regrowth of tissue with the implant forming a superstructure or degradation of the implant in which the backbones of the proteins are recognized for cleavage by the body. 
+
+# References
+
+23. Kuivaniemi, Helena, and Gerard Tromp. "Type III collagen           (COL3A1): Gene and protein structure, tissue distribution, and associated diseases." Gene vol. 707 (2019): 151-171. doi:10.1016/j.gene.2019.05.003. 
+
+# References
+
+[1] https://doi.org/10.1016%2Fj.carbpol.2007.05.040
+[2] https://search.worldcat.org/oclc/938890984
+[3] https://digital.library.unt.edu/ark:/67531/metadc828520/
+[4] https://doi.org/10.1021%2Fie50596a025
+[5] https://doi.org/10.1126%2Fscience.325_1329a
+[6] http://nrs.harvard.edu/urn-3:HUL.InstRepos:4270521
+[7] https://doi.org/10.1080%2F15583724.2012.705409
+[8] https://doi.org/10.1016%2Fj.compositesb.2019.106927
+[9] https://pearl.plymouth.ac.uk/bitstream/10026.1/9928/1/Bast_1_single-spaced_230610.pdf
+[10] [ERROR retrieving ref link]
+[11] https://doi.org/10.1016%2Fj.progpolymsci.2006.06.001
+[12] https://doi.org/10.1016%2Fj.pmatsci.2007.05.002
+[13] https://doi.org/10.1016%2Fj.jmbbm.2010.08.005
+[14] https://search.worldcat.org/oclc/968439866
+[15] https://doi.org/10.1016%2Fj.pmatsci.2007.06.001
+[16] https://doi.org/10.1002%2F14356007.a10_451.pub2
+[17] https://ui.adsabs.harvard.edu/abs/2007ComIn..14..581H
+[18] https://doi.org/10.1016%2Fs1672-6529%2816%2960385-2
+[19] https://ui.adsabs.harvard.edu/abs/2010AnRMS..40...77J
+[20] https://doi.org/10.1021%2Fbm0493685
+[21] https://doi.org/10.1002%2F%28SICI%291439-2054%2820000301%29276%3A1%3C1%3A%3AAID-MAME1%3E3.0.CO%3B2-W
+[22] [ERROR retrieving ref link]

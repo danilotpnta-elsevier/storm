@@ -1,0 +1,118 @@
+Polyunsaturated_fat
+
+In biochemistry and nutrition, a polyunsaturated fat is a fat that contains a polyunsaturated fatty acid (abbreviated PUFA), which is a subclass of fatty acid characterized by a backbone with two or more carbon–carbon double bonds.
+Some polyunsaturated fatty acids are essentials. Polyunsaturated fatty acids are precursors to and are derived from polyunsaturated fats, which include drying oils.
+
+# Nomenclature
+
+The position of the carbon-carbon double bonds in carboxylic acid chains in fats is designated by Greek letters. The carbon atom closest to the carboxyl group is the alpha carbon, the next carbon is the beta carbon and so on [1]. In fatty acids the carbon atom of the methyl group at the end of the hydrocarbon chain is called the omega carbon because omega is the last letter of the Greek alphabet. Omega-3 fatty acids have a double bond three carbons away from the methyl carbon, whereas omega-6 fatty acids have a double bond six carbons away from the methyl carbon. The illustration below shows the omega-6 fatty acid, linoleic acid.. Polyunsaturated fatty acids can be classified in various groups by their chemical structure:. Based on the length of their carbon backbone, they are sometimes classified in two groups:   All feature pentadiene groups. [4]. 
+
+# Production
+
+PUFAs with 18 carbon atoms, which are the most common variety, are not produced by mammals. Since they have important dietary functions, their biosynthesis has received much attention. Plants produce PUFAs from oleic acid. Key enzymes are called fatty acid desaturases, which introduce additional double bonds. Desaturases convert oleic acid into linoleic acid the precursor to alpha-linolenic acid, gamma-linolenic acid and dihomo-gamma-linolenic acid. Industrial PUFAs are generally obtained by hydrolysis of fats that contain PUFAs. The process is complicated by the sensitive nature of PUFAs, leading to side reactions and colorization. Thus, steam hydrolysis often fails for this reason. Alkaline hydrolysis of fats followed by acidification is expensive. Lipases, a family of enzymes, show potential as mild and green catalysts for the production of PUFAs from triglycerides. In general, outside of dietary contexts, PUFAs are undesirable components of vegetable oils, so there is great interest in their removal from, say, olive oil. One technology for lowering the PUFA contact is by selective formation of derivatives with ureas. 
+
+# Reactions
+
+From the perspective of chemical analysis, PUFA's have high iodine numbers. These high values are simply a reflection of the fact that PUFAs are polyunsaturated. Hydrogenation of PUFAs gives less unsaturated derivatives. For unsaturated products from partial hydrogenation often contain some trans isomers. The trans monounsaturated C20 species elaidic acid can be prepared in this way. 
+
+## Peroxidation
+
+Polyunsaturated fatty acids are susceptible to lipid peroxidation, far more so than monounsaturated or saturated analogues. The basis for this reactivity is the weakness of doubly allylic C-H bonds. They are drying oils, i.e. film-forming liquids suitable as painting. One practical consequence is that polyunsaturated fatty acids have poor shelf life, owing to their tendency toward autoxidation, leading, in the case of edibles, to rancidification. Metals accelerate the degradation. A range of reactions with oxygen occur. Products include fatty acid hydroperoxides, epoxy-hydroxy polyunsaturated fatty acids, jasmonates, divinylether fatty acids, and leaf aldehydes. Some of these derivatives are signalling molecules, some are used in plant defense (antifeedants), some are precursors to other metabolites that are used by the plant. 
+
+# Types
+
+## Methylene-interrupted polyenes
+
+These fatty acids have 2 or more cis double bonds that are separated from each other by a single methylene bridge (-CH2-). This form is also sometimes called a divinylmethane pattern. The essential fatty acids are all omega-3 and -6 methylene-interrupted fatty acids. See more at Essential fatty acids—Nomenclature [8]. 
+
+# Function and effects
+
+The biological effects of the ω-3 and ω-6 fatty acids are largely mediated by their mutual interactions, see Essential fatty acid interactions for detail.. 
+
+# Health
+
+## Potential benefits
+
+Because of their effects in the diet, unsaturated fats (monounsaturated and polyunsaturated) are often referred to as good fats; while saturated fats are sometimes referred to as bad fats. Some fat is needed in the diet, but it is usually considered that fats should not be consumed excessively, unsaturated fats should be preferred, and saturated fats in particular should be limited. In preliminary research, omega-3 fatty acids in algal oil, fish oil, fish and seafood have been shown to lower the risk of heart attacks. Other preliminary research indicates that omega-6 fatty acids in sunflower oil and safflower oil may also reduce the risk of cardiovascular disease [13]. Among omega-3 fatty acids, neither long-chain nor short-chain forms were consistently associated with breast cancer risk. High levels of docosahexaenoic acid (DHA), however, the most abundant omega-3 polyunsaturated fatty acid in erythrocyte (red blood cell) membranes, were associated with a reduced risk of breast cancer. DHA is vital for the grey matter structure of the human brain, as well as retinal stimulation and neurotransmission [15]. Contrary to conventional advice, an evaluation of evidence from 1966–1973 pertaining to the health impacts of replacing dietary saturated fat with linoleic acid found that participants in the group doing so had increased rates of death from all causes, coronary heart disease, and cardiovascular disease. Although this evaluation was disputed by many scientists,  it fueled debate over worldwide dietary advice to substitute polyunsaturated fats for saturated fats [16] [17]. Taking isotope-reinforced polyunsaturated fatty acids, for example deuterated linoleic acid where two atoms of hydrogen substituted with its heavy isotope deuterium, with food (heavy isotope diet) can suppress lipid peroxidation and prevent or treat the associated diseases. 
+
+## Pregnancy
+
+Polyunsaturated fat supplementation does not decrease the incidence of pregnancy-related disorders, such as hypertension or preeclampsia, but may increase the length of gestation slightly and decreased the incidence of early premature births. Expert panels in the United States and Europe recommend that pregnant and lactating women consume higher amounts of polyunsaturated fats than the general population to enhance the DHA status of the fetus and newborn. 
+
+## Cancer
+
+Results from observational clinical trials on polyunsaturated fat intake and cancer have been inconsistent and vary by numerous factors of cancer incidence, including gender and genetic risk. Some studies have shown associations between higher intakes and/or blood levels of polyunsaturated fat omega-3s and a decreased risk of certain cancers, including breast and colorectal cancer, while other studies found no associations with cancer risk [13]. 
+
+# Dietary sources
+
+Polyunsaturated fat can be found mostly in nuts, seeds, fish, seed oils, and oysters. "Unsaturated" refers to the fact that the molecules contain less than the maximum amount of hydrogen (if there were no double bonds) [1]. These materials exist as cis or trans isomers depending on the geometry of the double bond.. 
+
+# Non-dietary applications
+
+PUFA's are significant components of alkyd resins, which are used in coatings. 
+
+# References
+
+[1] http://lpi.oregonstate.edu/mic/other-nutrients/essential-fatty-acids
+[2] http://www.mayoclinic.com/health/fish-oil/NS_patient-fishoil/
+[3] https://doi.org/10.1002%2F14356007.a10_245.pub2
+[4] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5435082
+[5] https://doi.org/10.1146%2Fannurev.arplant.53.100301.135248
+[6] https://doi.org/10.1021%2Fcr300007p
+[7] [ERROR retrieving ref link]
+[8] https://web.archive.org/web/20150303184216/http://www.nal.usda.gov/fnic/foodcomp/search/
+[9] https://www.heartuk.org.uk/downloads/factsheets/fats-explained.pdf
+[10] https://health.gov/dietaryguidelines/2015/guidelines/chapter-1/key-recommendations/
+[11] https://www.nhs.uk/live-well/eat-well/different-fats-nutrition/
+[12] https://web.archive.org/web/20181222101538/http://www.ninindia.org/DietaryGuidelinesforNINwebsite.pdf
+[13] http://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/
+[14] https://doi.org/10.2459%2F01.JCM.0000289275.72556.13
+[15] https://doi.org/10.1093%2Fjnci%2F93.14.1088
+[16] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4688426
+[17] https://www.hsph.harvard.edu/nutritionsource/2016/04/13/diet-heart-ramsden-mce-bmj-comments/
+[18] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4537707
+[19] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3437768
+[20] https://pubmed.ncbi.nlm.nih.gov/32113652/
+[21] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3021439
+[22] https://fdc.nal.usda.gov/
+[23] https://archive.is/20140831015612/http://nutritiondata.self.com/facts/fats-and-oils/620/2
+[24] https://www.ams.usda.gov/sites/default/files/media/vegetableoilmargaine.pdf
+[25] https://fdc.nal.usda.gov/fdc-app.html#/food-details/173573/nutrients
+[26] https://doi.org/10.1016%2Fj.foodchem.2003.08.012
+[27] https://www.aocs.org/stay-informed/inform-magazine/featured-articles/what-is-unrefined-extra-virgin-cold-pressed-avocado-oil-april-2010
+[28] https://fdc.nal.usda.gov/fdc-app.html#/?query=ndbNumber:4581&format=
+[29] https://doi.org/10.1016%2Fj.foodchem.2009.09.070
+[30] https://fdc.nal.usda.gov/fdc-app.html#/food-details/172336/nutrients
+[31] https://www.washingtonpost.com/wp-dyn/content/article/2007/05/15/AR2007051500398.html
+[32] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171412/nutrients
+[33] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171029/nutrients
+[34] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171024/nutrients
+[35] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171441/nutrients
+[36] https://fdc.nal.usda.gov/fdc-app.html#/food-details/167702/nutrients
+[37] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4988453
+[38] https://doi.org/10.1080%2F09546630510035832
+[39] https://www.veghealth.com/nutrition-tables/Smoke-Points-of-Oils-table.pdf
+[40] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171027/nutrients
+[41] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171413/nutrients
+[42] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171015/nutrients
+[43] https://fdc.nal.usda.gov/fdc-app.html#/food-details/173603/nutrients
+[44] https://fdc.nal.usda.gov/fdc-app.html#/food-details/1750348/nutrients
+[45] https://doi.org/10.1002%2F047167849X.bio015.pub2
+[46] http://www.ricebranoil.biz/spec/rbdd.html
+[47] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171016/nutrients
+[48] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171411/nutrients
+[49] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171012/nutrients
+[50] https://fdc.nal.usda.gov/fdc-app.html#/food-details/1750349/nutrients
+[51] https://fdc.nal.usda.gov/fdc-app.html#/food-details/171030/nutrients
+[52] http://jonbarron.org/diet-and-nutrition/healthiest-cooking-oil-chart-smoke-points
+[53] https://www.thrivealgae.com/our-product/
+[54] http://www.uccs.edu/Documents/danderso/fats_oils.pdf
+[55] https://www.nal.usda.gov/fnic/foodcomp/search/
+[56] https://web.archive.org/web/20160309021611/https://ndb.nal.usda.gov/ndb/foods/show/634?fg=Fats+and+Oils&man=&lfacet=&format=&count=&max=25&offset=&sort=&qlookup=
+[57] http://nutritiondata.self.com/facts/fats-and-oils/574/2
+[58] http://nutritiondata.self.com/facts/fats-and-oils/573/2
+[59] http://nutritiondata.com/facts/fats-and-oils/572/2
+[60] https://web.archive.org/web/20161221223006/https://ndb.nal.usda.gov/ndb/foods/show/52?fgcd=&manu=&lfacet=&format=&count=&max=50&offset=&sort=default&order=asc&qlookup=cream+whipping&ds=
+[61] http://www.goosefat.co.uk/page/nutrition-and-health
+[62] http://www.nutritiondata.com/facts/dairy-and-egg-products/113/2
+[63] https://web.archive.org/web/20140110085159/http://ndb.nal.usda.gov/ndb/foods/show/2235

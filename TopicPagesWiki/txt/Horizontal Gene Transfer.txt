@@ -1,0 +1,278 @@
+Horizontal_gene_transfer
+
+Horizontal gene transfer (HGT) or lateral gene transfer (LGT) is the movement of genetic material between organisms other than by the ("vertical") transmission of DNA from parent to offspring (reproduction).  HGT is an important factor in the evolution of many organisms. HGT is influencing scientific understanding of higher-order evolution while more significantly shifting perspectives on bacterial evolution.
+Horizontal gene transfer is the primary mechanism for the spread of antibiotic resistance in bacteria, and plays an important role in the evolution of bacteria that can degrade novel compounds such as human-created pesticides and in the evolution, maintenance, and transmission of virulence. It often involves temperate bacteriophages and plasmids. Genes responsible for antibiotic resistance in one species of bacteria can be transferred to another species of bacteria through various mechanisms of HGT such as transformation, transduction and conjugation, subsequently arming the antibiotic resistant genes' recipient against antibiotics. The rapid spread of antibiotic resistance genes in this manner is becoming a challenge to manage in the field of medicine. Ecological factors may also play a role in the HGT of antibiotic resistant genes.
+Horizontal gene transfer is recognized as a pervasive evolutionary process that distributes genes between divergent prokaryotic lineages and can also involve eukaryotes. HGT events are thought to occur less frequently in eukaryotes than in prokaryotes. However, growing evidence indicates that HGT is relatively common among many eukaryotic species and can have an impact on adaptation to novel environments. Its study, however, is hindered by the complexity of eukaryotic genomes and the abundance of repeat-rich regions, which complicate the accurate identification and characterization of transferred genes.
+It is postulated that HGT promotes the maintenance of a universal life biochemistry and, subsequently, the universality of the genetic code.
+
+# History
+
+In 1982, R. John Ellis defined this type of transpositional transfer mutation as “intracellular promiscuity.”  Ellis further explored the phenomenon of “intracellular promiscuity” through the experiments of David Stern and David Lonsdale,  in which genetic transfer between chloroplasts to mitochondria was discovered, aiding in the definition and discovery of promiscuous DNA. [149] [150]. 
+
+# Mechanisms
+
+There are several mechanisms for horizontal gene transfer: [5] [41] [42]. 
+
+## Horizontal transposon transfer
+
+A transposable element (TE) (also called a transposon or jumping gene) is a mobile segment of DNA that can sometimes pick up a resistance gene and insert it into a plasmid or chromosome, thereby inducing horizontal gene transfer of antibiotic resistance. Horizontal transposon transfer (HTT) refers to the passage of pieces of DNA that are characterized by their ability to move from one locus to another between genomes by means other than parent-to-offspring inheritance. Horizontal gene transfer has long been thought to be crucial to prokaryotic evolution, but there is a growing amount of data showing that HTT is a common and widespread phenomenon in eukaryote evolution as well. On the transposable element side, spreading between genomes via horizontal transfer may be viewed as a strategy to escape purging due to purifying selection, mutational decay and/or host defense mechanisms [145]. HTT can occur with any type of transposable elements, but DNA transposons and LTR retroelements are more likely to be capable of HTT because both have a stable, double-stranded DNA intermediate that is thought to be sturdier than the single-stranded RNA intermediate of non-LTR retroelements, which can be highly degradable. Non-autonomous elements may be less likely to transfer horizontally compared to autonomous elements because they do not encode the proteins required for their own mobilization [145]. The structure of these non-autonomous elements generally consists of an intronless gene encoding a transposase protein, and may or may not have a promoter sequence. Those that do not have promoter sequences encoded within the mobile region rely on adjacent host promoters for expression. Horizontal transfer is thought to play an important role in the TE life cycle [145]. In plants, it appears that LTR retrotransposons of the Copia superfamilies, especially those with low copy numbers from the Ale and Ivana lineages, are more likely to undergo horizontal transfer between different plant species [145]. HTT has been shown to occur between species and across continents in both plants  and animals (Ivancevic et al [49]. 2013), though some TEs have been shown to more successfully colonize the genomes of certain species over others. Both spatial and taxonomic proximity of species has been proposed to favor HTTs in plants and animals [50]. It is unknown how the density of a population may affect the rate of HTT events within a population, but close proximity due to parasitism and cross contamination due to crowding have been proposed to favor HTT in both plants and animals [49]. In plants, the interaction between lianas and trees has been shown to facilitate HTT in natural ecosystems [49]. Successful transfer of a transposable element requires delivery of DNA from donor to host cell (and to the germ line for multi-cellular organisms), followed by integration into the recipient host genome [48]. Though the actual mechanism for the transportation of TEs from donor cells to host cells is unknown, it is established that naked DNA and RNA can circulate in bodily fluid [145]. Many proposed vectors include arthropods, viruses, freshwater snails (Ivancevic et al [145]. 2013), endosymbiotic bacteria,  and intracellular parasitic bacteria [47]. In some cases, even TEs facilitate transport for other TEs [145]. The arrival of a new TE in a host genome can have detrimental consequences because TE mobility may induce mutation. However, HTT can also be beneficial by introducing new genetic material into a genome and promoting the shuffling of genes and TE domains among hosts, which can be co-opted by the host genome to perform new functions. Moreover, transposition activity increases the TE copy number and generates chromosomal rearrangement hotspots [50]. HTT detection is a difficult task because it is an ongoing phenomenon that is constantly changing in frequency of occurrence and composition of TEs inside host genomes [51]. Furthermore, few species have been analyzed for HTT, making it difficult to establish patterns of HTT events between species. These issues can lead to the underestimation or overestimation of HTT events between ancestral and current eukaryotic species. 
+
+# Methods of detection
+
+Horizontal gene transfer is typically inferred using bioinformatics methods, either by identifying atypical sequence signatures ("parametric" methods) or by identifying strong discrepancies between the evolutionary history of particular sequences compared to that of their hosts. The transferred gene  (xenolog) found in the receiving species is more closely related to the genes of the donor species than would be expected. [citation needed]. 
+
+# Viruses
+
+The virus called Mimivirus infects amoebae. Another virus, called Sputnik, also infects amoebae, but it cannot reproduce unless mimivirus has already infected the same cell. Horizontal transfer is also seen between geminiviruses and tobacco plants.. 
+
+# Prokaryotes
+
+Horizontal gene transfer is common among bacteria, even among very distantly related ones. This process is thought to be a significant cause of increased drug resistance   when one bacterial cell acquires resistance, and the resistance genes are transferred to the other species [5] [54]. Transposition and horizontal gene transfer, along with strong natural selective forces have led to multi-drug resistant strains of S [55] [56]. aureus and many other pathogenic bacteria. Horizontal gene transfer also plays a role in the spread of virulence factors, such as exotoxins and exoenzymes, amongst bacteria [43]. A prime example concerning the spread of exotoxins is the adaptive evolution of Shiga toxins in E [5]. coli through horizontal gene transfer via transduction with Shigella species of bacteria. Strategies to combat certain bacterial infections by targeting these specific virulence factors and mobile genetic elements have been proposed [57]. For example, horizontally transferred genetic elements play important roles in the virulence of E [12]. coli, Salmonella, Streptococcus and Clostridium perfringens. In prokaryotes, restriction-modification systems are known to provide immunity against horizontal gene transfer and in stabilizing mobile genetic elements. Genes encoding restriction modification systems have been reported to move between prokaryotic genomes within mobile genetic elements (MGE) such as plasmids, prophages, insertion sequences/transposons, integrative conjugative elements (ICE),  and integrons [58]. Still, they are more frequently a chromosomal-encoded barrier to MGE than an MGE-encoded tool for cell infection. Lateral gene transfer via a mobile genetic element, namely the integrated conjugative element (ICE) Bs1 has been reported for its role in the global DNA damage SOS response of the gram positive Bacillus subtilis. Furthermore, it has been linked with the radiation and desiccation resistance of Bacillus pumilus SAFR-032 spores,  isolated from spacecraft cleanroom facilities [60] [61]. Transposon insertion elements have been reported to increase the fitness of gram-negative E. coli strains through either major transpositions or genome rearrangements, and increasing mutation rates. In a study on the effects of long-term exposure of simulated microgravity on non-pathogenic E [65] [66]. coli, the results showed transposon insertions occur at loci, linked to SOS stress response. When the same E [67]. coli strain was exposed to a combination of simulated microgravity and trace (background) levels of (the broad spectrum) antibiotic (chloramphenicol), the results showed transposon-mediated rearrangements (TMRs), disrupting genes involved in bacterial adhesion, and deleting an entire segment of several genes involved with motility and chemotaxis. Both these studies have implications for microbial growth, adaptation to and antibiotic resistance in real time space conditions. [68]. Horizontal gene transfer is particularly active in bacterial genomes around the production of secondary or specialized metabolites. This is clearly exhibited within certain groups of bacteria including P [69]. aeruginosa and actinomycetales, an order of Actinomycetota. Polyketide synthases (PKSs) and biosynthetic gene clusters provide modular organizations of associated genes making these bacteria well-adapted to acquire and discard helpful modular modifications via HGT [70]. [citation needed] Certain areas of genes known as hotspots further increase the likelihood of horizontally transferred secondary metabolite-producing genes. The promiscuity of enzymes is a reoccurring theme in this particular theatre [71]. [citation needed]. 
+
+## Bacterial transformation
+
+Natural transformation is a bacterial adaptation for DNA transfer (HGT) that depends on the expression of numerous bacterial genes whose products are responsible for this process. In general, transformation is a complex, energy-requiring developmental process [72] [73]. In order for a bacterium to bind, take up and recombine exogenous DNA into its chromosome, it must become competent, that is, enter a special physiological state. Competence development in Bacillus subtilis requires expression of about 40 genes. The DNA integrated into the host chromosome is usually (but with infrequent exceptions) derived from another bacterium of the same species, and is thus homologous to the resident chromosome [74]. The capacity for natural transformation occurs in at least 67 prokaryotic species. Competence for transformation is typically induced by high cell density and/or nutritional limitation, conditions associated with the stationary phase of bacterial growth [73]. Competence appears to be an adaptation for DNA repair. Transformation in bacteria can be viewed as a primitive sexual process, since it involves interaction of homologous DNA from two individuals to form recombinant DNA that is passed on to succeeding generations [75]. Although transduction is the form of HGT most commonly associated with bacteriophages, certain phages may also be able to promote transformation. 
+
+## Bacterial conjugation
+
+As mentioned before, conjugation is a method of horizontal gene transfer through cell to cell contact. Through the process of conjugation, type IV Secretion Systems (T4SS) are used to passage on DNA from the donor cell to the recipient cell [43]. These T4SS encoded within the plasmid carry other proteins and genes that help supplement the cell in conjugation [77]. Research has shown that there are Single Binding DNA Binding proteins (SSBs) also encoded within the conjugative plasmid may help with conjugation and cell viability. This is thought to be the case because SSBs naturally are expressed to help with stabilizing single-stranded DNA (ssDNA) [78]. SSBs will also recruit other proteins like RadD or RecA expressed in events of DNA recombination, repair, and replication [79]. Further showcasing their possible role in conjugation [80] [81]. Although it may help, studies have also shown for proteins like SSB to not be essential in conjugation. For example, the plasmid pCF10 from Enterococcus faecalis, a gram-positive bacterium, has a SSB like-protein called PrgE and was classified for not being required for conjugation. More work needs to be done on why proteins that bind to ssDNA are encoded into conjugative plasmids. [82]. Conjugation in the case of microbiomes and symbioses is very important. From this process new genes are acquired that lead to increasing genetic diversity and evolution such as the acquisition of antibiotic resistance genes. Mycobacterium tuberculosis is a species that has evolved through methods like conjugation while gaining antibiotic resistance. This evolution or increase in genetic diversity is also seen in many other species [83] [84]. Due to this, there is a huge concern on how impactful conjugation or horizontal gene transfer can be on human health and your microbiome as pathogenic microbes can become more pathogenic [85]. Studies have shown that even our own microbiome has a plethora of antimicrobial genes which if transferred to pathogenic microbes could be detrimental. Conjugation in Mycobacterium smegmatis, like conjugation in E. coli, requires stable and extended contact between a donor and a recipient strain, is DNase resistant, and the transferred DNA is incorporated into the recipient chromosome by homologous recombination. However, unlike E. coli high frequency of recombination conjugation (Hfr), mycobacterial conjugation is a type of HGT that is chromosome rather than plasmid based. Furthermore, in contrast to E [87]. coli (Hfr) conjugation, in M. smegmatis all regions of the chromosome are transferred with comparable efficiencies. Substantial blending of the parental genomes was found as a result of conjugation, and this blending was regarded as reminiscent of that seen in the meiotic products of sexual reproduction. 
+
+## Archaeal DNA transfer
+
+Haloarchaea are aerobic halophiles thought to have evolved from  anaerobic methanogens. A large amount of their genome, 126 composite gene families, are derived from genetic material from bacterial genomes. This has allowed them to adapt to extremely salty environments. The archaeon Sulfolobus solfataricus, when UV irradiated, strongly induces the formation of type IV pili which then facilitates cellular aggregation. Exposure to chemical agents that cause DNA damage also induces cellular aggregation [91] [92]. Other physical stressors, such as temperature shift or pH, do not induce aggregation, suggesting that DNA damage is a specific inducer of cellular aggregation [91]. [citation needed]. UV-induced cellular aggregation mediates intercellular chromosomal HGT marker exchange with high frequency,  and UV-induced cultures display recombination rates that exceed those of uninduced cultures by as much as three orders of magnitude [93]. S. solfataricus cells aggregate preferentially with other cells of their own species. Frols et al [93]. and Ajon et al [91] [94]. suggested that UV-inducible DNA transfer is likely an important mechanism for providing increased repair of damaged DNA via homologous recombination [93]. This process can be regarded as a simple form of sexual interaction.. Another thermophilic species, Sulfolobus acidocaldarius, is able to undergo HGT. S. acidocaldarius can exchange and recombine chromosomal markers at temperatures up to 84 °C. UV exposure induces pili formation and cellular aggregation [95]. Cells with the ability to aggregate have greater survival than mutants lacking pili that are unable to aggregate [93]. The frequency of recombination is increased by DNA damage induced by UV-irradiation  and by DNA damaging chemicals [96]. The ups operon, containing five genes, is highly induced by UV irradiation. The proteins encoded by the ups operon are employed in UV-induced pili assembly and cellular aggregation leading to intercellular DNA exchange and homologous recombination. Since this system increases the fitness of S [98]. acidocaldarius cells after UV exposure, Wolferen et al. considered that transfer of DNA likely takes place in order to repair UV-induced DNA damages by homologous recombination. [98] [99]. 
+
+# Eukaryotes
+
+"Sequence comparisons suggest recent horizontal transfer of many genes among diverse species including across the boundaries of phylogenetic 'domains'. Thus determining the phylogenetic history of a species can not be done conclusively by determining evolutionary trees for single genes." [100]. 
+
+# Compounds found to promote horizontal gene transfer
+
+Through research into the growing issue of antibiotic resistance  certain compounds have been observed to promote horizontal gene transfer [140]. Antibiotics given to bacteria at non-lethal levels have been known to be a cause of antibiotic resistance  but emerging research is now showing that certain non-antibiotic pharmaceuticals (ibuprofen, naproxen, gemfibrozil, diclofenac, propranolol, etc.) also have a role in promoting antibiotic resistance through their ability to promote horizontal gene transfer (HGT) of genes responsible for antibiotic resistance [141] [142] [143] [144] [144]. The transfer of antibiotic resistance genes (ARGs) through conjugation is significantly accelerated when donor cells with plasmids and recipient cells are introduced to each other in the presence of one of the pharmaceuticals. Non-antibiotic pharmaceuticals were also found to cause some responses in bacteria similar to those responses to antibiotics, such as increasing expression of the genes lexA, umuC, umuD and soxR involved in the bacteria's SOS response as well as other genes also expressed during exposure to antibiotics [141]. These findings are from 2021 and due to the widespread use of non-antibiotic pharmaceuticals, more research needs to be done in order to further understanding on the issue [141]. Alongside non-antibiotic pharmaceuticals, other compounds relevant to antibiotic resistance have been tested such as malachite green, ethylbenzene, styrene, 2,4-dichloroaniline, trioxymethylene, o-xylene solutions, p-nitrophenol (PNP), p-aminophenol (PAP), and phenol (PhOH). It is a global concern that ARGs have been found in wastewater treatment plants  Textile wastewater has been found to contain 3- to 13-fold higher abundance of mobile genetic elements than other samples of wastewater [142] [143] [142]. The cause of this is the organic compounds used for textile dying (o-xylene, ethylbenzene, trioxymethylene, styrene, 2,4-dichloroaniline, and malachite green)  raising the frequency of conjugative transfer when bacteria and plasmid (with donor) are introduced in the presence of these molecules [142] [142]. When textile wastewater combines with wastewater from domestic sewage, the ARGs present in wastewater are transferred at a higher rate due to the addition of textile dyeing compounds increasing the occurrence of HGT [142]. [citation needed]. Other organic pollutants commonly found in wastewater have been the subject of similar experiments. A 2021 study used similar methods of  using plasmid in a donor and mixing that with a receptor in the presence of compound in order to test horizontal gene transfer of antibiotic resistance genes but this time in the presence of phenolic compounds [143]. Phenolic compounds are commonly found in wastewater and have been found to change functions and structures of the microbial communities during the wastewater treatment process [143]. Additionally, HGT increases in frequency in the presence of the compounds p-nitrophenol (PNP), p-aminophenol (PAP), and phenol [143]. These compounds result in a 2- to 9-fold increase in HGT (p-nitrophenol being on the lower side of 2-fold increases and p-aminophenol and phenol having a maximum increase of 9-fold). This increase in HGT is on average less than the compounds ibuprofen, naproxen, gemfibrozil, diclofenac, propranolol, o-xylene, ethylbenzene, trioxymethylene, styrene, 2,4-dichloroaniline, and malachite green   but their increases is still significant [143] [141] [142]. The study that came to this conclusion is similar to the study on horizontal gene transfer and non-antibiotic pharmaceuticals in that it was done in 2021 and leaves room for more research, specifically in the focus of the study which is activated sludge [143]. Heavy metals have also been found to promote conjugative transfer of antibiotic resistance genes. The paper that led to the discovery of this was done in 2017 during the emerging field of horizontal gene transfer assisting compound research [144]. Metals assist in the spread of antibiotic resistance through both co-resistance as well as cross-resistance mechanisms [144]. In quantities relevant to the environment, Cu(II), Ag(I), Cr(VI), and Zn(II) promote HGT from donor and receptor strains of E [144]. coli. The presence of these metals triggered SOS response from bacterial cells and made the cells more permeable [144]. These are the mechanisms that make even low levels of heavy metal pollution in the environment impact HGT and therefore the spread of ARGs.. 
+
+# Promiscuous DNA
+
+Promiscuous DNA is a form of horizontal gene transfer that transmits genetic information across organellar barriers. Promiscuous DNA transfer has substantial evidence in its movement across the genome of numerous organisms, from movements in chloroplast to the nucleus,  chloroplast to the mitochondria,  and mitochondria to the nucleus [145] [146] [155]. 
+
+## History
+
+In 1982, R. John Ellis defined this type of transpositional transfer mutation as “intracellular promiscuity.”  Ellis further explored the phenomenon of “intracellular promiscuity” through the experiments of David Stern and David Lonsdale,  in which genetic transfer between chloroplasts to mitochondria was discovered, aiding in the definition and discovery of promiscuous DNA. [149] [150]. 
+
+## Mechanism
+
+While much remains to be understood about how promiscuous DNA undergoes movement and transfer, numerous experiments have pointed to plastid sequences, ptDNA, as a key player. Plasmids, with their mobile nature and crucial role in horizontal gene transfer, are seen as a significant element in DNA that exchanges genetic information [151] [152] [153]. This mobility makes ptDNA a potential donor for promiscuous DNA to traverse organellar barriers [154]. 
+
+## Types
+
+### NUMTs
+
+NUMTs (nuclear sequences of mitochondrial) are a type of promiscuous DNA that arises from the natural transfer of mitochondria DNA (mtDNA) to the nuclear genome (nDNA). These NUMTs, with their varying frequencies, sizes, and features, contribute to the genetic diversity across all eukaryotes and, in some cases, to diseases among humans [156]. 
+
+### NUPTs
+
+NUPTs (nuclear plastid DNA sequences) are a type of promiscuous DNA that arises from the natural transfer of ptDNA (plastid DNA) into nDNA. These fragments of ptDNA, similar to NUMTs in frequency, size, and features, also exhibit variability across species [157]. 
+
+# Artificial horizontal gene transfer
+
+Genetic engineering is essentially horizontal gene transfer, albeit with synthetic expression cassettes. The Sleeping Beauty transposon system  (SB) was developed as a synthetic gene transfer agent that was based on the known abilities of Tc1/mariner transposons to invade genomes of extremely diverse species [159]. The SB system has been used to introduce genetic sequences into a wide variety of animal genomes [160]. 
+
+# In evolution
+
+Horizontal gene transfer is a potential confounding factor in inferring phylogenetic trees based on the sequence of one gene. For example, given two distantly related bacteria that have exchanged a gene a phylogenetic tree including those species will show them to be closely related because that gene is the same even though most other genes are dissimilar [163]. For this reason, it is often ideal to use other information to infer robust phylogenies such as the presence or absence of genes or, more commonly, to include as wide a range of genes for phylogenetic analysis as possible.. For example, the most common gene to be used for constructing phylogenetic relationships in prokaryotes is the 16S ribosomal RNA gene since its sequences tend to be conserved among members with close phylogenetic distances, but variable enough that differences can be measured. However, in recent years it has also been argued that 16s rRNA genes can also be horizontally transferred. Although this may be infrequent, the validity of 16s rRNA-constructed phylogenetic trees must be reevaluated. Biologist Johann Peter Gogarten suggests "the original metaphor of a tree no longer fits the data from recent genome research" therefore "biologists should use the metaphor of a mosaic to describe the different histories combined in individual genomes and use the metaphor of a net to visualize the rich exchange and cooperative effects of HGT among microbes". There exist several methods to infer such phylogenetic networks. [40]. Using single genes as phylogenetic markers, it is difficult to trace organismal phylogeny in the presence of horizontal gene transfer. Combining the simple coalescence model of cladogenesis with rare HGT horizontal gene transfer events suggest there was no single most recent common ancestor that contained all of the genes ancestral to those shared among the three domains of life. Each contemporary molecule has its own history and traces back to an individual molecule cenancestor. However, these molecular ancestors were likely to be present in different organisms at different times." [165]. 
+
+## Challenge to the tree of life
+
+Horizontal gene transfer poses a possible challenge to the concept of the last universal common ancestor (LUCA) at the root of the tree of life first formulated by Carl Woese, which led him to propose the Archaea as a third domain of life. Indeed, it was while examining the new three-domain view of life that horizontal gene transfer arose as a complicating issue: Archaeoglobus fulgidus was seen as an anomaly with respect to a phylogenetic tree based upon the encoding for the enzyme HMGCoA reductase—the organism in question is a definite Archaean, with all the cell lipids and transcription machinery that are expected of an Archaean, but whose HMGCoA genes are of bacterial origin [166]. Scientists are broadly agreed on symbiogenesis, that mitochondria in eukaryotes derived from alpha-proteobacterial cells and that chloroplasts came from ingested cyanobacteria, and other gene transfers may have affected early eukaryotes [166]. (In contrast, multicellular eukaryotes have mechanisms to prevent horizontal gene transfer, including separated germ cells.) If there had been continued and extensive gene transfer, there would be a complex network with many ancestors, instead of a tree of life with sharply delineated lineages leading back to a LUCA. However, a LUCA can be identified, so horizontal transfers must have been relatively limited [166] [167]. Other early HGTs are thought to have happened. The first common ancestor (FUCA), earliest ancestor of LUCA, had other descendants that had their own lineages. These now-extinct sister lineages of LUCA descending from FUCA are thought to have horizontally transferred some of their genes into the genome of early descendants of LUCA [169]. 
+
+## Phylogenetic information in HGT
+
+It has been remarked that, despite the complications, the detection of horizontal gene transfers brings valuable phylogenetic and dating information. The potential of HGT to be used for dating phylogenies has recently been confirmed. 
+
+## The chromosomal organization of horizontal gene transfer
+
+The acquisition of new genes has the potential to disorganize the other genetic elements and hinder the function of the bacterial cell, thus affecting the competitiveness of bacteria. Consequently, bacterial adaptation lies in a conflict between the advantages of acquiring beneficial genes, and the need to maintain the organization of the rest of its genome. Horizontally transferred genes are typically concentrated in only ~1% of the chromosome (in regions called hotspots). This concentration increases with genome size and with the rate of transfer. Hotspots diversify by rapid gene turnover; their chromosomal distribution depends on local contexts (neighboring core genes), and content in mobile genetic elements. Hotspots concentrate most changes in gene repertoires, reduce the trade-off between genome diversification and organization, and should be treasure troves of strain-specific adaptive genes. Most mobile genetic elements and antibiotic resistance genes are in hotspots, but many hotspots lack recognizable mobile genetic elements and exhibit frequent homologous recombination at flanking core genes. Overrepresentation of hotspots with fewer mobile genetic elements in naturally transformable bacteria suggests that homologous recombination and horizontal gene transfer are tightly linked in genome evolution. 
+
+## Genes
+
+There is evidence for historical horizontal transfer of the following genes:. 
+
+# References
+
+[1] https://ui.adsabs.harvard.edu/abs/2000Natur.405..299O
+[2] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3068243
+[3] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3798261
+[4] https://doi.org/10.1038%2Fnrg2386
+[5] https://doi.org/10.1177%2F0300985813511131
+[6] https://doi.org/10.1111%2Fbij.12872
+[7] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1131874
+[8] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4073975
+[9] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4781227
+[10] https://doi.org/10.1111%2Fj.1600-0463.1998.tb05653.x
+[11] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC106609
+[12] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3522046
+[13] https://doi.org/10.1007%2FBF01575963
+[14] https://doi.org/10.1111%2Fj.1574-6968.2012.02589.x
+[15] https://doi.org/10.1099%2Fjgv.0.000329
+[16] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6123812
+[17] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8535800
+[18] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5550378
+[19] https://doi.org/10.1146%2Fannurev-micro-090817-062213
+[20] https://dx.doi.org/10.1016/j.cub.2019.08.012
+[21] https://linkinghub.elsevier.com/retrieve/pii/S0168952520302067
+[22] https://doi.org/10.1016%2Fj.biosystems.2017.10.004
+[23] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2167760
+[24] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC372978
+[25] http://mic.sgmjournals.org/content/73/1/1.full.pdf
+[26] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC386063
+[27] ISBN: 978-1-4042-0253-5
+[28] https://web.archive.org/web/20101016190354/http://nobelprize.org/nobel_prizes/medicine/laureates/1965/lwoff-lecture.html
+[29] [ERROR retrieving ref link]
+[30] https://doi.org/10.1111%2Fj.1348-0421.1960.tb00170.x
+[31] http://www.dcn.davis.ca.us/vme/hgt/JTheoBiolvol112pp333-343yr1985.PDF
+[32] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC22375
+[33] https://web.archive.org/web/20070927135534/http://www.sdsc.edu/~shindyal/ejc121304.pdf
+[34] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1156881
+[35] https://www.newscientist.com/article/2079813-farmers-may-have-been-accidentally-making-gmos-for-millennia/
+[36] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4574769
+[37] https://web.archive.org/web/20130106204712/http://phenomena.nationalgeographic.com/2010/02/14/genes-from-chagas-parasite-can-transfer-to-humans-and-be-passed-on-to-children/
+[38] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3688693
+[39] https://web.archive.org/web/20070927135534/http://www.sdsc.edu/~shindyal/ejc121304.pdf
+[40] https://web.archive.org/web/20120721232310/http://www.esalenctr.org/display/confpage.cfm?confid=10&pageid=105&pgtype=1
+[41] https://web.archive.org/web/20120115211044/http://textbookofbacteriology.net/themicrobialworld/bactresanti.html
+[42] http://www.sci.sdsu.edu/~smaloy/MicrobialGenetics/topics/genetic-exchange/exchange/exchange.html
+[43] ISBN: 978-0-19-925563-4
+[44] https://doi.org/10.1007%2F978-94-007-2920-9_10
+[45] https://doi.org/10.1038%2Fnews.2010.507
+[46] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2940939
+[47] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3922705
+[48] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10586619
+[49] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4009612
+[50] https://doi.org/10.1002%2Fbies.201300072
+[51] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3516303
+[52] https://ui.adsabs.harvard.edu/abs/2008Natur.455..100L
+[53] https://ui.adsabs.harvard.edu/abs/2008Natur.454..677P
+[54] https://doi.org/10.1007%2F978-1-60327-853-9_23
+[55] https://doi.org/10.1093%2Fjac%2Fdkp256
+[56] ISBN: 978-1-908230-10-2
+[57] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC98851
+[58] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5180612
+[59] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4176335
+[60] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3320793
+[61] https://link.springer.com/article/10.1007%2Fs00792-013-0559-z
+[62] https://ui.adsabs.harvard.edu/abs/2004MicEc..47..159L
+[63] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1317311
+[64] https://www.liebertpub.com/doi/10.1089/ast.2005.5.391
+[65] https://www.genetics.org/content/103/4/581.long
+[66] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1202041
+[67] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5460176
+[68] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6336426
+[69] https://ui.adsabs.harvard.edu/abs/2005JMolE..60..716G
+[70] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8304352
+[71] https://doi.org/10.1039%2Fb817075b
+[72] https://doi.org/10.1038%2Fnrmicro844
+[73] https://doi.org/10.1016%2Fj.resmic.2007.09.004
+[74] https://doi.org/10.1016%2F0168-9525%2896%2910014-7
+[75] http://www.hummingbirds.arizona.edu/Faculty/Michod/Downloads/IGE%20review%20sex.pdf
+[76] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5241400
+[77] https://doi.org/10.1128/jb.00438-22
+[78] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC207845
+[79] http://academic.oup.com/nar/article/45/21/12125/4559114
+[80] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4192491
+[81] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5034066
+[82] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11137577
+[83] https://onlinelibrary.wiley.com/doi/10.1046/j.1365-2958.1998.00818.x
+[84] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3856870
+[85] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2955785
+[86] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4720503
+[87] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3706393
+[88] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4259119
+[89] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5992828
+[90] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7599335
+[91] https://pure.rug.nl/ws/files/56956856/UV_inducible_cellular_aggregation_of_the_hyperthermophilic_archaeon_Sulfolobus_solfataricus_is_mediated_by_pili_formation.pdf
+[92] https://doi.org/10.1111%2Fj.1365-2958.2011.07860.x
+[93] https://pure.rug.nl/ws/files/6771142/2011MolMicrobiolAjon.pdf
+[94] https://doi.org/10.1042%2FBST0370036
+[95] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC178072
+[96] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC179455
+[97] https://doi.org/10.1016%2Fs0378-1097%2801%2900575-4
+[98] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3892339
+[99] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4542170
+[100] https://web.archive.org/web/20160304071146/http://bioinfosu.okstate.edu/MG/MGW3/MG334.html
+[101] https://doi.org/10.1016%2FS0168-9525%2800%2902053-9
+[102] https://doi.org/10.1126%2Fscience.1100671
+[103] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC528834
+[104] https://doi.org/10.1007%2Fs11103-004-5183-y
+[105] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1151995
+[106] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5705623
+[107] https://doi.org/10.1111%2Fnph.19595
+[108] https://doi.org/10.1038%2Fnature.2012.10116
+[109] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3306691
+[110] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7250577
+[111] https://www.science.org/content/article/bdelloids-surviving-borrowed-dna
+[112] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4983863
+[113] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4358723
+[114] http://www.the-scientist.com/?articles.view/articleNo/42420/title/Horizontal-Gene-Transfer-a-Hallmark-of-Animal-Genomes-/
+[115] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6339383
+[116] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3494942
+[117] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC137875
+[118] https://ui.adsabs.harvard.edu/abs/2007Sci...317.1753H
+[119] [ERROR retrieving ref link]
+[120] https://ui.adsabs.harvard.edu/abs/2010Sci...328.1128Y
+[121] https://www.nytimes.com/2014/04/17/science/plants-that-practice-genetic-engineering.html
+[122] [ERROR retrieving ref link]
+[123] https://doi.org/10.1086%2FBBLv227n3p300
+[124] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4607529
+[125] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3708498
+[126] https://doi.org/10.1016%2Fj.cell.2021.02.014
+[127] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3917961
+[128] https://doi.org/10.1093%2Fmolbev%2Fmst206
+[129] https://ui.adsabs.harvard.edu/abs/2010Sci...328..624M
+[130] https://ui.adsabs.harvard.edu/abs/2010Sci...328..574F
+[131] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9171917
+[132] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6737239
+[133] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3896755
+[134] https://ui.adsabs.harvard.edu/abs/2006CBio...16.1857R
+[135] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3174590
+[136] https://www.quantamagazine.org/dna-jumps-between-animal-species-no-one-knows-how-often-20210609/
+[137] https://doi.org/10.1016%2FS0021-9258%2819%2969131-3
+[138] http://precedings.nature.com/documents/5690/version/1/
+[139] https://www.economist.com/news/science-and-technology/21646197-human-beings-ancestors-have-routinely-stolen-genes-other-species-genetically?fsrc=scn/gp/wl/pe/geneticallymodifiedpeople
+[140] https://doi.org/10.1038%2Fnrmicro3270
+[141] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8397710
+[142] https://ui.adsabs.harvard.edu/abs/2017Chmsp.184...53J
+[143] https://ui.adsabs.harvard.edu/abs/2021ScTEn.80049549M
+[144] https://doi.org/10.1016%2Fj.envpol.2018.01.032
+[145] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2940939
+[146] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC166398
+[147] https://link.springer.com/article/10.1007/BF00020448
+[148] https://academic.oup.com/femsyr/article/8/6/846/568124
+[149] https://www.nature.com/articles/299678a0
+[150] https://www.nature.com/articles/299698a0
+[151] https://link.springer.com/article/10.1007/BF00042236
+[152] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7145815
+[153] https://academic.oup.com/mbe/article/15/6/738/1026281
+[154] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2976448
+[155] https://link.springer.com/article/10.1007/BF00020448
+[156] https://academic.oup.com/mutage/article-abstract/39/1/1/7296469
+[157] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10636329
+[158] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3807264
+[159] https://doi.org/10.1016%2FS0092-8674%2800%2980436-5
+[160] https://doi.org/10.1007%2F978-3-642-79795-8_6
+[161] https://doi.org/10.1006%2Fjmbi.2000.4047
+[162] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2581827
+[163] https://web.archive.org/web/20150414011040/http://www.newscientist.com/article/mg20126921.600-why-darwin-was-wrong-about-the-tree-of-life.html?page=1
+[164] https://doi.org/10.1099%2Fijs.0.63510-0
+[165] https://doi.org/10.1016%2Fj.tig.2004.02.004
+[166] https://ui.adsabs.harvard.edu/abs/2000SciAm.282b..90D
+[167] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC419918
+[168] https://ui.adsabs.harvard.edu/abs/2010Natur.465..219T
+[169] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7840587
+[170] https://doi.org/10.1007%2F978-1-60327-853-9_7
+[171] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5912509
+[172] https://ui.adsabs.harvard.edu/abs/2018NatEE...2..897W
+[173] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5635113
+[174] https://doi.org/10.1016%2Fj.tim.2006.09.001
+[175] https://doi.org/10.1111%2Fj.1365-2672.2004.02306.x
+[176] http://blogs.scientificamerican.com/artful-amoeba/2014/05/06/in-darkened-forests-ferns-stole-gene-from-an-unlikely-source-and-then-each-other/In
+[177] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4532919
+[178] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4011162
+[179] https://web.archive.org/web/20130106204723/http://phenomena.nationalgeographic.com/2011/02/16/gonorrhea-has-picked-up-human-dna-and-thats-just-the-beginning/

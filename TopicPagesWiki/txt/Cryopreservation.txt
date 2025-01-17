@@ -1,0 +1,178 @@
+Cryopreservation
+
+Cryopreservation or cryoconservation is a process where biological material - cells, tissues, or organs - are frozen to preserve the material for an extended period of time. At low temperatures (typically −80 °C (−112 °F) or −196 °C (−321 °F) using liquid nitrogen) any cell metabolism which might cause damage to the biological material in question is effectively stopped.  Cryopreservation is an effective way to transport biological samples over long distances, store samples for prolonged periods of time, and create a bank of samples for users. Molecules, referred to as cryoprotective agents (CPAs), are added to reduce the osmotic shock and physical stresses cells undergo in the freezing process. Some cryoprotective agents used in research are inspired by plants and animals in nature that have unique cold tolerance to survive harsh winters, including: trees, wood frogs, and tardigrades. The first human corpse to be frozen with the hope of future resurrection was James Bedford's, a few hours after his cancer-caused death in 1967. Bedford's is the only cryonics corpse frozen before 1974 still frozen today.
+
+# Natural cryopreservation
+
+Tardigrades, microscopic multicellular organisms, can survive freezing by replacing most of their internal water with a sugar called trehalose, preventing it from crystallization that otherwise damages cell membranes. Mixtures of solutes can achieve similar effects. Some solutes, including salts, have the disadvantage that they may be toxic at intense concentrations. In addition to the water-bears, wood frogs can tolerate the freezing of their blood and other tissues. Urea is accumulated in tissues in preparation for overwintering, and liver glycogen is converted in large quantities to glucose in response to internal ice formation. Both urea and glucose act as "cryoprotectants" to limit the amount of ice that forms and to reduce osmotic shrinkage of cells. Frogs can survive many freeze/thaw events during winter if no more than about 65% of the total body water freezes. Research exploring the phenomenon of "freezing frogs" has been performed primarily by the Canadian researcher, Dr. Kenneth B. Storey. [citation needed]. Freeze tolerance, in which organisms survive the winter by freezing solid and ceasing life functions, is known in a few vertebrates: five species of frogs (Rana sylvatica, Pseudacris triseriata, Hyla crucifer, Hyla versicolor, Hyla chrysoscelis), one of salamanders (Salamandrella keyserlingii), one of snakes (Thamnophis sirtalis) and three of turtles (Chrysemys picta, Terrapene carolina, Terrapene ornata). Snapping turtles Chelydra serpentina and wall lizards Podarcis muralis also survive nominal freezing but it has not been established to be adaptive for overwintering [8]. In the case of Rana sylvatica one cryopreservant is ordinary glucose, which increases in concentration by approximately 19 mmol/L when the frogs are cooled slowly. 
+
+# History
+
+One early theoretician of cryopreservation was James Lovelock. In 1953, he suggested that damage to red blood cells during freezing was due to osmotic stress,  and that increasing the salt concentration in a dehydrating cell might damage it [9]. In the mid-1950s, he experimented with the cryopreservation of rodents, determining that hamsters could be frozen with 60% of the water in the brain crystallized into ice with no adverse effects; other organs were shown to be susceptible to damage [10] [11]. Cryopreservation was applied to human materials beginning in 1954 with three pregnancies resulting from the insemination of previously frozen sperm. Fowl sperm was cryopreserved in 1957 by a team of scientists in the UK directed by Christopher Polge . During 1963, Peter Mazur, at Oak Ridge National Laboratory in the U.S., demonstrated that lethal intracellular freezing could be avoided if cooling was slow enough to permit sufficient water to leave the cell during progressive freezing of the extracellular fluid [14]. That rate differs between cells of differing size and water permeability: a typical cooling rate around 1 °C/minute is appropriate for many mammalian cells after treatment with cryoprotectants such as glycerol or dimethyl sulphoxide, but the rate is not a universal optimum. On April 22, 1966, the first human cadaver was frozen—it had been embalmed for two months—by being placed in liquid nitrogen and stored at just above freezing. The cadaver was that of an elderly woman from Los Angeles, whose name is unknown, and was soon thawed out and buried by relatives.The first human corpse to be frozen with the hope of future resurrection was James Bedford's, a few hours after his cancer-caused death in 1967. Bedford's is the only cryonics corpse frozen before 1974 still frozen today [7]. 
+
+# Risks
+
+Phenomena which can cause damage to cells during cryopreservation mainly occur during the freezing stage, and include solution effects, extracellular ice formation, dehydration, and intracellular ice formation. Many of these effects can be reduced by cryoprotectants.Once the preserved material has become frozen, it is relatively safe from further damage. 
+
+# Main methods to prevent risks
+
+The main techniques to prevent cryopreservation damages are a well-established combination of controlled rate and slow freezing and a newer flash-freezing process known as vitrification.. 
+
+## Slow programmable freezing
+
+Controlled-rate and slow freezing, also known as slow programmable freezing (SPF),  is a technique where cells are cooled to around -196 °C over the course of several hours. [18]. Slow programmable freezing was developed during the early 1970s, and eventually resulted in the first human frozen embryo birth in 1984. Since then, machines that freeze biological samples using programmable sequences, or controlled rates, have been used for human, animal, and cell biology – "freezing down" a sample to better preserve it for eventual thawing, before it is frozen, or cryopreserved, in liquid nitrogen. Such machines are used for freezing oocytes, skin, blood products, embryos, sperm, stem cells, and general tissue preservation in hospitals, veterinary practices and research laboratories around the world. As an example, the number of live births from frozen embryos 'slow frozen' is estimated at some 300,000 to 400,000 or 20% of the estimated 3 million in vitro fertilization (IVF) births. Lethal intracellular freezing can be avoided if cooling is slow enough to permit sufficient water to leave the cell during progressive freezing of the extracellular fluid. To minimize the growth of extracellular ice crystals and recrystallization,  biomaterials such as alginates, polyvinyl alcohol or chitosan can be used to impede ice crystal growth along with traditional small molecule cryoprotectants [20]. That rate differs between cells of differing size and water permeability: a typical cooling rate of about 1 °C/minute is appropriate for many mammalian cells after treatment with cryoprotectants such as glycerol or dimethyl sulfoxide (DMSO), but the rate is not a universal optimum [21]. The 1 °C / minute rate can be achieved by using devices such as a rate-controlled freezer or a benchtop portable freezing container. Several independent studies have provided evidence that frozen embryos stored using slow-freezing techniques may in some ways be 'better' than fresh in IVF. The studies indicate that using frozen embryos and eggs rather than fresh embryos and eggs reduced the risk of stillbirth and premature delivery though the exact reasons are still being explored.. 
+
+## Vitrification
+
+Vitrification is a flash-freezing (ultra-rapid cooling) process that helps to prevent the formation of ice crystals and helps prevent cryopreservation damage.. Researchers Greg Fahy and William F. Rall helped to introduce vitrification to reproductive cryopreservation in the mid-1980s. As of 2000, researchers claim vitrification provides the benefits of cryopreservation without damage due to ice crystal formation [23]. The situation became more complex with the development of tissue engineering as both cells and biomaterials need to remain ice-free to preserve high cell viability and functions, integrity of constructs and structure of biomaterials [29]. Vitrification of tissue engineered constructs was first reported by Lilia Kuleshova,  who also was the first scientist to achieve vitrification of oocytes, which resulted in live birth in 1999 [25]. For clinical cryopreservation, vitrification usually requires the addition of cryoprotectants before cooling [26]. Cryoprotectants are macromolecules added to the freezing medium to protect cells from the detrimental effects of intracellular ice crystal formation or from the solution effects, during the process of freezing and thawing. They permit a higher degree of cell survival during freezing, to lower the freezing point, to protect cell membrane from freeze-related injury. Cryoprotectants have high solubility, low toxicity at high concentrations, low molecular weight and the ability to interact with water via hydrogen bonding.. Instead of crystallizing, the syrupy solution becomes an amorphous ice—it vitrifies. Rather than a phase change from liquid to solid by crystallization, the amorphous state is like a "solid liquid", and the transformation is over a small temperature range described as the "glass transition" temperature.. Vitrification of water is promoted by rapid cooling, and can be achieved without cryoprotectants by an extremely rapid decrease of temperature (megakelvins per second). The rate that is required to attain glassy state in pure water was considered to be impossible until 2005. Two conditions usually required to allow vitrification are an increase of viscosity and a decrease in the freezing temperature. Many solutes do both, but larger molecules generally have a larger effect, particularly on viscosity. Rapid cooling also promotes vitrification.. For established methods of cryopreservation, the solute must penetrate the cell membrane in order to achieve increased viscosity and decrease the freezing temperature inside the cell. Sugars do not readily permeate through the membrane. Those solutes that do, such as DMSO, a common cryoprotectant, are often toxic in intense concentration. One of the difficult compromises of vitrifying cryopreservation concerns limiting the damage produced by the cryoprotectant itself due to cryoprotectant toxicity. Mixtures of cryoprotectants and the use of ice blockers have enabled the 21st Century Medicine company to vitrify a rabbit kidney to −135 °C with their proprietary vitrification mixture. Upon rewarming, the kidney was transplanted successfully into a rabbit, with complete functionality and viability, able to sustain the rabbit indefinitely as the sole functioning kidney. In 2000, FM-2030 became the first person to be successfully vitrified posthumously [28]. 
+
+## Persufflation
+
+Blood can be replaced with inert noble gases and/or metabolically vital gases like oxygen, so that organs can cool more quickly and less antifreeze is needed. Since regions of tissue are separated by gas, small expansions do not accumulate, thereby protecting against shattering. A small company, Arigos Biomedical, "has already recovered pig hearts from the 120 degrees below zero",  although the definition of "recovered" is not clear [30] [31]. Pressures of 60 atm can help increase heat exchange rates. Gaseous oxygen perfusion / persufflation can enhance organ preservation relative to static cold storage or hypothermic machine perfusion, since the lower viscosity of gases, may help reach more regions of preserved organs and deliver more oxygen per gram tissue [32]. 
+
+# Freezable tissues
+
+Generally, cryopreservation is easier for thin samples and suspended cells, because these can be cooled more quickly and so require lesser doses of toxic cryoprotectants. Therefore, cryopreservation of human livers and hearts for storage and transplant is still impractical.. Nevertheless, suitable combinations of cryoprotectants and regimes of cooling and rinsing during warming often allow the successful cryopreservation of biological materials, particularly cell suspensions or thin tissue samples. Examples include:. 
+
+## Embryos
+
+Cryopreservation for embryos is used for embryo storage, e.g., when IVF has resulted in more embryos than is currently needed.. One pregnancy and resulting healthy birth has been reported from an embryo stored for 27 years, after the successful pregnancy of an embryo from the same batch three years earlier. Many studies have evaluated the children born from frozen embryos, or "frosties" [39]. The result has been uniformly positive with no increase in birth defects or development abnormalities. A study of more than 11,000 cryopreserved human embryos showed no significant effect of storage time on post-thaw survival for IVF or oocyte donation cycles, or for embryos frozen at the pronuclear or cleavage stages [40]. Additionally, the duration of storage did not have any significant effect on clinical pregnancy, miscarriage, implantation, or live birth rate, whether from IVF or oocyte donation cycles [41]. Rather, oocyte age, survival proportion, and number of transferred embryos are predictors of pregnancy outcome [41]. 
+
+## Ovarian tissue
+
+Cryopreservation of ovarian tissue is of interest to women who want to preserve their reproductive function beyond the natural limit, or whose reproductive potential is threatened by cancer therapy,  for example in hematologic malignancies or breast cancer [42]. The procedure is to take a part of the ovary and perform slow freezing before storing it in liquid nitrogen whilst therapy is undertaken [43]. Tissue can then be thawed and implanted near the fallopian, either orthotopic (on the natural location) or heterotopic (on the abdominal wall),  where it starts to produce new eggs, allowing normal conception to occur [43]. The ovarian tissue may also be transplanted into mice that are immunocompromised (SCID mice) to avoid graft rejection, and tissue can be harvested later when mature follicles have developed [44]. 
+
+## Oocytes
+
+Human oocyte cryopreservation is a new technology in which a woman's eggs (oocytes) are extracted, frozen and stored. Later, when she is ready to become pregnant, the eggs can be thawed, fertilized, and transferred to the uterus as embryos.Since 1999, when the birth of the first baby from an embryo-derived from vitrified-warmed woman's eggs was reported by Kuleshova and co-workers in the journal of Human Reproduction,  this concept has been recognized and widespread [25]. This breakthrough in achieving vitrification of a woman's oocytes made an important advance in our knowledge and practice of the IVF process, as the clinical pregnancy rate is four times higher after oocyte vitrification than after slow freezing. Oocyte vitrification is vital for preserving fertility in young oncology patients and for individuals undergoing IVF who object, for either religious or ethical reasons, to the practice of freezing embryos. [46]. 
+
+## Semen
+
+Semen can be used successfully almost indefinitely after cryopreservation. The longest reported successful storage is 22 years. It can be used for sperm donation where the recipient wants the treatment in a different time or place or as a means of preserving fertility for men undergoing vasectomy or treatments that may compromise their fertility, such as chemotherapy, radiation therapy or surgery. [47]. 
+
+## Testicular tissue
+
+Cryopreservation of immature testicular tissue is a developing method to avail reproduction to young boys who need to have gonadotoxic therapy. Animal data are promising since healthy offspring have been obtained after transplantation of frozen testicular cell suspensions or tissue pieces. However, none of the fertility restoration options from frozen tissue, i.e. cell suspension transplantation, tissue grafting and in vitro maturation has proved efficient and safe in humans as yet. 
+
+## Moss
+
+Cryopreservation of whole moss plants, especially Physcomitrella patens, has been developed by Ralf Reski and coworkers  and is performed at the International Moss Stock Center [49]. This biobank collects, preserves, and distributes moss mutants and moss ecotypes. 
+
+## Mesenchymal stromal cells (MSCs)
+
+MSCs, when transfused immediately within a few hours post-thawing, may show reduced function or show decreased efficacy in treating diseases as compared to those MSCs which are in log phase of cell growth (fresh). As a result, cryopreserved MSCs should be brought back into the log phase of cell growth in in vitro culture before these are administered for clinical trials or experimental therapies. Re-culturing of MSCs will help in recovering from the shock the cells get during freezing and thawing. Various clinical trials on MSCs have failed which used cryopreserved products immediately post-thaw as compared to those clinical trials which used fresh MSCs. 
+
+## Seed
+
+Plant cryopreservation is becoming vital for its biodiversity value. Seeds are often considered as an important delivery system of genetic information. Cryopreservation of recalcitrant seed is the hardest due to intolerance to low temperature and low water content. However, plant vitrification solution can solve the problem and help recalcitrant seed (Nymphaea caerulea) cryopreserve [52]. 
+
+# Preservation of microbiology cultures
+
+Bacteria and fungi can be kept short-term (months to about a year, depending) refrigerated, however, cell division and metabolism is not completely arrested and thus is not an optimal option for long-term storage (years) or to preserve cultures genetically or phenotypically, as cell divisions can lead to mutations or sub-culturing can cause phenotypic changes. A preferred option, species-dependent, is cryopreservation. Nematode worms are the only multicellular eukaryotes that have been shown to survive cryopreservation. 
+
+## Fungi
+
+Fungi, notably zygomycetes, ascomycetes, and higher basidiomycetes, regardless of sporulation, are able to be stored in liquid nitrogen or deep-frozen. Cryopreservation is a hallmark method for fungi that do not sporulate (otherwise other preservation methods for spores can be used at lower costs and ease), sporulate but have delicate spores (large or freeze-dry sensitive), are pathogenic (dangerous to keep metabolically active fungus) or are to be used for genetic stocks (ideally to have an identical composition as the original deposit). As with many other organisms, cryoprotectants like DMSO or glycerol (e.g. filamentous fungi 10% glycerol or yeast 20% glycerol) are used. Differences between choosing cryoprotectants are species (or class) dependent, but generally for fungi penetrating cryoprotectants like DMSO, glycerol or polyethylene glycol are most effective (other non-penetrating ones include sugars mannitol, sorbitol, dextran, etc.). Freeze-thaw repetition is not recommended as it can decrease viability. Back-up deep-freezers or liquid nitrogen storage sites are recommended. Multiple protocols for freezing are summarized below (each uses screw-cap polypropylene cryotubes): [57]. 
+
+## Bacteria
+
+Many common culturable laboratory strains are deep-frozen to preserve genetically and phenotypically stable, long-term stocks. Sub-culturing and prolonged refrigerated samples may lead to loss of plasmid(s) or mutations [58]. Common final glycerol percentages are 15, 20, and 25. From a fresh culture plate, one single colony of interest is chosen and liquid culture is made. From the liquid culture, the medium is directly mixed with an equal amount of glycerol; the colony should be checked for any defects like mutations. All antibiotics should be washed from the culture before long-term storage. Methods vary, but mixing can be done gently by inversion or rapidly by vortex and cooling can vary by either placing the cryotube directly at −50 to −95 °C, shock-freezing in liquid nitrogen or gradually cooling and then storing at −80 °C or cooler (liquid nitrogen or liquid nitrogen vapor). Recovery of bacteria can also vary, namely, if beads are stored within the tube then the few beads can be used to plate or the frozen stock can be scraped with a loop and then plated, however, since only little stock is needed the entire tube should never be completely thawed and repeated freeze-thaw should be avoided. 100% recovery is not feasible regardless of methodology. 
+
+# Freeze tolerance in animals
+
+## Worms
+
+The microscopic soil-dwelling nematode roundworms Panagrolaimus detritophagus and Plectus parvus are the only eukaryotic organisms that have been proven to be viable after cryopreservation for many years (30,000 to 40,000 years). In this case, the preservation was natural rather than artificial, due to permafrost. They came alive when warmed up.. 
+
+## Vertebrates
+
+Several animal species, including fish, amphibians, and reptiles have been shown to tolerate freezing. At least four species of frogs (Pseudacris crucifer, Hyla versicolor, Pseudacris triseriata, Lithobates sylvaticus) and several species of turtles (Terrapene carolina, hatchling Chrysemys picta), lizards, and snakes are freeze tolerant and have developed adaptations for surviving freezing. While some frogs hibernate underground or in water, body temperatures still drop to −5 to −7 °C, causing them to freeze. The wood frog (Lithobates sylvaticus) can withstand repeated freezing, during which about 65% of its extracellular fluid is converted to ice. 
+
+# Anthropological perspective on cryopreservation
+
+Based on a speculative science, cryonics is controversial in scientific debate and can be better understood as an emergent death ritual along the social evolution of human culture and technology. [citation needed] Belief in an afterlife, or second life, where the phenomenological body endures a transition or resurrection is recurrent across ancient tradition, religion and science fiction. However, the increasingly socialised language of cryotechnology in health and wellness treatments,  recontextualises waking of the un/dead into the biosocial sphere, framing mortality as something akin to illness which can be controlled or cured. Cryonics draws into question the boundaries of the sovereign self   and the individual body, challenging legal definitions of personhood [62]. These boundaries, however, are not universal and ideas which limit the self within the dichotomy of Cartesian dualism are defined through Western philosophy and law. [63]. To understand the imprint of cryonics on the body politic. it is useful to apply the Foucauldian definition of biopower [67]. Ability to access and harness forms of cryotechnology (from cryostorage of food, blood or sperm) is historically bound to class, wealth and power. It is central to fertility, health and death and in this sense, cryonics is a mechanism in the ‘cold chain’   power structure with potential to produce, preserve, and/or restrict life. [62]. 
+
+## Power imbalance
+
+Cryopreservation requires substantial financial and medical resources in order for its potential success. Therefore, suggesting those able to access cryonics must descend from significant wealth or power. This modern form of biopower is integrated into society as a new method of dictating power over the individual or phenomenological body when determining life or death outcomes. Considering the cyclical nature of wealth and power in society already (systemically undercut by race, gender, class, and religion), it is likely that the use of cryonics in the future will have a self-perpetuating influence on these structures. Hence, there is further potential to amplify already existing power imbalances as implications from a legal, financial, and socio-cultural perspective will contribute to sustaining the cryonic practice, excluding most members of society in order to benefit an already dominant group.Ultimately, cryonics reinforces hegemonic inequalities already existing in society today in which few will benefit and calls into question the ethical ambiguity of individual bodily autonomy in the pursuit of self-preservation or survival. 
+
+## Issues relative to the body politic
+
+Cryopreservation has long been an issue of the individual body against the body politic. Those seeking to expand their lifespan in spite of death through preservation suffer from chronic, incurable, and/or degenerative conditions, having to overcome numerous legalities regarding body disposal, human tissue storage, the rights of minors, and in some cases medically assisted suicide. In 1993, Thomas Donaldson, suffering from a brain tumour, requested a medically assisted death [69] [70]. Due to the tumor, he was denied and his body was cryopreserved after the tumour had so devastated the surrounding brain tissue that Donaldson passed [71]. It was not until 25 years later in 2018 that the first person, Norman Hardy, was successfully cryopreserved after being allowed a medically aided death [71]. In 2016, a fourteen-year-old girl won the legal right to have her corpse cryogenically frozen, becoming a landmark case in the United Kingdom [71] [72]. In that same year, it was confirmed by Cryonics UK that their youngest member was just 7 years old [73]. 
+
+# References
+
+[1] https://doi.org/10.1007%2F978-1-4939-6921-0_5
+[2] https://discovery.ucl.ac.uk/id/eprint/10052556/
+[3] https://www.nationalforests.org/blog/how-do-trees-survive-the-winter
+[4] https://doi.org/10.1016%2FB978-012088457-5%2F50021-6
+[5] https://web.archive.org/web/20210302172652/https://www.nationalgeographic.com/animals/article/frog-antifreeze-blood-winter-adaptation
+[6] https://phys.org/news/2022-10-tardigrades-survive-temperatures.html
+[7] http://www.alcor.org/Library/html/BedfordLetter.htm
+[8] http://www.units.muohio.edu/cryolab/publications/documents/CostanzoLeeWright91AJP.pdf
+[9] https://doi.org/10.1016%2F0006-3002%2853%2990273-X
+[10] https://books.google.com/books?id=PPven_q2xiQC&pg=PP7
+[11] https://ui.adsabs.harvard.edu/abs/1970Sci...168..939M
+[12] https://web.archive.org/web/20200417212211/https://www.alcor.org/cryonics/cryonics8803.pdf
+[13] [ERROR retrieving ref link]
+[14] https://ui.adsabs.harvard.edu/abs/1957RSPSB.147..498P
+[15] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1366450
+[16] https://alcor.org/Library/html/suspensionfailures.html
+[17] https://doi.org/10.1152%2Fajpcell.1984.247.3.C125
+[18] https://doi.org/10.1016%2Fj.fertnstert.2008.04.076
+[19] http://www.bionews.org.uk/commentary.lasso?storyid=4055
+[20] https://doi.org/10.1038%2Fncomms4244
+[21] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4485240
+[22] http://www.nature.com/protocolexchange/protocols/2085
+[23] https://ui.adsabs.harvard.edu/abs/1985Natur.313..573R
+[24] http://www.alcor.org/cryonics/cryonics2000-4.pdf
+[25] https://www.ingentaconnect.com/content/cryo/cryo/2004/00000025/00000004/art00002
+[26] https://doi.org/10.1093%2Fhumrep%2F14.12.3077
+[27] https://arxiv.org/abs/cond-mat/0409440
+[28] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2781097
+[29] http://www.alcor.org/cryonics/cryonics2000-4.pdf
+[30] https://www.newscientist.com/article/mg21929343-100-heart-of-glass-could-be-key-to-banking-organs/
+[31] https://thebossmagazine.com/freezing-and-thawing-organs/
+[32] https://worldwide.espacenet.com/textdoc?DB=EPODOC&IDX=US9314015
+[33] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3519283
+[34] https://doi.org/10.1016%2Fj.fertnstert.2008.10.017
+[35] https://www.susupport.com/cryopreservation-process
+[36] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7761154
+[37] https://doi.org/10.1016%2Fj.cryobiol.2009.10.163
+[38] https://doi.org/10.5586%2Fasbp.9132
+[39] https://www.nytimes.com/2020/12/03/science/tennessee-embryo-donate.html
+[40] https://archive.today/20121206043620/http://www.givf.com/fertility/embryofreezing.shtml
+[41] https://doi.org/10.1016%2Fj.fertnstert.2008.09.084
+[42] https://doi.org/10.1530%2FREP-09-0039
+[43] https://doi.org/10.1016%2Fj.fertnstert.2008.10.006
+[44] https://doi.org/10.1016%2FS0140-6736%2804%2917222-X
+[45] https://doi.org/10.1016%2Fj.fertnstert.2008.10.020
+[46] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11246547
+[47] http://www.planer.com/PlanerComWebsite.nsf/7dc62b5d9e44dd40802575460048fc4e/df90c37237a74df88025757d005b0057?OpenDocument
+[48] https://doi.org/10.1093%2Fhumupd%2Fdmp054
+[49] https://ui.adsabs.harvard.edu/abs/2004PlBio...6..119S
+[50] https://www.sciencedaily.com/releases/2010/02/100224134325.htm
+[51] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3279133
+[52] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8201202
+[53] https://arxiv.org/abs/2203.14201
+[54] https://hdl.handle.net/11296%2F477356
+[55] https://www.livescience.com/63187-siberian-permafrost-worms-revive.html
+[56] https://doi.org/10.1134%2FS0012496618030079
+[57] https://doi.org/10.1016%2FB978-012509551-8%2F50006-4
+[58] https://doi.org/10.1016%2FC2010-0-67152-5
+[59] [ERROR retrieving ref link]
+[60] http://www.addgene.org/plasmid_protocols/create_glycerol_stock/
+[61] https://web.archive.org/web/20130907031938/http://www.qiagen.com/Knowledge-and-Support/Spotlight/Plasmid-Resource-Center/Growth%20of%20bacterial%20cultures
+[62] https://doi.org/10.7551%2Fmitpress%2F10456.003.0006
+[63] https://doi.org/10.1080%2F13576275.2023.2230906
+[64] https://doi.org/10.1525%2Fmaq.1987.1.1.02a00020
+[65] ISBN: 978-0-14-012486-6
+[66] https://www.cryonicsarchive.org/library/suspension-failures-lessons-from-the-early-years/
+[67] https://doi.org/10.1525%2Fmaq.1987.1.1.02a00020
+[68] https://www.acjol.org/index.php/njll/article/view/4507
+[69] https://doi.org/10.1007%2Fs10943-020-01166-6
+[70] https://www.ceeol.com/search/article-detail?id=552539
+[71] https://doi.org/10.3390%2Frel11110584
+[72] https://doi.org/10.1080%2F01459741003715391
+[73] https://pure.qub.ac.uk/en/publications/f438b7c2-9232-4265-8364-74f1f0da34c5
+[74] https://www.thetimes.com/article/child-of-7-signed-up-for-body-freezing-fhnzcgxsf

@@ -12,6 +12,9 @@ from flair.data import Sentence
 from flair.nn import Classifier
 from tqdm import tqdm
 
+from config.constants import TOPICS_ORES_SCORES_JSON, TOPICS_URLS_JSON
+from src.utils import load_json, write_html, dump_json, write_str
+
 
 def get_references(sentence, reference_dict):
     """
@@ -22,12 +25,46 @@ def get_references(sentence, reference_dict):
     @param reference_dict, dictionary of references
     @return cleaned sentence, reference_list pair
     """
-    refs = re.findall(r'\[\d+\]', sentence)
-    sentence = re.sub(r'\[\d+\]', '', sentence).strip().replace("\n", "")
-    return sentence, [reference_dict[ref.replace("[", "").replace("]", "")] for ref in refs]
+    refs = re.findall(r"\[\d+\]", sentence)
+    sentence = re.sub(r"\[\d+\]", "", sentence).strip().replace("\n", "")
+    return sentence, [
+        reference_dict[ref.replace("[", "").replace("]", "")] for ref in refs
+    ]
 
 
-def extract_data(url, reference_dict):
+def load_topics():
+    """Load topics from json file"""
+
+    # TODO: Investigate whether this would be more optimal
+    # topic_ores_scores_dict = load_json(TOPICS_ORES_SCORES_JSON)
+    # urls_topics_dict = {entry["url"]: entry["topic"] for entry in topic_ores_scores_dict}
+    
+    topic_urls_dict = load_json(TOPICS_URLS_JSON)
+    urls_topics_dict = {url: topic for topic, url in topic_urls_dict.items()}
+    return urls_topics_dict
+
+
+def get_content_until_next_header(element):
+    """Helper function to get all content until next header"""
+    content = []
+    current = element.next_sibling
+
+    while current:
+        if current.name == "p":
+            content.append(current)
+
+        elif current.name == "div":
+            headers = current.find_all(
+                ["h1", "h2", "h3", "h4", "h5", "h6"], recursive=True
+            )
+            if headers:
+                break
+
+        current = current.next_sibling
+    return content
+
+
+def extract_data(html, reference_dict):
     """
     Extract section data from wiki url.
 
@@ -35,26 +72,29 @@ def extract_data(url, reference_dict):
     @reference_dict, reference dict from extract_references()
     @return a dictionary, key is section / subsection name, value is a list of {"sentence": ..., "refs": []}
     """
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
+
     data = {}
-    for header in soup.find_all(['h1', 'h2', 'h3', "h4", "h5", "h6"]):
-        section_title = header.text.replace('[edit]', '').strip().replace('\xa0', ' ')
+
+    for header in html.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
+        header_container = header.parent
+        section_title = header.text.replace("[edit]", "").strip().replace("\xa0", " ")
         section_data = []
-        for sibling in header.find_next_siblings():
-            if sibling.name in ['h1', 'h2', 'h3', "h4", "h5", "h6"]:
-                break
-            if sibling.name == 'p':
-                for sentence in sibling.text.replace("[", " [").split('. '):
+
+        paragraphs = get_content_until_next_header(header_container)
+
+        for p in paragraphs:
+            for sentence in p.text.replace("[", " [").split(". "):
+                if sentence:
+                    sentence, refs = get_references(sentence, reference_dict)
                     if sentence:
-                        sentence, refs = get_references(sentence, reference_dict)
-                        if sentence:
-                            section_data.append({"sentence": sentence, "refs": refs})
+                        section_data.append({"sentence": sentence, "refs": refs})
+
         data[section_title] = section_data
+
     return data
 
 
-def extract_references(url):
+def extract_references(html):
     """
     Extract references from reference section with following structure:
     {
@@ -62,24 +102,27 @@ def extract_references(url):
       "2": "https://...",
     }
 
-    @param url, url of the wikipedia page
+    @param html wikipedia page
     @return dictionary of references, key is the citation index string, value is correpsonding url link
     """
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
+
     references = {}
-    for references_section in soup.find_all('ol', {'class': 'references'}):
-        for ref in references_section.find_all('li', {'id': lambda x: x and x.startswith('cite_note-')}):
-            index = str(ref['id'].rsplit('-', 1)[-1])
-            link_tag = ref.find('a', {'href': True, 'rel': 'nofollow'})
-            isbn_tag = ref.find('a', href=re.compile(r'Special:BookSources'))
+    for references_section in html.find_all("ol", {"class": "references"}):
+        for ref in references_section.find_all(
+            "li", {"id": lambda x: x and x.startswith("cite_note-")}
+        ):
+            index = str(ref["id"].rsplit("-", 1)[-1])
+            link_tag = ref.find("a", {"href": True, "rel": "nofollow"})
+            isbn_tag = ref.find("a", href=re.compile(r"Special:BookSources"))
             if link_tag:
-                link = link_tag['href']
+                link = link_tag["href"]
                 references[index] = link
             elif isbn_tag:
-                link = f'ISBN: {isbn_tag.text}'
+                link = f"ISBN: {isbn_tag.text}"
                 references[index] = link
             else:
+                # TODO: handle other types of references
+                # Danilo: For the time being this is not necessary for computing metrics
                 references[index] = "[ERROR retrieving ref link]"
     return references
 
@@ -99,35 +142,44 @@ def getSections(page, structured_data):
         ]
     }
     """
-    return [{"section_title": i.title,
-             "section_content": structured_data[i.title],
-             "subsections": getSections(i, structured_data)
-             } for i in page.sections]
+    return [
+        {
+            "section_title": i.title,
+            "section_content": structured_data[i.title],
+            "subsections": getSections(i, structured_data),
+        }
+        for i in page.sections
+    ]
 
 
-def get_wikipedia_json_output(username, url):
+def fetch_data_wikipedia(username, url):
     """
     Get wikepdia output as format json
 
     @param username, username for wikipedia api agent.
     @param url, url of wikipedia page
     """
-    wiki_api = wikipediaapi.Wikipedia(username, 'en')
+    wiki_api = wikipediaapi.Wikipedia(username, "en")
     wikipedia_page_name = url.replace("https://en.wikipedia.org/wiki/", "")
     wikiapi_page = wiki_api.page(wikipedia_page_name)
 
+    response = requests.get(url)
+    html_page = BeautifulSoup(response.content, "html.parser")
+
     # extract references
-    reference_dict = extract_references(url)
-    structured_data = extract_data(url, reference_dict)
+    reference_dict = extract_references(html_page)
+    structured_data = extract_data(html_page, reference_dict)
 
     # save extracted result to file
-    result = {"title": wikipedia_page_name,
-              "url": url,
-              "summary": wikiapi_page.summary,
-              "content": getSections(wikiapi_page, structured_data),
-              "references": reference_dict}
+    extracted_data = {
+        "title": wikipedia_page_name,
+        "url": url,
+        "summary": wikiapi_page.summary,
+        "content": getSections(wikiapi_page, structured_data),
+        "references": reference_dict,
+    }
 
-    return result, wikipedia_page_name, reference_dict
+    return html_page, extracted_data, reference_dict
 
 
 def section_dict_to_text(data, inv_reference_dict, level=1):
@@ -143,8 +195,11 @@ def section_dict_to_text(data, inv_reference_dict, level=1):
             result += cur_sentence["sentence"]
             if cur_sentence["refs"]:
                 result += " "
-                result += " ".join(f"[{inv_reference_dict[ref]}]" for ref in cur_sentence["refs"] if
-                                   ref != "[ERROR retrieving ref link]")
+                result += " ".join(
+                    f"[{inv_reference_dict[ref]}]"
+                    for ref in cur_sentence["refs"]
+                    if ref != "[ERROR retrieving ref link]"
+                )
             result += ". "
     for subsection in subsections:
         result += section_dict_to_text(subsection, inv_reference_dict, level=level + 1)
@@ -162,63 +217,89 @@ def output_as_text(result, reference_dict):
         output += f"[{idx}] {link}\n"
     return output
 
-tagger = Classifier.load('ner')
+
+tagger = Classifier.load("ner")
 
 
 def extract_entities_flair(text):
-    sentences = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text)    
+    clean_txt = re.sub(
+        r"#+ ", "", re.sub(r"\[\d+\]", "", text[: text.find("\n\n# References\n\n")])
+    )
+    sentences = re.split(r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s", clean_txt)
     entities = []
     for sentence in sentences:
         if len(sentence) == 0:
             continue
         sentence = Sentence(sentence)
         tagger.predict(sentence)
-        entities.extend([entity.text for entity in sentence.get_spans('ner')])
+        entities.extend([entity.text for entity in sentence.get_spans("ner")])
 
     entities = list(set([e.lower() for e in entities]))
 
     return entities
 
 
-def process_url(url, output_dir, username='Knowledge Curation Project'):
-    result, wikipedia_page_name, reference_dict = get_wikipedia_json_output(username=username, url=url)
+def process_url(topic, url, output_dir, username="Knowledge Curation Project"):
+    """
+    Process a Wikipedia page and save the result to the output directory.
+    """
+
+    html_page, result, reference_dict = fetch_data_wikipedia(username=username, url=url)
     txt = output_as_text(result, reference_dict)
-    clean_txt = re.sub(r'#+ ', '', re.sub(r'\[\d+\]', '', txt[:txt.find("\n\n# References\n\n")]))
-    # Extract entities for future analysis.
-    result['flair_entities'] = extract_entities_flair(clean_txt)
+    result["flair_entities"] = extract_entities_flair(txt)
 
-    wikipedia_page_name = wikipedia_page_name.replace("/", "_")
-
-    with open(os.path.join(output_dir, 'json', wikipedia_page_name + ".json"), "w") as f:
-        json.dump(result, f, indent=2)
-    with open(os.path.join(output_dir, 'txt', wikipedia_page_name + ".txt"), "w") as f:
-        f.write(txt)
+    dump_json(result, os.path.join(output_dir, "json", topic + ".json"))
+    write_str(txt, os.path.join(output_dir, "txt", topic + ".txt"))
+    write_str(txt, os.path.join(output_dir, "md", topic + ".md"))
+    write_html(
+        str(html_page.prettify()),
+        os.path.join(output_dir, "html", topic + ".html"),
+    )
 
 
 def main(args):
-    pathlib.Path(f'{args.outputDirectory}/json').mkdir(parents=True, exist_ok=True)
-    pathlib.Path(f'{args.outputDirectory}/txt').mkdir(parents=True, exist_ok=True)
-    if args.batch:
+    pathlib.Path(f"{args.outputDirectory}/json").mkdir(parents=True, exist_ok=True)
+    pathlib.Path(f"{args.outputDirectory}/txt").mkdir(parents=True, exist_ok=True)
+    pathlib.Path(f"{args.outputDirectory}/md").mkdir(parents=True, exist_ok=True)
+    pathlib.Path(f"{args.outputDirectory}/html").mkdir(parents=True, exist_ok=True)
+
+    urls_topics_dict = load_topics()
+
+    if args.batch_path:
         df = pd.read_csv(args.batch_path)
-        for _, row in tqdm(df.iterrows()):
+        for _, row in tqdm(
+            df.iterrows(), total=len(df), desc="Fetching Wikipedia pages"
+        ):
             try:
-                process_url(row['url'], args.outputDirectory)
+                url = row["url"]
+                topic = urls_topics_dict.get(url, url.split("/")[-1])
+                process_url(topic, url, args.outputDirectory)
             except Exception as e:
                 print(e)
                 print(f'Error occurs when processing {row["url"]}')
     else:
-        process_url(args.url, args.outputDirectory)
+        topic = urls_topics_dict.get(args.url, args.url.split("/")[-1])
+        process_url(topic, args.url, args.outputDirectory)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Parse a Wikipedia page into sections.')
-    parser.add_argument('--batch', action='store_true', help='Process data in a batch.')
-    parser.add_argument('--batch_path', type=str, help='Path of the batch topic file.')
-    parser.add_argument('-u', '--url',
-                        default='https://en.wikipedia.org/wiki/Python_(programming_language)',
-                        help='The URL of the Wikipedia page to parse (default: https://en.wikipedia.org/wiki/Python_(programming_language))')
-    parser.add_argument('-o', '--outputDirectory',
-                        default='./',
-                        help='The path where the parsed content will be saved (default: current directory)')
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Parse a Wikipedia page into sections."
+    )
+    parser.add_argument("--batch_path", type=str, help="Path of the batch topic file.")
+    parser.add_argument(
+        "-u",
+        "--url",
+        # default="https://en.wikipedia.org/wiki/Python_(programming_language)",
+        # default="https://en.wikipedia.org/wiki/Wave",
+        default="https://en.wikipedia.org/wiki/Zillennials",
+        help="The URL of the Wikipedia page to parse (default: https://en.wikipedia.org/wiki/Python_(programming_language))",
+    )
+    parser.add_argument(
+        "-o",
+        "--outputDirectory",
+        default="./",
+        help="The path where the parsed content will be saved (default: current directory)",
+    )
 
     main(parser.parse_args())

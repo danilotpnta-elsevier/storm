@@ -1,0 +1,157 @@
+Mental_health_nursing
+
+Psychiatric nursing or mental health nursing is the appointed position of a nurse that specialises in mental health, and cares for people of all ages experiencing mental illnesses or distress. These include: neurodevelopmental disorders, schizophrenia, schizoaffective disorder, mood disorders, addiction, anxiety disorders, personality disorders, eating disorders, suicidal thoughts, psychosis, paranoia, and self-harm.
+Mental health nurses receive specific training in psychological therapies, building a therapeutic alliance, dealing with challenging behaviour, and the administration of psychiatric medication.
+In most countries, after the 1990s, a psychiatric nurse would have to attain a bachelor's degree in nursing to become a Registered Nurse (RN), and specialise in mental health. Degrees vary in different countries, and are governed by country-specific regulations. In the United States one can become a RN, and a psychiatric nurse, by completing either a diploma program, an associate (ASN) degree, or a bachelor's (BSN) degree.
+Mental health nurses can work in a variety of services, including: Child and Adolescent Mental Health Services (CAMHS), Acute Medical Units (AMUs), Psychiatric Intensive Care Units (PICUs), and Community Mental Health Services (CMHS).
+
+# History
+
+The history of psychiatry and psychiatric nursing, although disjointed, can be traced back to ancient philosophical thinkers. Marcus Tullius Cicero, in particular, was the first known person to create a questionnaire for the mentally ill using biographical information to determine the best course of psychological treatment and care. Some of the first known psychiatric care centers were constructed in the Middle East during the 8th century . The medieval Muslim physicians and their attendants relied on clinical observations for diagnosis and treatment. In 13th century medieval Europe, psychiatric hospitals were built to house the mentally ill, but there were not any nurses to care for them and treatment was rarely provided. These facilities functioned more as a housing unit for the insane. Throughout the high point of Christianity in Europe, hospitals for the mentally ill believed in using religious intervention . The insane were partnered with "soul friends" to help them reconnect with society. Their primary concern was befriending the melancholy and disturbed, forming intimate spiritual relationships. Today, these soul friends are seen as the first modern psychiatric nurses. In the colonial era of the United States, some settlers adapted community health nursing practices. Individuals with mental defects that were deemed as dangerous were incarcerated or kept in cages, maintained and paid fully by community attendants. Wealthier colonists kept their insane relatives either in their attics or cellars and hired attendants, or nurses, to care for them. In other communities, the mentally ill were sold at auctions as slave labor. Others were forced to leave town. As the population in the colonies expanded, informal care for the community failed and small institutions were established [4]. In 1752 the first "lunatics ward" was opened at the Pennsylvania Hospital which attempted to treat the mentally ill. Attendants used the most modern treatments of the time: purging, bleeding, blistering, and shock techniques. Overall, the attendants caring for the patients believed in treating the institutionalized with respect. They believed if the patients were treated as reasonable people, then they would act as such; if they gave them confidence, then patients would rarely abuse it. The 1790s saw the beginnings of moral treatment being introduced for people with mental distress. The concept of a safe asylum, proposed by Philippe Pinel and William Tuke, offered protection and care at institutions for patients who had been previously abused or enslaved [5]. In the United States, Dorothea Dix was instrumental in opening 32 state asylums to provide quality care for the ill [5]. Dix also was in charge of the Union Army Nurses during the American Civil War, caring for both Union and Confederate soldiers. Although it was a promising movement, attendants and nurses were often accused of abusing or neglecting the residents and isolating them from their families. The formal recognition of psychiatry as a modern and legitimate profession occurred in 1808. In Europe, one of the major advocates for mental health nursing to help psychiatrists was Dr . William Ellis. He proposed giving the "keepers of the insane" better pay and training so more respectable, intelligent people would be attracted to the profession. In his 1836 publication of Treatise on Insanity, he openly stated that an established nursing practice calmed depressed patients and gave hope to the hopeless. However, psychiatric nursing was not formalized in the United States until 1882 when Linda Richards opened Boston City College . This was the first school specifically designed to train nurses in psychiatric care. The discrepancy between the founding of psychiatry and the recognition of trained nurses in the field is largely attributed to the attitudes in the 19th century which opposed training women to work in the medical field. In 1913 Johns Hopkins University was the first college of nursing in the United States to offer psychiatric nursing as part of its general curriculum. The first psychiatric nursing textbook, Nursing Mental Diseases by Harriet Bailey, was not published until 1920. It was not until 1950 when the National League for Nursing required all nursing schools to include a clinical experience in psychiatry to receive national accreditation. The first psychiatric nurses faced difficult working conditions [5]. Overcrowding, under-staffing and poor resources required the continuance of custodial care. They were pressured by an increasing patient population that rose dramatically by the end of the 19th century. As a result, labor organizations formed to fight for better pay and fewer hours. Additionally, large asylums were founded to hold the large number of mentally ill, including the famous Kings Park Psychiatric Center in Long Island, New York . At its peak in the 1950s, the center housed more than 33,000 patients and required its own power plant. Nurses were often called "attendants" to imply a more humanitarian approach to care. During this time, attendants primarily kept the facilities clean and maintained order among the patients. They also carried out orders from the physicians. In 1963, President John F. Kennedy accelerated the trend towards deinstitutionalization with the Community Mental Health Act. In 1964, the Civil Rights Act was passed, which made it illegal for an organization to discriminate if federally funded. Despite this ruling, certain states such as Mississippi and Alabama fought these laws in court, promoting segregation within healthcare. Moreover, since psychiatric drugs were becoming more available allowing patients to live on their own and the asylums were too expensive, institutions began shutting down [8] [8]. Nursing care thus became more intimate and holistic . Expanded roles were also developed in the 1960s allowing nurses to provide outpatient services such as counseling, psychotherapy, consultations, prescribing medications, along with the diagnosis and treatment of mental illnesses. The first developed standard of care was created by the psychiatric division of the American Nurses Association (ANA) in 1973. This standard outlined the responsibilities and expected quality of care of nurses. In 1975, the government published a document called "Better Services for the Mentally Ill" which reviewed the current standards of psychiatric nursing worldwide and laid out better plans for the future of mental health nursing. Global health care underwent huge expansions in the 1980s; this was due to the government's reaction from the fast increasing demand on health care services. The expansion was continued until the economic crisis of the 1970s. In 1982, the Area Health Authorities was terminated. In 1983, better structure of hospitals was implemented. General managers were introduced to make decisions, thus creating a better system of operation. The year 1983 also saw a lot of staff cuts which were heavily felt by all the mental health nurses. However, a new training syllabus was introduced in 1982, which offered suitable knowledgeable nurses. The 2000s have seen major educational upgrades for nurses to specialize in mental health as well as various financial opportunities. 
+
+# Interventions
+
+Nursing interventions may be divided into the following categories: [6]. 
+
+## Physical and biological interventions
+
+### Psychiatric medication
+
+Psychiatric medication is a commonly used intervention and many psychiatric mental health nurses are involved in the administration of medicines, both in oral (e.g. tablet or liquid) form or by intramuscular injection. Nurse practitioners can prescribe medication. Nurses will monitor for side effects and response to these medical treatments by using assessments. Nurses will also offer information on medication so that, where possible, the person in care can make an informed choice, using the best medical-based evidence available. [10]. 
+
+### Electroconvulsive therapy
+
+Psychiatric mental health nurses are also involved in the administration of the treatment of electroconvulsive therapy and assist with the preparation and recovery from the treatment, which involves anesthesia. This treatment is only used in a tiny proportion of cases and only after all other possible treatments have been exhausted. Nurses may also be involved in gaining consent for this procedure. However, consent arrangements vary depending on the jurisdiction in which the treatment takes place. [11]. 
+
+### Physical care
+
+Along with other nurses, psychiatric mental health nurses will intervene in areas of physical need to ensure that people have good levels of personal hygiene, nutrition, sleep, etc., as well as tending to any concomitant physical ailments. In mental health patients, obesity is not rare because some medications can have a side effect of gaining weight which can cause the patient to have low confidence and lead to other health issues. To fix this problem, mental health nurses are urged to encourage patients to get more exercise to enhance their physical health, along with their mental health by improving the patients confidence and lowering stress levels, improving their mental health which has been a focus for mental health nurses because many patients do not get enough exercise [12]. Nurses may also need to help the patients with alcohol or drug abuse because mental health patients are at a higher risk for this behavior [12]. Mental health nurses need to be able to communicate to patients about this [12]. The alcohol and drug abuse could cause the patient to also have a higher risk of sexually transmitted diseases because alcohol and drugs can lead to more sexual behavior. 
+
+## Psychosocial interventions
+
+Psychosocial interventions are increasingly delivered by nurses in mental health settings. These include psychotherapy interventions, such as cognitive behavioural therapy, family therapy, and less commonly other interventions, such as milieu therapy or psychodynamic approaches. These interventions can be applied to a broad range of problems including psychosis, depression, and anxiety. Nurses will work with people over a period of time and use psychological methods to teach the person psychological techniques that they can then use to aid recovery and help manage any future crisis in their mental health. In practice, these interventions will be used often, in conjunction with psychiatric medications. Psychosocial interventions are based on evidence-based practice, and therefore the techniques tend to follow set guidelines based upon what has been demonstrated to be effective by nursing research. There has been some criticism  that evidence based practice is focused primarily on quantitative research and should reflect also a more qualitative research approach that seeks to understand the meaning of people's experience. [13]. 
+
+## Spiritual interventions
+
+The basis of this approach is to look at mental illness or distress from the perspective of a spiritual crisis. Spiritual interventions focus on developing a sense of meaning, purpose, and hope for the person in their current life experience. Spiritual interventions involve listening to the person's story and facilitating the person to connect to God, a greater power or greater whole, perhaps by using meditation or prayer [14]. This may be a religious or non-religious experience depending on the individual's own spirituality. Spiritual interventions, along with psychosocial interventions, emphasize the importance of engagement, however, spiritual interventions focus more on caring and 'being with' the person during their time of crisis, rather than intervening and trying to 'fix' the problem. Spiritual interventions tend to be based on qualitative research and share some similarities with the humanistic approach to psychotherapy. [citation needed]. 
+
+## Therapeutic relationship
+
+As with other areas of nursing practice, psychiatric mental health nursing works within nursing models, utilising nursing care plans, and seeks to care for the whole person. However, the emphasis of mental health nursing is on the development of a therapeutic alliance. In practice, this means that the nurse should seek to engage with the person in care in a positive and collaborative way that will empower the patient to draw on his or her inner resources in addition to any other treatment they may be receiving [15]. 
+
+## Therapeutic relationship aspects of psychiatric nursing
+
+The most important duty of a psychiatric nurse is to maintain a positive therapeutic relationship with patients in a clinical setting. The fundamental elements of mental health care revolve around the interpersonal relations and interactions established between professionals and clients. Caring for people with mental illnesses demands an intensified presence and a strong desire to be supportive. 
+
+### Understanding and empathy
+
+Understanding and empathy from psychiatric nurses reinforces a positive psychological balance for patients. Conveying an understanding is important because it provides patients with a sense of importance. The expression of thoughts and feelings should be encouraged without blaming, judging, or belittling [17]. Feeling important is significant to the lives of people who live in a structured society, who often stigmatise the mentally ill because of their disorder [18]. Empowering patients with feelings of importance will bring them closer to the normality they had before the onset of their disorder [19]. When subjected to fierce personal attacks, the psychiatric nurse retained the desire and ability to understand the patient. The ability to quickly empathise with unfortunate situations proves essential. Involvedness is also required when patients expect nursing staff to understand even when they are unable to express their needs verbally. When a psychiatric nurse gains understanding of the patient, the chances of improving overall treatment greatly increases. [16]. 
+
+### Individuality
+
+Individualised care becomes important when nurses need to get to know the patient. To lives this knowledge the psychiatric nurse must see patients as individual people with lives beyond their mental illness. Seeing people as individuals with lives beyond their mental illness is imperative in making patients feel valued and respected. In order to accept the patient as an individual, the psychiatric nurse must not be controlled by his or her own values, or by ideas, and pre-understanding of mental health patients [20]. Individual needs of patients are met by bending the rules of standard interventions and assessment [21]. Psychiatric nurses spoke of the potential to 'bend the rules', which required an interpretation of the unit rules, and the ability to evaluate the risks associated with bending them. 
+
+### Providing support
+
+Successful therapeutic relationships between nurses and patients need to have positive support. Different methods of providing patients with support include many active responses. Minor activities, such as shopping, reading the newspaper together, or taking lunch or dinner breaks with patients can improve the quality of support provided [19]. Physical support may also be used and is manifested through the use of touch [23]. Patients described feelings of connection when nurses hugged them or put a hand on their shoulder [23]. Psychiatric nurses in Berg and Hallberg's study described an element of a working relationship as comforting through holding a patient's hand [19]. Patients with depression described relief when the nurse embraced them [16]. Physical touch is intended to comfort and console patients who are willing to embrace these sensations and share mutual feelings with nurses. [17]. 
+
+### Being there and being available
+
+In order to make patients feel more comfortable, the patient care providers make themselves more approachable, therefore more readily open to multiple levels of personal connections. Such personal connections have the ability to uplift patients' spirits and secure confidentiality. Utilisation of the quality of time spent with the patient proves to be beneficial. By being available for a proper amount of time, patients open up and disclose personal stories, which enable nurses to understand the meaning behind each story. The outcome results in nurses making every effort to attain a non-biased point of view [21]. A combination of being there and being available allows empirical connections to quell any negative feelings within patients. [21]. 
+
+### Being genuine
+
+The act of being genuine must come from within and be expressed by nurses without reluctance. Genuineness requires the nurse to be natural or authentic in their interactions with the patient. In his article about pivotal moments in therapeutic relationships, Welch found that nurses must be in accordance with their values and beliefs [24]. Along with the previous concept, O'Brien   concluded that being consistent and reliable in both punctuality and character makes for genuinity [25] [26]. Schafer and Peternelj-Taylor   believe that a nurses 'genuineness' is determined through the level of consistency displayed between their verbal and non-verbal behaviour [20]. Similarly, Scanlon  found that genuineness was expressed by fulfilling intended tasks [27]. Self-disclosure proves to be the key to being open and honest. It involves the nurse sharing life experiences and is essential to the development of the therapeutic relationship, because as the relationship grows patients are reluctant to give any more information if they feel the relationship is too one sided [28]. Multiple authors found genuine emotion, such as tearfulness, blunt feedback, and straight talk facilitated the therapeutic relationship in the pursuit of being open and honest [28]. The friendship of a therapeutic relationship is different from a sociable friendship because the therapeutic relationship friendship is asymmetrical in nature [19]. The basic concept of genuineness is centered on being true to one's word [19]. Patients would not trust nurses who fail in complying with what they say or promise.. 
+
+### Promoting equality
+
+For a successful therapeutic relationship to form, a beneficial co-dependency between the nurse and patient must be established. A derogatory view of the patient's role in the clinical setting dilapidates a therapeutic alliance. While patients need nurses to support their recovery, psychiatric nurses need patients to develop skills and experience. Psychiatric nurses convey themselves as team members or facilitators of the relationship, rather than the leaders [29]. By empowering the patient with a sense of control and involvement, nurses encourage the patient's independence [19]. Sole control of certain situations should not be embedded in the nurse [19]. Equal interactions are established when nurses talk to patients one-on-one. Participating in activities that do not make one person more dominant over the other, such as talking about a mutual interest or getting lunch together strengthen the levels of equality shared between professionals and patients. This can also create the "illusion of choice"; giving the patient options, even if limited or confined within structure. 
+
+### Demonstrating respect
+
+To develop a quality therapeutic relationship, nurses need to make patients feel respected and important. Accepting patient faults and problems is vital to convey respect—helping the patient see themselves as worthy and worthwhile [21]. 
+
+### Demonstrating clear boundaries
+
+Boundaries are essential for protecting both the patient and the nurse, and maintaining a functional therapeutic relationship. Limit setting helps to shield the patient from embarrassing behaviour,  and instills the patient with feelings of safety and containment [31]. Limit setting also protects the nurse from "burnout",  preserving personal stability—thus promoting a quality relationship. [23] [23]. 
+
+### Demonstrating self-awareness
+
+Psychiatric nurses recognise personal vulnerability in order to develop professionally. Humanistic insight, basic human values, and self-knowledge improves the depth of understanding the self [24]. Different personalities affect the way psychiatric nurses respond to their patients [32]. The more self-aware, the more knowledge on how to approach interactions with patients nurses have. Interpersonal skills needed to form relationships with patients were acquired through learning about oneself [26]. Clinical supervision was found to provide the opportunity for nurses to reflect on patient relationships,  to improve clinical skills,  and to help repair difficult relationships [27] [33] [32]. The reflections   articulated by nurses through clinical supervision help foster self-awareness. [34] [21]. 
+
+# Pediatric mental health nursing
+
+Nurses are vital to the evaluation and treatment of children with mental illness. Pediatric mental health nursing is the treatment/nursing of mental illness in pediatric patients. Family nurse practitioners (FNPs) are typically expected to evaluate and treat pediatric patients struggling with their mental health. One out of five children experience a mental disorder in a given year, but only 20% receive treatment of said disorder. 
+
+# Profession status
+
+## Canada
+
+The registered psychiatric nurse is a distinct nursing profession in all of the four western provinces. Such nurses carry the designation "RPN". In Eastern Canada, an Americanized system of psychiatric nursing is followed. Registered Psychiatric Nurses can also work in all three of the territories in Canada; although, the registration process to work in the territories varies as the psychiatric nurses must be licensed by one of the four provinces. [citation needed]. 
+
+## Ireland
+
+In Ireland, mental health nurses undergo a 4-year honors degree training programme. Nurses that trained under the diploma course in Ireland can do a post graduation course to bring their status from diploma to degree. [citation needed]. 
+
+## New Zealand
+
+Mental Health Nurses in New Zealand require a diploma or degree in nursing. All nurses are now trained in both general and mental health, as part of their three-year degree training programme. Mental health nurses are often requested to complete a graduate diploma or a post graduate certificate in mental health, if they are employed by a District Health Board. This gives additional training that is specific to working with people with mental health issues. [citation needed]. 
+
+## Sweden
+
+In Sweden, to become a registered psychiatric nurse one must first become a registered nurse which requires a BSc (Bachelor of Science) in Nursing (three years of full-time study, 180 higher education credits). Then, one must complete one year of graduate studies in psychiatric/mental health nursing (60 higher education credits), which also includes writing a MSc (Master of Science) thesis. The registered psychiatric nurse is an evolving profession in Sweden [36]. However, unlike in countries such as the US, there is no psychiatric-mental health nurse practitioner, so in Sweden, the profession cannot for example prescribe pharmacological treatment. 
+
+## United Kingdom
+
+In the UK and Ireland the term psychiatric nurse has now largely been replaced with mental health nurse. Mental health nurses undergo a 3–4 year training programme at bachelor's degree level, or a 2-year training programme at master's degree level, in common with other nurses. However, most of their training is specific to caring for clients with mental health issues.. RMNs can continue into further training as Advanced Nurse Practitioners (ANPs): this requires completion of a 9-month Master's programme. The role includes prescribing medications, being on call for hospital wards and delivering psychosocial interventions to clients.. 
+
+## United States
+
+In North America, there are three levels of psychiatric nursing.. Psychiatric nurses who earn doctoral degrees (PhD, DNSc, EdD) often are found in practice settings, teaching, doing research, or as administrators in hospitals, agencies or schools of nursing.. 
+
+## Australia
+
+In Australia, to be a psychiatric nurse a bachelor's degree of nursing need to be obtained in order to become a registered nurse (RN) and this degree takes three years full-time. Then a diploma in mental health or something similar will need to also be obtained, this is an additional year of study [39]. An Australian psychiatric nurse has duties that may include assessing patients who are mentally ill, observation, helping patients take part in activities, giving medication, observing if the medication is working, assisting in behaviour change programs or visiting patients who are at home. Australian nurses can work in public or private hospitals, institutes, correctional institutes, mental care facilities and homes of the patients. 
+
+# References
+
+[1] [ERROR retrieving ref link]
+[2] [ERROR retrieving ref link]
+[3] [ERROR retrieving ref link]
+[4] https://archive.org/details/historypoliticso0000levi
+[5] https://archive.org/details/psychiatricmenta0000vide
+[6] https://archive.org/details/psychiatricnursi0000unse_g1y2
+[7] https://www.nami.org/Blogs/NAMI-Blog/July-2020/Discrimination-and-Racism-in-the-History-of-Mental-Health-Care
+[8] https://www.nami.org/Blogs/NAMI-Blog/July-2020/Discrimination-and-Racism-in-the-History-of-Mental-Health-Care
+[9] https://books.google.com/books?id=vo46Jqvu_8oC
+[10] https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6376699
+[11] https://books.google.com/books?id=mtbsAwAAQBAJ&pg=PA90
+[12] https://eprints.soton.ac.uk/399398/1/Improving%2520the%2520physical%2520health%2520of%2520people%2520with%2520mental%2520health%2520problems.docx
+[13] https://doi.org/10.1046%2Fj.1440-1800.2002.00151.x
+[14] ISBN: 978-1-85302-804-5
+[15] ISBN: 978-0-340-81026-2
+[16] https://doi.org/10.1046%2Fj.1365-2850.2000.00307.x
+[17] https://doi.org/10.1046%2Fj.1440-0979.2003.00276.x
+[18] https://doi.org/10.1046%2Fj.1440-0979.2002.00245.x
+[19] https://works.bepress.com/mona_shattell/26/download/
+[20] https://doi.org/10.1080%2F01612840305320
+[21] https://doi.org/10.1046%2Fj.0283-9318.2003.00233.x
+[22] https://doi.org/10.1046%2Fj.1440-0979.1999.00148.x
+[23] https://doi.org/10.1111%2Fj.1365-2850.2004.00774.x
+[24] https://doi.org/10.1046%2Fj.1365-2648.2003.02677.x
+[25] https://doi.org/10.1111%2Fj.1440-0979.2005.00376.x
+[26] https://doi.org/10.1046%2Fj.1440-0979.2000.00171.x
+[27] https://doi.org/10.1111%2Fj.1365-2850.2006.00958.x
+[28] https://doi.org/10.1046%2Fj.1365-2648.2000.01288.x
+[29] https://doi.org/10.1046%2Fj.1351-0126.2001.00457.x
+[30] https://doi.org/10.1111%2Fj.1365-2850.2004.00763.x
+[31] https://doi.org/10.1111%2Fj.1440-0979.2005.00363.x
+[32] https://doi.org/10.1046%2Fj.1365-2850.2002.00538.x
+[33] https://doi.org/10.1046%2Fj.1440-0979.1999.00141.x
+[34] https://doi.org/10.1111%2Fj.1744-6163.1998.tb00998.x
+[35] https://ipedsnursing.org/resources
+[36] https://utbildning.gu.se/program/program_detalj/?programid=V2PSV
+[37] https://www.swenurse.se/globalassets/01-svensk-sjukskoterskeforening/publikationer-svensk-sjukskoterskeforening/kompetensbeskrivningar-publikationer/kompetensbeskrivning.sjukskoterska.psykiatri.2014.pdf
+[38] http://www.apna.org/i4a/pages/index.cfm?pageid=3292
+[39] https://mhsa.aihw.gov.au/resources/workforce/mental-health-nursing-workforce/
+[40] http://www.acmhn.org/about-us/about-mh-nursing

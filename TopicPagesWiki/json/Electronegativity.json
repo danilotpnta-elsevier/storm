@@ -1,0 +1,588 @@
+{
+    "title": "Electronegativity",
+    "url": "https://en.wikipedia.org/wiki/Electronegativity",
+    "summary": "Electronegativity, symbolized as \u03c7, is the tendency for an atom of a given chemical element to attract shared electrons (or electron density) when forming a chemical bond. An atom's electronegativity is affected by both its atomic number and the distance at which its valence electrons reside from the charged nucleus. The higher the associated electronegativity, the more an atom or a substituent group attracts electrons. Electronegativity serves as a simple way to quantitatively estimate the bond energy, and the sign and magnitude of a bond's chemical polarity, which characterizes a bond along the continuous scale from covalent to ionic bonding. The loosely defined term electropositivity is the opposite of electronegativity: it characterizes an element's tendency to donate valence electrons.\nOn the most basic level, electronegativity is determined by factors like the nuclear charge (the more protons an atom has, the more \"pull\" it will have on electrons) and the number and location of other electrons in the atomic shells (the more electrons an atom has, the farther from the nucleus the valence electrons will be, and as a result, the less positive charge they will experience\u2014both because of their increased distance from the nucleus and because the other electrons in the lower energy core orbitals will act to shield the valence electrons from the positively charged nucleus).\nThe term \"electronegativity\" was introduced by J\u00f6ns Jacob Berzelius in 1811,\nthough the concept was known before that and was studied by many chemists including Avogadro.\nIn spite of its long history, an accurate scale of electronegativity was not developed until 1932, when Linus Pauling proposed an electronegativity scale which depends on bond energies, as a development of valence bond theory. It has been shown to correlate with a number of other chemical properties. Electronegativity cannot be directly measured and must be calculated from other atomic or molecular properties. Several methods of calculation have been proposed, and although there may be small differences in the numerical values of the electronegativity, all methods show the same periodic trends between elements.\nThe most commonly used method of calculation is that originally proposed by Linus Pauling. This gives a dimensionless quantity, commonly referred to as the Pauling scale (\u03c7r), on a relative scale running from 0.79 to 3.98 (hydrogen = 2.20). When other methods of calculation are used, it is conventional (although not obligatory) to quote the results on a scale that covers the same range of numerical values: this is known as an electronegativity in Pauling units.\nAs it is usually calculated, electronegativity is not a property of an atom alone, but rather a property of an atom in a molecule. Even so, the electronegativity of an atom is strongly correlated with the first ionization energy. The electronegativity is slightly negatively correlated (for smaller electronegativity values) and rather strongly positively correlated (for most and larger electronegativity values) with the electron affinity. It is to be expected that the electronegativity of an element will vary with its chemical environment, but it is usually considered to be a transferable property, that is to say that similar values will be valid in a variety of situations.\nCaesium is the least electronegative element (0.79); fluorine is the most (3.98).",
+    "content": [
+        {
+            "section_title": "Methods of calculation",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Pauling electronegativity",
+                    "section_content": [
+                        {
+                            "sentence": "Pauling first proposed  the concept of electronegativity in 1932 to explain why the covalent bond between two different atoms (A\u2013B) is stronger than the average of the A\u2013A and the B\u2013B bonds",
+                            "refs": [
+                                "https://doi.org/10.1021%2Fja01348a011"
+                            ]
+                        },
+                        {
+                            "sentence": "According to valence bond theory, of which Pauling was a notable proponent, this \"additional stabilization\" of the heteronuclear bond is due to the contribution of ionic canonical forms to the bonding.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The difference in electronegativity between atoms A and B is given by:|\u03c7A\u2212\u03c7B|=(eV)\u22121/2Ed(AB)\u2212Ed(AA)+Ed(BB)2{\\displaystyle |\\chi _{\\rm {A}}-\\chi _{\\rm {B}}|=({\\rm {eV}})^{-1/2}{\\sqrt {E_{\\rm {d}}({\\rm {AB}})-{\\frac {E_{\\rm {d}}({\\rm {AA}})+E_{\\rm {d}}({\\rm {BB}})}{2}}}}}where the dissociation energies, Ed, of the A\u2013B, A\u2013A and B\u2013B bonds are expressed in electronvolts, the factor (eV)\u22121\u20442 being included to ensure a dimensionless result",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Hence, the difference in Pauling electronegativity between hydrogen and bromine is 0.73 (dissociation energies: H\u2013Br, 3.79\u00a0eV; H\u2013H, 4.52\u00a0eV; Br\u2013Br 2.00\u00a0eV)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As only differences in electronegativity are defined, it is necessary to choose an arbitrary reference point in order to construct a scale",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Hydrogen was chosen as the reference, as it forms covalent bonds with a large variety of elements: its electronegativity was fixed first  at 2.1, later revised  to 2.20",
+                            "refs": [
+                                "https://doi.org/10.1021%2Fja01348a011",
+                                "https://doi.org/10.1016%2F0022-1902%2861%2980142-5"
+                            ]
+                        },
+                        {
+                            "sentence": "It is also necessary to decide which of the two elements is the more electronegative (equivalent to choosing one of the two possible signs for the square root)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This is usually done using \"chemical intuition\": in the above example, hydrogen bromide dissolves in water to form H+ and Br\u2212 ions, so it may be assumed that bromine is more electronegative than hydrogen",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, in principle, since the same electronegativities should be obtained for any two bonding compounds, the data are in fact overdetermined, and the signs are unique once a reference point has been fixed (usually, for H or F).",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "To calculate Pauling electronegativity for an element, it is necessary to have data on the dissociation energies of at least two types of covalent bonds formed by that element",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "A",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "L",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Allred updated Pauling's original values in 1961 to take account of the greater availability of thermodynamic data,  and it is these \"revised Pauling\" values of the electronegativity that are most often used.",
+                            "refs": [
+                                "https://doi.org/10.1016%2F0022-1902%2861%2980142-5"
+                            ]
+                        },
+                        {
+                            "sentence": "The essential point of Pauling electronegativity is that there is an underlying, quite accurate, semi-empirical formula for dissociation energies, namely:Ed(AB)=Ed(AA)+Ed(BB)2+(\u03c7A\u2212\u03c7B)2eV{\\displaystyle E_{\\rm {d}}({\\rm {AB}})={\\frac {E_{\\rm {d}}({\\rm {AA}})+E_{\\rm {d}}({\\rm {BB}})}{2}}+(\\chi _{\\rm {A}}-\\chi _{\\rm {B}})^{2}{\\rm {eV}}}or sometimes, a more accurate fitEd(AB)=Ed(AA)Ed(BB)+1.3(\u03c7A\u2212\u03c7B)2eV{\\displaystyle E_{\\rm {d}}({\\rm {AB}})={\\sqrt {E_{\\rm {d}}({\\rm {AA}})E_{\\rm {d}}({\\rm {BB}})}}+1.3(\\chi _{\\rm {A}}-\\chi _{\\rm {B}})^{2}{\\rm {eV}}}",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "These are approximate equations but they hold with good accuracy",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Pauling obtained the first equation by noting that a bond can be approximately represented as a quantum mechanical superposition of a covalent bond and two ionic bond-states",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The covalent energy of a bond is approximate, by quantum mechanical calculations, the geometric mean of the two energies of covalent bonds of the same molecules, and there is additional energy that comes from ionic factors, i.e",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "polar character of the bond.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The geometric mean is approximately equal to the arithmetic mean\u2014which is applied in the first formula above\u2014when the energies are of a similar value, e.g., except for the highly electropositive elements, where there is a larger difference of two dissociation energies; the geometric mean is more accurate and almost always gives positive excess energy, due to ionic bonding",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The square root of this excess energy, Pauling notes, is approximately additive, and hence one can introduce the electronegativity",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Thus, it is these semi-empirical formulas for bond energy that underlie the concept of Pauling electronegativity.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The formulas are approximate, but this rough approximation is in fact relatively good and gives the right intuition, with the notion of the polarity of the bond and some theoretical grounding in quantum mechanics",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The electronegativities are then determined to best fit the data.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In more complex compounds, there is an additional error since electronegativity depends on the molecular environment of an atom",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Also, the energy estimate can be only used for single, not for multiple bonds",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The enthalpy of formation of a molecule containing only single bonds can subsequently be estimated based on an electronegativity table, and it depends on the constituents and the sum of squares of differences of electronegativities of all pairs of bonded atoms",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Such a formula for estimating energy typically has a relative error on the order of 10% but can be used to get a rough qualitative idea and understanding of a molecule.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Mulliken electronegativity",
+                    "section_content": [
+                        {
+                            "sentence": "Robert S",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Mulliken proposed that the arithmetic mean of the first ionization energy (Ei) and the electron affinity (Eea) should be a measure of the tendency of an atom to attract electrons:  \u03c7=Ei+Eea2{\\displaystyle \\chi ={\\frac {E_{\\rm {i}}+E_{\\rm {ea}}}{2}}}",
+                            "refs": [
+                                "[ERROR retrieving ref link]",
+                                "ISBN: 9789401115162"
+                            ]
+                        },
+                        {
+                            "sentence": "As this definition is not dependent on an arbitrary relative scale, it has also been termed absolute electronegativity,  with the units of kilojoules per mole or electronvolts",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/1934JChPh...2..782M"
+                            ]
+                        },
+                        {
+                            "sentence": "However, it is more usual to use a linear transformation to transform these absolute values into values that resemble the more familiar Pauling values",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "For ionization energies and electron affinities in electronvolts, \u03c7=0.187(Ei+Eea)+0.17{\\displaystyle \\chi =0.187(E_{\\rm {i}}+E_{\\rm {ea}})+0.17\\,}and for energies in kilojoules per mole, \u03c7=(1.97\u00d710\u22123)(Ei+Eea)+0.19.{\\displaystyle \\chi =(1.97\\times 10^{-3})(E_{\\rm {i}}+E_{\\rm {ea}})+0.19.}",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/1935JChPh...3..573M",
+                                "https://doi.org/10.1021%2Fja00310a009"
+                            ]
+                        },
+                        {
+                            "sentence": "The Mulliken electronegativity can only be calculated for an element whose electron affinity is known",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Measured values are available for 72 elements, while approximate values have been estimated or calculated for the remaining elements.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The Mulliken electronegativity of an atom is sometimes said to be the negative of the chemical potential",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "By inserting the energetic definitions of the ionization potential and electron affinity into the Mulliken electronegativity, it is possible to show that the Mulliken chemical potential is a finite difference approximation of the electronic energy with respect to the number of electrons., i.e.,\u03bc(Mulliken)=\u2212\u03c7(Mulliken)=\u2212Ei+Eea2{\\displaystyle \\mu ({\\rm {Mulliken)=-\\chi ({\\rm {Mulliken)={}-{\\frac {E_{\\rm {i}}+E_{\\rm {ea}}}{2}}}}}}}",
+                            "refs": [
+                                "https://web.archive.org/web/20190908204147/https://www.pdfdrive.com/inorganic-chemistry-principles-of-structure-and-reactivity-e175855674.html"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Allred\u2013Rochow electronegativity",
+                    "section_content": [
+                        {
+                            "sentence": "A",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Louis Allred and Eugene G",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Rochow considered  that electronegativity should be related to the charge experienced by an electron on the \"surface\" of an atom: The higher the charge per unit area of atomic surface the greater the tendency of that atom to attract electrons",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "The effective nuclear charge, Zeff, experienced by valence electrons can be estimated using Slater's rules, while the surface area of an atom in a molecule can be taken to be proportional to the square of the covalent radius, rcov",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "When rcov is expressed in picometres, \u03c7=3590Zeffrcov2+0.744{\\displaystyle \\chi =3590{{Z_{\\rm {eff}}} \\over {r_{\\rm {cov}}^{2}}}+0.744}",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/2019JPCA..12310065F"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Sanderson electronegativity equalization",
+                    "section_content": [
+                        {
+                            "sentence": "R.T",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Sanderson has also noted the relationship between Mulliken electronegativity and atomic size, and has proposed a method of calculation based on the reciprocal of the atomic volume",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "With a knowledge of bond lengths, Sanderson's model allows the estimation of bond energies in a wide range of compounds",
+                            "refs": [
+                                "https://doi.org/10.1016%2F0022-1902%2858%2980003-2"
+                            ]
+                        },
+                        {
+                            "sentence": "Sanderson's model has also been used to calculate molecular geometry, s-electron energy, NMR spin-spin coupling constants and other parameters for organic compounds",
+                            "refs": [
+                                "https://www.pearson.com/us/higher-education/program/Housecroft-Inorganic-Chemistry-5th-Edition/PGM2178749.html"
+                            ]
+                        },
+                        {
+                            "sentence": "This work underlies the concept of electronegativity equalization, which suggests that electrons distribute themselves around a molecule to minimize or to equalize the Mulliken electronegativity",
+                            "refs": [
+                                "https://doi.org/10.1021%2Fja00346a026",
+                                "https://archive.org/details/polarcovalence0000sand"
+                            ]
+                        },
+                        {
+                            "sentence": "This behavior is analogous to the equalization of chemical potential in macroscopic thermodynamics",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Allen electronegativity",
+                    "section_content": [
+                        {
+                            "sentence": "Perhaps the simplest definition of electronegativity is that of Leland C",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Allen, who has proposed that it is related to the average energy of the valence electrons in a free atom,",
+                            "refs": [
+                                "https://books.google.com/books?id=IqWXSLz6QE8C&pg=PA106",
+                                "https://books.google.com/books?id=mGOpScSIwU4C&pg=PA91",
+                                "https://doi.org/10.1021%2Fja00207a003"
+                            ]
+                        },
+                        {
+                            "sentence": "\u03c7=ns\u03b5s+np\u03b5pns+np{\\displaystyle \\chi ={n_{\\rm {s}}\\varepsilon _{\\rm {s}}+n_{\\rm {p}}\\varepsilon _{\\rm {p}} \\over n_{\\rm {s}}+n_{\\rm {p}}}}",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "where \u03b5s,p are the one-electron energies of s- and p-electrons in the free atom and ns,p are the number of s- and p-electrons in the valence shell.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The one-electron energies can be determined directly from spectroscopic data, and so electronegativities calculated by this method are sometimes referred to as spectroscopic electronegativities",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The necessary data are available for almost all elements, and this method allows the estimation of electronegativities for elements that cannot be treated by the other methods, e.g",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "francium, which has an Allen electronegativity of 0.67",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, it is not clear what should be considered to be valence electrons for the d- and f-block elements, which leads to an ambiguity for their electronegativities calculated by the Allen method.",
+                            "refs": [
+                                "https://doi.org/10.1021%2Fja992866e"
+                            ]
+                        },
+                        {
+                            "sentence": "On this scale, neon has the highest electronegativity of all elements, followed by fluorine, helium, and oxygen.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Correlation of electronegativity with other properties",
+            "section_content": [
+                {
+                    "sentence": "The wide variety of methods of calculation of electronegativities, which all give results that correlate well with one another, is one indication of the number of chemical properties that might be affected by electronegativity",
+                    "refs": []
+                },
+                {
+                    "sentence": "The most obvious application of electronegativities is in the discussion of bond polarity, for which the concept was introduced by Pauling",
+                    "refs": []
+                },
+                {
+                    "sentence": "In general, the greater the difference in electronegativity between two atoms the more polar the bond that will be formed between them, with the atom having the higher electronegativity being at the negative end of the dipole",
+                    "refs": []
+                },
+                {
+                    "sentence": "Pauling proposed an equation to relate the \"ionic character\" of a bond to the difference in electronegativity of the two atoms,  although this has fallen somewhat into disuse.",
+                    "refs": [
+                        "https://archive.org/details/natureofchemical00paul"
+                    ]
+                },
+                {
+                    "sentence": "Several correlations have been shown between infrared stretching frequencies of certain bonds and the electronegativities of the atoms involved:  however, this is not surprising as such stretching frequencies depend in part on bond strength, which enters into the calculation of Pauling electronegativities",
+                    "refs": [
+                        "https://doi.org/10.1021%2Fja9928677"
+                    ]
+                },
+                {
+                    "sentence": "More convincing are the correlations between electronegativity and chemical shifts in NMR spectroscopy  or isomer shifts in M\u00f6ssbauer spectroscopy  (see figure)",
+                    "refs": [
+                        "[ERROR retrieving ref link]",
+                        "https://archive.org/details/infraredspectrao0000bell_w1a8/page/392"
+                    ]
+                },
+                {
+                    "sentence": "Both these measurements depend on the s-electron density at the nucleus, and so are a good indication that the different measures of electronegativity really are describing \"the ability of an atom in a molecule to attract electrons to itself\"",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Trends in electronegativity",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Periodic trends",
+                    "section_content": [
+                        {
+                            "sentence": "In general, electronegativity increases on passing from left to right along a period and decreases on descending a group",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Hence, fluorine is the most electronegative of the elements (not counting noble gases), whereas caesium is the least electronegative, at least of those elements for which substantial data is available",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "There are some exceptions to this general rule",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Gallium and germanium have higher electronegativities than aluminium and silicon, respectively, because of the d-block contraction",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Elements of the fourth period immediately after the first row of the transition metals have unusually small atomic radii because the 3d-electrons are not effective at shielding the increased nuclear charge, and smaller atomic size correlates with higher electronegativity (see Allred-Rochow electronegativity and Sanderson electronegativity above)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The anomalously high electronegativity of lead, in particular when compared to thallium and bismuth, is an artifact of electronegativity varying with oxidation state: its electronegativity conforms better to trends if it is quoted for the +2 state with a Pauling value of 1.87 instead of the +4 state.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Variation of electronegativity with oxidation number",
+                    "section_content": [
+                        {
+                            "sentence": "In inorganic chemistry, it is common to consider a single value of electronegativity to be valid for most \"normal\" situations",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "While this approach has the advantage of simplicity, it is clear that the electronegativity of an element is not an invariable atomic property and, in particular, increases with the oxidation state of the element",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Allred used the Pauling method to calculate separate electronegativities for different oxidation states of the handful of elements (including tin and lead) for which sufficient data were available",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, for most elements, there are not enough different covalent compounds for which bond dissociation energies are known to make this approach feasible.",
+                            "refs": [
+                                "https://doi.org/10.1016%2F0022-1902%2861%2980142-5"
+                            ]
+                        },
+                        {
+                            "sentence": "The chemical effects of this increase in electronegativity can be seen both in the structures of oxides and halides and in the acidity of oxides and oxoacids",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Hence CrO3 and Mn2O7 are acidic oxides with low melting points, while Cr2O3 is amphoteric and Mn2O3 is a completely basic oxide.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The effect can also be clearly seen in the dissociation constants pKa of the oxoacids of chlorine",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The effect is much larger than could be explained by the negative charge being shared among a larger number of oxygen atoms, which would lead to a difference in pKa of log10(1\u20444)\u00a0= \u20130.6 between hypochlorous acid and perchloric acid",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As the oxidation state of the central chlorine atom increases, more electron density is drawn from the oxygen atoms onto the chlorine, diminishing the partial negative charge of individual oxygen atoms",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "At the same time, the positive partial charge on the hydrogen increases with a higher oxidation state",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This explains the observed increased acidity with an increasing oxidation state in the oxoacids of chlorine.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Electronegativity and hybridization scheme",
+                    "section_content": [
+                        {
+                            "sentence": "The electronegativity of an atom changes depending on the hybridization of the orbital employed in bonding",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Electrons in s orbitals are held more tightly than electrons in p orbitals",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Hence, a bond to an atom that employs an spx hybrid orbital for bonding will be more heavily polarized to that atom when the hybrid orbital has more s character",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "That is, when electronegativities are compared for different hybridization schemes of a given element, the order \u03c7(sp3) < \u03c7(sp2) < \u03c7(sp) holds (the trend should apply to non-integer hybridization indices as well)",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Group electronegativity",
+            "section_content": [
+                {
+                    "sentence": "In organic chemistry, electronegativity is associated more with different functional groups than with individual atoms",
+                    "refs": []
+                },
+                {
+                    "sentence": "The terms group electronegativity and substituent electronegativity are used synonymously",
+                    "refs": []
+                },
+                {
+                    "sentence": "However, it is common to distinguish between the inductive effect and the resonance effect, which might be described as \u03c3- and \u03c0-electronegativities, respectively",
+                    "refs": []
+                },
+                {
+                    "sentence": "There are a number of linear free-energy relationships that have been used to quantify these effects, of which the Hammett equation is the best known",
+                    "refs": []
+                },
+                {
+                    "sentence": "Kabachnik Parameters are group electronegativities for use in organophosphorus chemistry.",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Electropositivity",
+            "section_content": [
+                {
+                    "sentence": "Electropositivity is a measure of an element's ability to donate electrons, and therefore form positive ions; thus, it is antipode to electronegativity.",
+                    "refs": []
+                },
+                {
+                    "sentence": "Mainly, this is an attribute of metals, meaning that, in general, the greater the metallic character of an element the greater the electropositivity",
+                    "refs": []
+                },
+                {
+                    "sentence": "Therefore, the alkali metals are the most electropositive of all",
+                    "refs": []
+                },
+                {
+                    "sentence": "This is because they have a single electron in their outer shell and, as this is relatively far from the nucleus of the atom, it is easily lost; in other words, these metals have low ionization energies",
+                    "refs": []
+                },
+                {
+                    "sentence": "While electronegativity increases along periods in the periodic table, and decreases down groups, electropositivity decreases along periods (from left to right) and increases down groups",
+                    "refs": []
+                },
+                {
+                    "sentence": "This means that elements in the upper right of the periodic table of elements (oxygen, sulfur, chlorine, etc.) will have the greatest electronegativity, and those in the lower-left (rubidium, caesium, and francium) the greatest electropositivity.",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "See also",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "References",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "Bibliography",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "External links",
+            "section_content": [],
+            "subsections": []
+        }
+    ],
+    "references": {
+        "9": "[ERROR retrieving ref link]",
+        "10": "ISBN: 9789401115162",
+        "1": "https://goldbook.iupac.org/terms/view/E01990.html",
+        "2": "https://ui.adsabs.harvard.edu/abs/1996JChEd..73...11J",
+        "3": "https://doi.org/10.1021%2Fja01348a011",
+        "4": "https://doi.org/10.1021/acsomega.0c00831",
+        "5": "https://archive.org/details/natureofchemical00paul",
+        "6": "https://web.archive.org/web/20190621000348/https://pubchem.ncbi.nlm.nih.gov/periodic-table/#view=table&property=Electronegativity",
+        "7": "ISBN: 978-0-08-022057-4",
+        "8": "https://doi.org/10.1016%2F0022-1902%2861%2980142-5",
+        "11": "https://ui.adsabs.harvard.edu/abs/1934JChPh...2..782M",
+        "12": "https://ui.adsabs.harvard.edu/abs/1935JChPh...3..573M",
+        "13": "https://doi.org/10.1021%2Fja00310a009",
+        "14": "https://web.archive.org/web/20190908204147/https://www.pdfdrive.com/inorganic-chemistry-principles-of-structure-and-reactivity-e175855674.html",
+        "15": "[ERROR retrieving ref link]",
+        "16": "https://ui.adsabs.harvard.edu/abs/2019JPCA..12310065F",
+        "17": "https://doi.org/10.1016%2F0022-1902%2858%2980003-2",
+        "18": "https://www.pearson.com/us/higher-education/program/Housecroft-Inorganic-Chemistry-5th-Edition/PGM2178749.html",
+        "19": "https://doi.org/10.1021%2Fja00346a026",
+        "20": "https://archive.org/details/polarcovalence0000sand",
+        "21": "[ERROR retrieving ref link]",
+        "22": "https://doi.org/10.1007%2Fs11172-006-0105-6",
+        "23": "https://books.google.com/books?id=IqWXSLz6QE8C&pg=PA106",
+        "24": "https://books.google.com/books?id=mGOpScSIwU4C&pg=PA91",
+        "25": "https://doi.org/10.1021%2Fja00207a003",
+        "26": "https://doi.org/10.1021%2Fja992866e",
+        "27": "https://doi.org/10.1021%2Fja9928677",
+        "28": "[ERROR retrieving ref link]",
+        "29": "https://archive.org/details/infraredspectrao0000bell_w1a8/page/392",
+        "30": "https://ui.adsabs.harvard.edu/abs/1961JChPh..35..722S",
+        "31": "https://doi.org/10.1021%2Fic50086a025",
+        "32": "https://pubs.acs.org/doi/10.1021/jp062886k",
+        "33": "https://search.worldcat.org/oclc/424555669",
+        "34": "https://archive.today/20091101004334/http://au.encarta.msn.com/encyclopedia_781538810/Electropositivity.html"
+    },
+    "flair_entities": [
+        "allen",
+        "mulliken",
+        "rochow",
+        "robert s",
+        "louis allred",
+        "electronegativity  electronegativity",
+        "eea",
+        "avogadro",
+        "j\u00f6ns jacob berzelius",
+        "ei",
+        "zeff",
+        "allred",
+        "sanderson",
+        "slater",
+        "pauling",
+        "kabachnik parameters",
+        "leland c",
+        "f",
+        "eugene g",
+        "linus pauling"
+    ]
+}

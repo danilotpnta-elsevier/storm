@@ -1,0 +1,1732 @@
+{
+    "title": "Polystyrene",
+    "url": "https://en.wikipedia.org/wiki/Polystyrene",
+    "summary": "Polystyrene (PS)  is a synthetic polymer made from monomers of the aromatic hydrocarbon styrene. Polystyrene can be solid or foamed. General-purpose polystyrene is clear, hard, and brittle. It is an inexpensive resin per unit weight. It is a poor barrier to air and water vapor and has a relatively low melting point. Polystyrene is one of the most widely used plastics, with the scale of its production being several million tonnes per year. Polystyrene is naturally transparent, but can be colored with colorants. Uses include protective packaging (such as packing peanuts and optical disc jewel cases), containers, lids, bottles, trays, tumblers, disposable cutlery, in the making of models, and as an alternative material for phonograph records.\nAs a thermoplastic polymer, polystyrene is in a solid (glassy) state at room temperature but flows if heated above about 100 \u00b0C, its glass transition temperature.  It becomes rigid again when cooled. This temperature behaviour is exploited for extrusion (as in Styrofoam) and also for molding and vacuum forming, since it can be cast into molds with fine detail.  The temperatures behavior can be controlled by photocrosslinking.\nUnder ASTM standards, polystyrene is regarded as not biodegradable. It is accumulating as a form of litter in the outside environment, particularly along shores and waterways, especially in its foam form, and in the Pacific Ocean.",
+    "content": [
+        {
+            "section_title": "History",
+            "section_content": [
+                {
+                    "sentence": "Polystyrene was discovered in 1839 by Eduard Simon, an apothecary from Berlin",
+                    "refs": []
+                },
+                {
+                    "sentence": "From storax, the resin of the Oriental sweetgum tree Liquidambar orientalis, he distilled an oily substance, that he named styrol, now called styrene",
+                    "refs": [
+                        "https://babel.hathitrust.org/cgi/pt?id=uva.x002457910;view=1up;seq=277"
+                    ]
+                },
+                {
+                    "sentence": "Several days later, Simon found that it had thickened into a jelly, now known to have been a polymer, that he dubbed styrol oxide (\"Styroloxyd\") because he presumed that it had resulted from oxidation (styrene oxide is a distinct compound)",
+                    "refs": []
+                },
+                {
+                    "sentence": "By 1845 Jamaican-born chemist John Buddle Blyth and German chemist August Wilhelm von Hofmann showed that the same transformation of styrol took place in the absence of oxygen",
+                    "refs": []
+                },
+                {
+                    "sentence": "They called the product \"meta styrol\"; analysis showed that it was chemically identical to Simon's Styroloxyd",
+                    "refs": [
+                        "https://books.google.com/books?id=A8MwAAAAYAAJ&pg=PA289"
+                    ]
+                },
+                {
+                    "sentence": "In 1866 Marcellin Berthelot correctly identified the formation of meta styrol/Styroloxyd from styrol as a polymerisation process",
+                    "refs": [
+                        "[ERROR retrieving ref link]"
+                    ]
+                },
+                {
+                    "sentence": "About 80 years later it was realized that heating of styrol starts a chain reaction that produces macromolecules, following the thesis of German organic chemist Hermann Staudinger (1881\u20131965)",
+                    "refs": [
+                        "https://archive.org/stream/bulletin27frangoog#page/n295/mode/2up"
+                    ]
+                },
+                {
+                    "sentence": "This eventually led to the substance receiving its present name, polystyrene",
+                    "refs": []
+                },
+                {
+                    "sentence": "[citation needed]",
+                    "refs": []
+                },
+                {
+                    "sentence": "The company I",
+                    "refs": []
+                },
+                {
+                    "sentence": "G",
+                    "refs": []
+                },
+                {
+                    "sentence": "Farben began manufacturing polystyrene in Ludwigshafen, about 1931, hoping it would be a suitable replacement for die-cast zinc in many applications",
+                    "refs": []
+                },
+                {
+                    "sentence": "Success was achieved when they developed a reactor vessel that extruded polystyrene through a heated tube and cutter, producing polystyrene in pellet form",
+                    "refs": []
+                },
+                {
+                    "sentence": "Ray McIntire (1918\u20131996), a chemical engineer of Dow Chemical, rediscovered a process first patented in early 1930s by Swedish inventor Carl Munters",
+                    "refs": []
+                },
+                {
+                    "sentence": "According to the Science History Institute, \"Dow bought the rights to Munters's method and began producing a lightweight, water-resistant, and buoyant material that seemed perfectly suited for building docks and watercraft and for insulating homes, offices, and chicken sheds.\"  In 1944, Styrofoam was patented",
+                    "refs": [
+                        "https://www.invent.org/inductees/otis-ray-mcintire",
+                        "https://www.sciencehistory.org/distillations/styrofoam-a-practical-and-problematic-creation"
+                    ]
+                },
+                {
+                    "sentence": "Before 1949, chemical engineer Fritz Stastny (1908\u20131985) developed pre-expanded PS beads by incorporating aliphatic hydrocarbons, such as pentane",
+                    "refs": []
+                },
+                {
+                    "sentence": "These beads are the raw material for molding parts or extruding sheets",
+                    "refs": []
+                },
+                {
+                    "sentence": "BASF and Stastny applied for a patent that was issued in 1949",
+                    "refs": []
+                },
+                {
+                    "sentence": "The molding process was demonstrated at the Kunststoff Messe 1952 in D\u00fcsseldorf",
+                    "refs": []
+                },
+                {
+                    "sentence": "Products were named Styropor",
+                    "refs": []
+                },
+                {
+                    "sentence": "The crystal structure of isotactic polystyrene was reported by Giulio Natta",
+                    "refs": []
+                },
+                {
+                    "sentence": "In 1954, the Koppers Company in Pittsburgh, Pennsylvania, developed expanded polystyrene (EPS) foam under the trade name Dylite",
+                    "refs": []
+                },
+                {
+                    "sentence": "In 1960, Dart Container, the largest manufacturer of foam cups, shipped their first order",
+                    "refs": [
+                        "[ERROR retrieving ref link]"
+                    ]
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Structure and production",
+            "section_content": [
+                {
+                    "sentence": "In chemical terms, polystyrene is a long chain hydrocarbon wherein alternating carbon centers are attached to phenyl groups (a derivative of benzene)",
+                    "refs": []
+                },
+                {
+                    "sentence": "Polystyrene's chemical formula is (C8H8)n; it contains the chemical elements carbon and hydrogen",
+                    "refs": []
+                },
+                {
+                    "sentence": "[citation needed]",
+                    "refs": []
+                },
+                {
+                    "sentence": "The material's properties are determined by short-range van der Waals attractions between polymer chains",
+                    "refs": []
+                },
+                {
+                    "sentence": "Since the molecules consist of thousands of atoms, the cumulative attractive force between the molecules is large",
+                    "refs": []
+                },
+                {
+                    "sentence": "When heated (or deformed at a rapid rate, due to a combination of viscoelastic and thermal insulation properties), the chains can take on a higher degree of confirmation and slide past each other",
+                    "refs": []
+                },
+                {
+                    "sentence": "This intermolecular weakness (versus the high intramolecular strength due to the hydrocarbon backbone) confers flexibility and elasticity",
+                    "refs": []
+                },
+                {
+                    "sentence": "The ability of the system to be readily deformed above its glass transition temperature allows polystyrene (and thermoplastic polymers in general) to be readily softened and molded upon heating",
+                    "refs": []
+                },
+                {
+                    "sentence": "Extruded polystyrene is about as strong as an unalloyed aluminium but much more flexible and much less dense (1.05 g/cm3 for polystyrene vs",
+                    "refs": []
+                },
+                {
+                    "sentence": "2.70 g/cm3 for aluminium)",
+                    "refs": []
+                }
+            ],
+            "subsections": [
+                {
+                    "section_title": "Production",
+                    "section_content": [
+                        {
+                            "sentence": "Polystyrene foams are produced using blowing agents that form bubbles and expand the foam",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In expanded polystyrene, these are usually hydrocarbons such as pentane, which may pose a flammability hazard in manufacturing or storage of newly manufactured material, but have relatively mild environmental impact",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "[citation needed] Extruded polystyrene is usually made with hydrofluorocarbons (HFC-134a),  which have global warming potentials of approximately 1000\u20131300 times that of carbon dioxide",
+                            "refs": [
+                                "http://www.earthresource.org/campaigns/capp/capp-styrofoam.html"
+                            ]
+                        },
+                        {
+                            "sentence": "Packaging, particularly expanded polystyrene, is a contributor of microplastics from both land and maritime activities",
+                            "refs": [
+                                "http://www.epa.gov/ozone/geninfo/gwps.html"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Tacticity",
+                    "section_content": [
+                        {
+                            "sentence": "In polystyrene, tacticity describes the extent to which the phenyl group is uniformly aligned (arranged at one side) in the polymer chain",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Tacticity has a strong effect on the properties of the plastic",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Standard polystyrene is atactic",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The diastereomer where all of the phenyl groups are on the same side is called isotactic polystyrene, which is not produced commercially",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "[citation needed]",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "section_title": "Atactic polystyrene",
+                            "section_content": [
+                                {
+                                    "sentence": "The only commercially important form of polystyrene is atactic, in which the phenyl groups are randomly distributed on both sides of the polymer chain",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "This random positioning prevents the chains from aligning with sufficient regularity to achieve any crystallinity",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The plastic has a glass transition temperature Tg of \u224890\u00a0\u00b0C",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Polymerization is initiated with free radicals",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Syndiotactic polystyrene",
+                            "section_content": [
+                                {
+                                    "sentence": "Ziegler\u2013Natta polymerization can produce an ordered syndiotactic polystyrene with the phenyl groups positioned on alternating sides of the hydrocarbon backbone",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "This form is highly crystalline with a Tm (melting point) of 270\u00a0\u00b0C (518\u00a0\u00b0F)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Syndiotactic polystyrene resin is currently produced under the trade name XAREC by Idemitsu corporation, who use a metallocene catalyst for the polymerisation reaction",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "section_title": "Degradation",
+            "section_content": [
+                {
+                    "sentence": "Polystyrene is relatively chemically inert",
+                    "refs": []
+                },
+                {
+                    "sentence": "While it is waterproof and resistant to breakdown by many acids and bases, it is easily attacked by many organic solvents (e.g",
+                    "refs": []
+                },
+                {
+                    "sentence": "it dissolves quickly when exposed to acetone), chlorinated solvents, and aromatic hydrocarbon solvents",
+                    "refs": []
+                },
+                {
+                    "sentence": "Because of its resilience and inertness, it is used for fabricating many objects of commerce",
+                    "refs": []
+                },
+                {
+                    "sentence": "Like other organic compounds, polystyrene burns to give carbon dioxide and water vapor, in addition to other thermal degradation by-products",
+                    "refs": []
+                },
+                {
+                    "sentence": "Polystyrene, being an aromatic hydrocarbon, typically combusts incompletely as indicated by the sooty flame",
+                    "refs": []
+                },
+                {
+                    "sentence": "[citation needed]",
+                    "refs": []
+                },
+                {
+                    "sentence": "The process of depolymerizing polystyrene into its monomer, styrene, is called pyrolysis",
+                    "refs": []
+                },
+                {
+                    "sentence": "This involves using high heat and pressure to break down the chemical bonds between each styrene compound",
+                    "refs": []
+                },
+                {
+                    "sentence": "Pyrolysis usually goes up to 430\u00a0\u00b0C",
+                    "refs": []
+                },
+                {
+                    "sentence": "The high energy cost of doing this has made commercial recycling of polystyrene back into styrene monomer difficult",
+                    "refs": [
+                        "https://www.azocleantech.com/article.aspx?ArticleID=336"
+                    ]
+                },
+                {
+                    "sentence": "[citation needed]",
+                    "refs": []
+                }
+            ],
+            "subsections": [
+                {
+                    "section_title": "Organisms",
+                    "section_content": [
+                        {
+                            "sentence": "Polystyrene is generally considered to be non-biodegradable",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, certain organisms are able to degrade it, albeit very slowly",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In 2015, researchers discovered that mealworms, the larvae form of the darkling beetle Tenebrio molitor, could digest and subsist healthily on a diet of EPS",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "About 100 mealworms could consume between 34 and 39 milligrams of this white foam in a day",
+                            "refs": [
+                                "https://web.archive.org/web/20210108134659/https://news.stanford.edu/pr/2015/pr-worms-digest-plastics-092915.html",
+                                "https://ui.adsabs.harvard.edu/abs/2015EnST...4912080Y"
+                            ]
+                        },
+                        {
+                            "sentence": "The droppings of mealworm were found to be safe for use as soil for crops",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In 2016, it was also reported that superworms (Zophobas morio) may eat expanded polystyrene (EPS)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "A group of high school students in Ateneo de Manila University found that compared to Tenebrio molitor larvae, Zophobas morio larvae may consume greater amounts of EPS over longer periods of time",
+                            "refs": [
+                                "http://livingearthsystems.com/mealworms-compost-styrofoam/"
+                            ]
+                        },
+                        {
+                            "sentence": "In 2022 scientists identified several bacterial genera, including Pseudomonas, Rhodococcus and Corynebacterium,  in the gut of superworms that contain encoded enzymes associated with the degradation of polystyrene and the breakdown product styrene",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The bacterium Pseudomonas putida is capable of converting styrene oil into the biodegradable plastic PHA",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This may someday be of use in the effective disposing of polystyrene foam",
+                            "refs": [
+                                "http://www.livescience.com/technology/060307_styrofoam_cup.html",
+                                "https://ui.adsabs.harvard.edu/abs/2006EnST...40.2433W",
+                                "http://www.scientificamerican.com/article/bacteria-turn-styrofoam-i/"
+                            ]
+                        },
+                        {
+                            "sentence": "It is worthy to note the polystyrene must undergo pyrolysis to turn into styrene oil",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "[citation needed]",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Forms produced",
+            "section_content": [
+                {
+                    "sentence": "Polystyrene is commonly injection molded, vacuum formed, or extruded, while expanded polystyrene is either extruded or molded in a special process.Polystyrene copolymers are also produced; these contain one or more other monomers in addition to styrene",
+                    "refs": []
+                },
+                {
+                    "sentence": "In recent years the expanded polystyrene composites with cellulose   and starch  have also been produced",
+                    "refs": [
+                        "https://doi.org/10.1177%2F0892705704035405",
+                        "https://ui.adsabs.harvard.edu/abs/2002JPoSB..40..723D",
+                        "https://nrc-publications.canada.ca/eng/view/accepted/?id=43335b28-49c7-4640-877c-1d79813ff029"
+                    ]
+                },
+                {
+                    "sentence": "Polystyrene is used in some polymer-bonded explosives (PBX)",
+                    "refs": []
+                },
+                {
+                    "sentence": "[citation needed]",
+                    "refs": []
+                }
+            ],
+            "subsections": [
+                {
+                    "section_title": "Sheet or molded polystyrene",
+                    "section_content": [
+                        {
+                            "sentence": "Polystyrene (PS) is used for producing disposable plastic cutlery and dinnerware, CD \"jewel\" cases, smoke detector housings, license plate frames, plastic model assembly kits, and many other objects where a rigid, economical plastic is desired",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Production methods include thermoforming (vacuum forming) and injection molding.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Polystyrene Petri dishes and other laboratory containers such as test tubes and microplates play an important role in biomedical research and science",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "For these uses, articles are almost always made by injection molding, and often sterilized post-molding, either by irradiation or by treatment with ethylene oxide",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Post-mold surface modification, usually with oxygen-rich plasmas, is often done to introduce polar groups",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Much of modern biomedical research relies on the use of such products; they, therefore, play a critical role in pharmaceutical research",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Thin sheets of polystyrene are used in polystyrene film capacitors as it forms a very stable dielectric, but has largely fallen out of use in favor of polyester.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Foams",
+                    "section_content": [
+                        {
+                            "sentence": "Polystyrene foams are 95\u201398% air",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Polystyrene foams are good thermal insulators and are therefore often used as building insulation materials, such as in insulating concrete forms and structural insulated panel building systems",
+                            "refs": [
+                                "https://web.archive.org/web/20180308035110/https://www.chemicalsafetyfacts.org/polystyrene-post/",
+                                "http://www.epspackaging.org/index.php?option=com_content&view=article&id=8&Itemid=4"
+                            ]
+                        },
+                        {
+                            "sentence": "Grey polystyrene foam, incorporating graphite, has superior insulation properties",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Carl Munters and John Gudbrand Tandberg of Sweden received a US patent for polystyrene foam as an insulation product in 1935 (USA patent number 2,023,204)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "PS foams also exhibit good damping properties, therefore it is used widely in packaging",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The trademark Styrofoam by Dow Chemical Company is informally used (mainly US & Canada) for all foamed polystyrene products, although strictly it should only be used for \"extruded closed-cell\" polystyrene foams made by Dow Chemicals.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Foams are also used for non-weight-bearing architectural structures (such as ornamental pillars).",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "section_title": "Expanded polystyrene (EPS)",
+                            "section_content": [
+                                {
+                                    "sentence": "Expanded polystyrene (EPS) is a rigid and tough, closed-cell foam with a normal density range of 11 to 32\u00a0kg/m3",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "It is usually white and made of pre-expanded polystyrene beads",
+                                    "refs": [
+                                        "http://www.thermalps.com.au/imagesDB/wysiwyg/TDS_Expanded_Polystyrene.pdf"
+                                    ]
+                                },
+                                {
+                                    "sentence": "The manufacturing process for EPS conventionally begins with the creation of small polystyrene beads",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Styrene monomers (and potentially other additives) are suspended in water, where they undergo free-radical addition polymerization",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The polystyrene beads formed by this mechanism may have an average diameter of around 200\u00a0\u03bcm",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The beads are then permeated with a \"blowing agent\", a material that enables the beads to be expanded",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Pentane is commonly used as the blowing agent",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The beads are added to a continuously agitated reactor with the blowing agent, among other additives, and the blowing agent seeps into pores within each bead",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The beads are then expanded using steam",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "EPS is used for food containers, molded sheets for building insulation, and packing material either as solid blocks formed to accommodate the item being protected or as loose-fill \"peanuts\" cushioning fragile items inside boxes",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "EPS also has been widely used in automotive and road safety applications such as motorcycle helmets and road barriers on automobile race tracks",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "A significant portion of all EPS products are manufactured through injection molding",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Mold tools tend to be manufactured from steels (which can be hardened and plated), and aluminum alloys",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The molds are controlled through a split via a channel system of gates and runners",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "EPS is colloquially called \"styrofoam\" in the Anglosphere, an genericization of Dow Chemical's brand of extruded polystyrene",
+                                    "refs": [
+                                        "http://www.bpf.co.uk/plastipedia/processes/moulding_eps.aspx"
+                                    ]
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "EPS in building construction",
+                            "section_content": [
+                                {
+                                    "sentence": "Sheets of EPS are commonly packaged as rigid panels (common in Europe is a size of 100\u00a0cm x 50\u00a0cm, usually depending on an intended type of connection and glue techniques, it is, in fact, 99.5\u00a0cm x 49.5\u00a0cm or 98\u00a0cm x 48\u00a0cm; less common is 120 x 60\u00a0cm; size 4 by 8\u00a0ft (1.2 by 2.4\u00a0m) or 2 by 8\u00a0ft (0.61 by 2.44\u00a0m) in the United States)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Common thicknesses are from 10\u00a0mm to 500\u00a0mm",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Many customizations, additives, and thin additional external layers on one or both sides are often added to help with various properties",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "An example of this is  lamination with cement board to form a structural insulated panel.",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Thermal conductivity is measured according to EN 12667",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Typical values range from 0.032 to 0.038\u00a0W/(m\u22c5K) depending on the density of the EPS board",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The value of 0.038\u00a0W/(m\u22c5K) was obtained at 15\u00a0kg/m3 while the value of 0.032\u00a0W/(m\u22c5K) was obtained at 40\u00a0kg/m3 according to the datasheet of K-710 from StyroChem Finland",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Adding fillers (graphites, aluminum, or carbons) has recently allowed the thermal conductivity of EPS to reach around 0.030\u20130.034\u00a0W/(m\u22c5K) (as low as 0.029\u00a0W/(m\u22c5K)) and as such has a grey/black color which distinguishes it from standard EPS",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Several EPS producers have produced a variety of these increased thermal resistance EPS usage for this product in the UK and EU.",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Water vapor diffusion resistance (\u03bc) of EPS is around 30\u201370.",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "ICC-ES (International Code Council Evaluation Service) requires EPS boards used in building construction meet ASTM C578 requirements",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "One of these requirements is that the limiting oxygen index of EPS as measured by ASTM D2863 be greater than 24 volume\u00a0%",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Typical EPS has an oxygen index of around 18 volume\u00a0%; thus, a flame retardant is added to styrene or polystyrene during the formation of EPS.",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The boards containing a flame retardant when tested in a tunnel using test method UL 723 or ASTM E84 will have a flame spread index of less than 25 and a smoke-developed index of less than 450",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "ICC-ES requires the use of a 15-minute thermal barrier when EPS boards are used inside of a building.",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "According to the EPS-IA ICF organization, the typical density of EPS used for insulated concrete forms (expanded polystyrene concrete) is 1.35 to 1.80 pounds per cubic foot (21.6 to 28.8\u00a0kg/m3)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "This is either Type II or Type IX EPS according to ASTM C578",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "EPS blocks or boards used in building construction are commonly cut using hot wires",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Extruded polystyrene (XPS)",
+                            "section_content": [
+                                {
+                                    "sentence": "Extruded polystyrene foam (XPS) consists of closed cells",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "It offers improved surface roughness, higher stiffness and reduced thermal conductivity",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The density range is about 28\u201334\u00a0kg/m3",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Extruded polystyrene material is also used in crafts and model building, in particular architectural models",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Because of the extrusion manufacturing process, XPS does not require facers to maintain its thermal or physical property performance",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Thus, it makes a more uniform substitute for corrugated cardboard",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Thermal conductivity varies between 0.029 and 0.039 W/(m\u00b7K) depending on bearing strength/density and the average value is \u22480.035 W/(m\u00b7K).",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Water vapor diffusion resistance (\u03bc) of XPS is around 80\u2013250.",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Commonly extruded polystyrene foam materials include:",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Water absorption of polystyrene foams",
+                            "section_content": [
+                                {
+                                    "sentence": "Although it is a closed-cell foam, both expanded and extruded polystyrene are not entirely waterproof or vapor proof",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In expanded polystyrene there are interstitial gaps between the expanded closed-cell pellets that form an open network of channels between the bonded pellets, and this network of gaps can become filled with liquid water",
+                                    "refs": [
+                                        "http://leidykla.vgtu.lt/conferences/MBM_2007/1pdf/Gnip_Kersulis.pdf"
+                                    ]
+                                },
+                                {
+                                    "sentence": "If the water freezes into ice, it expands and can cause polystyrene pellets to break off from the foam",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Extruded polystyrene is also permeable by water molecules and can not be considered a vapor barrier",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Water-logging commonly occurs over a long period in polystyrene foams that are constantly exposed to high humidity or are continuously immersed in water, such as in hot tub covers, in floating docks, as supplemental flotation under boat seats, and for below-grade exterior building insulation constantly exposed to groundwater",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Typically an exterior vapor barrier such as impermeable plastic sheeting or a sprayed-on coating is necessary to prevent saturation.",
+                                    "refs": [
+                                        "http://epsindustry.org/sites/default/files/EPS%20Below%20Grade%20105.pdf"
+                                    ]
+                                }
+                            ],
+                            "subsections": []
+                        }
+                    ]
+                },
+                {
+                    "section_title": "Oriented polystyrene",
+                    "section_content": [
+                        {
+                            "sentence": "Oriented polystyrene (OPS) is produced by stretching extruded PS film, improving visibility through the material by reducing haziness and increasing stiffness",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This is often used in packaging where the manufacturer would like the consumer to see the enclosed product",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Some benefits to OPS are that it is less expensive to produce than other clear plastics such as polypropylene (PP), (PET), and high-impact polystyrene (HIPS), and it is less hazy than HIPS or PP",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The main disadvantage of OPS is that it is brittle, and will crack or tear easily.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Co-polymers",
+            "section_content": [
+                {
+                    "sentence": "Ordinary (homopolymeric) polystyrene has an excellent property profile about transparency, surface quality and stiffness",
+                    "refs": []
+                },
+                {
+                    "sentence": "Its range of applications is further extended by copolymerization and other modifications (blends e.g",
+                    "refs": []
+                },
+                {
+                    "sentence": "with PC and syndiotactic polystyrene)",
+                    "refs": []
+                },
+                {
+                    "sentence": ":\u200a102\u2013104\u200a Several copolymers are used based on styrene: The brittleness of homopolymeric polystyrene is overcome by elastomer-modified styrene-butadiene copolymers",
+                    "refs": [
+                        "ISBN: 3-527-31582-9"
+                    ]
+                },
+                {
+                    "sentence": "Copolymers of styrene and acrylonitrile (SAN) are more resistant to thermal stress, heat and chemicals than homopolymers and are also transparent",
+                    "refs": []
+                },
+                {
+                    "sentence": "Copolymers called ABS have similar properties and can be used at low temperatures, but they are opaque.",
+                    "refs": []
+                }
+            ],
+            "subsections": [
+                {
+                    "section_title": "Styrene-butane co-polymers",
+                    "section_content": [
+                        {
+                            "sentence": "Styrene-butane co-polymers can be produced with a low butene content",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Styrene-butane co-polymers include PS-I and SBC (see below), both co-polymers are impact resistant",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "PS-I is prepared by graft co-polymerization, SBC by anionic block co-polymerization, which makes it transparent in case of appropriate block size",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "If styrene-butane co-polymer has a high butylene content, styrene-butadiene rubber (SBR) is formed.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The impact strength of styrene-butadiene co-polymers is based on phase separation, polystyrene and poly-butane are not soluble in each other (see Flory\u2013Huggins solution theory)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Co-polymerization creates a boundary layer without complete mixing",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The butadiene fractions (the \"rubber phase\") assemble to form particles embedded in a polystyrene matrix",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "A decisive factor for the improved impact strength of styrene-butadiene copolymers is their higher absorption capacity for deformation work",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Without applied force, the rubber phase initially behaves like a filler",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Under tensile stress, crazes (microcracks) are formed, which spread to the rubber particles",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The energy of the propagating crack is then transferred to the rubber particles along its path",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "A large number of cracks give the originally rigid material a laminated structure",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The formation of each lamella contributes to the consumption of energy and thus to an increase in elongation at break",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Polystyrene homo-polymers deform when a force is applied until they break",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Styrene-butane co-polymers do not break at this point, but begin to flow, solidify to tensile strength and only break at much higher elongation",
+                            "refs": []
+                        },
+                        {
+                            "sentence": ":\u200a426",
+                            "refs": [
+                                "https://search.worldcat.org/oclc/834590709"
+                            ]
+                        },
+                        {
+                            "sentence": "With a high proportion of polybutadiene, the effect of the two phases is reversed",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Styrene-butadiene rubber behaves like an elastomer but can be processed like a thermoplastic.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "section_title": "Impact-resistant polystyrene (PS-I)",
+                            "section_content": [
+                                {
+                                    "sentence": "PS-I (impact resistant polystyrene) consists of a continuous polystyrene matrix and a rubber phase dispersed therein",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "It is produced by polymerization of styrene in the presence of polybutadiene dissolved (in styrene)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Polymerization takes place simultaneously in two ways:",
+                                    "refs": [
+                                        "http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/10/styrol_polymerisation/schlagzaehes_ps/schlagzaehes_ps.vlu.html"
+                                    ]
+                                },
+                                {
+                                    "sentence": "By using a statistical copolymer at this position, the polymer becomes less susceptible to cross-linking and flows better in the melt",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "For the production of SBS, the first styrene is homopolymerized via anionic copolymerization",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Typically, an organometallic compound such as butyllithium is used as a catalyst",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Butadiene is then added and after styrene again its polymerization",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The catalyst remains active during the whole process (for which the used chemicals must be of high purity)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The molecular weight distribution of the polymers is very low (polydispersity in the range of 1.05, the individual chains have thus very similar lengths)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The length of the individual blocks can be adjusted by the ratio of catalyst to monomer",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The size of the rubber sections, in turn, depends on the block length",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The production of small structures (smaller than the wavelength of the light) ensure transparency",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In contrast to PS-I, however, the block copolymer does not form any particles but has a lamellar structure.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Styrene-butadiene rubber",
+                            "section_content": [
+                                {
+                                    "sentence": "Styrene-butadiene rubber (SBR) is produced like PS-I by graft copolymerization, but with a lower styrene content",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Styrene-butadiene rubber thus consists of a rubber matrix with a polystyrene phase dispersed therein",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Unlike PS-I and SBC, it is not a thermoplastic, but an elastomer",
+                                    "refs": [
+                                        "http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/9/mac/werkstoff_polystyren/sorten/sorten.vlu/Page/vsc/de/ch/9/mac/werkstoff_polystyren/sorten/copolymere/sb/pfropfcopolymere.vscml.html"
+                                    ]
+                                },
+                                {
+                                    "sentence": "Within the rubber phase, the polystyrene phase is assembled into domains",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "This causes physical cross-linking on a microscopic level",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "When the material is heated above the glass transition point, the domains disintegrate, the cross-linking is temporarily suspended and the material can be processed like a thermoplastic",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        }
+                    ]
+                },
+                {
+                    "section_title": "Acrylonitrile butadiene styrene",
+                    "section_content": [
+                        {
+                            "sentence": "Acrylonitrile butadiene styrene (ABS) is a material that is stronger than pure polystyrene.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Others",
+                    "section_content": [
+                        {
+                            "sentence": "SMA is a copolymer with maleic anhydride",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Styrene can be copolymerized with other monomers; for example, divinylbenzene can be used for cross-linking the polystyrene chains to give the polymer used in solid phase peptide synthesis",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Styrene-acrylonitrile resin (SAN) has a greater thermal resistance than pure styrene.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Environmental issues",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Production",
+                    "section_content": [
+                        {
+                            "sentence": "Polystyrene foams are produced using blowing agents that form bubbles and expand the foam",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In expanded polystyrene, these are usually hydrocarbons such as pentane, which may pose a flammability hazard in manufacturing or storage of newly manufactured material, but have relatively mild environmental impact",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "[citation needed] Extruded polystyrene is usually made with hydrofluorocarbons (HFC-134a),  which have global warming potentials of approximately 1000\u20131300 times that of carbon dioxide",
+                            "refs": [
+                                "http://www.earthresource.org/campaigns/capp/capp-styrofoam.html"
+                            ]
+                        },
+                        {
+                            "sentence": "Packaging, particularly expanded polystyrene, is a contributor of microplastics from both land and maritime activities",
+                            "refs": [
+                                "http://www.epa.gov/ozone/geninfo/gwps.html"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Environmental degradation",
+                    "section_content": [
+                        {
+                            "sentence": "Polystyrene is not biodegradeable but it is susceptible to photo-oxidation",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "For this reason commercial products contain light stabilizers.",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4320144"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Litter",
+                    "section_content": [
+                        {
+                            "sentence": "Animals do not recognize polystyrene foam as an artificial material and may even mistake it for food",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Polystyrene foam blows in the wind and floats on water due to its low specific gravity",
+                            "refs": [
+                                "ISBN: 978-1-60456-242-2"
+                            ]
+                        },
+                        {
+                            "sentence": "It can have serious effects on the health of birds and marine animals that swallow significant quantities",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Juvenile rainbow trout exposed to polystyrene fragments show toxic effects in the form of substantial histomorphometrical changes",
+                            "refs": [
+                                "ISBN: 978-1-60456-242-2"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Reducing",
+                    "section_content": [
+                        {
+                            "sentence": "Restricting the use of foamed polystyrene takeout food packaging is a priority of many solid waste environmental organisations",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Efforts have been made to find alternatives to polystyrene, especially foam in restaurant settings",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/2018MarPB.137..157S"
+                            ]
+                        },
+                        {
+                            "sentence": "The original impetus was to eliminate chlorofluorocarbons (CFC), which was a former component of foam.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "section_title": "United States",
+                            "section_content": [
+                                {
+                                    "sentence": "In 1987, Berkeley, California, banned CFC food containers",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The following year, Suffolk County, New York, became the first U.S",
+                                    "refs": [
+                                        "https://www.nytimes.com/1987/09/24/us/berkeley-barring-use-of-a-food-container.html?src=pm"
+                                    ]
+                                },
+                                {
+                                    "sentence": "jurisdiction to ban polystyrene in general",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "However, legal challenges by the Society of the Plastics Industry  kept the ban from going into effect until at last it was delayed when the Republican and Conservative parties gained the majority of the county legislature",
+                                    "refs": [
+                                        "https://www.nytimes.com/1988/03/30/nyregion/suffolk-votes-a-bill-to-ban-plastic-bags.html",
+                                        "https://www.nytimes.com/1990/03/04/nyregion/ban-on-plastics-in-suffolk-is-overturned.html?src=pm"
+                                    ]
+                                },
+                                {
+                                    "sentence": "In the meantime, Berkeley became the first city to ban all foam food containers",
+                                    "refs": [
+                                        "https://www.nytimes.com/1992/03/04/nyregion/vote-blocks-plastics-ban-for-suffolk.html"
+                                    ]
+                                },
+                                {
+                                    "sentence": "As of 2006, about one hundred localities in the United States, including Portland, Oregon, and San Francisco had some sort of ban on polystyrene foam in restaurants",
+                                    "refs": [
+                                        "https://www.latimes.com/archives/la-xpm-1988-06-16-mn-6881-story.html"
+                                    ]
+                                },
+                                {
+                                    "sentence": "For instance, in 2007 Oakland, California, required restaurants to switch to disposable food containers that would biodegrade if added to food compost",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In 2013, San Jose became reportedly the largest city in the country to ban polystyrene foam food containers",
+                                    "refs": [
+                                        "http://www.sfgate.com/news/article/Styrofoam-food-packaging-banned-in-Oakland-2516522.php"
+                                    ]
+                                },
+                                {
+                                    "sentence": "Some communities have implemented wide polystyrene bans, such as Freeport, Maine, which did so in 1990",
+                                    "refs": [
+                                        "http://www.nbcbayarea.com/news/local/San-Jose-Set-to-Ban-Styrofoam-221354051.html"
+                                    ]
+                                },
+                                {
+                                    "sentence": "In 1988, the first U.S",
+                                    "refs": [
+                                        "https://web.archive.org/web/20140329123453/http://freeportmaine.com/inc/scripts/file.php?file_id=1060"
+                                    ]
+                                },
+                                {
+                                    "sentence": "ban of general polystyrene foam was enacted in Berkeley, California",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "On 1 July 2015, New York City became the largest city in the United States to attempt to prohibit the sale, possession, and distribution of single-use polystyrene foam (the initial decision was overturned on appeal)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In San Francisco, supervisors approved the toughest ban on \"Styrofoam\" (EPS) in the US which went into effect 1 January 2017",
+                                    "refs": [
+                                        "http://www.msnbc.com/new-york-city-foam-ban-overturned"
+                                    ]
+                                },
+                                {
+                                    "sentence": "The city's Department of the Environment can make exceptions for certain uses like shipping medicines at prescribed temperatures",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The U.S",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Green Restaurant Association does not allow polystyrene foam to be used as part of its certification standard",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Several green leaders, including the Dutch Ministry of the Environment, advise people to reduce their environmental harm by using reusable coffee cups",
+                                    "refs": [
+                                        "http://www.dinegreen.com/disposables-standard"
+                                    ]
+                                },
+                                {
+                                    "sentence": "In March 2019, Maryland banned polystyrene foam food containers and became the first state in the country to pass a food container foam ban through the state legislature",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Maine was the first state to officially get a foam food container ban onto the books",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In May 2019, Maryland Governor Hogan allowed the foam ban (House Bill 109) to become law without a signature making Maryland the second state to have a food container foam ban on the books, but is the first one to take effect on 1 July 2020",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In September 2020, the New Jersey state legislature voted to ban disposable foam food containers and cups made of polystyrene foam",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Outside the United States",
+                            "section_content": [
+                                {
+                                    "sentence": "China banned expanded polystyrene takeout/takeaway containers and tableware around 1999",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "However, compliance has been a problem and, in 2013, the Chinese plastics industry was lobbying for the ban's repeal",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "India and Taiwan also banned polystyrene-foam food-service ware before 2007",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The government of Zimbabwe, through its Environmental Management Agency (EMA), banned polystyrene containers (popularly called 'kaylite' in the country), under Statutory Instrument 84 of 2012 (Plastic Packaging and Plastic Bottles) (Amendment) Regulations, 2012 (No 1.)",
+                                    "refs": [
+                                        "http://www.herald.co.zw/government-bans-kaylite-packaging-%e2%80%a2health-considerations-cited-%e2%80%a2defiant-citizens-face-prosecution/",
+                                        "http://www.herald.co.zw/expanded-polystyrene-kaylite-what-are-its-impacts/"
+                                    ]
+                                },
+                                {
+                                    "sentence": "The city of Vancouver, Canada, has announced its Zero Waste 2040 plan in 2018",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The city will introduce bylaw amendments to prohibit business license holders from serving prepared food in polystyrene foam cups and take-out containers, beginning 1 June 2019",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In 2019, the European Union voted to ban expanded polystyrene food packaging and cups, with the law officially going into effect in 2021",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Fiji passed the Environmental Management Bill in December 2020",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Imports of polystyrene products were banned in January 2021",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        }
+                    ]
+                },
+                {
+                    "section_title": "Recycling",
+                    "section_content": [
+                        {
+                            "sentence": "In general, polystyrene is not accepted in curbside collection recycling programs and is not separated and recycled where it is accepted",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In Germany, polystyrene is collected as a consequence of the packaging law (Verpackungsverordnung) that requires manufacturers to take responsibility for recycling or disposing of any packaging material they sell.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Most polystyrene products are currently not recycled due to the lack of incentive to invest in the compactors and logistical systems required",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Due to the low density of polystyrene foam, it is not economical to collect",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, if the waste material goes through an initial compaction process, the material changes density from typically 30\u00a0kg/m3 to 330\u00a0kg/m3 and becomes a recyclable commodity of high value for producers of recycled plastic pellets",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Expanded polystyrene scrap can be easily added to products such as EPS insulation sheets and other EPS materials for construction applications; many manufacturers cannot obtain sufficient scrap because of collection issues",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "When it is not used to make more EPS, foam scrap can be turned into products such as clothes hangers, park benches, flower pots, toys, rulers, stapler bodies, seedling containers, picture frames, and architectural molding from recycled PS",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As of 2016, around 100 tonnes of EPS are recycled every month in the UK",
+                            "refs": [
+                                "https://expandedpoly.co.uk/environment/"
+                            ]
+                        },
+                        {
+                            "sentence": "Recycled EPS is also used in many metal casting operations",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Rastra is made from EPS that is combined with cement to be used as an insulating amendment in the making of concrete foundations and walls",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "American manufacturers have produced insulating concrete forms made with approximately 80% recycled EPS since 1993.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Upcycling",
+                    "section_content": [
+                        {
+                            "sentence": "A March 2022 joint study by scientists Sewon Oh and Erin Stache at Cornell University in Ithaca, New York found a new processing method of upcycling polystyrene to benzoic acid",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The process involved irradiation of polystyrene with iron chloride and acetone under white light and oxygen for 20 hours",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The scientists also demonstrated a similar scalable commercial process of upcycling polystyrene into valuable small-molecules (like benzoic acid) taking just a few hours",
+                            "refs": [
+                                "https://pubs.acs.org/doi/10.1021/jacs.2c01411"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Incineration",
+                    "section_content": [
+                        {
+                            "sentence": "If polystyrene is properly incinerated at high temperatures (up to 1000\u00a0\u00b0C ) and with plenty of air  (14 m3/kg [citation needed]), the chemicals generated are water, carbon dioxide, and possibly small amounts of residual halogen-compounds from flame-retardants",
+                            "refs": [
+                                "[ERROR retrieving ref link]",
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "If only incomplete incineration is done, there will also be leftover carbon soot and a complex mixture of volatile compounds",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "[better\u00a0source\u00a0needed] According to the American Chemistry Council, when polystyrene is incinerated in modern facilities, the final volume is 1% of the starting volume; most of the polystyrene is converted into carbon dioxide, water vapor, and heat",
+                            "refs": [
+                                "http://www.newton.dep.anl.gov/askasci/chem00/chem00053.htm"
+                            ]
+                        },
+                        {
+                            "sentence": "Because of the amount of heat released, it is sometimes used as a power source for steam or electricity generation",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "When polystyrene was burned at temperatures of 800\u2013900\u00a0\u00b0C (the typical range of a modern incinerator), the products of combustion consisted of \"a complex mixture of polycyclic aromatic hydrocarbons (PAHs) from alkyl benzenes to benzoperylene",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Over 90 different compounds were identified in combustion effluents from polystyrene.\"  [better\u00a0source\u00a0needed] The American National Bureau of Standards Center for Fire Research found 57 chemical by-products released during the combustion of expanded polystyrene (EPS) foam",
+                            "refs": [
+                                "https://doi.org/10.1016%2FS0021-9673%2801%2990737-X"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Safety",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Health",
+                    "section_content": [
+                        {
+                            "sentence": "The American Chemistry Council, formerly known as the Chemical Manufacturers' Association, writes:",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "From 1999 to 2002, a comprehensive review of the potential health risks associated with exposure to styrene was conducted by a 12-member international expert panel selected by the Harvard Center for Risk Assessment",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The scientists had expertise in toxicology, epidemiology, medicine, risk analysis, pharmacokinetics, and exposure assessment",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The Harvard study reported that styrene is naturally present in trace quantities in foods such as strawberries, beef, and spices, and is naturally produced in the processing of foods such as wine and cheese",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The study also reviewed all the published data on the quantity of styrene contributing to the diet due to migration of food packaging and disposable food contact articles, and concluded that risk to the general public from exposure to styrene from foods or food-contact applications (such as polystyrene packaging and foodservice containers) was at levels too low to produce adverse effects",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Polystyrene is commonly used in containers for food and drinks",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The styrene monomer (from which polystyrene is made) is a cancer suspect agent",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Styrene is \"generally found in such low levels in consumer products that risks aren't substantial\"",
+                            "refs": [
+                                "https://web.archive.org/web/20110612024850/http://ntp.niehs.nih.gov/index.cfm?objectid=72016262-BDB7-CEBA-FA60E922B18C2540"
+                            ]
+                        },
+                        {
+                            "sentence": "Polystyrene which is used for food contact may not contain more than 1% (0.5% for fatty foods) of styrene by weight",
+                            "refs": [
+                                "https://www.nytimes.com/2011/06/11/health/11cancer.html"
+                            ]
+                        },
+                        {
+                            "sentence": "Styrene oligomers in polystyrene containers used for food packaging have been found to migrate into the food",
+                            "refs": [
+                                "http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=177.1640"
+                            ]
+                        },
+                        {
+                            "sentence": "Another Japanese study conducted on wild-type and AhR-null mice found that the styrene trimer, which the authors detected in cooked polystyrene container-packed instant foods, may increase thyroid hormone levels",
+                            "refs": [
+                                "https://doi.org/10.3358%2Fshokueishi.41.200"
+                            ]
+                        },
+                        {
+                            "sentence": "Whether polystyrene can be microwaved with food is controversial",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Some containers may be safely used in a microwave, but only if labeled as such",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Some sources suggest that foods containing carotene (vitamin A) or cooking oils must be avoided",
+                            "refs": [
+                                "https://www.health.harvard.edu/staying-healthy/microwaving-food-in-plastic-dangerous-or-not"
+                            ]
+                        },
+                        {
+                            "sentence": "Because of the pervasive use of polystyrene, these serious health related issues remain topical",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "[unreliable source?]",
+                            "refs": [
+                                "http://www.aei.org/publication/styrene-in-the-crosshairs-competeing-standards-confuse-public-regulators/"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Fire hazards",
+                    "section_content": [
+                        {
+                            "sentence": "Like other organic compounds, polystyrene is flammable",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Polystyrene is classified according to DIN4102 as a \"B3\" product, meaning highly flammable or \"Easily Ignited\"",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As a consequence, although it is an efficient insulator at low temperatures, its use is prohibited in any exposed installations in building construction if the material is not flame-retardant",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "[citation needed] It must be concealed behind drywall, sheet metal, or concrete",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Foamed polystyrene plastic materials have been accidentally ignited and caused huge fires and losses of life, for example at the D\u00fcsseldorf International Airport and in the Channel Tunnel (where polystyrene was inside a railway carriage that caught fire)",
+                            "refs": [
+                                "https://ir.canterbury.ac.nz/bitstream/handle/10092/14390/RNelligan06.pdf"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "See also",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "References",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "Sources",
+            "section_content": [
+                {
+                    "sentence": "This article incorporates text from a free content work",
+                    "refs": []
+                },
+                {
+                    "sentence": "Licensed under Cc BY-SA 3.0 IGO (license statement/permission)",
+                    "refs": []
+                },
+                {
+                    "sentence": "Text taken from Drowning in Plastics \u2013 Marine Litter and Plastic Waste Vital Graphics\u200b, United Nations Environment Programme",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Bibliography",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "External links",
+            "section_content": [],
+            "subsections": []
+        }
+    ],
+    "references": {
+        "1": "https://doi.org/10.1016%2FB978-1-895198-47-8.50162-4",
+        "2": "[ERROR retrieving ref link]",
+        "3": "[ERROR retrieving ref link]",
+        "4": "https://books.google.com/books?id=9Oal8DG_7GAC&pg=PA15",
+        "5": "https://books.google.com/books?id=FRGoFxKels4C&pg=PA3",
+        "6": "http://plastics.americanchemistry.com/Education-Resources/Hands-on-Plastics/Introduction-to-Plastics-Science-Teaching-Resources/History-of-Polymers-Plastics-for-Teachers.html",
+        "7": "https://doi.org/10.1002%2F14356007.a21_615.pub2",
+        "8": "https://patents.google.com/patent/US2681323A/en",
+        "9": "https://pubs.acs.org/doi/10.1021/la0611099",
+        "10": "https://ui.adsabs.harvard.edu/abs/2014EPoll.188...45K",
+        "11": "https://babel.hathitrust.org/cgi/pt?id=uva.x002457910;view=1up;seq=277",
+        "12": "https://books.google.com/books?id=A8MwAAAAYAAJ&pg=PA289",
+        "13": "[ERROR retrieving ref link]",
+        "14": "https://archive.org/stream/bulletin27frangoog#page/n295/mode/2up",
+        "15": "http://www.recordnet.com/apps/pbcs.dll/article?AID=/20070921/A_NEWS/709210329",
+        "16": "https://www.invent.org/inductees/otis-ray-mcintire",
+        "17": "https://www.sciencehistory.org/distillations/styrofoam-a-practical-and-problematic-creation",
+        "18": "https://www.invent.org/inductees/otis-ray-mcintire",
+        "19": "https://pagev.org/polystyrene",
+        "20": "https://ui.adsabs.harvard.edu/abs/1960NCim...15S..68N",
+        "21": "[ERROR retrieving ref link]",
+        "22": "https://archive.today/20100604022321/http://www.dartcontainer.com/web/products.nsf/pages/celebrating50timeline.html",
+        "23": "https://patents.google.com/patent/US9738739/en",
+        "24": "https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Arenes/Properties_of_Arenes/The_Phenyl_Group",
+        "25": "http://www.idemitsu.com/products/petrochemicals/engineering/polystyrene.html",
+        "26": "https://www.azocleantech.com/article.aspx?ArticleID=336",
+        "27": "https://doi.org/10.1080%2F07388551.2017.1355293",
+        "28": "https://web.archive.org/web/20210108134659/https://news.stanford.edu/pr/2015/pr-worms-digest-plastics-092915.html",
+        "29": "https://ui.adsabs.harvard.edu/abs/2015EnST...4912080Y",
+        "30": "http://livingearthsystems.com/mealworms-compost-styrofoam/",
+        "31": "https://www.academia.edu/43122081",
+        "32": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9455710",
+        "33": "http://www.livescience.com/technology/060307_styrofoam_cup.html",
+        "34": "https://ui.adsabs.harvard.edu/abs/2006EnST...40.2433W",
+        "35": "http://www.scientificamerican.com/article/bacteria-turn-styrofoam-i/",
+        "36": "https://books.google.com/books?id=d_XOKdeyXrYC&pg=PA706",
+        "37": "ISBN: 978-0-19-518101-2",
+        "38": "ISBN: 90-407-2388-5",
+        "39": "https://doi.org/10.1177%2F0892705704035405",
+        "40": "https://ui.adsabs.harvard.edu/abs/2002JPoSB..40..723D",
+        "41": "https://nrc-publications.canada.ca/eng/view/accepted/?id=43335b28-49c7-4640-877c-1d79813ff029",
+        "42": "https://web.archive.org/web/20080226152632/http://barrule.com/workshop/images/info/foams/index.htm",
+        "43": "https://web.archive.org/web/20180308035110/https://www.chemicalsafetyfacts.org/polystyrene-post/",
+        "44": "http://www.epspackaging.org/index.php?option=com_content&view=article&id=8&Itemid=4",
+        "45": "https://web.archive.org/web/20180311052238/http://neotherm.ie/neographite_031_graphite_enhanced_polystyrene.html",
+        "46": "https://patents.google.com/patent/US2023204",
+        "47": "http://www.thermalps.com.au/imagesDB/wysiwyg/TDS_Expanded_Polystyrene.pdf",
+        "48": "https://patentimages.storage.googleapis.com/38/74/c0/e31dc824c43b22/US5217660.pdf",
+        "49": "https://doi.org/10.4271%2F2006-01-3612",
+        "50": "https://doi.org/10.1115%2Fimece2005-81078",
+        "51": "https://hal.science/hal-00574810",
+        "52": "http://www.bpf.co.uk/plastipedia/processes/moulding_eps.aspx",
+        "53": "https://web.archive.org/web/20080324134328/http://building.dow.com/styrofoam/what.htm",
+        "54": "http://www.ceresana.com/en/insight/products/plastics/expandable-polystyrene/",
+        "55": "https://www.sciencedirect.com/science/article/pii/S1359431106001256",
+        "56": "https://www.nathanibiz.com/ti-xps.php",
+        "57": "http://www.depron.co.uk/technical.htm",
+        "58": "http://leidykla.vgtu.lt/conferences/MBM_2007/1pdf/Gnip_Kersulis.pdf",
+        "59": "https://www.foamular.com/assets/0/144/172/174/e45fe07d-5cc9-4e4b-866a-5e35d75090ec.pdf",
+        "60": "http://epsindustry.org/sites/default/files/EPS%20Below%20Grade%20105.pdf",
+        "61": "ISBN: 3-527-31582-9",
+        "62": "http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/9/mac/werkstoff_polystyren/sorten/sorten.vlu/Page/vsc/de/ch/9/mac/werkstoff_polystyren/sorten/copolymere/uebersicht.vscml.html",
+        "63": "https://search.worldcat.org/oclc/834590709",
+        "64": "http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/10/styrol_polymerisation/schlagzaehes_ps/schlagzaehes_ps.vlu.html",
+        "65": "http://www.chemgapedia.de/vsengine/vlu/vsc/de/ch/9/mac/werkstoff_polystyren/sorten/sorten.vlu/Page/vsc/de/ch/9/mac/werkstoff_polystyren/sorten/copolymere/sb/pfropfcopolymere.vscml.html",
+        "66": "https://iisrp.com/wp-content/uploads/08SBC16Aug2012.pdf",
+        "67": "http://www.earthresource.org/campaigns/capp/capp-styrofoam.html",
+        "68": "http://www.epa.gov/ozone/geninfo/gwps.html",
+        "69": "http://www.unep.org/resources/report/drowning-plastics-marine-litter-and-plastic-waste-vital-graphics",
+        "70": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4320144",
+        "71": "ISBN: 978-1-60456-242-2",
+        "72": "https://zenodo.org/record/4588238",
+        "73": "https://ui.adsabs.harvard.edu/abs/2018MarPB.137..157S",
+        "74": "https://www.nytimes.com/1987/09/24/us/berkeley-barring-use-of-a-food-container.html?src=pm",
+        "75": "https://www.nytimes.com/1988/03/30/nyregion/suffolk-votes-a-bill-to-ban-plastic-bags.html",
+        "76": "https://www.nytimes.com/1990/03/04/nyregion/ban-on-plastics-in-suffolk-is-overturned.html?src=pm",
+        "77": "https://www.nytimes.com/1992/03/04/nyregion/vote-blocks-plastics-ban-for-suffolk.html",
+        "78": "https://www.latimes.com/archives/la-xpm-1988-06-16-mn-6881-story.html",
+        "79": "http://www.sfgate.com/news/article/Styrofoam-food-packaging-banned-in-Oakland-2516522.php",
+        "80": "http://www.nbcbayarea.com/news/local/San-Jose-Set-to-Ban-Styrofoam-221354051.html",
+        "81": "https://web.archive.org/web/20140329123453/http://freeportmaine.com/inc/scripts/file.php?file_id=1060",
+        "82": "http://www.msnbc.com/new-york-city-foam-ban-overturned",
+        "83": "http://www.sfchronicle.com/bayarea/article/City-OKs-ban-on-Styrofoam-Jane-Kim-wants-to-play-8332796.php",
+        "84": "http://www.dinegreen.com/disposables-standard",
+        "85": "https://web.archive.org/web/20061112142759/http://www.emagazine.com/view/?2933",
+        "86": "https://news.bloombergenvironment.com/environment-and-energy/maryland-foam-packaging-ban-energy-bills-to-become-law",
+        "87": "https://environmentamerica.org/news/ame/statement-maryland-becomes-second-state-ban-plastic-foam-containers",
+        "88": "https://www.baltimoresun.com/politics/bs-md-hogan-bill-list-20190524-story.html",
+        "89": "https://web.archive.org/web/20190620002002/http://www.mdlcv.org/2019-foam-ban",
+        "90": "https://www.nytimes.com/2020/09/25/nyregion/nj-paper-plastic-bag-ban.html",
+        "91": "http://www.plasticsnews.com/article/20130321/NEWS/130329979/china-moves-to-end-its-ban-on-ps-food-packaging",
+        "92": "https://web.archive.org/web/20061023152054/http://clerkwebsvr1.oaklandnet.com/attachments/13659.pdf",
+        "93": "http://www.herald.co.zw/government-bans-kaylite-packaging-%e2%80%a2health-considerations-cited-%e2%80%a2defiant-citizens-face-prosecution/",
+        "94": "http://www.herald.co.zw/expanded-polystyrene-kaylite-what-are-its-impacts/",
+        "95": "http://vancouver.ca/green-vancouver/single-use-items.aspx",
+        "96": "https://www.wastedive.com/news/european-parliament-approves-2021-single-use-plastics-ban/551552/",
+        "97": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32019L0904&from=EN",
+        "98": "https://www.fbcnews.com.fj/news/grace-period-for-polystyrene-products/",
+        "99": "https://expandedpoly.co.uk/environment/",
+        "100": "http://ecclestons.com/expanded-polystyrene-recycling.htm",
+        "101": "https://pubs.acs.org/doi/10.1021/jacs.2c01411",
+        "102": "[ERROR retrieving ref link]",
+        "103": "http://www.newton.dep.anl.gov/askasci/chem00/chem00053.htm",
+        "104": "https://web.archive.org/web/20090607023527/http://americanchemistry.com/s_plastics/sec_pfpg.asp?CID=1434&DID=5226",
+        "105": "https://doi.org/10.1016%2FS0021-9673%2801%2990737-X",
+        "106": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=101741",
+        "107": "https://web.archive.org/web/20110824143749/http://plasticfoodservicefacts.com/main/Safety/Californias-Proposition-65/Q-A-on-the-Safety-of-Polystyrene-Foodservice-Products.GMEditor.html",
+        "108": "https://doi.org/10.1080%2F10937400252972162",
+        "109": "https://web.archive.org/web/20110612024850/http://ntp.niehs.nih.gov/index.cfm?objectid=72016262-BDB7-CEBA-FA60E922B18C2540",
+        "110": "https://www.nytimes.com/2011/06/11/health/11cancer.html",
+        "111": "http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/cfrsearch.cfm?fr=177.1640",
+        "112": "https://doi.org/10.3358%2Fshokueishi.41.200",
+        "113": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2430229",
+        "114": "https://www.health.harvard.edu/staying-healthy/microwaving-food-in-plastic-dangerous-or-not",
+        "115": "http://www.ejnet.org/plastics/polystyrene/health.html",
+        "116": "http://www.aei.org/publication/styrene-in-the-crosshairs-competeing-standards-confuse-public-regulators/",
+        "117": "https://ir.canterbury.ac.nz/bitstream/handle/10092/14390/RNelligan06.pdf",
+        "118": "https://www.irishtimes.com/news/foul-play-considered-in-chunnel-fire-inquiry-1.110786"
+    },
+    "flair_entities": [
+        "eps.",
+        "icf",
+        "dutch",
+        "maryland",
+        "channel tunnel",
+        "ul 723",
+        "jamaican-born",
+        "san",
+        "canada",
+        "portland",
+        "ema",
+        "germany",
+        "german",
+        "eps",
+        "china",
+        "european union",
+        "hermann staudinger",
+        "astm e84",
+        "zimbabwe",
+        "europe",
+        "ray mcintire",
+        "environmental management agency",
+        "munters",
+        "k-710",
+        "suffolk county",
+        "dow",
+        "styroloxyd",
+        "pacific ocean",
+        "dow chemical",
+        "sewon oh",
+        "dow chemical company",
+        "pennsylvania",
+        "astm",
+        "oakland",
+        "science history institute",
+        "f",
+        "society of the plastics industry",
+        "freeport",
+        "berlin",
+        "sbc",
+        "rastra",
+        "cornell university",
+        "dart container",
+        "united nations environment programme",
+        "styropor",
+        "harvard",
+        "history  polystyrene",
+        "icc-es",
+        "amendment",
+        "plastics",
+        "dylite",
+        "us",
+        "house bill 109",
+        "international code council evaluation service",
+        "statutory instrument 84",
+        "carl munters",
+        "marcellin berthelot",
+        "august wilhelm von hofmann",
+        "swedish",
+        "d\u00fcsseldorf international airport",
+        "dow chemicals.",
+        "ahr-null",
+        "zero waste 2040",
+        "chemical manufacturers' association",
+        "john gudbrand tandberg",
+        "oregon",
+        "fritz stastny",
+        "ithaca",
+        "stastny",
+        "fiji",
+        "styrofoam",
+        "pseudomonas",
+        "eu.",
+        "basf",
+        "san jose",
+        "harvard center for risk assessment",
+        "ludwigshafen",
+        "butadiene",
+        "u.s",
+        "astm d2863",
+        "eduard simon",
+        "kunststoff messe",
+        "xarec",
+        "conservative",
+        "erin stache",
+        "pentane",
+        "environmental management bill",
+        "san francisco",
+        "american national bureau of standards center for fire research",
+        "astm c578",
+        "styrene",
+        "oriental",
+        "d\u00fcsseldorf",
+        "sbs",
+        "simon",
+        "marine litter",
+        "styrochem finland",
+        "koppers company",
+        "xps",
+        "u.s. green restaurant association",
+        "van der waals",
+        "idemitsu",
+        "new york",
+        "maine",
+        "chinese",
+        "hips",
+        "abs",
+        "berkeley",
+        "republican",
+        "taiwan",
+        "corynebacterium",
+        "ps-i",
+        "india",
+        "rhodococcus",
+        "hogan",
+        "new jersey",
+        "uk",
+        "new york city",
+        "ateneo de manila university",
+        "cfc",
+        "american",
+        "american chemistry council",
+        "farben",
+        "polystyrene",
+        "eps-ia",
+        "ministry of the environment",
+        "giulio natta",
+        "usa",
+        "john buddle blyth",
+        "pittsburgh",
+        "department of the environment",
+        "din4102",
+        "vancouver",
+        "sweden",
+        "anglosphere",
+        "sma",
+        "japanese",
+        "california",
+        "united states"
+    ]
+}

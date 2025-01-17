@@ -1,0 +1,122 @@
+{
+    "title": "Endochondral_ossification",
+    "url": "https://en.wikipedia.org/wiki/Endochondral_ossification",
+    "summary": "Endochondral ossification is one of the two essential pathways by which bone tissue is produced during fetal development of the mammalian skeletal system, the other pathway being intramembranous ossification. Both endochondral and intramembranous processes initiate from a precursor mesenchymal tissue, but their transformations into bone are different. In intramembranous ossification, mesenchymal tissue is directly converted into bone. On the other hand, endochondral ossification starts with mesenchymal tissue turning into an intermediate cartilage stage, which is eventually substituted by bone.\nEndochondral ossification is responsible for development of most bones including long and short bones, the bones of the axial (ribs and vertebrae) and the appendicular skeleton (e.g. upper and lower limbs), the bones of the skull base (including the ethmoid and sphenoid bones) and the medial end of the clavicle. In addition, endochondral ossification is not exclusively confined to embryonic development; it also plays a crucial role in the healing of fractures.",
+    "content": [
+        {
+            "section_title": "Formation of the cartilage model",
+            "section_content": [
+                {
+                    "sentence": "The initiation of endochondral ossification starts by proliferation and condensation of mesenchymal cells in the area where the bone will eventually be formed",
+                    "refs": []
+                },
+                {
+                    "sentence": "Subsequently, these mesenchymal progenitor cells differentiate into chondroblasts, which actively synthesize cartilage matrix components",
+                    "refs": []
+                },
+                {
+                    "sentence": "Thus, the initial hyaline cartilage template is formed, which has the same basic shape and outline as the future bone",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Primary center of ossification",
+            "section_content": [
+                {
+                    "sentence": "In developing bones, ossification commences within the primary ossification center located in the center of the diaphysis (bone shaft),  where the following changes occur:",
+                    "refs": [
+                        "https://doi.org/10.1016%2Fj.aanat.2021.151704"
+                    ]
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Secondary center of ossification",
+            "section_content": [
+                {
+                    "sentence": "During the postnatal life, a secondary ossification center appears in each end (epiphysis) of long bones",
+                    "refs": []
+                },
+                {
+                    "sentence": "In these secondary centers, cartilage is converted to bone similarly to that occurring in a primary ossification center",
+                    "refs": []
+                },
+                {
+                    "sentence": "As the secondary ossification centers enlarge, residual cartilage persists in two distinct locations:",
+                    "refs": [
+                        "https://www.lww.co.uk/9781975181574/histology-a-text-and-atlas/",
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10724094"
+                    ]
+                },
+                {
+                    "sentence": "At the end of an individual\u2019s growth period, the production of new cartilage in the epiphyseal plate stops",
+                    "refs": []
+                },
+                {
+                    "sentence": "After this point, existing cartilage within the plate turns into mature bone tissue",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Histology",
+            "section_content": [
+                {
+                    "sentence": "During endochondral ossification, five distinct zones can be seen at the light-microscope level:",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10648520"
+                    ]
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Fracture healing",
+            "section_content": [
+                {
+                    "sentence": "For complete recovery of a fractured bone\u2019s biomechanical functionality, the bone healing process needs to culminate in the formation of lamellar bone at the fracture site to withstand the same forces and stresses it did before the fracture",
+                    "refs": []
+                },
+                {
+                    "sentence": "Indirect fracture healing, the most common type of bone repair,  relies heavily on endochondral ossification",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3105171"
+                    ]
+                },
+                {
+                    "sentence": "In this type of healing, endochondral ossification occurs within the fracture gap and external to the periosteum",
+                    "refs": []
+                },
+                {
+                    "sentence": "In contrast, intramembranous ossification takes place directly beneath the periosteum, adjacent to the broken bone\u2019s ends",
+                    "refs": []
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Additional images",
+            "section_content": [],
+            "subsections": []
+        }
+    ],
+    "references": {
+        "1": "[ERROR retrieving ref link]",
+        "2": "https://web.archive.org/web/20110714142832/http://www.myetymology.com/english/endochondral.html",
+        "3": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10648520",
+        "4": "https://www.ncbi.nlm.nih.gov/books/NBK537199//",
+        "5": "https://doi.org/10.1016%2Fj.aanat.2021.151704",
+        "6": "https://shop.lww.com/Langman-s-Medical-Embryology/p/9781975179960",
+        "7": "https://www.ncbi.nlm.nih.gov/books/NBK525990/",
+        "8": "https://www.lww.co.uk/9781975181574/histology-a-text-and-atlas/",
+        "9": "https://www.mhprofessional.com/junqueira-s-basic-histology-text-and-atlas-seventeenth-edition-9781264930395-usa",
+        "10": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3105171",
+        "11": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10724094",
+        "12": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4318416"
+    },
+    "flair_entities": []
+}

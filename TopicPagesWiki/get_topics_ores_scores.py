@@ -9,6 +9,8 @@ from tqdm import tqdm
 from config.constants import TOPICS_URLS_JSON, TOPICS_ORES_SCORES_JSON
 from src.utils import load_json, dump_json
 
+import argparse
+
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(levelname)-8s : %(message)s")
 
@@ -114,7 +116,7 @@ def get_predicted_quality(title, verbose=False):
     return predicted_quality
 
 
-def main():
+def main(args):
 
     if not os.path.exists(TOPICS_URLS_JSON):
         print_warning()
@@ -136,12 +138,25 @@ def main():
             data["predicted_scores"].append(predicted_quality["probability"])
 
     df = pd.DataFrame(data)
-    df.to_csv('topics_ores_scores.csv', index=False)
     print_stats(df)
+    if args.extract_HQ_articles:
+        high_quality_classes = {"B", "GA", "FA"}
+        df = df[df["predicted_class"].isin(high_quality_classes)]
+
+    df.to_csv('topics_ores_scores.csv', index=False)
 
     records = df.to_dict(orient="records")
     dump_json(records, TOPICS_ORES_SCORES_JSON, ensure_ascii=False)
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Get ORES scores for Wikipedia articles."
+    )
+    parser.add_argument(
+        "--extract-HQ-articles",
+        action="store_true",
+        default=True,
+        help="Extract high-quality Wikipedia articles based on ORES scores.",
+    )
+    main(parser.parse_args())

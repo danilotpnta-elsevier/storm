@@ -23,3 +23,8 @@ secrets.toml
 *.log
 */assertion.log
 *results/
+
+# Avoid tempt data files
+TopicPagesWiki/backup/
+TopicPagesWiki/md/
+TopicPagesWiki/pdf/

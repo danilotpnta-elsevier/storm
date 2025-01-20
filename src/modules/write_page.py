@@ -193,7 +193,12 @@ class WriteSection(dspy.Signature):
         Here is the format of your writing:
             1. Use "#" Title" to indicate section title, "##" Title" to indicate subsection title, "###" Title" to indicate subsubsection title, and so on.
             2. Use [1], [2], ..., [n] in line (for example, "The capital of the United States is Washington, D.C.[1][3]."). You DO NOT need to include a References or Sources section to list the sources at the end.
+
     """
+    #TODO: Danilo: possibly adapt this to the format of asking to 
+    # Ask LLM to be detail as needed
+    # 1. Provide the list of most relevant sources
+    # 2. Use these sources to make the section
 
     info = dspy.InputField(prefix="The collected information:\n", format=str)
     topic = dspy.InputField(prefix="The topic of the page: ", format=str)
@@ -270,7 +275,10 @@ class WriteLeadSection(dspy.Signature):
 
 
 class PolishPage(dspy.Signature):
-    """You are a faithful text editor that is good at finding repeated information in the article and deleting them to make sure there is no repetition in the article. You won't delete any non-repeated part in the article. You will keep the inline citations and article structure (indicated by "#", "##", etc.) appropriately. Do your job for the following article."""
+    """You are a faithful text editor that is good at finding repeated information in the article and deleting them to make sure there is no repetition in the article. You won't delete any non-repeated part in the article. You will keep the inline citations and article structure (indicated by "#", "##", etc.) appropriately. Do your job for the following article.
+    
+    """
+    #TODO: Danilo: there might be more prompts that could optmize the polished_articles
 
     draft_page = dspy.InputField(prefix="The draft article:\n", format=str)
     page = dspy.OutputField(prefix="Your revised article:\n")

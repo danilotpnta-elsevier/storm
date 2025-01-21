@@ -80,7 +80,10 @@ def main(args):
             "heading_soft_recall": heading_soft_recalls,
         }
     )
-    results.to_csv(args.result_output_path, index=False)
+    results_output_path = os.path.join(
+        args.result_output_dir, "storm_outline_quality.csv"
+    )
+    results.to_csv(results_output_path, index=False)
 
     # Print averages
     if entity_recalls and heading_soft_recalls:
@@ -106,16 +109,27 @@ if __name__ == "__main__":
     )
     parser.add_argument("--gt-dir", type=str, help="Path of human-written articles.")
     parser.add_argument("--pred-dir", type=str, help="Path of generated outlines.")
-    parser.add_argument("--pred-file-name", type=str, help="Name of the outline file.")
     parser.add_argument(
-        "--result-output-path", type=str, help="Path to save the results."
+        "--pred-file-name",
+        default="storm_gen_outline.txt",
+        type=str,
+        help="Name of the outline file.",
     )
+    parser.add_argument(
+        "--result-output-dir", help="Directory to store the evaluation results. "
+    )
+    args = parser.parse_args()
+
+    if not os.path.exists(args.result_output_dir):
+        os.makedirs(args.result_output_dir)
+        print(f"Directory {args.result_output_dir} created.")
+
     """
     python eval_outline_quality.py \
         --input-path "../TopicPagesWiki/topics_ores_scores.csv" \
         --gt-dir "../TopicPagesWiki" \
         --pred-dir "/home/toapantabarahonad/storm-plus/data/baseline/refined_articles/models--snippet_ranking_model" \
-        --pred-file-name storm_gen_outline.txt \
-        --result-output-path "/home/toapantabarahonad/storm-plus/results/storm_outline_quality.csv"
+        --result-output-dir "/home/toapantabarahonad/storm-plus/results/storm_outline_eval_results"
     """
-    main(parser.parse_args())
+
+    main(args)

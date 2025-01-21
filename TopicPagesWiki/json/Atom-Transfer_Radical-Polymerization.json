@@ -1,0 +1,800 @@
+{
+    "title": "Atom_transfer_radical_polymerization",
+    "url": "https://en.wikipedia.org/wiki/Atom_transfer_radical_polymerization",
+    "summary": "Atom transfer radical polymerization (ATRP) is an example of a reversible-deactivation radical polymerization. Like its counterpart, ATRA, or atom transfer radical addition, ATRP is a means of forming a carbon-carbon bond with a transition metal catalyst. Polymerization from this method is called atom transfer radical addition polymerization (ATRAP). As the name implies, the atom transfer step is crucial in the reaction responsible for uniform polymer chain growth. ATRP (or transition metal-mediated living radical polymerization) was independently discovered by Mitsuo Sawamoto and by Krzysztof Matyjaszewski and Jin-Shan Wang in 1995.\n\nThe following scheme presents a typical ATRP reaction:",
+    "content": [
+        {
+            "section_title": "Overview of ATRP",
+            "section_content": [
+                {
+                    "sentence": "ATRP usually employs a transition metal complex as the catalyst with an alkyl halide as the initiator (R-X)",
+                    "refs": []
+                },
+                {
+                    "sentence": "Various transition metal complexes, namely those of Cu, Fe, Ru, Ni, and Os, have been employed as catalysts for ATRP",
+                    "refs": []
+                },
+                {
+                    "sentence": "In an ATRP process, the dormant species is activated by the transition metal complex to generate radicals via one electron transfer process",
+                    "refs": []
+                },
+                {
+                    "sentence": "Simultaneously the transition metal is oxidized to higher oxidation state",
+                    "refs": []
+                },
+                {
+                    "sentence": "This reversible process rapidly establishes an equilibrium that is predominately shifted to the side with very low radical concentrations",
+                    "refs": []
+                },
+                {
+                    "sentence": "The number of polymer chains is determined by thenumber of initiators",
+                    "refs": []
+                },
+                {
+                    "sentence": "Each growing chain has the same probability to propagate with monomers to form living/dormant polymer chains (R-Pn-X)",
+                    "refs": []
+                },
+                {
+                    "sentence": "As a result, polymers with similar molecular weights and narrow molecular weight distribution can be prepared.",
+                    "refs": []
+                },
+                {
+                    "sentence": "ATRP reactions are very robust in that they are tolerant of many functional groups like allyl, amino, epoxy, hydroxy, and vinyl groups present in either the monomer or the initiator",
+                    "refs": []
+                },
+                {
+                    "sentence": "ATRP methods are also advantageous due to the ease of preparation, commercially available and inexpensive catalysts (copper complexes), pyridine-based ligands, and initiators (alkyl halides)",
+                    "refs": [
+                        "ISBN: 0849398134"
+                    ]
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Components of normal ATRP",
+            "section_content": [
+                {
+                    "sentence": "There are five important variable components of atom transfer radical polymerizations",
+                    "refs": []
+                },
+                {
+                    "sentence": "They are the monomer, initiator, catalyst, ligand, and solvent",
+                    "refs": []
+                },
+                {
+                    "sentence": "The following section breaks down the contributions of each component to the overall polymerization.",
+                    "refs": []
+                }
+            ],
+            "subsections": [
+                {
+                    "section_title": "Monomer",
+                    "section_content": [
+                        {
+                            "sentence": "Monomers typically used in ATRP are molecules with substituents that can stabilize the propagating radicals; for example, styrenes, (meth)acrylates, (meth)acrylamides, and acrylonitrile",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "ATRP is successful at leading to polymers of high number average molecular weight and low dispersity when the concentration of the propagating radical balances the rate of radical termination",
+                            "refs": [
+                                "https://doi.org/10.1002%2F%28sici%291521-4095%28199808%2910%3A12%3C901%3A%3Aaid-adma901%3E3.0.co%3B2-b"
+                            ]
+                        },
+                        {
+                            "sentence": "Yet, the propagating rate is unique to each individual monomer",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Therefore, it is important that the other components of the polymerization (initiator, catalyst, ligand, and solvent) are optimized in order for the concentration of the dormant species to be greater than that of the propagating radical while being low enough as to prevent slowing down or halting the reaction",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Initiator",
+                    "section_content": [
+                        {
+                            "sentence": "The number of growing polymer chains is determined by the initiator",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "To ensure a low polydispersity and a controlled polymerization, the rate of initiation must be as fast or preferably faster than the rate of propagation   Ideally, all chains will be initiated in a very short period of time and will be propagated at the same rate",
+                            "refs": [
+                                "http://www.cmu.edu/maty/atrp-how/initiators.html"
+                            ]
+                        },
+                        {
+                            "sentence": "Initiators are typically chosen to be alkyl halides whose frameworks are similar to that of the propagating radical",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Alkyl halides such as alkyl bromides are more reactive than alkyl chlorides",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "Both offer good molecular weight control",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The shape or structure of the initiator influences polymer architecture",
+                            "refs": [
+                                "[ERROR retrieving ref link]",
+                                "https://doi.org/10.1021%2Fcr940534g"
+                            ]
+                        },
+                        {
+                            "sentence": "For example, initiators with multiple alkyl halide groups on a single core can lead to a star-like polymer shape",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Furthermore, \u03b1-functionalized ATRP initiators can be used to synthesize hetero-telechelic polymers with a variety of chain-end groups",
+                            "refs": [
+                                "http://www.sigmaaldrich.com/materials-science/polymer-science/atrp.html",
+                                "http://www.cmu.edu/maty/materials/Incorporation-of-functional-groups-into-polymers/use-of-functional-atrp-initiators.html"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Catalyst",
+                    "section_content": [
+                        {
+                            "sentence": "The catalyst is the most important component of ATRP because it determines the equilibrium constant between the active and dormant species",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This equilibrium determines the polymerization rate",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "An equilibrium constant that is too small may inhibit or slow the polymerization while an equilibrium constant that is too large leads to a wide distribution of chain lengths",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "There are several requirements for the metal catalyst:",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The most studied catalysts are those that include copper, which has shown the most versatility with successful polymerizations for a wide selection of monomers.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Ligand",
+                    "section_content": [
+                        {
+                            "sentence": "One of the most important aspects in an ATRP reaction is the choice of ligand which is used in combination with the traditionally copper halide catalyst to form the catalyst complex",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The main function of the ligand is to solubilize the copper halide in whichever solvent is chosen and to adjust the redox potential of the copper",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This changes the activity and dynamics of the halogen exchange reaction and subsequent activation and deactivation of the polymer chains during polymerization, therefore greatly affecting the kinetics of the reaction and the degree of control over the polymerization",
+                            "refs": [
+                                "https://www.cmu.edu/maty/chem/catalyst-development/structural-characterization.html"
+                            ]
+                        },
+                        {
+                            "sentence": "Different ligands should be chosen based on the activity of the monomer and the choice of metal for the catalyst",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As copper halides are primarily used as the catalyst, amine based ligands are most commonly chosen",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Ligands with higher activities are being investigated as ways to potentially decrease the concentration of catalyst in the reaction since a more active catalyst complex would lead to a higher concentration of deactivator in the reaction",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, a too active catalyst can lead to a loss of control and increase the polydispersity of the resulting polymer.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Solvents",
+                    "section_content": [
+                        {
+                            "sentence": "Toluene, 1,4-dioxane, xylene, anisole, DMF, DMSO, water, methanol, acetonitrile, or even the monomer itself (described as a bulk polymerization) are commonly used.",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Kinetics of normal ATRP",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "ATRP equilibrium constant",
+                    "section_content": [
+                        {
+                            "sentence": "The radical concentration in normal ATRP can be calculated via the following equation:",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "It is important to know the KATRP value to adjust the radical concentration",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The KATRP value depends on the homo-cleavage energy of the alkyl halide and the redox potential of the Cu catalyst with different ligands",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Given two alkyl halides (R1-X and R2-X) and two ligands (L1 and L2), there will be four combinations between different alkyl halides and ligands",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Let KijATRP refer to the KATRP value for Ri-X and Lj",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "If we know three of these four combinations, the fourth one can be calculated as:",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The KATRP values for different alkyl halides and different Cu catalysts can be found in literature",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Solvents have significant effects on the KATRP values",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The KATRP value increases dramatically with the polarity of the solvent for the same alkyl halide and the same Cu catalyst",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The polymerization must take place in solvent/monomer mixture, which changes to solvent/monomer/polymer mixture gradually",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/2009MaMol..42.6348B"
+                            ]
+                        },
+                        {
+                            "sentence": "The KATRP values could change 10000 times by switching the reaction medium from pure methyl acrylate to pure dimethyl sulfoxide",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Activation and deactivation rate coefficients",
+                    "section_content": [
+                        {
+                            "sentence": "Deactivation rate coefficient, kd, values must be sufficiently large to obtain low dispersity",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The direct measurement of kd is difficult though not impossible",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In most cases, kd may be calculated from known KATRP and ka",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Cu complexes providing very low kd values are not recommended for use in ATRP reactions.",
+                            "refs": [
+                                "https://doi.org/10.1021%2Fja802290a",
+                                "https://ui.adsabs.harvard.edu/abs/2007MaMol..40.1858T",
+                                "https://ui.adsabs.harvard.edu/abs/2006MaMol..39.4953T"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Retention of chain end functionality",
+                    "section_content": [
+                        {
+                            "sentence": "High level retention of chain end functionality is typically desired",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, the determination of the loss of chain end functionality based on 1H NMR and mass spectroscopy methods cannot provide precise values",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As a result, it is difficult to identify the contributions of different chain breaking reactions in ATRP",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "One simple rule in ATRP comprises the principle of halogen conservation",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Halogen conservation means the total amount of halogen in the reaction systems must remain as a constant",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/2012MaMol..45.8929W"
+                            ]
+                        },
+                        {
+                            "sentence": "From this rule, the level of retention of chain end functionality can be precisely determined in many cases",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The precise determination of the loss of chain end functionality enabled further investigation of the chain breaking reactions in ATRP",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Advantages and disadvantages of ATRP",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Advantages",
+                    "section_content": [
+                        {
+                            "sentence": "ATRP enables the polymerization of a wide variety of monomers with different chemical functionalities, proving to be more tolerant of these functionalities than  ionic polymerizations",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "It provides increased control of molecular weight, molecular architecture and polymer composition while maintaining a low polydispersity (1.05-1.2)",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The halogen remaining at the end of the polymer chain after polymerization allows for facile post-polymerization chain-end modification into different reactive functional groups",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The use of multi-functional initiators facilitates the synthesis of lower-arm star polymers and telechelic polymers",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "External visible light stimulation ATRP has a high responding speed and excellent functional group tolerance",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Disadvantages",
+                    "section_content": [
+                        {
+                            "sentence": "The most significant drawback of ATRP is the high concentrations of catalyst required for the reaction",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "This catalyst standardly consists of a copper halide and an amine-based ligand",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The removal of the copper from the polymer after polymerization is often tedious and expensive, limiting ATRP's use in the commercial sector",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, researchers are currently developing methods which would limit the necessity of the catalyst concentration to ppm",
+                            "refs": [
+                                "https://pubs.acs.org/cen/science/84/8444sci1.html"
+                            ]
+                        },
+                        {
+                            "sentence": "ATRP is also a traditionally air-sensitive reaction normally requiring freeze-pump thaw cycles",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, techniques such as Activator Generated by Electron Transfer (AGET) ATRP provide potential alternatives which are not air-sensitive",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "A final disadvantage is the difficulty of conducting ATRP in aqueous media.",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3604987"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Different ATRP methods",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Activator regeneration ATRP methods",
+                    "section_content": [
+                        {
+                            "sentence": "In a normal ATRP, the concentration of radicals is determined by the KATRP value, concentration of dormant species, and the  [CuI]/ [CuII] ratio",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In principle, the total amount of Cu catalyst should not influence polymerization kinetics",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "However, the loss of chain end functionality slowly but irreversibly converts CuI to CuII",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Thus initial  [CuI]/ [I] ratios are typically 0.1 to 1",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "When very low concentrations of catalysts are used, usually at the ppm level, activator regeneration processes are generally required to compensate the loss of CEF and regenerate a sufficient amount of CuI to continue the polymerization",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Several activator regeneration ATRP methods were developed, namely ICAR ATRP, ARGET ATRP, SARA ATRP, eATRP, and photoinduced ATRP",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The activator regeneration process is introduced to compensate the loss of chain end functionality, thus the cumulative amount of activator regeneration should roughly equal the total amount of the loss of chain end functionality",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "section_title": "ICAR ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "Initiators for continuous activator regeneration (ICAR) is a technique that uses conventional radical initiators to continuously regenerate the activator, lowering its required concentration from thousands of ppm to <100 ppm; making it an industrially relevant technique.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "ARGET ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "Activators regenerated by electron transfer (ARGET) employs non-radical forming reducing agents for regeneration of CuI",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "A good reducing agent (e.g",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "hydrazine, phenols, sugars, ascorbic acid) should only react with CuII and not with radicals or other reagents in the reaction mixture.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "SARA ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "A typical SARA ATRP employs Cu0 as both supplemental activator and reducing agent (SARA)",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Cu0 can activate alkyl halide directly but slowly",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Cu0 can also reduce CuII to CuI",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Both processes help to regenerate CuI activator",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Other zerovalent metals, such as Mg, Zn, and Fe, have also been employed for Cu-based SARA ATRP",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "eATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "In eATRP the activator CuI is regenerated via electrochemical process",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The development of eATRP enables precise control of the reduction process and external regulation of the polymerization",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In an eATRP process, the redox reaction involves two electrodes",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The CuII species is reduced to CuI at the cathode",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The anode compartment is typically separated from the polymerization environment by a glass frit and a conductive gel",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Alternatively, a sacrificial aluminum counter electrode can be used, which is directly immersed in the reaction mixture.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Photoinduced ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "The direct photo reduction of transition metal catalysts in ATRP and/or photo assistant activation of alkyl halide is particularly interesting because such a procedure will allow performing of ATRP with ppm level of catalysts without any other additives.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        }
+                    ]
+                },
+                {
+                    "section_title": "Other ATRP methods",
+                    "section_content": [],
+                    "subsections": [
+                        {
+                            "section_title": "Reverse ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "In reverse ATRP, the catalyst is added in its higher oxidation state",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Chains are activated by conventional radical initiators (e.g",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "AIBN) and deactivated by the transition metal",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The source of transferable halogen is the copper salt, so this must be present in concentrations comparable to the transition metal.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "SR&NI ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "A mixture of radical initiator and active (lower oxidation state) catalyst allows for the creation of block copolymers (contaminated with homopolymer) which is impossible using standard reverse ATRP",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "This is called SR&NI (simultaneous reverse and normal initiation ATRP).",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "AGET ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "Activators generated by electron transfer uses a reducing agent unable to initiate new chains (instead of organic radicals) as regenerator for the low-valent metal",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Examples are metallic copper, tin(II), ascorbic acid, or triethylamine",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "It allows for lower concentrations of transition metals, and may also be possible in aqueous or dispersed media.",
+                                    "refs": []
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Hybrid and bimetallic systems",
+                            "section_content": [
+                                {
+                                    "sentence": "This technique uses a variety of different metals/oxidation states, possibly on solid supports, to act as activators/deactivators, possibly with reduced toxicity or sensitivity",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Iron salts can, for example, efficiently activate alkyl halides but requires an efficient Cu(II) deactivator which can be present in much lower concentrations (3\u20135\u00a0mol%)",
+                                    "refs": [
+                                        "https://ui.adsabs.harvard.edu/abs/2010JCIS..341..273X",
+                                        "https://doi.org/10.1021%2Fla800244g"
+                                    ]
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Metal-free ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "Trace metal catalyst remaining in the final product has limited the application of ATRP in biomedical and electronic fields",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In 2014, Craig Hawker and coworkers developed a new catalysis system involving photoredox reaction of 10-phenothiazine",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "The metal-free ATRP has been demonstrated to be capable of controlled polymerization of methacrylates",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "This technique was later expanded to polymerization of acrylonitrile by Matyjaszewski et al",
+                                    "refs": [
+                                        "http://www.escholarship.org/uc/item/5vm8s0vp"
+                                    ]
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Mechano/sono-ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "Mechano/sono-ATRP uses mechanical forces, typically ultrasonic agitation, as an external stimulus to induce the (re)generation of activators in ATRP",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Esser-Kahn, et al",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "demonstrated the first example of mechanoATRP using the piezoelectricity of barium titanate to reduce Cu(II) species",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Matyjaszewski, et al",
+                                    "refs": [
+                                        "https://doi.org/10.1038%2Fnchem.2633"
+                                    ]
+                                },
+                                {
+                                    "sentence": "later improved the technique by using nanometer-sized and/or surface-functionalized barium titanate or zinc oxide particles, achieving superior rate and control of polymerization, as well as temporal control, with ppm-level of copper catalysts",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "In addition to peizoelectric particles, water and carbonates were found to mediate mechano/sono-ATRP",
+                                    "refs": [
+                                        "https://doi.org/10.1021%2Facsmacrolett.7b00152",
+                                        "https://ui.adsabs.harvard.edu/abs/2017MaMol..50.7940W"
+                                    ]
+                                },
+                                {
+                                    "sentence": "Mechochemically homolyzed water molecules undergoes radical addition to monomers, which in turn reduces Cu(II) species",
+                                    "refs": []
+                                },
+                                {
+                                    "sentence": "Mechanically unstable Cu(II)-carbonate complexes formed in the presence to insoluble carbonates, which oxidizes dimethylsulfoxide, the solvent molecules, to generate Cu(I) species and carbon dioxide",
+                                    "refs": [
+                                        "https://doi.org/10.1021%2Facsmacrolett.8b00027"
+                                    ]
+                                }
+                            ],
+                            "subsections": []
+                        },
+                        {
+                            "section_title": "Biocatalytic ATRP",
+                            "section_content": [
+                                {
+                                    "sentence": "Metalloenzymes have been used for the first time as ATRP catalysts, in parallel and independently, by the research teams of Fabio Di Lena  and Nico Bruns",
+                                    "refs": [
+                                        "https://pubs.rsc.org/en/content/articlelanding/2011/cc/c1cc10989h"
+                                    ]
+                                },
+                                {
+                                    "sentence": "This pioneering work has paved the way to the emerging field of biocatalytic reversible-deactivation radical polymerization",
+                                    "refs": [
+                                        "https://onlinelibrary.wiley.com/doi/10.1002/marc.201100349"
+                                    ]
+                                }
+                            ],
+                            "subsections": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "section_title": "Polymers synthesized through ATRP",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "See also",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "External links",
+            "section_content": [],
+            "subsections": []
+        }
+    ],
+    "references": {
+        "1": "https://ui.adsabs.harvard.edu/abs/1995MaMol..28.1721K",
+        "2": "https://doi.org/10.1021%2Fja00125a035",
+        "3": "http://www.wolffund.org.il/cat.asp?id=15&cat_title=CHEMISTRY",
+        "4": "http://pac.iupac.org/publications/pac/pdf/2010/pdf/8202x0483.pdf",
+        "5": "ISBN: 0849398134",
+        "6": "https://web.archive.org/web/20090222022449/http://www.chem.cmu.edu/groups/maty/about/research/03.html",
+        "7": "https://doi.org/10.1002%2F%28sici%291521-4095%28199808%2910%3A12%3C901%3A%3Aaid-adma901%3E3.0.co%3B2-b",
+        "8": "[ERROR retrieving ref link]",
+        "9": "https://doi.org/10.1021%2Fcr940534g",
+        "10": "http://www.cmu.edu/maty/atrp-how/initiators.html",
+        "11": "http://www.sigmaaldrich.com/materials-science/polymer-science/atrp.html",
+        "12": "http://www.cmu.edu/maty/materials/Incorporation-of-functional-groups-into-polymers/use-of-functional-atrp-initiators.html",
+        "13": "https://www.cmu.edu/maty/chem/catalyst-development/structural-characterization.html",
+        "14": "https://doi.org/10.1021%2Fja802290a",
+        "15": "https://ui.adsabs.harvard.edu/abs/2009MaMol..42.6348B",
+        "16": "https://figshare.com/articles/Determination_of_ATRP_Equilibrium_Constants_under_Polymerization_Conditions/2459842",
+        "17": "https://ui.adsabs.harvard.edu/abs/2007MaMol..40.1858T",
+        "18": "https://ui.adsabs.harvard.edu/abs/2006MaMol..39.4953T",
+        "19": "https://ui.adsabs.harvard.edu/abs/2012MaMol..45.8929W",
+        "20": "https://ui.adsabs.harvard.edu/abs/2013MaMol..46..683W",
+        "21": "http://ai4c.com/2019/11/19/atom-transfer-radical-polymerization-atrp/",
+        "22": "https://pubs.acs.org/cen/science/84/8444sci1.html",
+        "23": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3604987",
+        "24": "https://ui.adsabs.harvard.edu/abs/2010JCIS..341..273X",
+        "25": "https://doi.org/10.1021%2Fla800244g",
+        "26": "http://www.escholarship.org/uc/item/5vm8s0vp",
+        "27": "https://doi.org/10.1021%2Fmz500834g",
+        "28": "https://doi.org/10.1038%2Fnchem.2633",
+        "29": "https://doi.org/10.1021%2Facsmacrolett.7b00152",
+        "30": "https://ui.adsabs.harvard.edu/abs/2017MaMol..50.7940W",
+        "31": "https://doi.org/10.1021%2Facsmacrolett.8b00027",
+        "32": "https://figshare.com/articles/Atom_Transfer_Radical_Polymerization_Enabled_by_Sonochemically_Labile_Cu-carbonate_Species/7615799",
+        "33": "https://pubs.rsc.org/en/content/articlelanding/2011/cc/c1cc10989h",
+        "34": "https://onlinelibrary.wiley.com/doi/10.1002/marc.201100349",
+        "35": "https://doi.org/10.1002/ange.202202033",
+        "36": "https://pubs.acs.org/doi/10.1021/acs.macromol.2c02307"
+    },
+    "flair_entities": [
+        "arget atrp",
+        "icar",
+        "nico bruns",
+        "mitsuo sawamoto",
+        "craig hawker",
+        "lj",
+        "atra",
+        "icar atrp",
+        "katrp",
+        "cui",
+        "matyjaszewski",
+        "fe",
+        "cef",
+        "cu0",
+        "fabio di lena",
+        "arget",
+        "atrap",
+        "metalloenzymes",
+        "cu",
+        "ru",
+        "cu-based",
+        "atrp",
+        "ri-x",
+        "nmr",
+        "esser-kahn",
+        "krzysztof matyjaszewski",
+        "atrp  atrp",
+        "l2",
+        "electron transfer",
+        "jin-shan wang",
+        "os",
+        "cuii",
+        "eatrp",
+        "sara",
+        "mg, zn",
+        "sara atrp",
+        "mechano",
+        "let kijatrp"
+    ]
+}

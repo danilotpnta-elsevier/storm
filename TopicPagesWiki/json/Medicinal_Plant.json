@@ -1,0 +1,1195 @@
+{
+    "title": "Medicinal_plants",
+    "url": "https://en.wikipedia.org/wiki/Medicinal_plants",
+    "summary": "Medicinal plants, also called medicinal herbs, have been discovered and used in traditional medicine practices since prehistoric times. Plants synthesize hundreds of chemical compounds for various functions, including defense and protection against insects, fungi, diseases, against parasites and herbivorous mammals.\nThe earliest historical records of herbs are found from the Sumerian civilization, where hundreds of medicinal plants including opium are listed on clay tablets, c.\u20093000 BC. The Ebers Papyrus from ancient Egypt, c.\u20091550 BC, describes over 850 plant medicines. The Greek physician Dioscorides, who worked in the Roman army, documented over 1000 recipes for medicines using over 600 medicinal plants in De materia medica, c.\u200960 AD; this formed the basis of pharmacopoeias for some 1500 years. Drug research sometimes makes use of ethnobotany to search for pharmacologically active substances, and this approach has yielded hundreds of useful compounds. These include the common drugs aspirin, digoxin, quinine, and opium. The compounds found in plants are diverse, with most in four biochemical classes: alkaloids, glycosides, polyphenols, and terpenes. Few of these are scientifically confirmed as medicines or used in conventional medicine.\nMedicinal plants are widely used as folk medicine in non-industrialized societies, mainly because they are readily available and cheaper than modern medicines. The annual global export value of the thousands of types of plants with medicinal properties was estimated to be US$60 billion per year and growing at the rate of 6% per annum. In many countries, there is little regulation of traditional medicine, but the World Health Organization coordinates a network to encourage safe and rational use. The botanical herbal market has been criticized for being poorly regulated and containing placebo and pseudoscience products with no scientific research to support their medical claims. Medicinal plants face both general threats, such as climate change and habitat destruction, and the specific threat of over-collection to meet market demand.",
+    "content": [
+        {
+            "section_title": "History",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Prehistoric times",
+                    "section_content": [
+                        {
+                            "sentence": "Plants, including many now used as culinary herbs and spices, have been used as medicines, not necessarily effectively, from prehistoric times",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Spices have been used partly to counter food spoilage bacteria, especially in hot climates,   and especially in meat dishes that spoil more readily",
+                            "refs": [
+                                "https://ro.uow.edu.au/cgi/viewcontent.cgi?article=2450&context=hbspapers",
+                                "https://doi.org/10.1086%2F420058"
+                            ]
+                        },
+                        {
+                            "sentence": "Angiosperms (flowering plants) were the original source of most plant medicines",
+                            "refs": [
+                                "https://doi.org/10.1016%2FS1090-5138%2800%2900068-4"
+                            ]
+                        },
+                        {
+                            "sentence": "Human settlements are often surrounded by weeds used as herbal medicines, such as nettle, dandelion and chickweed",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "Humans were not alone in using herbs: some animals, such as non-human primates, monarch butterflies and sheep ingest plants when they are ill",
+                            "refs": [
+                                "https://doi.org/10.1016%2Fj.jep.2004.03.002",
+                                "https://doi.org/10.1016%2FS0378-8741%2800%2900385-8"
+                            ]
+                        },
+                        {
+                            "sentence": "Samples from prehistoric burial sites indicate that Paleolithic peoples consumed plants",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "For instance, a 60,000-year-old Neanderthal burial site, \"Shanidar IV\", in northern Iraq yielded pollen from eight plant species",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "At Taforalt cave, Morocco, 15,000-year-old remains of ephedra were found inside a tomb, indicating its possible role in funeral rites",
+                            "refs": [
+                                "https://ui.adsabs.harvard.edu/abs/1975Sci...190..880S"
+                            ]
+                        },
+                        {
+                            "sentence": "A mushroom found in the personal effects of \u00d6tzi the Iceman, whose body was frozen in the \u00d6tztal Alps for more than 5,000 years, may have been used against whipworm",
+                            "refs": [
+                                "https://www.nature.com/articles/s41598-024-77785-w"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Ancient times",
+                    "section_content": [
+                        {
+                            "sentence": "In ancient Sumeria, hundreds of medicinal plants including myrrh and opium are listed on clay tablets from around 3000 BC",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The ancient Egyptian Ebers Papyrus lists over 800 plant medicines such as aloe, cannabis, castor bean, garlic, juniper, and mandrake",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In antiquity, various cultures across Europe, including the Romans, Celts, and Nordic peoples, also practiced herbal medicine as a significant component of their healing traditions.",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The Romans had a rich tradition of herbal medicine, drawing upon knowledge inherited from the Greeks and expanding upon it",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Notable works include those of Pedanius Dioscorides, whose \"De Materia Medica\" served as a comprehensive guide to medicinal plants and remained influential for centuries",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Additionally, Pliny the Elder's \"Naturalis Historia\" contains valuable insights into Roman medical plant practices",
+                            "refs": [
+                                "[ERROR retrieving ref link]",
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "Among the Celtic peoples of ancient Europe, herbalism played a vital role in both medicine and spirituality",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Druids, the religious leaders of the Celts, were reputed to possess deep knowledge of plants and their medicinal properties",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Although written records are scarce, archaeological evidence, such as the discovery of medicinal plants at Celtic sites, provides insight into their herbal practices",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "In the Nordic regions, including Scandinavia and parts of Germany, herbal medicine was also prevalent in ancient times",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The Norse sagas and Eddic poetry often mention the use of herbs for healing purposes",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Additionally, archaeological findings, such as the remains of medicinal plants in Viking-age graves, attest to the importance of herbal remedies in Nordic culture",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "From ancient times to the present, Ayurvedic medicine as documented in the Atharva Veda, the Rig Veda and the Sushruta Samhita has used hundreds of herbs and spices, such as turmeric, which contains curcumin",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The Chinese pharmacopoeia, the Shennong Ben Cao Jing records plant medicines such as chaulmoogra for leprosy, ephedra, and hemp",
+                            "refs": [
+                                "https://web.archive.org/web/20081010045900/http://medind.nic.in/iae/t07/i4/iaet07i4p243.pdf"
+                            ]
+                        },
+                        {
+                            "sentence": "This was expanded in the Tang dynasty Yaoxing Lun",
+                            "refs": [
+                                "ISBN: 978-0-88192-483-1"
+                            ]
+                        },
+                        {
+                            "sentence": "In the fourth century BC, Aristotle's pupil Theophrastus wrote the first systematic botany text, Historia plantarum",
+                            "refs": [
+                                "https://books.google.com/books?id=H9Q8agQrJR0C&pg=PA6"
+                            ]
+                        },
+                        {
+                            "sentence": "In around 60 AD, the Greek physician Pedanius Dioscorides, working for the Roman army, documented over 1000 recipes for medicines using over 600 medicinal plants in De materia medica",
+                            "refs": [
+                                "https://books.google.com/books?id=TJSGJjh8Jo8C&pg=PA11"
+                            ]
+                        },
+                        {
+                            "sentence": "The book remained the authoritative reference on herbalism for over 1500 years, into the seventeenth century",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Middle Ages",
+                    "section_content": [
+                        {
+                            "sentence": "During the Middle Ages, herbalism continued to flourish across Europe, with distinct traditions emerging in various regions, often influenced by cultural, religious, indigenous, and geographical factors",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In the Early Middle Ages, Benedictine monasteries preserved medical knowledge in Europe, translating and copying classical texts and maintaining herb gardens",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Hildegard of Bingen wrote Causae et Curae (\"Causes and Cures\") on medicine",
+                            "refs": [
+                                "https://books.google.com/books?id=ITxsaqEmVHAC&pg=PA70",
+                                "https://books.google.com/books?id=GfC0TDkJJNgC&pg=PA179"
+                            ]
+                        },
+                        {
+                            "sentence": "In France, herbalism thrived alongside the practice of medieval medicine, which combined elements of Ancient Greek and Roman traditions",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Catholic monastic orders played a significant role in preserving and expanding herbal knowledge",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Manuscripts like the \"Tractatus de Herbis\" from the 15th century depict French herbal remedies and their uses",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Monasteries and convents served as centers of learning, where monks and nuns cultivated medicinal gardens",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "Likewise, in Italy, herbalism flourished with contribution Italian physicians like Matthaeus Platearius who compiled herbal manuscripts, such as the \"Circa Instans,\" which served as practical guides for herbal remedies",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In the Iberian Peninsula, the regions of the North remained independent during the period of Islamic occupation, and retained their traditional and indigenous medical practices",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Galicia and Asturias, possessed a rich herbal heritage shaped by its Celtic and Roman influences",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The Galician people were known for their strong connection to the land and nature and preserved botanical knowledge, with healers, known as \"curandeiros\" or \"meigas,\" who relied on local plants for healing purposes    The Asturian landscape, characterized by lush forests and mountainous terrain, provided a rich source of medicinal herbs used in traditional healing practices, with \"yerbatos,\" who possessed extensive knowledge of local plants and their medicinal properties   Barcelona, located in the Catalonia region of northeastern Spain, was a hub of cultural exchange during the Middle Ages, fostering the preservation and dissemination of medical knowledge",
+                            "refs": [
+                                "[ERROR retrieving ref link]",
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "Catalan herbalists, known as \"herbolarios,\" compiled manuscripts detailing the properties and uses of medicinal plants found in the region",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The University of Barcelona, founded in 1450, played a pivotal role in advancing herbal medicine through its botanical gardens and academic pursuits",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In Scotland and England, herbalism was deeply rooted in folk traditions and influenced by Celtic, Anglo-Saxon, and Norse practices",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Herbal knowledge was passed down through generations, often by wise women known as \"cunning folk.\" The \"Physicians of Myddfai,\" a Welsh herbal manuscript from the 13th century, reflects the blending of Celtic and Christian beliefs in herbal medicine",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In the Islamic Golden Age, scholars translated many classical Greek texts including Dioscorides into Arabic, adding their own commentaries",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Herbalism flourished in the Islamic world, particularly in Baghdad and in Al-Andalus",
+                            "refs": [
+                                "https://archive.org/details/newhealingherbs00mich/page/15"
+                            ]
+                        },
+                        {
+                            "sentence": "Among many works on medicinal plants, Abulcasis (936\u20131013) of Cordoba wrote The Book of Simples, and Ibn al-Baitar (1197\u20131248) recorded hundreds of medicinal herbs such as Aconitum, nux vomica, and tamarind in his Corpus of Simples",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Avicenna included many plants in his 1025 The Canon of Medicine",
+                            "refs": [
+                                "https://archive.org/details/newhealingherbs00mich/page/15"
+                            ]
+                        },
+                        {
+                            "sentence": "Abu-Rayhan Biruni,  Ibn Zuhr,  Peter of Spain, and John of St Amand wrote further pharmacopoeias",
+                            "refs": [
+                                "https://doi.org/10.1017%2FS1062798708000215",
+                                "https://pubmed.ncbi.nlm.nih.gov/10386051",
+                                "https://doi.org/10.1086%2F372742"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Early Modern",
+                    "section_content": [
+                        {
+                            "sentence": "The Early Modern period saw the flourishing of illustrated herbals across Europe, starting with the 1526 Grete Herball",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "John Gerard wrote his famous The Herball or General History of Plants in 1597, based on Rembert Dodoens, and Nicholas Culpeper published his The English Physician Enlarged",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Many new plant medicines arrived in Europe as products of Early Modern exploration and the resulting Columbian Exchange, in which livestock, crops and technologies were transferred between the Old World and the Americas in the 15th and 16th centuries",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        },
+                        {
+                            "sentence": "Medicinal herbs arriving in the Americas included garlic, ginger, and turmeric; coffee, tobacco and coca travelled in the other direction",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In Mexico, the sixteenth century Badianus Manuscript described medicinal plants available in Central America",
+                            "refs": [
+                                "https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.232.9242",
+                                "https://web.archive.org/web/20170227062205/http://147.163.105.223/bocconea/24-069.pdf"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "19th and 20th centuries",
+                    "section_content": [
+                        {
+                            "sentence": "The place of plants in medicine was radically altered in the 19th century by the application of chemical analysis",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Alkaloids were isolated from a succession of medicinal plants, starting with morphine from the poppy in 1806, and soon followed by ipecacuanha and strychnos in 1817, quinine from the cinchona tree, and then many others",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "As chemistry progressed, additional classes of potentially active substances were discovered in plants",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Commercial extraction of purified alkaloids including morphine began at Merck in 1826",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Synthesis of a substance first discovered in a medicinal plant began with salicylic acid in 1853",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Around the end of the 19th century, the mood of pharmacy turned against medicinal plants, as enzymes often modified the active ingredients when whole plants were dried, and alkaloids and glycosides purified from plant material started to be preferred",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Drug discovery from plants continued to be important through the 20th century and into the 21st, with important anti-cancer drugs from yew and Madagascar periwinkle",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Context",
+            "section_content": [
+                {
+                    "sentence": "Medicinal plants are used with the intention of maintaining health, to be administered for a specific condition, or both, whether in modern medicine or in traditional medicine",
+                    "refs": []
+                },
+                {
+                    "sentence": "The Food and Agriculture Organization estimated in 2002 that over 50,000 medicinal plants are used across the world",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5422022",
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3549945"
+                    ]
+                },
+                {
+                    "sentence": "The Royal Botanic Gardens, Kew more conservatively estimated in 2016 that 17,810 plant species have a medicinal use, out of some 30,000 plants for which a use of any kind is documented",
+                    "refs": [
+                        "http://www.fao.org/docrep/005/AA010E/AA010e02.htm"
+                    ]
+                },
+                {
+                    "sentence": "In modern medicine, around a quarter [a] of the drugs prescribed to patients are derived from medicinal plants, and they are rigorously tested",
+                    "refs": []
+                },
+                {
+                    "sentence": "In other systems of medicine, medicinal plants may constitute the majority of what are often informal attempted treatments, not tested scientifically",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3549945",
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2536466"
+                    ]
+                },
+                {
+                    "sentence": "The World Health Organization estimates, without reliable data, that some 80 percent of the world's population depends mainly on traditional medicine (including but not limited to plants); perhaps some two billion people are largely reliant on medicinal plants",
+                    "refs": [
+                        "[ERROR retrieving ref link]"
+                    ]
+                },
+                {
+                    "sentence": "The use of plant-based materials including herbal or natural health products with supposed health benefits, is increasing in developed countries",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3549945",
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2536466"
+                    ]
+                },
+                {
+                    "sentence": "This brings attendant risks of toxicity and other effects on human health, despite the safe image of herbal remedies",
+                    "refs": [
+                        "https://web.archive.org/web/20100124091134/http://www.who.int/bulletin/volumes/86/8/07-042820/en/"
+                    ]
+                },
+                {
+                    "sentence": "Herbal medicines have been in use since long before modern medicine existed; there was and often still is little or no knowledge of the pharmacological basis of their actions, if any, or of their safety",
+                    "refs": [
+                        "https://web.archive.org/web/20100124091134/http://www.who.int/bulletin/volumes/86/8/07-042820/en/"
+                    ]
+                },
+                {
+                    "sentence": "The World Health Organization formulated a policy on traditional medicine in 1991, and since then has published guidelines for them, with a series of monographs on widely used herbal medicines",
+                    "refs": []
+                },
+                {
+                    "sentence": "Medicinal plants may provide three main kinds of benefit: health benefits to the people who consume them as medicines; financial benefits to people who harvest, process, and distribute them for sale; and society-wide benefits, such as job opportunities, taxation income, and a healthier labour force",
+                    "refs": []
+                },
+                {
+                    "sentence": "However, development of plants or extracts having potential medicinal uses is blunted by weak scientific evidence, poor practices in the process of drug development, and insufficient financing",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3549945"
+                    ]
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "Phytochemical basis",
+            "section_content": [
+                {
+                    "sentence": "All plants produce chemical compounds which give them an evolutionary advantage, such as defending against herbivores or, in the example of salicylic acid, as a hormone in plant defenses",
+                    "refs": []
+                },
+                {
+                    "sentence": "These phytochemicals have potential for use as drugs,  and the content and known pharmacological activity of these substances in medicinal plants is the scientific basis for their use in modern medicine, if scientifically confirmed",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11128932",
+                        "https://www.fs.fed.us/wildflowers/ethnobotany/medicinal/ingredients.shtml",
+                        "https://archive.org/details/salicylicacidpla0000unse"
+                    ]
+                },
+                {
+                    "sentence": "For instance, daffodils (Narcissus) contain nine groups of alkaloids including galantamine, licensed for use against Alzheimer's disease",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5422022"
+                    ]
+                },
+                {
+                    "sentence": "The alkaloids are bitter-tasting and toxic, and concentrated in the parts of the plant such as the stem most likely to be eaten by herbivores; they may also protect against parasites",
+                    "refs": []
+                },
+                {
+                    "sentence": "Modern knowledge of medicinal plants is being systematised in the Medicinal Plant Transcriptomics Database, which by 2011 provided a sequence reference for the transcriptome of some thirty species",
+                    "refs": []
+                },
+                {
+                    "sentence": "Major classes of plant phytochemicals are described below, with examples of plants that contain them",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9006343"
+                    ]
+                }
+            ],
+            "subsections": [
+                {
+                    "section_title": "Alkaloids",
+                    "section_content": [
+                        {
+                            "sentence": "Alkaloids are bitter-tasting chemicals, very widespread in nature, and often toxic, found in many medicinal plants",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "There are several classes with different modes of action as drugs, both recreational and pharmaceutical",
+                            "refs": [
+                                "https://web.archive.org/web/20170217232814/http://www.phytotherapyjournal.com/File_Folder/96-105.pdf"
+                            ]
+                        },
+                        {
+                            "sentence": "Medicines of different classes include atropine, scopolamine, and hyoscyamine (all from nightshade),  the traditional medicine berberine (from plants such as Berberis and Mahonia), [b] caffeine (Coffea), cocaine (Coca), ephedrine (Ephedra), morphine (opium poppy), nicotine (tobacco), [c] reserpine (Rauvolfia serpentina), quinidine and quinine (Cinchona), vincamine (Vinca minor), and vincristine (Catharanthus roseus)",
+                            "refs": [
+                                "ISBN: 978-0-444-52736-3"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Glycosides",
+                    "section_content": [
+                        {
+                            "sentence": "Anthraquinone glycosides are found in medicinal plants such as rhubarb, cascara, and Alexandrian senna",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Plant-based laxatives made from such plants include senna,  rhubarb  and Aloe",
+                            "refs": [
+                                "[ERROR retrieving ref link]",
+                                "https://doi.org/10.1023%2FA%3A1024828131581",
+                                "http://www.iuphar-db.org/DATABASE/FamilyIntroductionForward?familyId=76&familyType=IC",
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3854541"
+                            ]
+                        },
+                        {
+                            "sentence": "The cardiac glycosides are powerful drugs from medicinal plants including foxglove and lily of the valley",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "They include digoxin and digitoxin which support the beating of the heart, and act as diuretics",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Polyphenols",
+                    "section_content": [
+                        {
+                            "sentence": "Polyphenols of several classes are widespread in plants, having diverse roles in defenses against plant diseases and predators",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "They include hormone-mimicking phytoestrogens and astringent tannins",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11128932"
+                            ]
+                        },
+                        {
+                            "sentence": "Plants containing phytoestrogens have been administered for centuries for gynecological disorders, such as fertility, menstrual, and menopausal problems",
+                            "refs": [
+                                "https://books.google.com/books?id=Y8SpVXEng4QC&pg=PA3",
+                                "https://doi.org/10.1111%2Fj.1600-0773.1987.tb01794.x"
+                            ]
+                        },
+                        {
+                            "sentence": "Among these plants are Pueraria mirifica,  kudzu,  angelica,  fennel, and anise",
+                            "refs": [
+                                "http://pharmaxchange.info/press/2012/12/pharmacognosy-of-rhubarb/",
+                                "http://botany.csdl.tamu.edu/FLORA/Wilson/481/medbot/bot2.htm",
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3903987",
+                                "ISBN: 978-0-521-36377-8"
+                            ]
+                        },
+                        {
+                            "sentence": "Many polyphenolic extracts, such as from grape seeds, olives or maritime pine bark, are sold as dietary supplements and cosmetics without proof or legal health claims for medicinal effects",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In Ayurveda, the astringent rind of the pomegranate, containing polyphenols called punicalagins, is used as a medicine, with no scientific proof of efficacy",
+                            "refs": [
+                                "https://doi.org/10.1093%2Fjaoac%2F89.4.1138"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Terpenes",
+                    "section_content": [
+                        {
+                            "sentence": "Terpenes and terpenoids of many kinds are found in a variety of medicinal plants,  and in resinous plants such as the conifers",
+                            "refs": [
+                                "https://doi.org/10.2903%2Fj.efsa.2010.1489"
+                            ]
+                        },
+                        {
+                            "sentence": "They are strongly aromatic and serve to repel herbivores",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Their scent makes them useful in essential oils, whether for perfumes such as rose and lavender, or for aromatherapy",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Some have medicinal uses: for example, thymol is an antiseptic and was once used as a vermifuge (anti-worm medicine)",
+                            "refs": [
+                                "https://books.google.com/books?id=Y8SpVXEng4QC&pg=PA3",
+                                "https://books.google.com/books?id=LlogqveEFVgC",
+                                "https://doi.org/10.1002%2Fjps.20987"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "In practice",
+            "section_content": [],
+            "subsections": [
+                {
+                    "section_title": "Cultivation",
+                    "section_content": [
+                        {
+                            "sentence": "Medicinal plants demand intensive management",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Different species each require their own distinct conditions of cultivation",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "The World Health Organization recommends the use of rotation to minimise problems with pests and plant diseases",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Cultivation may be traditional or may make use of conservation agriculture practices to maintain organic matter in the soil and to conserve water, for example with no-till farming systems",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In many medicinal and aromatic plants, plant characteristics vary widely with soil type and cropping strategy, so care is required to obtain satisfactory yields",
+                            "refs": [
+                                "https://www.jstor.org/stable/27836252"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Preparation",
+                    "section_content": [
+                        {
+                            "sentence": "Medicinal plants are often tough and fibrous, requiring some form of preparation to make them convenient to administer",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "According to the Institute for Traditional Medicine, common methods for the preparation of herbal medicines include decoction, powdering, and extraction with alcohol, in each case yielding a mixture of substances",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Decoction involves crushing and then boiling the plant material in water to produce a liquid extract that can be taken orally or applied topically",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Powdering involves drying the plant material and then crushing it to yield a powder that can be compressed into tablets",
+                            "refs": [
+                                "https://pubchem.ncbi.nlm.nih.gov/compound/thymol"
+                            ]
+                        },
+                        {
+                            "sentence": "Alcohol extraction involves soaking the plant material in cold wine or distilled spirit to form a tincture",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Traditional poultices were made by boiling medicinal plants, wrapping them in a cloth, and applying the resulting parcel externally to the affected part of the body",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "When modern medicine has identified a drug in a medicinal plant, commercial quantities of the drug may either be synthesised or extracted from plant material, yielding a pure chemical",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Extraction can be practical when the compound in question is complex",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4748402"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Usage",
+                    "section_content": [
+                        {
+                            "sentence": "Plant medicines are in wide use around the world",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In most of the developing world, especially in rural areas, local traditional medicine, including herbalism, is the only source of health care for people, while in the developed world, alternative medicine including use of dietary supplements is marketed aggressively using the claims of traditional medicine",
+                            "refs": [
+                                "http://www.itmonline.org/arts/methprep.htm"
+                            ]
+                        },
+                        {
+                            "sentence": "As of 2015, most products made from medicinal plants had not been tested for their safety and efficacy, and products that were marketed in developed economies and provided in the undeveloped world by traditional healers were of uneven quality, sometimes containing dangerous contaminants",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Traditional Chinese medicine makes use of a wide variety of plants, among other materials and techniques",
+                            "refs": [
+                                "http://www.historyextra.com/article/medieval/9-weird-medieval-medicines"
+                            ]
+                        },
+                        {
+                            "sentence": "Researchers from Kew Gardens found 104 species used for diabetes in Central America, of which seven had been identified in at least three separate studies",
+                            "refs": [
+                                "https://doi.org/10.1016%2FS0006-2952%2896%2900654-5"
+                            ]
+                        },
+                        {
+                            "sentence": "The Yanomami of the Brazilian Amazon, assisted by researchers, have described 101 plant species used for traditional medicines",
+                            "refs": [
+                                "https://web.archive.org/web/20080727053337/http://www.who.int/mediacentre/factsheets/fs134/en/",
+                                "https://web.archive.org/web/20150822171551/http://www.who.int/dg/speeches/2015/traditional-medicine/en/"
+                            ]
+                        },
+                        {
+                            "sentence": "Drugs derived from plants including opiates, cocaine and cannabis have both medical and recreational uses",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Different countries have at various times made use of illegal drugs, partly on the basis of the risks involved in taking psychoactive drugs",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Effectiveness",
+                    "section_content": [
+                        {
+                            "sentence": "Plant medicines have often not been tested systematically, but have come into use informally over the centuries",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "By 2007, clinical trials had demonstrated potentially useful activity in nearly 16% of herbal extracts; there was limited in vitro or in vivo evidence for roughly half the extracts; there was only phytochemical evidence for around 20%; 0.5% were allergenic or toxic; and some 12% had basically never been studied scientifically",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Cancer Research UK caution that there is no reliable evidence for the effectiveness of herbal remedies for cancer",
+                            "refs": [
+                                "https://books.google.com/books?id=zgBPDAAAQBAJ&pg=PA4"
+                            ]
+                        },
+                        {
+                            "sentence": "A 2012 phylogenetic study built a family tree down to genus level using 20,000 species to compare the medicinal plants of three regions, Nepal, New Zealand and the Cape of South Africa",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "It discovered that the species used traditionally to treat the same types of condition belonged to the same groups of plants in all three regions, giving a \"strong phylogenetic signal\"",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Since many plants that yield pharmaceutical drugs belong to just these groups, and the groups were independently used in three different world regions, the results were taken to mean 1) that these plant groups do have potential for medicinal efficacy, 2) that undefined pharmacological activity is associated with use in traditional medicine, and 3) that the use of a phylogenetic groups for possible plant medicines in one region may predict their use in the other regions",
+                            "refs": [
+                                "[ERROR retrieving ref link]"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Regulation",
+                    "section_content": [
+                        {
+                            "sentence": "The World Health Organization (WHO) has been coordinating a network called the International Regulatory Cooperation for Herbal Medicines to try to improve the quality of medical products made from medicinal plants and the claims made for them",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In 2015, only around 20% of countries had well-functioning regulatory agencies, while 30% had none, and around half had limited regulatory capacity",
+                            "refs": [
+                                "https://www.economist.com/blogs/dailychart/2010/11/drugs_cause_most_harm"
+                            ]
+                        },
+                        {
+                            "sentence": "In India, where Ayurveda has been practised for centuries, herbal remedies are the responsibility of a government department, AYUSH, under the Ministry of Health & Family Welfare",
+                            "refs": [
+                                "http://www.historyextra.com/article/medieval/9-weird-medieval-medicines"
+                            ]
+                        },
+                        {
+                            "sentence": "WHO has set out a strategy for traditional medicines  with four objectives: to integrate them as policy into national healthcare systems; to provide knowledge and guidance on their safety, efficacy, and quality; to increase their availability and affordability; and to promote their rational, therapeutically sound usage",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3465383"
+                            ]
+                        },
+                        {
+                            "sentence": "WHO notes in the strategy that countries are experiencing seven challenges to such implementation, namely in developing and enforcing policy; in integration; in safety and quality, especially in assessment of products and qualification of practitioners; in controlling advertising; in research and development; in education and training; and in the sharing of information",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3465383"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Drug discovery",
+                    "section_content": [
+                        {
+                            "sentence": "The pharmaceutical industry has roots in the apothecary shops of Europe in the 1800s, where pharmacists provided local traditional medicines to customers, which included extracts like morphine, quinine, and strychnine",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Therapeutically important drugs like camptothecin (from Camptotheca acuminata, used in traditional Chinese medicine) and taxol (from the Pacific yew, Taxus brevifolia) were derived from medicinal plants",
+                            "refs": [
+                                "https://web.archive.org/web/20130901005446/http://www.who.int/medicines/areas/traditional/irch/en/"
+                            ]
+                        },
+                        {
+                            "sentence": "The Vinca alkaloids vincristine and vinblastine, used as anti-cancer drugs, were discovered in the 1950s from the Madagascar periwinkle, Catharanthus roseus",
+                            "refs": [
+                                "https://www.jstor.org/stable/24099124",
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4748402"
+                            ]
+                        },
+                        {
+                            "sentence": "Hundreds of compounds have been identified using ethnobotany, investigating plants used by indigenous peoples for possible medical applications",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Some important phytochemicals, including curcumin, epigallocatechin gallate, genistein and resveratrol are pan-assay interference compounds, meaning that in vitro studies of their activity often provide unreliable data",
+                            "refs": [
+                                "http://pubs.acs.org/cen/coverstory/83/8325/8325emergence.html"
+                            ]
+                        },
+                        {
+                            "sentence": "As a result, phytochemicals have frequently proven unsuitable as the lead substances in drug discovery",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "In the United States over the period 1999 to 2012, despite several hundred applications for new drug status, only two botanical drug candidates had sufficient evidence of medicinal value to be approved by the Food and Drug Administration",
+                            "refs": [
+                                "https://doi.org/10.2174%2F138945006776054988",
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3883245"
+                            ]
+                        },
+                        {
+                            "sentence": "The pharmaceutical industry has remained interested in mining traditional uses of medicinal plants in its drug discovery efforts",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Of the 1073 small-molecule drugs approved in the period 1981 to 2010, over half were either directly derived from or inspired by natural substances",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4748402"
+                            ]
+                        },
+                        {
+                            "sentence": "Among cancer treatments, of 185 small-molecule drugs approved in the period from 1981 to 2019, 65% were derived from or inspired by natural substances",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4748402",
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1240543"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Safety",
+                    "section_content": [
+                        {
+                            "sentence": "Plant medicines can cause adverse effects and even death, whether by side-effects of their active substances, by adulteration or contamination, by overdose, or by inappropriate prescription",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Many such effects are known, while others remain to be explored scientifically",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "There is no reason to presume that because a product comes from nature it must be safe: the existence of powerful natural poisons like atropine and nicotine shows this to be untrue",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Further, the high standards applied to conventional medicines do not always apply to plant medicines, and dose can vary widely depending on the growth conditions of plants: older plants may be much more toxic than young ones, for instance",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Plant extracts may interact with conventional drugs, both because they may provide an increased dose of similar compounds, and because some phytochemicals interfere with the body's systems that metabolise drugs in the liver including the cytochrome P450 system, making the drugs last longer in the body and have a cumulative effect",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Plant medicines can be dangerous during pregnancy",
+                            "refs": [
+                                "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2590766"
+                            ]
+                        },
+                        {
+                            "sentence": "Since plants may contain many different substances, plant extracts may have complex effects on the human body",
+                            "refs": [
+                                "https://doi.org/10.1002%2F9780470319444.ch11"
+                            ]
+                        }
+                    ],
+                    "subsections": []
+                },
+                {
+                    "section_title": "Quality, advertising, and labelling",
+                    "section_content": [
+                        {
+                            "sentence": "Herbal medicine and dietary supplement products have been criticized as not having sufficient standards or scientific evidence to confirm their contents, safety, and presumed efficacy",
+                            "refs": []
+                        },
+                        {
+                            "sentence": "Companies often make false claims about their herbal products promising health benefits that aren't backed by evidence to generate more sales",
+                            "refs": [
+                                "https://pubmed.ncbi.nlm.nih.gov/11759460",
+                                "https://pubmed.ncbi.nlm.nih.gov/17969314",
+                                "https://doi.org/10.1097%2F00005721-200505000-00009",
+                                "https://web.archive.org/web/20180818071259/http://quackwatch.com/01QuackeryRelatedTopics/herbs.html"
+                            ]
+                        },
+                        {
+                            "sentence": "The market for dietary supplements and nutraceuticals grew by 5% during the COVID-19 pandemic, which led to the United States taking action to stop the deceptive marketing of herbal products to combat the virus",
+                            "refs": []
+                        }
+                    ],
+                    "subsections": []
+                }
+            ]
+        },
+        {
+            "section_title": "Threats",
+            "section_content": [
+                {
+                    "sentence": "Where medicinal plants are harvested from the wild rather than cultivated, they are subject to both general and specific threats",
+                    "refs": []
+                },
+                {
+                    "sentence": "General threats include climate change and habitat loss to development and agriculture",
+                    "refs": []
+                },
+                {
+                    "sentence": "A specific threat is over-collection to meet rising demand for medicines",
+                    "refs": []
+                },
+                {
+                    "sentence": "A case in point was the pressure on wild populations of the Pacific yew soon after news of taxol's effectiveness became public",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3325194"
+                    ]
+                },
+                {
+                    "sentence": "The threat from over-collection could be addressed by cultivation of some medicinal plants, or by a system of certification to make wild harvesting sustainable",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4748402"
+                    ]
+                },
+                {
+                    "sentence": "A report in 2020 by the Royal Botanic Gardens, Kew identifies 723 medicinal plants as being at risk of extinction, caused partly by over-collection",
+                    "refs": [
+                        "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3325194"
+                    ]
+                }
+            ],
+            "subsections": []
+        },
+        {
+            "section_title": "See also",
+            "section_content": [],
+            "subsections": []
+        },
+        {
+            "section_title": "Notes",
+            "section_content": [],
+            "subsections": []
+        }
+    ],
+    "references": {
+        "52": "[ERROR retrieving ref link]",
+        "71": "[ERROR retrieving ref link]",
+        "73": "[ERROR retrieving ref link]",
+        "1": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC535471",
+        "2": "https://doi.org/10.1007/s004360050598",
+        "3": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8794845",
+        "4": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5422022",
+        "5": "https://books.google.com/books?id=s7c2EaxDYjUC&pg=PA32",
+        "6": "https://ro.uow.edu.au/cgi/viewcontent.cgi?article=2450&context=hbspapers",
+        "7": "https://doi.org/10.1086%2F420058",
+        "8": "https://doi.org/10.1016%2FS1090-5138%2800%2900068-4",
+        "9": "[ERROR retrieving ref link]",
+        "10": "https://doi.org/10.1016%2Fj.jep.2004.03.002",
+        "11": "https://doi.org/10.1016%2FS0378-8741%2800%2900385-8",
+        "12": "ISBN: 978-0-88192-483-1",
+        "13": "https://ui.adsabs.harvard.edu/abs/1975Sci...190..880S",
+        "14": "https://www.nature.com/articles/s41598-024-77785-w",
+        "15": "https://doi.org/10.1016%2FS0140-6736%2805%2979939-6",
+        "16": "ISBN: 978-0-88192-483-1",
+        "17": "[ERROR retrieving ref link]",
+        "18": "[ERROR retrieving ref link]",
+        "19": "[ERROR retrieving ref link]",
+        "20": "[ERROR retrieving ref link]",
+        "21": "[ERROR retrieving ref link]",
+        "22": "https://web.archive.org/web/20081010045900/http://medind.nic.in/iae/t07/i4/iaet07i4p243.pdf",
+        "23": "ISBN: 978-0-88192-483-1",
+        "24": "https://books.google.com/books?id=H9Q8agQrJR0C&pg=PA6",
+        "25": "https://books.google.com/books?id=TJSGJjh8Jo8C&pg=PA11",
+        "26": "https://books.google.com/books?id=ITxsaqEmVHAC&pg=PA70",
+        "27": "https://books.google.com/books?id=GfC0TDkJJNgC&pg=PA179",
+        "28": "https://doi.org/10.1046%2Fj.1365-4362.1999.00617.x",
+        "29": "[ERROR retrieving ref link]",
+        "30": "[ERROR retrieving ref link]",
+        "31": "[ERROR retrieving ref link]",
+        "32": "[ERROR retrieving ref link]",
+        "33": "[ERROR retrieving ref link]",
+        "34": "[ERROR retrieving ref link]",
+        "35": "https://archive.org/details/newhealingherbs00mich/page/15",
+        "36": "https://archive.org/details/newhealingherbs00mich/page/15",
+        "37": "https://doi.org/10.1017%2FS1062798708000215",
+        "38": "https://pubmed.ncbi.nlm.nih.gov/10386051",
+        "39": "https://doi.org/10.1086%2F372742",
+        "40": "https://doi.org/10.1067%2Fmcp.2000.106465",
+        "41": "[ERROR retrieving ref link]",
+        "42": "https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.232.9242",
+        "43": "https://web.archive.org/web/20170227062205/http://147.163.105.223/bocconea/24-069.pdf",
+        "44": "https://doi.org/10.1353%2Fjhi.2008.0017",
+        "45": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4748402",
+        "46": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3358962",
+        "47": "https://www.publish.csiro.au/HR/HR9930940335",
+        "48": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3549945",
+        "49": "http://www.fao.org/docrep/005/AA010E/AA010e02.htm",
+        "50": "https://web.archive.org/web/20170919052314/https://stateoftheworldsplants.com/2016/report/sotwp_2016.pdf",
+        "51": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2536466",
+        "53": "https://web.archive.org/web/20100124091134/http://www.who.int/bulletin/volumes/86/8/07-042820/en/",
+        "54": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3887317",
+        "55": "https://books.google.com/books?id=zgBPDAAAQBAJ&pg=PA4",
+        "56": "https://doi.org/10.1111%2Fj.1365-2710.2009.01096.x",
+        "57": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11128932",
+        "58": "https://www.fs.fed.us/wildflowers/ethnobotany/medicinal/ingredients.shtml",
+        "59": "https://archive.org/details/salicylicacidpla0000unse",
+        "60": "https://www.researchgate.net/publication/260943788_The_Roots_of_Innovation",
+        "61": "https://doi.org/10.1016%2FS1099-4831%2806%2963003-4",
+        "62": "https://www.drugs.com/mtm/galantamine.html",
+        "63": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9006343",
+        "64": "http://apps.pharmacy.uic.edu/depts/pcrps/MedTranscriptomePlants/",
+        "65": "https://books.google.com/books?id=cJHsMALUDj0C&pg=PA123",
+        "66": "https://books.google.com/books?id=Y8SpVXEng4QC&pg=PA3",
+        "67": "https://web.archive.org/web/20170217232814/http://www.phytotherapyjournal.com/File_Folder/96-105.pdf",
+        "68": "ISBN: 978-0-444-52736-3",
+        "69": "http://www.ema.europa.eu/docs/en_GB/document_library/Maximum_Residue_Limits_-_Report/2009/11/WC500010731.pdf",
+        "70": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2410097",
+        "72": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079499",
+        "74": "https://doi.org/10.1023%2FA%3A1024828131581",
+        "75": "http://www.iuphar-db.org/DATABASE/FamilyIntroductionForward?familyId=76&familyType=IC",
+        "76": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3854541",
+        "77": "https://doi.org/10.1016%2FS0378-6080%2809%2903148-1",
+        "78": "https://doi.org/10.1111%2Fj.1600-0773.1987.tb01794.x",
+        "79": "http://pharmaxchange.info/press/2012/12/pharmacognosy-of-rhubarb/",
+        "80": "http://botany.csdl.tamu.edu/FLORA/Wilson/481/medbot/bot2.htm",
+        "81": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3903987",
+        "82": "ISBN: 978-0-521-36377-8",
+        "83": "http://www.koreascience.or.kr/article/JAKO200210103477199.page",
+        "84": "https://doi.org/10.1093%2Fjaoac%2F89.4.1138",
+        "85": "ISBN: 978-981-02-2773-9",
+        "86": "https://doi.org/10.1016%2FS0378-8741%2880%2981015-4",
+        "87": "https://doi.org/10.2903%2Fj.efsa.2010.1489",
+        "88": "https://books.google.com/books?id=LlogqveEFVgC",
+        "89": "https://doi.org/10.1002%2Fjps.20987",
+        "90": "https://doi.org/10.1016%2FC2011-0-09611-4",
+        "91": "https://www.jstor.org/stable/27836252",
+        "92": "https://doi.org/10.1046%2Fj.1469-8137.2000.00626.x",
+        "93": "https://pubchem.ncbi.nlm.nih.gov/compound/thymol",
+        "94": "https://web.archive.org/web/20091020064719/http://apps.who.int/medicinedocs/en/d/Js4928e/4.3.html",
+        "95": "https://doi.org/10.1002%2Fjsfa.5630",
+        "96": "https://www.sciencedirect.com/science/article/pii/B9780702031328000062",
+        "97": "http://www.itmonline.org/arts/methprep.htm",
+        "98": "http://www.historyextra.com/article/medieval/9-weird-medieval-medicines",
+        "99": "https://doi.org/10.1016%2FS0006-2952%2896%2900654-5",
+        "100": "https://web.archive.org/web/20080727053337/http://www.who.int/mediacentre/factsheets/fs134/en/",
+        "101": "https://web.archive.org/web/20150822171551/http://www.who.int/dg/speeches/2015/traditional-medicine/en/",
+        "102": "https://nccih.nih.gov/health/whatiscam/chinesemed.htm",
+        "103": "https://www.kew.org/blogs/kew-science/managing-diabetes-medicinal-plants-0",
+        "104": "https://kclpure.kcl.ac.uk/portal/en/publications/medicinal-plants-used-in-the-traditional-management-of-diabetes-and-its-sequelae-in-central-america-a-review(69685ce6-6956-4937-bf12-ef28f0c3144c).html",
+        "105": "https://www.kew.org/blogs/kew-science/medicinal-knowledge-amazon",
+        "106": "[ERROR retrieving ref link]",
+        "107": "https://www.economist.com/blogs/dailychart/2010/11/drugs_cause_most_harm",
+        "108": "https://www.cancerresearchuk.org/about-cancer/cancer-in-general/treatment/complementary-alternative-therapies/individual-therapies/herbal-medicine",
+        "109": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3465383",
+        "110": "https://web.archive.org/web/20130901005446/http://www.who.int/medicines/areas/traditional/irch/en/",
+        "111": "https://www.jstor.org/stable/24099124",
+        "112": "http://apps.who.int/iris/bitstream/10665/92455/1/9789241506090_eng.pdf?ua=1",
+        "113": "http://pubs.acs.org/cen/coverstory/83/8325/8325emergence.html",
+        "114": "https://doi.org/10.2174%2F138945006776054988",
+        "115": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3883245",
+        "116": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1240543",
+        "117": "https://doi.org/10.1038%2F513481a",
+        "118": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4465542",
+        "119": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3721181",
+        "120": "https://www.kew.org/sites/default/files/2020-09/Kew%20State%20of%20the%20Worlds%20Plants%20and%20Fungi.pdf",
+        "121": "https://doi.org/10.1007%2F978-90-481-2448-0_34",
+        "122": "https://web.archive.org/web/20191105150424/http://toxicology.usu.edu/endnote/Harmless-Herbs.pdf",
+        "123": "https://doi.org/10.1097%2F00001888-200103000-00010",
+        "124": "https://doi.org/10.1016%2FS0378-8741%2800%2900394-9",
+        "125": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2590766",
+        "126": "https://doi.org/10.1002%2F9780470319444.ch11",
+        "127": "https://pubmed.ncbi.nlm.nih.gov/11759460",
+        "128": "https://pubmed.ncbi.nlm.nih.gov/17969314",
+        "129": "https://doi.org/10.1097%2F00005721-200505000-00009",
+        "130": "https://web.archive.org/web/20180818071259/http://quackwatch.com/01QuackeryRelatedTopics/herbs.html",
+        "131": "https://doi.org/10.1016%2Fj.ctim.2011.09.004",
+        "132": "https://doi.org/10.1001%2Fjama.290.11.1505",
+        "133": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3325194",
+        "134": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8416287",
+        "135": "https://www.justice.gov/usao-edny/pr/united-states-files-enforcement-action-stop-deceptive-marketing-herbal-tea-product",
+        "136": "https://doi.org/10.1038%2Fnplants.2016.64",
+        "137": "https://www.bbc.co.uk/news/science-environment-54344309"
+    },
+    "flair_entities": [
+        "paleolithic",
+        "narcissus",
+        "egypt",
+        "alzheimer",
+        "galicia",
+        "ephedra",
+        "morocco",
+        "pliny the elder",
+        "naturalis historia",
+        "ministry of health & family welfare",
+        "nordic",
+        "benedictine",
+        "institute for traditional medicine",
+        "asturian",
+        "india",
+        "john gerard",
+        "greek",
+        "ayurveda",
+        "baghdad",
+        "badianus manuscript",
+        "islamic",
+        "nicholas culpeper",
+        "norse",
+        "circa instans",
+        "cape of south africa",
+        "\u00f6tzi",
+        "dioscorides",
+        "aloe",
+        "pacific",
+        "celts",
+        "abu-rayhan biruni",
+        "aconitum",
+        "st amand",
+        "arabic",
+        "galician",
+        "spain",
+        "us",
+        "shanidar iv",
+        "the canon of medicine",
+        "who",
+        "de materia medica",
+        "chinese",
+        "causae et curae (\"causes and cures",
+        "scotland",
+        "druids",
+        "italian",
+        "sumerian",
+        "corpus of simples",
+        "amazon",
+        "italy",
+        "international regulatory cooperation for herbal medicines",
+        "eddic",
+        "ibn al-baitar",
+        "ayurvedic",
+        "hildegard of bingen",
+        "food and drug administration",
+        "anglo-saxon",
+        "catholic",
+        "mahonia",
+        "new zealand",
+        "united states",
+        "england",
+        "germany",
+        "aristotle",
+        "madagascar",
+        "iceman",
+        "roman",
+        "catalonia",
+        "cancer research uk",
+        "physicians of myddfai",
+        "neanderthal",
+        "yaoxing lun",
+        "alexandrian",
+        "nepal",
+        "iberian peninsula",
+        "yanomami",
+        "food and agriculture organization",
+        "sumeria",
+        "kew gardens",
+        "tractatus de herbis",
+        "tang",
+        "ancient greek",
+        "the herball or general history of plants",
+        "greeks",
+        "scandinavia",
+        "cordoba",
+        "mexico",
+        "celtic",
+        "ebers papyrus",
+        "theophrastus",
+        "shennong ben cao jing",
+        "ayush",
+        "rig veda",
+        "columbian exchange",
+        "asturias",
+        "islamic golden age",
+        "welsh",
+        "bc",
+        "matthaeus platearius",
+        "christian",
+        "grete herball",
+        "egyptian ebers papyrus",
+        "merck",
+        "catalan",
+        "ibn zuhr",
+        "brazilian",
+        "\u00f6tztal alps",
+        "romans",
+        "peter",
+        "medicinal plant transcriptomics database",
+        "the english physician enlarged",
+        "north",
+        "viking-age",
+        "royal botanic gardens",
+        "rembert dodoens",
+        "europe",
+        "world health organization",
+        "americas",
+        "atharva veda",
+        "taforalt",
+        "french",
+        "iraq",
+        "central america",
+        "university of barcelona",
+        "kew",
+        "old world",
+        "sushruta samhita",
+        "abulcasis",
+        "pedanius dioscorides",
+        "avicenna",
+        "john",
+        "al-andalus",
+        "the book of simples",
+        "barcelona",
+        "france"
+    ]
+}

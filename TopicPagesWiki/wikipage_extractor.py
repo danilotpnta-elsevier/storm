@@ -13,8 +13,9 @@ from flair.nn import Classifier
 from tqdm import tqdm
 
 from config.constants import TOPICS_ORES_SCORES_JSON, TOPICS_URLS_JSON
-from src.utils import load_json, write_html, dump_json, write_str
+from src.utils import load_json, write_html, dump_json, write_str, md_to_pdf
 
+from typing import List
 
 def get_references(sentence, reference_dict):
     """
@@ -239,7 +240,13 @@ def extract_entities_flair(text):
     return entities
 
 
-def process_url(topic, url, output_dir, username="Knowledge Curation Project"):
+def process_url(
+    topic: str,
+    url: str,
+    output_dir: str,
+    files_types_to_save: List[str],
+    username: str = "Knowledge Curation Project"
+):
     """
     Process a Wikipedia page and save the result to the output directory.
     """
@@ -248,13 +255,23 @@ def process_url(topic, url, output_dir, username="Knowledge Curation Project"):
     txt = output_as_text(result, reference_dict)
     result["flair_entities"] = extract_entities_flair(txt)
 
+    topic = topic.replace(" ", "_")
     dump_json(result, os.path.join(output_dir, "json", topic + ".json"))
     write_str(txt, os.path.join(output_dir, "txt", topic + ".txt"))
-    write_str(txt, os.path.join(output_dir, "md", topic + ".md"))
-    write_html(
-        str(html_page.prettify()),
-        os.path.join(output_dir, "html", topic + ".html"),
-    )
+
+    if "md" in files_types_to_save:
+        md_path = os.path.join(output_dir, "md", topic + ".md")    
+        write_str(txt, md_path)
+
+        # TODO: check if this ouputs error
+        if "pdf" in files_types_to_save:
+            md_to_pdf(md_path, os.path.join(output_dir, "pdf", topic + ".pdf"))
+
+    if "html" in files_types_to_save:
+        write_html(
+            str(html_page.prettify()),
+            os.path.join(output_dir, "html", topic + ".html"),
+        )
 
 
 def main(args):
@@ -273,13 +290,13 @@ def main(args):
             try:
                 url = row["url"]
                 topic = urls_topics_dict.get(url, url.split("/")[-1])
-                process_url(topic, url, args.outputDirectory)
+                process_url(topic, url, args.outputDirectory, args.files_types_to_save)
             except Exception as e:
                 print(e)
                 print(f'Error occurs when processing {row["url"]}')
     else:
         topic = urls_topics_dict.get(args.url, args.url.split("/")[-1])
-        process_url(topic, args.url, args.outputDirectory)
+        process_url(topic, args.url, args.outputDirectory, args.files_types_to_save)
 
 
 if __name__ == "__main__":
@@ -301,5 +318,15 @@ if __name__ == "__main__":
         default="./",
         help="The path where the parsed content will be saved (default: current directory)",
     )
+    parser.add_argument(
+        "--files_types_to_save",
+        nargs='+',
+        choices=["md", "html", "pdf"],
+        default=["md", "html"],
+        help="The types of files to save (default: md and html). Options: md, html and pdf",
+    )
 
+    '''
+    python wikipage_extractor.py --batch_path "/home/toapantabarahonad/storm-plus/storm/TopicPagesWiki/topics_ores_scores.csv"
+    '''
     main(parser.parse_args())

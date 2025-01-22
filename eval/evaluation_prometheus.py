@@ -123,15 +123,14 @@ def get_grading_dict(
             # geenrate output
             import torch
             torch.cuda.empty_cache()
-            inputs = tokenizer(prompt, return_tensors="pt")
-
-            attention_mask = inputs["attention_mask"]
+            
+            inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
             print(inputs["input_ids"].shape)
             
 
             outputs = model.generate(
-                inputs["input_ids"].to(model.device),
-                attention_mask=attention_mask,
+                inputs["input_ids"],
+                attention_mask=inputs["attention_mask"],
                 pad_token_id=tokenizer.eos_token_id,
                 do_sample=not disable_sample,
                 temperature=temperature,

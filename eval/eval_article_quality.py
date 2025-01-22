@@ -69,19 +69,20 @@ def assert_int(x):
 
 
 def main(args):
-
-
+   
+    import torch
 
     logger.info(f"loading tokenizer {args.tokenizer} and model {args.model}")
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
     model = LlamaForCausalLM.from_pretrained(
         args.model,
         device_map="auto",
+        torch_dtype=torch.float16,
         offload_folder=args.offload_dir,
         max_memory={
-            0: "16GiB",
+            0: "23GiB",
             "cpu": "128GiB",
-        },
+        }
     )
 
     df = pd.read_csv(args.input_path)

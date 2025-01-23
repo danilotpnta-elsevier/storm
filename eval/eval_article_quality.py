@@ -7,20 +7,22 @@ The script expects
     - a directory (args.pred_dir) containing generated articles. The outlines should be named as {topic_name}/{args.pred_file_name}.
 """
 
-import argparse
-import json
-import logging
 import os
+import logging
+import argparse
 
 import pandas as pd
 from tqdm import tqdm
+from collections import defaultdict
+
+import torch
 from transformers import AutoTokenizer, LlamaForCausalLM
 
 from evaluation_prometheus import get_grading_dict, preprocess_text
 from evaluation_trim_length import process_document
 from metrics import article_entity_recall, compute_rouge_scores
 
-from src.utils import get_device
+from src.utils import dump_json, load_json, load_str
 from config.constants import HF_CACHE_DIR
 
 logging.basicConfig(
@@ -45,32 +47,103 @@ class ColoredFormatter(logging.Formatter):
         return super().format(record)
 
 
-def load_str(path):
-    with open(path, "r") as f:
-        return "\n".join(f.readlines())
+def check_files_exists(file_path_1, file_path_2, file_path_3):
+    """
+    Check if all necessary files exist. Return False if any are missing. Otherwise, return True.
+    Log a warning for missing files and their paths.
 
+    Example:
+        - pred_article_path:    Boltzmann_Distribution/storm_gen_article_polished.txt
+        - gt_article_path:      TopicPagesWiki/txt/Boltzmann_Distribution.txt
+        - gt_article_json_path: TopicPagesWiki/json/Boltzmann_Distribution.json
+    """
+    file_paths = {
+        "Prediction": file_path_1,
+        "Ground Truth (txt)": file_path_2,
+        "Ground Truth (json)": file_path_3,
+    }
+    missing_files = {
+        desc: path for desc, path in file_paths.items() if not os.path.exists(path)
+    }
 
-def load_json(path):
-    with open(path, "r") as f:
-        return json.load(f)
-
-
-def dump_json(data, path):
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
-
-
-def assert_int(x):
-    try:
-        int(x)
-        return True
-    except:
+    if missing_files:
+        for desc, path in missing_files.items():
+            logger.warning(f"{desc} file not found: {path}")
         return False
+    return True
+
+
+def update_aggregated_results(aggregated_results, evaluation_main_dict):
+    """
+    Update aggregated results with evaluation results from one topic.
+
+    Args:
+        aggregated_results (dict): Dictionary containing aggregated results.
+        evaluation_main_dict (dict): Dictionary containing evaluation results for one topic.
+    """
+
+    for k, v in evaluation_main_dict["grading"]["rubric_grading"].items():
+        aggregated_results[k].append(v)
+
+    for k, v in evaluation_main_dict["grading"]["auto_grading"].items():
+        aggregated_results[k].append(v)
+
+    aggregated_results["entity_recall"].append(
+        evaluation_main_dict["grading"]["entity_recall"]
+    )
+
+
+def compute_average_scores(aggregated_results):
+    """
+    Compute average scores from aggregated results and save to a JSON file.
+
+    Args:
+        aggregated_results (dict): Dictionary containing aggregated results.
+
+    Returns:
+        avg_results (dict): Dictionary containing average scores.
+    """
+    logger.info(f"Computing average score.")
+    avg_results = {}
+
+    # for k in aggregated_results:
+    #     if type(aggregated_results[k][0]) is dict:
+    #         avg_results[k] = sum(
+    #             [float(x["score"]) for x in aggregated_results[k]]
+    #         ) / len(aggregated_results[k])
+    #     else:
+    #         avg_results[k] = sum(aggregated_results[k]) / len(aggregated_results[k])
+    #     print(f"{k}: {avg_results[k]}")
+
+    # TODO: Revisist cases where scores is not present
+    for k, v in aggregated_results.items():
+        try:
+            scores = []
+            if isinstance(v, list):
+                for entry in v:
+                    if isinstance(entry, dict):
+                        score = entry.get("score")
+                        if isinstance(score, (int, float)):
+                            scores.append(float(score))
+                        elif (
+                            isinstance(score, str)
+                            and score.replace(".", "", 1).isdigit()
+                        ):
+                            scores.append(float(score))
+                    elif isinstance(entry, (int, float)):
+                        scores.append(float(entry))
+
+            avg_results[k] = sum(scores) / len(scores) if scores else None
+            logger.info(f"{k}: {avg_results[k]}")
+
+        except Exception as e:
+            logger.error(f"Error processing key '{k}': {e}")
+            avg_results[k] = None
+
+    return avg_results
 
 
 def main(args):
-   
-    import torch
 
     logger.info(f"loading tokenizer {args.tokenizer} and model {args.model}")
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer)
@@ -79,45 +152,51 @@ def main(args):
         device_map="auto",
         torch_dtype=torch.float16,
         offload_folder=args.offload_dir,
-        max_memory={
-            0: "23GiB",
-            "cpu": "128GiB",
-        }
+        # max_memory={
+        #     0: "23GiB",
+        #     "cpu": "128GiB",
+        # }
     )
 
     df = pd.read_csv(args.input_path)
 
-    aggregated_results = {}
+    aggregated_results = defaultdict(list)
 
-    for i, row in tqdm(df.iterrows()):
-        # import pdb
+    for i, row in tqdm(df.iterrows(), total=len(df), desc="Processing topics"):
 
-        # pdb.set_trace()
+        # if i == 2:
+        #     break
         topic = row["topic"]
         topic_name = topic.replace(" ", "_").replace("/", "_")
-        llm_output_path = os.path.join(args.pred_dir, topic_name, args.pred_file_name)
-        assert os.path.exists(
-            llm_output_path
-        ), f"llm output path not exists {llm_output_path}"
+        pred_article_path = os.path.join(args.pred_dir, topic_name, args.pred_file_name)
+        gt_article_path = os.path.join(args.gt_dir, "txt", topic_name + ".txt")
+        gt_article_json_path = os.path.join(args.gt_dir, "json", topic_name + ".json")
 
-        golden_answer_json = load_json(
-            os.path.join(args.gt_dir, "json", topic_name + ".json")
+        files_present = check_files_exists(
+            pred_article_path, gt_article_path, gt_article_json_path
         )
-        golden_answer = load_str(os.path.join(args.gt_dir, "txt", topic_name + ".txt"))
-        golden_answer = preprocess_text(golden_answer)
-        llm_output = load_str(llm_output_path)
-        llm_output = preprocess_text(llm_output)
-        output_file_path = os.path.join(args.result_output_dir, f"{topic_name}.json")
+        if not files_present:
+            logger.warning(f"Skipping topic: {topic_name}")
+            continue
+
+        # Load files
+        golden_answer_json = load_json(gt_article_json_path)
+        golden_answer_txt = load_str(gt_article_path)
+        golden_answer = preprocess_text(golden_answer_txt)
+
+        pred_article_txt = load_str(pred_article_path)
+        pred_article = preprocess_text(pred_article_txt)
 
         # Prometheus model has a limited context window.
         trimmed_output_for_rubric_grading = process_document(
-            llm_output_path, max_words=2000
+            pred_article_path, max_words=2000
         )
 
+        ### Computing evaluation metrics
+        logger.info(f"Processing rubric grading.")
         evaluation_main_dict = {"topic": topic, "grading": {}}
 
-        # Get rubric grading.
-        logger.info(f"Processing rubric grading.")
+        # 1. Get `rubric_grading` using Prometheus model
         grading_dict = get_grading_dict(
             responses=[trimmed_output_for_rubric_grading],
             topic=topic,
@@ -139,58 +218,38 @@ def main(args):
                         criteria_description
                     ] = feedback_dict
 
-        # get automatic evaluation score
+        # 2. Get `auto_grading` ~ automatic evaluation scores
         logger.info(f"Processing automatic evaluation.")
         automatic_evaluation_score = compute_rouge_scores(
-            predicted_answer=llm_output, golden_answer=golden_answer
+            predicted_answer=pred_article, golden_answer=golden_answer
         )
         evaluation_main_dict["grading"]["auto_grading"] = automatic_evaluation_score
 
-        # get named entity overlap with golden answer
+        # 3. Get `entity_recall` ~ named entity overlap with golden answer
         logger.info(f"Processing entity overlap with ground truth")
         evaluation_main_dict["grading"]["entity_recall"] = article_entity_recall(
             golden_entities=golden_answer_json["flair_entities"],
-            predicted_article=llm_output,
+            predicted_article=pred_article,
         )
+        ###
 
-        dump_json(evaluation_main_dict, output_file_path)
+        # Save evaluation results
+        results_one_topic_path = os.path.join(
+            args.result_output_dir, f"{topic_name}.json"
+        )
+        dump_json(evaluation_main_dict, results_one_topic_path)
 
-        if len(aggregated_results) == 0:
-            for k in evaluation_main_dict["grading"]["rubric_grading"]:
-                aggregated_results[k] = [
-                    evaluation_main_dict["grading"]["rubric_grading"][k]
-                ]
-            for k in evaluation_main_dict["grading"]["auto_grading"]:
-                aggregated_results[k] = [
-                    evaluation_main_dict["grading"]["auto_grading"][k]
-                ]
-            aggregated_results["entity_recall"] = [
-                evaluation_main_dict["grading"]["entity_recall"]
-            ]
-        else:
-            for k in evaluation_main_dict["grading"]["rubric_grading"]:
-                aggregated_results[k].append(
-                    evaluation_main_dict["grading"]["rubric_grading"][k]
-                )
-            for k in evaluation_main_dict["grading"]["auto_grading"]:
-                aggregated_results[k].append(
-                    evaluation_main_dict["grading"]["auto_grading"][k]
-                )
-            aggregated_results["entity_recall"].append(
-                evaluation_main_dict["grading"]["entity_recall"]
-            )
+        # Store evaluation results in aggregated_results
+        update_aggregated_results(aggregated_results, evaluation_main_dict)
 
-    # compute average score
-    logger.info(f"Computing average score.")
-    avg_results = {}
-    for k in aggregated_results:
-        if type(aggregated_results[k][0]) is dict:
-            avg_results[k] = sum(
-                [float(x["score"]) for x in aggregated_results[k]]
-            ) / len(aggregated_results[k])
-        else:
-            avg_results[k] = sum(aggregated_results[k]) / len(aggregated_results[k])
-        print(f"{k}: {avg_results[k]}")
+    ### End of loop
+    results_all_topics_path = os.path.join(
+        args.result_output_dir, "aggregated_results.json"
+    )
+    dump_json(aggregated_results, results_all_topics_path)
+    # aggregated_results = load_json(results_all_topics_path)
+
+    avg_results = compute_average_scores(aggregated_results)
     dump_json(avg_results, os.path.join(args.result_output_dir, "avg_results.json"))
 
 
@@ -240,8 +299,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model",
         choices=["kaist-ai/prometheus-13b-v1.0", "kaist-ai/prometheus-7b-v1.0"],
-        # default="kaist-ai/prometheus-13b-v1.0",
-        default="kaist-ai/prometheus-7b-v1.0",
+        default="kaist-ai/prometheus-13b-v1.0",
+        # default="kaist-ai/prometheus-7b-v1.0",
         help="Model to use for rubric evaluation.",
     )
     parser.add_argument(

@@ -200,6 +200,10 @@ class WriteSection(dspy.Signature):
     # 1. Provide the list of most relevant sources
     # 2. Use these sources to make the section
 
+    # Update: After writing the section, suggest a more relevant title if needed
+    #         Does this title stills fits, do not use repetive words 
+    #         Perhaps passes the outline for avoiding repting the same words in the title
+
     info = dspy.InputField(prefix="The collected information:\n", format=str)
     topic = dspy.InputField(prefix="The topic of the page: ", format=str)
     section = dspy.InputField(prefix="The section you need to write: ", format=str)

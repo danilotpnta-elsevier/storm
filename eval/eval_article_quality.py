@@ -159,13 +159,12 @@ def main(args):
     )
 
     df = pd.read_csv(args.input_path)
-
     aggregated_results = defaultdict(list)
 
     for i, row in tqdm(df.iterrows(), total=len(df), desc="Processing topics"):
 
-        # if i == 2:
-        #     break
+        if i == 3:
+            break
         topic = row["topic"]
         topic_name = topic.replace(" ", "_").replace("/", "_")
         pred_article_path = os.path.join(args.pred_dir, topic_name, args.pred_file_name)
@@ -248,9 +247,11 @@ def main(args):
     )
     dump_json(aggregated_results, results_all_topics_path)
     # aggregated_results = load_json(results_all_topics_path)
-
+    
+    
     avg_results = compute_average_scores(aggregated_results)
-    dump_json(avg_results, os.path.join(args.result_output_dir, "avg_results.json"))
+    avg_results_path = os.path.join(args.result_output_dir, "avg_results.json")
+    dump_json(avg_results, avg_results_path)
 
 
 if __name__ == "__main__":
@@ -310,6 +311,9 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
+    model_name = args.model.split("/")[-1]
+    args.result_output_dir = os.path.join(args.result_output_dir, model_name)
+    
     if not os.path.exists(args.result_output_dir):
         os.makedirs(args.result_output_dir)
         logger.info(f"Directory {args.result_output_dir} created.")

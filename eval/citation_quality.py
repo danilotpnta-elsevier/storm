@@ -1,7 +1,6 @@
 """The code is adapted from https://github.com/princeton-nlp/ALCE/blob/main/eval.py"""
 
 import copy
-import json
 import logging
 import random
 import re
@@ -13,16 +12,18 @@ import pandas as pd
 import torch
 
 import nltk
+
 try:
-    nltk.data.find('tokenizers/punkt')
+    nltk.data.find("tokenizers/punkt")
 except LookupError:
-    nltk.download('punkt')
+    nltk.download("punkt")
 
 from nltk import sent_tokenize
 from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from src.utils import dump_json
+from src.utils import dump_json, load_json, load_str
+from config.constants import TOPICS_PER_CATEOGORY_JSON
 
 random.seed(0)
 
@@ -41,15 +42,6 @@ autoais_model, autoais_tokenizer, mistral_7b_instruct, mistral_7b_tokenizer = (
     None,
     None,
 )
-
-
-def get_max_memory():
-    """Get the maximum memory available for the current GPU for loading models."""
-    free_in_GB = int(torch.cuda.mem_get_info()[0] / 1024**3)
-    max_memory = f"{free_in_GB - 6}GB"
-    n_gpus = torch.cuda.device_count()
-    max_memory = {i: max_memory for i in range(n_gpus)}
-    return max_memory
 
 
 def remove_citations(sent):
@@ -85,6 +77,39 @@ def truncate_paragraph(paragraph, max_words):
         trunks.append(" ".join(current_trunk))
 
     return trunks
+
+
+def process_citation_quality(citation_data):
+
+    categories = load_json(TOPICS_PER_CATEOGORY_JSON)
+    metrics = {
+        topic: {"recall": recall, "precision": precision}
+        for topic, recall, precision in zip(
+            citation_data["topic"], citation_data["recall"], citation_data["precision"]
+        )
+    }
+
+    results = {}
+    for category, topics in categories.items():
+        topic_metrics = [metrics[topic] for topic in topics if topic in metrics]
+        recalls = [metric["recall"] for metric in topic_metrics]
+        precisions = [metric["precision"] for metric in topic_metrics]
+
+        results[category] = {
+            "topics": [
+                {"topic": topic, **metrics[topic]}
+                for topic in topics
+                if topic in metrics
+            ],
+            "stats": {
+                "count": len(topic_metrics),
+                "recall_mean": np.mean(recalls) if recalls else 0,
+                "recall_std": np.std(recalls) if recalls else 0,
+                "precision_mean": np.mean(precisions) if precisions else 0,
+                "precision_std": np.std(precisions) if precisions else 0,
+            },
+        }
+    return results
 
 
 def _run_nli_autoais(passage, claim, partial):
@@ -281,30 +306,6 @@ def compute_autoais(
     }
 
 
-def load_str(path):
-    with open(path, "r") as f:
-        return "\n".join(f.readlines())
-
-
-def load_json(path):
-    with open(path, "r") as f:
-        return json.load(f)
-
-
-def extract_url(text):
-    # This pattern matches the format [number]: text (url)
-    pattern = r"\[\d+\]: .* \((https?://[^\)]+)\)"
-
-    # Find the first match of the pattern in the text
-    match = re.search(pattern, text)
-
-    # Return the URL if a match is found
-    if match:
-        return match.group(1)
-    else:
-        return None
-
-
 def expand_citaions(output):
     """
     Expand citations by following rule:
@@ -316,7 +317,7 @@ def expand_citaions(output):
         return re.findall(r"\[(\d+)\]", sentence)
 
     modified_pargraphs = []
-    for paragraph_idx, paragraph in enumerate(output.split("\n")):
+    for _, paragraph in enumerate(output.split("\n")):
         if len(paragraph) == 0:
             continue
         sentence_endings = r"(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?|\!)\s"
@@ -344,28 +345,10 @@ def expand_citaions(output):
 
 def format_data(root_dir, file_name_suffix, do_citation_expansion=False):
     final_page = load_str(os.path.join(root_dir, file_name_suffix))
-    # search_results = load_json(
-    #     f"{root_dir}_search_results.json"
-    # )  # This is the url_to_info.json
-    # if "url_to_info" in search_results:
-    #     url_to_info = search_results["url_to_info"]
-    #     assert list(search_results["url_to_unified_index"].keys()) == list(
-    #         url_to_info.keys()
-    #     )
-    # else:
-    #     # this will work with the url_to_info.json
-    #     url_to_info = {
-    #         d["url"]: {"title": d["title"], "snippets": d["snippets"]}
-    #         for d in search_results
-    #     }
 
     # .../baseline/refined_articles/models--snippet_ranking_model/Boltzmann_Distribution
     url_to_info_path = os.path.join(root_dir, "url_to_info.json")
     search_results = load_json(url_to_info_path)
-    # url_to_info = {
-    #     d["url"]: {"title": d["title"], "snippets": d["snippets"]}
-    #     for d in search_results
-    # }
 
     url_to_info = {
         value["url"]: {"title": value["title"], "snippets": value["snippets"]}
@@ -398,12 +381,10 @@ def format_data(root_dir, file_name_suffix, do_citation_expansion=False):
 
 def main(args):
     global mistral_7b_instruct, mistral_7b_tokenizer
-    dtype = torch.float16 if args.fp16 else torch.float32
 
     mistral_7b_instruct = AutoModelForCausalLM.from_pretrained(
         "mistralai/Mistral-7B-Instruct-v0.1",
-        device_map="auto",
-        dtype=dtype,
+        device_map="auto"
     )
     mistral_7b_tokenizer = AutoTokenizer.from_pretrained(
         "mistralai/Mistral-7B-Instruct-v0.1"
@@ -438,11 +419,18 @@ def main(args):
             results["precision"].append(result["citation_prec"])
             results["eval_log"].append(result["evaluation_logs"])
 
-        # Define output path and save it
-        results_citation_quality_path = os.path.join(
+        # Save overall citation quality
+        citation_quality_path = os.path.join(
             args.result_output_dir, "citation_quality.json"
         )
-        dump_json(results, results_citation_quality_path)
+        dump_json(results, citation_quality_path)
+
+        # Process and save citation quality grouped by category
+        citation_quality_per_category_path = os.path.join(
+            args.result_output_dir, "citation_quality_per_category.json"
+        )
+        citation_quality_per_category = process_citation_quality(results)
+        dump_json(citation_quality_per_category, citation_quality_per_category_path)
 
         # Averaged Aggregated data
         avg_results_citation_quality = {
@@ -460,6 +448,7 @@ def main(args):
             f"Average recall: {avg_results_citation_quality['avg_recall']}\n"
             f"Average precision: {avg_results_citation_quality['avg_precision']}\n"
         )
+
 
 if __name__ == "__main__":
     parser = ArgumentParser()
@@ -485,9 +474,7 @@ if __name__ == "__main__":
         help="whether expand citations",
     )
     parser.add_argument(
-        "--fp16",
-        action="store_true",
-        help="Enable FP16/half-precision mode"
+        "--fp16", action="store_true", help="Enable FP16/half-precision mode"
     )
     parser.add_argument(
         "--result-output-dir",
@@ -505,7 +492,6 @@ if __name__ == "__main__":
     if not os.path.exists(args.result_output_dir):
         os.makedirs(args.result_output_dir)
         logger.info(f"Directory {args.result_output_dir} created.")
-    
 
     """
     python citation_quality.py \
@@ -514,6 +500,6 @@ if __name__ == "__main__":
         --file_name_suffix "storm_gen_article_polished.txt" \
         --batch_topic_path "../TopicPagesWiki/topics_ores_scores.csv" \
         --do_citation_expansion \
-        --result-output-dir "/home/toapantabarahonad/storm-plus/results/storm_citation_results"
+        --result-output-dir "/home/toapantabarahonad/storm-plus/results/storm_citation_results" 
     """
     main(args)

@@ -180,9 +180,8 @@ def _run_nli_autoais_vllm(passage, claim, partial):
             temperature=0,
             max_tokens=200,
         )
-        
         # vLLM uses a different generation API
-        outputs = mistral_7b_instruct_vllm.generate([prompt], sampling_params)
+        outputs = mistral_7b_instruct_vllm.chat(messages, sampling_params)
         
         # Extract the generated text from the output
         generated_text = outputs[0].outputs[0].text.strip()
@@ -308,12 +307,12 @@ def compute_autoais(
 
             # If not directly rejected by citation format error, calculate the recall score
             if joint_entail == -1:
-                joint_entail = _run_nli_autoais(
-                    joint_passage, target_sent, partial=False
-                )
-                # joint_entail = _run_nli_autoais_vllm(
+                # joint_entail = _run_nli_autoais(
                 #     joint_passage, target_sent, partial=False
                 # )
+                joint_entail = _run_nli_autoais_vllm(
+                    joint_passage, target_sent, partial=False
+                )
 
             entail += joint_entail
             if joint_entail == 0:
@@ -330,8 +329,8 @@ def compute_autoais(
                 for psgs_id in ref:
                     # condition A
                     passage = _format_document(item["docs"][psgs_id])
-                    nli_result = _run_nli_autoais(passage, target_sent, partial=True)
-                    # nli_result = _run_nli_autoais_vllm(passage, target_sent, partial=True)
+                    # nli_result = _run_nli_autoais(passage, target_sent, partial=True)
+                    nli_result = _run_nli_autoais_vllm(passage, target_sent, partial=True)
 
                     # condition B
                     if not nli_result:
@@ -343,12 +342,12 @@ def compute_autoais(
                                 for pid in subset_exclude
                             ]
                         )
-                        nli_result = _run_nli_autoais(
-                            passage, target_sent, partial=False
-                        )
-                        # nli_result = _run_nli_autoais_vllm(
+                        # nli_result = _run_nli_autoais(
                         #     passage, target_sent, partial=False
                         # )
+                        nli_result = _run_nli_autoais_vllm(
+                            passage, target_sent, partial=False
+                        )
                         if nli_result:  # psgs_id is not necessary
                             flag = 0
                             sent_mcite_overcite += 1
@@ -477,10 +476,10 @@ def format_data(root_dir, file_name_suffix, do_citation_expansion=False):
 def main(args):
     global mistral_7b_instruct, mistral_7b_tokenizer, mistral_7b_instruct_vllm
 
-    mistral_7b_instruct = AutoModelForCausalLM.from_pretrained(
-        "mistralai/Mistral-7B-Instruct-v0.1",
-        device_map="auto"
-    )
+    # mistral_7b_instruct = AutoModelForCausalLM.from_pretrained(
+    #     "mistralai/Mistral-7B-Instruct-v0.1",
+    #     device_map="auto"
+    # )
     mistral_7b_instruct_vllm = LLM(
         model="mistralai/Mistral-7B-Instruct-v0.1",
         dtype="float16",

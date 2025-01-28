@@ -358,7 +358,9 @@ class DeepSearchRunner:
 
             def gen_section(sec_title):
                 search_qs = [sec_title]
+                # search_qs = [# Title, Q1, Q2, Q3]
                 search_qs.extend(convert_outline_into_queries(outline_tree[sec_title]))
+                # print(search_qs)  #TODO: examine this later
                 url_to_snippets = search_collected_info.search(search_qs)
                 section_outline = f"# {sec_title}\n" + convert_outline_into_str(
                     outline_tree[sec_title], 2

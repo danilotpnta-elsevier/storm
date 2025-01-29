@@ -1,34 +1,29 @@
 """The code is adapted from https://github.com/princeton-nlp/ALCE/blob/main/eval.py"""
 
+import os
+import re
 import copy
 import logging
 import random
-import re
-import os
+from tqdm import tqdm
 from argparse import ArgumentParser
 
 import numpy as np
 import pandas as pd
-import torch
 
 import nltk
+from nltk import sent_tokenize
+
+from vllm import LLM, SamplingParams
+from src.utils import dump_json, load_json, load_str, format_args
+from config.constants import TOPICS_PER_CATEOGORY_JSON
+
+random.seed(0)
 
 try:
     nltk.data.find("tokenizers/punkt")
 except LookupError:
     nltk.download("punkt")
-
-from nltk import sent_tokenize
-from tqdm import tqdm
-from transformers import AutoTokenizer, AutoModelForCausalLM
-
-from src.utils import dump_json, load_json, load_str
-from config.constants import TOPICS_PER_CATEOGORY_JSON
-
-from vllm import LLM, SamplingParams
-
-
-random.seed(0)
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -36,23 +31,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-AUTOAIS_MODEL = "google/t5_xxl_true_nli_mixture"
 
-global autoais_model, autoais_tokenizer, mistral_7b_instruct, mistral_7b_tokenizer
-autoais_model, autoais_tokenizer, mistral_7b_instruct, mistral_7b_tokenizer = (
-    None,
-    None,
-    None,
-    None,
-)
+def remove_citations(s):
+    """Remove citations from a string."""
 
-
-def remove_citations(sent):
-    return (
-        re.sub(r"\[\d+", "", re.sub(r" \[\d+", "", sent))
-        .replace(" |", "")
-        .replace("]", "")
-    )
+    return re.sub(r"\[\d+\]", "", s)
 
 
 def truncate_paragraph(paragraph, max_words):
@@ -115,66 +98,33 @@ def process_citation_quality(citation_data):
     return results
 
 
-# def _run_nli_autoais_vllm(passage, claim, partial):
-#     """
-#     Run inference for assessing AIS using vLLM.
-#     """
-#     # Create the prompt
-#     if partial:
-#         prompt = (
-#             f"Can the source at least partially support the claim? "
-#             f"Start your answer with 'Yes' or 'No'.\nSource: {passage}\nClaim: {claim}"
-#         )
-#     else:
-#         prompt = (
-#             f"Is the claim faithful to the source? A claim is faithful to the source if the core part in the claim can be supported by the source.\n"
-#             f"Start your answer with 'Yes' or 'No'.\nSource: {passage}\nClaim: {claim}"
-#         )
-
-#     # Define sampling parameters (temperature=0 for deterministic output)
-#     sampling_params = SamplingParams(max_tokens=200, temperature=0.0, stop=["\n"])
-
-#     # Run the model with vLLM
-#     result = mistral_7b_instruct.generate([prompt], sampling_params)
-#     response = result[0].outputs[0].text.strip()
-
-#     # Determine inference result
-#     if response.startswith("Yes"):
-#         return 1  # Supported
-#     return 0  # Not supported
-
-
-def _run_nli_autoais_vllm(passage, claim, partial):
+def _run_nli_autoais(passage, claim, partial):
     """
     Run inference for assessing AIS between a premise and hypothesis using vLLM.
     Adapted from the original AutoAIS implementation to work with vLLM.
-    
+
     Args:
         passage (str): The source text passage
         claim (str): The claim to verify
         partial (bool): Whether to check for partial support
-    
+
     Returns:
         int: 1 if the claim is supported, 0 otherwise
     """
-    
-    # print("passage: ", passage)
-    # print("claim: ", claim)
-    # print("partial: ", partial)
 
     passage_trunks = truncate_paragraph(passage, 500)
     inference = 0
-    
+
     for trunk in passage_trunks:
         # Construct the prompt
         if partial:
             prompt = f"Can the source at least partially support the claim? Start your answer with 'Yes' or 'No'.\nSource: {trunk}\nClaim: {claim}"
         else:
             prompt = f"Is the claim faithful to the source? A claim is faithful to the source if the core part in the claim can be supported by the source.\nStart your answer with 'Yes' or 'No'.\nSource: {trunk}\nClaim: {claim}"
-        
+
         # Create the message in Mistral chat format
         messages = [{"role": "user", "content": prompt}]
-        
+
         # Generate using vLLM
         sampling_params = SamplingParams(
             temperature=0,
@@ -182,50 +132,17 @@ def _run_nli_autoais_vllm(passage, claim, partial):
         )
         # vLLM uses a different generation API
         outputs = mistral_7b_instruct_vllm.chat(messages, sampling_params)
-        
+
         # Extract the generated text from the output
         generated_text = outputs[0].outputs[0].text.strip()
         print("response_vllm: ", generated_text)
-        
+
         # Check if the response starts with "Yes"
         if generated_text.startswith("Yes"):
             inference = 1
             print("inference_vllm: ", inference)
             break
     print("inference_vllm: ", inference)
-    return inference
-
-def _run_nli_autoais(passage, claim, partial):
-    """
-    Run inference for assessing AIS between a premise and hypothesis.
-    Adapted from https://github.com/google-research-datasets/Attributed-QA/blob/main/evaluation.py
-    """
-    global mistral_7b_instruct, mistral_7b_tokenizer
-
-    passage_trunks = truncate_paragraph(passage, 500)
-    inference = 0
-    for trunk in passage_trunks:
-        if partial:
-            s = f"Can the source at least partially support the claim? Start your answer with 'Yes' or 'No'.\nSource: {trunk}\nClaim: {claim}"
-        else:
-            s = f"Is the claim faithful to the source? A claim is faithful to the source if the core part in the claim can be supported by the source.\nStart your answer with 'Yes' or 'No'.\nSource: {trunk}\nClaim: {claim}"
-        messages = [{"role": "user", "content": s}]
-        encodeds = mistral_7b_tokenizer.apply_chat_template(
-            messages, return_tensors="pt"
-        )
-        model_inputs = encodeds.to("cuda")
-        generated_ids = mistral_7b_instruct.generate(
-            model_inputs, max_new_tokens=200, do_sample=False
-        )
-        decoded = mistral_7b_tokenizer.batch_decode(generated_ids, temperature=0)[0]
-        res = decoded[decoded.find("[/INST]") + len("[/INST]") :].strip()
-
-        print("response_old: ", res)
-        if res.startswith("Yes"):
-            inference = 1
-            print("inference: ", inference)
-            break
-    print("inference: ", inference)
     return inference
 
 
@@ -241,8 +158,6 @@ def compute_autoais(
         citation: check citations and use the corresponding references.
         decontext: decontextualize the output
     """
-
-    global mistral_7b_instruct, mistral_7b_tokenizer
 
     def _format_document(doc):
         """Format document for AutoAIS."""
@@ -310,7 +225,7 @@ def compute_autoais(
                 # joint_entail = _run_nli_autoais(
                 #     joint_passage, target_sent, partial=False
                 # )
-                joint_entail = _run_nli_autoais_vllm(
+                joint_entail = _run_nli_autoais(
                     joint_passage, target_sent, partial=False
                 )
 
@@ -330,7 +245,7 @@ def compute_autoais(
                     # condition A
                     passage = _format_document(item["docs"][psgs_id])
                     # nli_result = _run_nli_autoais(passage, target_sent, partial=True)
-                    nli_result = _run_nli_autoais_vllm(passage, target_sent, partial=True)
+                    nli_result = _run_nli_autoais(passage, target_sent, partial=True)
 
                     # condition B
                     if not nli_result:
@@ -345,7 +260,7 @@ def compute_autoais(
                         # nli_result = _run_nli_autoais(
                         #     passage, target_sent, partial=False
                         # )
-                        nli_result = _run_nli_autoais_vllm(
+                        nli_result = _run_nli_autoais(
                             passage, target_sent, partial=False
                         )
                         if nli_result:  # psgs_id is not necessary
@@ -474,22 +389,13 @@ def format_data(root_dir, file_name_suffix, do_citation_expansion=False):
 
 
 def main(args):
-    global mistral_7b_instruct, mistral_7b_tokenizer, mistral_7b_instruct_vllm
+    global mistral_7b_instruct_vllm
 
-    # mistral_7b_instruct = AutoModelForCausalLM.from_pretrained(
-    #     "mistralai/Mistral-7B-Instruct-v0.1",
-    #     device_map="auto"
-    # )
     mistral_7b_instruct_vllm = LLM(
-        model="mistralai/Mistral-7B-Instruct-v0.1",
+        model=args.model,
         dtype="float16",
         tensor_parallel_size=4,
     )
-
-    mistral_7b_tokenizer = AutoTokenizer.from_pretrained(
-        "mistralai/Mistral-7B-Instruct-v0.1"
-    )
-    mistral_7b_instruct = mistral_7b_instruct
 
     if args.mode == "single":
         output, docs = format_data(
@@ -574,10 +480,21 @@ if __name__ == "__main__":
         help="whether expand citations",
     )
     parser.add_argument(
+        "--model",
+        type=str,
+        choices=[
+            "mistralai/Mistral-7B-Instruct-v0.1",
+            "mistralai/Mistral-7B-Instruct-v0.2",
+            "mistralai/Mistral-7B-Instruct-v0.3",
+        ],
+        default="mistralai/Mistral-7B-Instruct-v0.1",
+        help="Name of the LLM model as a judge. Default is 'mistralai/Mistral-7B-Instruct-v0.1'.",
+    )
+    parser.add_argument(
         "--fp16", action="store_true", help="Enable FP16/half-precision mode"
     )
     parser.add_argument(
-        "--result-output-dir",
+        "--result_output_dir",
         help="Directory to store the evaluation results. "
         "Each article evaluation will be saved as separate file named after {topic_name}.json",
     )
@@ -589,9 +506,10 @@ if __name__ == "__main__":
     else:
         logger.setLevel(logging.INFO)
 
-    if not os.path.exists(args.result_output_dir):
-        os.makedirs(args.result_output_dir)
-        logger.info(f"Directory {args.result_output_dir} created.")
+    args.result_output_dir = os.path.join(
+        args.result_output_dir, args.model.rsplit("/", 1)[-1]
+    )
+    os.makedirs(args.result_output_dir, exist_ok=True)
 
     """
     python citation_quality.py \
@@ -600,6 +518,7 @@ if __name__ == "__main__":
         --file_name_suffix "storm_gen_article_polished.txt" \
         --batch_topic_path "../TopicPagesWiki/topics_ores_scores.csv" \
         --do_citation_expansion \
-        --result-output-dir "/home/toapantabarahonad/storm-plus/results/storm_citation_results" 
+        --result_output_dir "/home/toapantabarahonad/storm-plus/results/storm_citation_eval_results"
     """
+    print(format_args(args))
     main(args)

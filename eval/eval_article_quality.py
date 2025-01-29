@@ -247,8 +247,7 @@ def main(args):
     )
     dump_json(aggregated_results, results_all_topics_path)
     # aggregated_results = load_json(results_all_topics_path)
-    
-    
+
     avg_results = compute_average_scores(aggregated_results)
     avg_results_path = os.path.join(args.result_output_dir, "avg_results.json")
     dump_json(avg_results, avg_results_path)
@@ -309,11 +308,14 @@ if __name__ == "__main__":
         default=os.path.join(HF_CACHE_DIR, "offload"),
         help="Directory to offload the model and tokenizer to.",
     )
+    parser.add_argument("--jobid", type=str, required=False, help="Slurm job ID")
     args = parser.parse_args()
 
     model_name = args.model.split("/")[-1]
-    args.result_output_dir = os.path.join(args.result_output_dir, model_name)
-    
+    args.result_output_dir = os.path.join(
+        args.result_output_dir, model_name, args.jobid or ""
+    )
+
     if not os.path.exists(args.result_output_dir):
         os.makedirs(args.result_output_dir)
         logger.info(f"Directory {args.result_output_dir} created.")

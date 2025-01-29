@@ -498,6 +498,7 @@ if __name__ == "__main__":
         help="Directory to store the evaluation results. "
         "Each article evaluation will be saved as separate file named after {topic_name}.json",
     )
+    parser.add_argument("--jobid", type=str, required=False, help="Slurm job ID")
 
     args = parser.parse_args()
 
@@ -507,7 +508,7 @@ if __name__ == "__main__":
         logger.setLevel(logging.INFO)
 
     args.result_output_dir = os.path.join(
-        args.result_output_dir, args.model.rsplit("/", 1)[-1]
+        args.result_output_dir, args.model.rsplit("/", 1)[-1], args.jobid or ""
     )
     os.makedirs(args.result_output_dir, exist_ok=True)
 

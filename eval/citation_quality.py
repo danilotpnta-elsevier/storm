@@ -501,6 +501,7 @@ if __name__ == "__main__":
     parser.add_argument("--jobid", type=str, required=False, help="Slurm job ID")
 
     args = parser.parse_args()
+    print(format_args(args))
 
     if args.disable_log:
         logger.setLevel(logging.ERROR)
@@ -521,5 +522,4 @@ if __name__ == "__main__":
         --do_citation_expansion \
         --result_output_dir "/home/toapantabarahonad/storm-plus/results/storm_citation_eval_results"
     """
-    print(format_args(args))
     main(args)

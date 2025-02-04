@@ -22,14 +22,10 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)-8s : %(message)s")
 def create_session():
     session = requests.Session()
     retry_strategy = Retry(
-        total=5,  # Increased retries
-        backoff_factor=2,  # Increased backoff
-        status_forcelist=[429, 500, 502, 503, 504],
+        total=5, backoff_factor=2, status_forcelist=[429, 500, 502, 503, 504]
     )
     adapter = HTTPAdapter(
-        max_retries=retry_strategy,
-        pool_connections=25,  # Reduced connections
-        pool_maxsize=25,
+        max_retries=retry_strategy, pool_connections=25, pool_maxsize=25
     )
     session.mount("http://", adapter)
     session.mount("https://", adapter)
@@ -125,34 +121,51 @@ def process_topic(session, topic_url_pair):
         return None
 
 
-def batch_process_topics(topic_urls_dict, max_workers=8, batch_size=20):
+def batch_process_topics(topic_urls_dict, results_path, max_workers=8, batch_size=20):
     session = create_session()
-    results = []
 
-    # Convert dictionary items to list for batch processing
-    items = list(topic_urls_dict.items())
+    # Initialize or load existing results
+    if os.path.exists(results_path):
+        results = load_json(results_path)
+        processed_topics = {item["topic"] for item in results}
+    else:
+        results = []
+        processed_topics = set()
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        for i in range(0, len(items), batch_size):
-            batch = items[i : i + batch_size]
+    # Filter topics to process
+    topics_to_process = {
+        topic: url
+        for topic, url in topic_urls_dict.items()
+        if topic not in processed_topics
+    }
 
-            # Add delay between batches
-            if i > 0:
-                time.sleep(3)  # 3 second delay between batches
+    logger.info(f"Found {len(results)} existing results")
+    logger.info(f"Processing {len(topics_to_process)} remaining topics")
 
-            process_with_session = partial(process_topic, session)
-            future_to_topic = {
-                executor.submit(process_with_session, item): item for item in batch
+    # Process in batches
+    items = list(topics_to_process.items())
+    for i in range(0, len(items), batch_size):
+        batch = items[i : i + batch_size]
+
+        # Add delay between batches
+        if i > 0:
+            time.sleep(3)
+
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {
+                executor.submit(process_topic, session, item): item for item in batch
             }
 
             for future in tqdm(
-                as_completed(future_to_topic),
+                as_completed(futures),
                 total=len(batch),
-                desc=f"Processing batch {i//batch_size + 1}/{len(items)//batch_size + 1}",
+                desc=f"Processing batch {i//batch_size + 1}/{(len(items) + batch_size - 1)//batch_size}",
             ):
                 result = future.result()
                 if result:
                     results.append(result)
+                    # Save progress after each successful result
+                    dump_json(results, results_path)
 
     return results
 
@@ -160,15 +173,23 @@ def batch_process_topics(topic_urls_dict, max_workers=8, batch_size=20):
 def main(args):
     print_warning(args.topics_urls_json)
 
+    # Define paths for intermediate and final results
+    suffix = "_all" if "all" in os.path.basename(args.topics_urls_json) else ""
+    results_path = os.path.join(args.output_dir, f"topics_ores_scores{suffix}.json")
+    csv_path = os.path.join(args.output_dir, f"topics_ores_scores{suffix}.csv")
+
     # Load topics
     topics_with_urls_dict = load_json(args.topics_urls_json)
 
-    # Process topics in parallel with reduced concurrency
+    # Process topics
     results = batch_process_topics(
-        topics_with_urls_dict, max_workers=args.max_workers, batch_size=args.batch_size
+        topics_with_urls_dict,
+        results_path,
+        max_workers=args.max_workers,
+        batch_size=args.batch_size,
     )
 
-    # Convert results to DataFrame
+    # Convert to DataFrame
     df = pd.DataFrame(results)
 
     # Print statistics
@@ -179,19 +200,11 @@ def main(args):
         high_quality_classes = {"B", "GA", "FA"}
         df = df[df["predicted_class"].isin(high_quality_classes)]
 
-    # Save results
-    suffix = "_all" if "all" in os.path.basename(args.topics_urls_json) else ""
-
-    # Save CSV
-    csv_path = os.path.join(args.output_dir, f"topics_ores_scores{suffix}.csv")
+    # Save final results
     df.to_csv(csv_path, index=False)
+    dump_json(results, results_path, ensure_ascii=False)
 
-    # Save JSON
-    records = df.to_dict(orient="records")
-    json_path = os.path.join(args.output_dir, f"topics_ores_scores{suffix}.json")
-    dump_json(records, json_path, ensure_ascii=False)
-
-    print(f"Files saved to:\n- CSV: {csv_path}\n- JSON: {json_path}")
+    print(f"Files saved to:\n- CSV: {csv_path}\n- JSON: {results_path}")
 
 
 if __name__ == "__main__":
@@ -219,13 +232,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--max-workers",
         type=int,
-        default=32,  # Reduced from 48
+        default=32,
         help="Maximum number of worker threads (default: 8)",
     )
     parser.add_argument(
         "--batch-size",
         type=int,
-        default=20,  # Reduced from 100
+        default=20,
         help="Number of topics to process in each batch (default: 20)",
     )
 

@@ -9,25 +9,11 @@ import re
 from fastchat.conversation import get_conv_template
 from transformers import AutoTokenizer, LlamaForCausalLM
 
+from src.utils import dump_json, load_json, load_str
+
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
-
-
-def read_txt_file(file_path):
-    """
-    Read a text file to string
-    """
-    with open(file_path, "r") as file:
-        return file.read()
-
-
-def read_json(file_path):
-    """
-    Read a json file to dict
-    """
-    with open(file_path, "r") as file:
-        return json.load(file)
 
 
 def preprocess_text(text):
@@ -100,8 +86,8 @@ def get_grading_dict(
     logger=None,
 ):
     grading = {}
-    prompt_template = read_txt_file(prompt_template_path)
-    rubrics = read_json(rubric_path)
+    prompt_template = load_str(prompt_template_path)
+    rubrics = load_json(rubric_path)
 
     # Read all files in the given directory
     for rubric_idx, rubric in enumerate(rubrics):
@@ -180,7 +166,7 @@ def main(args):
     model = LlamaForCausalLM.from_pretrained(args.model, device_map="auto")
 
     doc_paths = glob.glob(os.path.join(args.batch_process_dir, "*.txt"))
-    responses = [preprocess_text(read_txt_file(doc_path)) for doc_path in doc_paths]
+    responses = [preprocess_text(load_str(doc_path)) for doc_path in doc_paths]
 
     grading = get_grading_dict(
         responses=responses,
@@ -198,9 +184,8 @@ def main(args):
     )
 
     # Save grading dictionary to output path
-    with open(args.output_path, "w") as outfile:
-        json.dump(grading, outfile, indent=2)
-        logger.info("Grading complete. Output saved to: %s", args.output_path)
+    dump_json(grading, args.output_path)
+    logger.info("Grading complete. Output saved to: %s", args.output_path)
 
 
 if __name__ == "__main__":
@@ -223,7 +208,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--rubric_path",
-        default="./prompts/eval_rubric_5.json",
+        default="./eval_rubric_5.json",
         help="path to rubric json file",
     )
 

@@ -1,20 +1,20 @@
-import logging
 import re
 import os
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from functools import partial
-import requests
-import pandas as pd
+import logging
 from tqdm import tqdm
+
+import pandas as pd
+
+import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from config.constants import TOPICS_URLS_JSON, DATA_DIR
 from src.utils import load_json, dump_json, format_args
 import argparse
 
-# Configure logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(levelname)-8s : %(message)s")
 
@@ -175,8 +175,9 @@ def main(args):
 
     # Define paths for intermediate and final results
     suffix = "_all" if "all" in os.path.basename(args.topics_urls_json) else ""
-    results_path = os.path.join(args.output_dir, f"topics_ores_scores{suffix}.json")
-    csv_path = os.path.join(args.output_dir, f"topics_ores_scores{suffix}.csv")
+    filename = os.path.splitext(os.path.basename(args.topics_urls_json))[0]
+    results_path = os.path.join(args.output_dir, f"{filename}_ores_scores{suffix}.json")
+    csv_path = os.path.join(args.output_dir, f"{filename}_ores_scores{suffix}.csv")
 
     # Load topics
     topics_with_urls_dict = load_json(args.topics_urls_json)
@@ -218,7 +219,7 @@ if __name__ == "__main__":
         help="Path to the JSON file containing topics.",
     )
     parser.add_argument(
-        "--extract-HQ-articles",
+        "--extract_HQ_articles",
         action="store_true",
         default=True,
         help="Extract high-quality Wikipedia articles based on ORES scores.",
@@ -230,13 +231,13 @@ if __name__ == "__main__":
         help="Directory where to save the ORES scores JSON file.",
     )
     parser.add_argument(
-        "--max-workers",
+        "--max_workers",
         type=int,
         default=1,
         help="Maximum number of worker threads (default: 1 no parallelism)",
     )
     parser.add_argument(
-        "--batch-size",
+        "--batch_size",
         type=int,
         default=20,
         help="Number of topics to process in each batch (default: 20)",

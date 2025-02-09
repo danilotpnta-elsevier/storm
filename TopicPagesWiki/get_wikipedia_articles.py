@@ -251,6 +251,12 @@ class FilesHandler:
     def __init__(self, output_dir: str, files_types_to_save: List[str]):
         self.output_dir = output_dir
         self.files_types_to_save = files_types_to_save
+        self.init_output_dir = self.init_output_dir()
+
+    def init_output_dir(self):
+        for file_type in self.files_types_to_save:
+            os.makedirs(os.path.join(self.output_dir, file_type), exist_ok=True)
+            print(f"Saving files to: ", os.path.join(self.output_dir, file_type))
 
     def save(self, topic, html_page, txt, result):
 
@@ -288,9 +294,6 @@ def process_url(url: str, username: str = "Knowledge Curation Project"):
 
 def main(args):
 
-    for file_type in args.files_types_to_save:
-        os.makedirs(os.path.join(args.output_dir, file_type), exist_ok=True)
-
     urls_topics_dict = load_topics()
     fileManager = FilesHandler(args.output_dir, args.files_types_to_save)
 
@@ -318,7 +321,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Parse a Wikipedia page into sections."
     )
-    parser.add_argument("--batch_path", type=str, help="Path of the batch topic file.")
+    parser.add_argument(
+        "--batch_path",
+        required=False,
+        type=str,
+        help="Path to CSV file containing URLs to parse.",
+    )
     parser.add_argument(
         "-u",
         "--url",
@@ -337,15 +345,17 @@ if __name__ == "__main__":
         "--files_types_to_save",
         nargs="+",
         choices=["html", "txt", "json", "md", "pdf"],
-        default=["html", "txt", "json"],
-        help="The types of files to save (default: md and html). Options: md, html and pdf",
+        help="The types of files to save (Default: html, txt and json). Additional formats will be saved.",
     )
+
+    args = parser.parse_args()
+    defaults = ["html", "txt", "json"]
+    args.files_types_to_save = list(set(defaults + args.files_types_to_save))
+    print(args.files_types_to_save)
+    print(format_args(args))
 
     """
     python wikipage_extractor.py --batch_path "/home/toapantabarahonad/storm-plus/storm/TopicPagesWiki/topics_ores_scores.csv"
     """
-
-    args = parser.parse_args()
-    print(format_args(args))
 
     main(args)

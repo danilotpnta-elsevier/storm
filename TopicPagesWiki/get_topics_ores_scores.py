@@ -37,7 +37,7 @@ def print_stats(df):
     percentage_high_quality = (num_high_quality / len(df)) * 100
 
     print(
-        f"Finish successfully!\n"
+        f"\n=============== SUMMARY ===============\n"
         f"- {num_high_quality} out of {len(df)} Topics "
         f"({percentage_high_quality:.2f}%) are of high-quality class B, GA, or FA."
     )

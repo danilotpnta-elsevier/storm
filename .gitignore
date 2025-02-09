@@ -28,3 +28,6 @@ secrets.toml
 TopicPagesWiki/backup/
 TopicPagesWiki/md/
 TopicPagesWiki/pdf/
+TopicPagesWiki/html/
+TopicPagesWiki/txt/
+TopicPagesWiki/json/

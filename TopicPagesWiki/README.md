@@ -8,7 +8,7 @@ The dataset contains **100 Wikipedia articles**, each corresponding to a Science
 
 1. **`get_wikipedia_urls.py`**: Retrieves Wikipedia URLs for a list of ScienceDirect Topics.
 2. **`get_topics_ores_scores.py`**: Evaluates and filters articles based on quality using the ORES API.
-3. **`wikipedia_extractor.py`**: Parses Wikipedia articles and saves them in multiple formats for analysis.
+3. **`get_wikipedia_articles.py`**: Parses Wikipedia articles and saves them in multiple formats for analysis.
 
 
 ## How the Dataset Was Built?
@@ -30,7 +30,7 @@ For reproducibility, the dataset was constructed using the following steps:
 - **Output**: A CSV and JSON file containing high-quality topics and their corresponding ORES scores.
 
 ### 3. Fetching Wikipedia Articles
-- **Script**: `wikipedia_extractor.py`.
+- **Script**: `get_wikipedia_articles.py`.
 - **Process**:
   - Parses the Wikipedia pages for high-quality topics.
   - Extracts the following content:

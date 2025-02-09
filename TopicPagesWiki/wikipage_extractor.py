@@ -1,21 +1,28 @@
-import argparse
-import json
 import os
-import pathlib
 import re
-
+import argparse
 import pandas as pd
+from tqdm import tqdm
+
 import requests
 import wikipediaapi
 from bs4 import BeautifulSoup
+
 from flair.data import Sentence
 from flair.nn import Classifier
-from tqdm import tqdm
 
 from config.constants import TOPICS_ORES_SCORES_JSON, TOPICS_URLS_JSON
-from src.utils import load_json, write_html, dump_json, write_str, md_to_pdf
+from src.utils import (
+    load_json,
+    write_html,
+    dump_json,
+    write_str,
+    md_to_pdf,
+    format_args,
+)
 
 from typing import List
+
 
 def get_references(sentence, reference_dict):
     """
@@ -39,7 +46,7 @@ def load_topics():
     # TODO: Investigate whether this would be more optimal
     # topic_ores_scores_dict = load_json(TOPICS_ORES_SCORES_JSON)
     # urls_topics_dict = {entry["url"]: entry["topic"] for entry in topic_ores_scores_dict}
-    
+
     topic_urls_dict = load_json(TOPICS_URLS_JSON)
     urls_topics_dict = {url: topic for topic, url in topic_urls_dict.items()}
     return urls_topics_dict
@@ -240,13 +247,34 @@ def extract_entities_flair(text):
     return entities
 
 
-def process_url(
-    topic: str,
-    url: str,
-    output_dir: str,
-    files_types_to_save: List[str],
-    username: str = "Knowledge Curation Project"
-):
+class FilesHandler:
+    def __init__(self, output_dir: str, files_types_to_save: List[str]):
+        self.output_dir = output_dir
+        self.files_types_to_save = files_types_to_save
+
+    def save(self, topic, html_page, txt, result):
+
+        topic = topic.replace(" ", "_")
+
+        # 1. Saves defaults: html, txt, json
+        write_html(
+            str(html_page.prettify()),
+            os.path.join(self.output_dir, "html", topic + ".html"),
+        )
+        write_str(txt, os.path.join(self.output_dir, "txt", topic + ".txt"))
+        dump_json(result, os.path.join(self.output_dir, "json", topic + ".json"))
+
+        # 2. Saves extra files
+        if "md" in self.files_types_to_save:
+            md_path = os.path.join(self.output_dir, "md", topic + ".md")
+            write_str(txt, md_path)
+
+            # TODO: check if this ouputs error
+            if "pdf" in self.files_types_to_save:
+                md_to_pdf(md_path, os.path.join(self.output_dir, "pdf", topic + ".pdf"))
+
+
+def process_url(url: str, username: str = "Knowledge Curation Project"):
     """
     Process a Wikipedia page and save the result to the output directory.
     """
@@ -255,32 +283,16 @@ def process_url(
     txt = output_as_text(result, reference_dict)
     result["flair_entities"] = extract_entities_flair(txt)
 
-    topic = topic.replace(" ", "_")
-    dump_json(result, os.path.join(output_dir, "json", topic + ".json"))
-    write_str(txt, os.path.join(output_dir, "txt", topic + ".txt"))
-
-    if "md" in files_types_to_save:
-        md_path = os.path.join(output_dir, "md", topic + ".md")    
-        write_str(txt, md_path)
-
-        # TODO: check if this ouputs error
-        if "pdf" in files_types_to_save:
-            md_to_pdf(md_path, os.path.join(output_dir, "pdf", topic + ".pdf"))
-
-    if "html" in files_types_to_save:
-        write_html(
-            str(html_page.prettify()),
-            os.path.join(output_dir, "html", topic + ".html"),
-        )
+    return html_page, txt, result
 
 
 def main(args):
-    pathlib.Path(f"{args.outputDirectory}/json").mkdir(parents=True, exist_ok=True)
-    pathlib.Path(f"{args.outputDirectory}/txt").mkdir(parents=True, exist_ok=True)
-    pathlib.Path(f"{args.outputDirectory}/md").mkdir(parents=True, exist_ok=True)
-    pathlib.Path(f"{args.outputDirectory}/html").mkdir(parents=True, exist_ok=True)
+
+    for file_type in args.files_types_to_save:
+        os.makedirs(os.path.join(args.output_dir, file_type), exist_ok=True)
 
     urls_topics_dict = load_topics()
+    fileManager = FilesHandler(args.output_dir, args.files_types_to_save)
 
     if args.batch_path:
         df = pd.read_csv(args.batch_path)
@@ -290,13 +302,16 @@ def main(args):
             try:
                 url = row["url"]
                 topic = urls_topics_dict.get(url, url.split("/")[-1])
-                process_url(topic, url, args.outputDirectory, args.files_types_to_save)
+                html_page, txt, result = process_url(url)
+                fileManager.save(topic, html_page, txt, result)
+
             except Exception as e:
                 print(e)
                 print(f'Error occurs when processing {row["url"]}')
     else:
         topic = urls_topics_dict.get(args.url, args.url.split("/")[-1])
-        process_url(topic, args.url, args.outputDirectory, args.files_types_to_save)
+        html_page, txt, result = process_url(args.url)
+        fileManager.save(topic, html_page, txt, result)
 
 
 if __name__ == "__main__":
@@ -314,19 +329,23 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-o",
-        "--outputDirectory",
+        "--output_dir",
         default="./",
-        help="The path where the parsed content will be saved (default: current directory)",
+        help="The directory where the parsed content will be saved (default: current directory)",
     )
     parser.add_argument(
         "--files_types_to_save",
-        nargs='+',
-        choices=["md", "html", "pdf"],
-        default=["md", "html"],
+        nargs="+",
+        choices=["html", "txt", "json", "md", "pdf"],
+        default=["html", "txt", "json"],
         help="The types of files to save (default: md and html). Options: md, html and pdf",
     )
 
-    '''
+    """
     python wikipage_extractor.py --batch_path "/home/toapantabarahonad/storm-plus/storm/TopicPagesWiki/topics_ores_scores.csv"
-    '''
-    main(parser.parse_args())
+    """
+
+    args = parser.parse_args()
+    print(format_args(args))
+
+    main(args)

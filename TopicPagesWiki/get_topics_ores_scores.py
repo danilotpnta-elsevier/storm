@@ -232,8 +232,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--max-workers",
         type=int,
-        default=32,
-        help="Maximum number of worker threads (default: 8)",
+        default=1,
+        help="Maximum number of worker threads (default: 1 no parallelism)",
     )
     parser.add_argument(
         "--batch-size",

@@ -328,7 +328,7 @@ if __name__ == "__main__":
     python eval_article_quality.py \
             --input-path "../TopicPagesWiki/topics_ores_scores.csv" \
             --gt-dir "../TopicPagesWiki" \
-            --pred-dir "/home/toapantabarahonad/storm-plus/data/baseline/refined_articles/models--snippet_ranking_model" \
-            --result-output-dir "/home/toapantabarahonad/storm-plus/results/storm_article_eval_results"
+            --pred-dir "/home/toapantabarahonad/ds-agentic-topic-pages-gen/data/baseline/refined_articles/models--snippet_ranking_model" \
+            --result-output-dir "/home/toapantabarahonad/ds-agentic-topic-pages-gen/results/storm_article_eval_results"
     """
     main(args)

@@ -355,7 +355,7 @@ if __name__ == "__main__":
     print(format_args(args))
 
     """
-    python wikipage_extractor.py --batch_path "/home/toapantabarahonad/storm-plus/storm/TopicPagesWiki/topics_ores_scores.csv"
+    python wikipage_extractor.py --batch_path "/home/toapantabarahonad/ds-agentic-topic-pages-gen/storm/TopicPagesWiki/topics_ores_scores.csv"
     """
 
     main(args)

@@ -516,10 +516,10 @@ if __name__ == "__main__":
     """
     python citation_quality.py \
         --mode "batch" \
-        --dir "/home/toapantabarahonad/storm-plus/data/baseline/refined_articles/models--snippet_ranking_model" \
+        --dir "/home/toapantabarahonad/ds-agentic-topic-pages-gen/data/baseline/refined_articles/models--snippet_ranking_model" \
         --file_name_suffix "storm_gen_article_polished.txt" \
         --batch_topic_path "../TopicPagesWiki/topics_ores_scores.csv" \
         --do_citation_expansion \
-        --result_output_dir "/home/toapantabarahonad/storm-plus/results/storm_citation_eval_results"
+        --result_output_dir "/home/toapantabarahonad/ds-agentic-topic-pages-gen/results/storm_citation_eval_results"
     """
     main(args)

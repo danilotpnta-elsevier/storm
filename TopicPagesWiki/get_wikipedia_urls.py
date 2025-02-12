@@ -8,7 +8,7 @@ import wikipediaapi
 import wikipedia
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from config.constants import TOPICS_ALL_JSON, DATA_DIR
+from config.constants import TOPICS_ALL_JSON, data_dir
 from src.utils import load_json, dump_json, format_args
 
 
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output_dir",
         type=str,
-        default=DATA_DIR,
+        default=data_dir,
         help="Directory to save output JSON.",
     )
     parser.add_argument(

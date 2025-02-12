@@ -11,7 +11,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from config.constants import TOPICS_URLS_JSON, DATA_DIR
+from config.constants import TOPICS_URLS_JSON, data_dir
 from src.utils import load_json, dump_json, format_args
 import argparse
 
@@ -227,7 +227,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output_dir",
         type=str,
-        default=DATA_DIR,
+        default=data_dir,
         help="Directory where to save the ORES scores JSON file.",
     )
     parser.add_argument(

@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from flair.data import Sentence
 from flair.nn import Classifier
 
-from config.constants import TOPICS_ORES_SCORES_JSON, TOPICS_URLS_JSON
+from config.constants import TOPICS_URLS_JSON
 from src.utils import (
     load_json,
     write_html,

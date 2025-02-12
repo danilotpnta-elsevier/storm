@@ -23,7 +23,7 @@ from evaluation_trim_length import process_document
 from metrics import article_entity_recall, compute_rouge_scores
 
 from src.utils import dump_json, load_json, load_str
-from config.constants import HF_CACHE_DIR
+from config.constants import hf_cache_dir
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -305,7 +305,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--offload_dir",
-        default=os.path.join(HF_CACHE_DIR, "offload"),
+        default=os.path.join(hf_cache_dir, "offload"),
         help="Directory to offload the model and tokenizer to.",
     )
     parser.add_argument("--jobid", type=str, required=False, help="Slurm job ID")

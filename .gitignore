@@ -26,3 +26,4 @@ secrets.toml
 *results/
 .venv/
 frontend/demo_light/DEMO_WORKING_DIR/
+TopicPagesWiki/

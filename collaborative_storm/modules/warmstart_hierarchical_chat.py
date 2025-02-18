@@ -68,7 +68,7 @@ class SectionToConvTranscript(dspy.Signature):
 
 
 class ReportToConversation(dspy.Module):
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         self.engine = engine
         self.section_to_conv_transcript = dspy.Predict(SectionToConvTranscript)
 
@@ -126,7 +126,7 @@ class ReportToConversation(dspy.Module):
 class WarmStartConversation(dspy.Module):
     def __init__(
         self,
-        question_asking_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        question_asking_lm: Union[dspy.LM],
         generate_expert_module: GenerateExpertModule,
         answer_question_module: AnswerQuestionModule,
         logging_wrapper: LoggingWrapper,
@@ -277,7 +277,7 @@ class GenerateWarmStartOutline(dspy.Signature):
 
 
 class GenerateWarmStartOutlineModule(dspy.Module):
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         self.engine = engine
         self.gen_outline = dspy.Predict(GenerateWarmStartOutline)
         self.draft_outline = dspy.Predict(WritePageOutline)

@@ -27,8 +27,8 @@ class ConvSimulator(dspy.Module):
 
     def __init__(
         self,
-        topic_expert_engine: Union[dspy.dsp.LM, dspy.dsp.HFModel],
-        question_asker_engine: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        topic_expert_engine: Union[dspy.LM],
+        question_asker_engine: Union[dspy.LM],
         retriever: Retriever,
         max_search_queries_per_turn: int,
         search_top_k: int,
@@ -86,7 +86,7 @@ class WikiWriter(dspy.Module):
 
     The asked question will be used to start a next round of information seeking."""
 
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         super().__init__()
         self.ask_question_with_persona = dspy.ChainOfThought(AskQuestionWithPersona)
         self.ask_question = dspy.ChainOfThought(AskQuestion)
@@ -188,7 +188,7 @@ class TopicExpert(dspy.Module):
 
     def __init__(
         self,
-        engine: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        engine: Union[dspy.LM],
         max_search_queries: int,
         search_top_k: int,
         retriever: Retriever,
@@ -254,8 +254,8 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
         self,
         retriever: Retriever,
         persona_generator: Optional[StormPersonaGenerator],
-        conv_simulator_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
-        question_asker_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        conv_simulator_lm: Union[dspy.LM],
+        question_asker_lm: Union[dspy.LM],
         max_search_queries_per_turn: int,
         search_top_k: int,
         max_conv_turn: int,

@@ -14,7 +14,7 @@ class KnowledgeBaseSummmary(dspy.Signature):
 
 
 class KnowledgeBaseSummaryModule(dspy.Module):
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         self.engine = engine
         self.gen_summary = dspy.Predict(KnowledgeBaseSummmary)
 

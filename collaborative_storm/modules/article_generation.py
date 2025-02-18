@@ -11,7 +11,7 @@ class ArticleGenerationModule(dspy.Module):
 
     def __init__(
         self,
-        engine: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        engine: Union[dspy.LM],
     ):
         super().__init__()
         self.write_section = dspy.Predict(WriteSection)

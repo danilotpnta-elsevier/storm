@@ -72,7 +72,7 @@ class GroundedQuestionGeneration(dspy.Signature):
 
 
 class GroundedQuestionGenerationModule(dspy.Module):
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         self.engine = engine
         self.gen_focus = dspy.Predict(GroundedQuestionGeneration)
         self.polish_style = dspy.Predict(ConvertUtteranceStyle)

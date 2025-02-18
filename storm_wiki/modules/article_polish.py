@@ -16,8 +16,8 @@ class StormArticlePolishingModule(ArticlePolishingModule):
 
     def __init__(
         self,
-        article_gen_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
-        article_polish_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        article_gen_lm: Union[dspy.LM],
+        article_polish_lm: Union[dspy.LM],
     ):
         self.article_gen_lm = article_gen_lm
         self.article_polish_lm = article_polish_lm
@@ -75,8 +75,8 @@ class PolishPage(dspy.Signature):
 class PolishPageModule(dspy.Module):
     def __init__(
         self,
-        write_lead_engine: Union[dspy.dsp.LM, dspy.dsp.HFModel],
-        polish_engine: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        write_lead_engine: Union[dspy.LM],
+        polish_engine: Union[dspy.LM],
     ):
         super().__init__()
         self.write_lead_engine = write_lead_engine

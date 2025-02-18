@@ -41,7 +41,7 @@ class GenerateExpertWithFocus(dspy.Signature):
 
 
 class GenerateExpertModule(dspy.Module):
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         self.engine = engine
         self.generate_expert_general = dspy.Predict(GenerateExpertGeneral)
         self.generate_expert_w_focus = dspy.ChainOfThought(GenerateExpertWithFocus)

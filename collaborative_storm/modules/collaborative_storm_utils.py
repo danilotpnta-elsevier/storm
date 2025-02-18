@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from ..engine import RunnerArgument
 from ...interface import Information, Retriever, LMConfigs
 from ...logging_wrapper import LoggingWrapper
-from ...rm import BingSearch
+# from ...rm import BingSearch
 
 
 def extract_storm_info_snippet(info: Information, snippet_index: int) -> Information:

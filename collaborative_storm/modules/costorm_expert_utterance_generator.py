@@ -42,8 +42,8 @@ class GenExpertActionPlanning(dspy.Signature):
 class CoStormExpertUtteranceGenerationModule(dspy.Module):
     def __init__(
         self,
-        action_planning_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
-        utterance_polishing_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        action_planning_lm: Union[dspy.LM],
+        utterance_polishing_lm: Union[dspy.LM],
         answer_question_module: AnswerQuestionModule,
         logging_wrapper: LoggingWrapper,
         callback_handler: BaseCallbackHandler = None,

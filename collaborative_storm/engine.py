@@ -16,8 +16,8 @@ from .modules.warmstart_hierarchical_chat import WarmStartModule
 from ..dataclass import ConversationTurn, KnowledgeBase
 from ..interface import LMConfigs, Agent
 from ..logging_wrapper import LoggingWrapper
-from ..lm import OpenAIModel, AzureOpenAIModel, TogetherClient
-from ..rm import BingSearch
+from ..lm import OpenAIModel, AzureOpenAIModel
+# from ..rm import BingSearch
 
 
 class CollaborativeStormLMConfigs(LMConfigs):
@@ -141,22 +141,22 @@ class CollaborativeStormLMConfigs(LMConfigs):
                 "No valid OpenAI API provider is provided. Cannot use default LLM configurations."
             )
 
-    def set_question_answering_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_question_answering_lm(self, model: Union[dspy.LM]):
         self.question_answering_lm = model
 
-    def set_discourse_manage_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_discourse_manage_lm(self, model: Union[dspy.LM]):
         self.discourse_manage_lm = model
 
-    def set_utterance_polishing_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_utterance_polishing_lm(self, model: Union[dspy.LM]):
         self.utterance_polishing_lm = model
 
-    def set_warmstart_outline_gen_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_warmstart_outline_gen_lm(self, model: Union[dspy.LM]):
         self.warmstart_outline_gen_lm = model
 
-    def set_question_asking_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_question_asking_lm(self, model: Union[dspy.LM]):
         self.question_asking_lm = model
 
-    def set_knowledge_base_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_knowledge_base_lm(self, model: Union[dspy.LM]):
         self.knowledge_base_lm = model
 
     def collect_and_reset_lm_usage(self):

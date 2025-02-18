@@ -14,7 +14,7 @@ class StormOutlineGenerationModule(OutlineGenerationModule):
     curation stage, generate outline for the article.
     """
 
-    def __init__(self, outline_gen_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, outline_gen_lm: Union[dspy.LM]):
         super().__init__()
         self.outline_gen_lm = outline_gen_lm
         self.write_outline = WriteOutline(engine=self.outline_gen_lm)
@@ -75,7 +75,7 @@ class StormOutlineGenerationModule(OutlineGenerationModule):
 class WriteOutline(dspy.Module):
     """Generate the outline for the Wikipedia page."""
 
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         super().__init__()
         self.draft_page_outline = dspy.Predict(WritePageOutline)
         self.write_page_outline = dspy.Predict(WritePageOutlineFromConv)

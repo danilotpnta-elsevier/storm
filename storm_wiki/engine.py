@@ -118,19 +118,19 @@ class STORMWikiLMConfigs(LMConfigs):
                 "No valid OpenAI API provider is provided. Cannot use default LLM configurations."
             )
 
-    def set_conv_simulator_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_conv_simulator_lm(self, model: Union[dspy.LM]):
         self.conv_simulator_lm = model
 
-    def set_question_asker_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_question_asker_lm(self, model: Union[dspy.LM]):
         self.question_asker_lm = model
 
-    def set_outline_gen_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_outline_gen_lm(self, model: Union[dspy.LM]):
         self.outline_gen_lm = model
 
-    def set_article_gen_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_article_gen_lm(self, model: Union[dspy.LM]):
         self.article_gen_lm = model
 
-    def set_article_polish_lm(self, model: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def set_article_polish_lm(self, model: Union[dspy.LM]):
         self.article_polish_lm = model
 
 
@@ -311,6 +311,14 @@ class STORMWikiRunner(Engine):
             config_log, os.path.join(self.article_output_dir, "run_config.json")
         )
 
+        def custom_default(o):
+            if hasattr(o, 'to_dict'):
+                return o.to_dict()
+            try:
+                return o.__dict__
+            except AttributeError:
+                return str(o)
+
         llm_call_history = self.lm_configs.collect_and_reset_lm_history()
         with open(
             os.path.join(self.article_output_dir, "llm_call_history.jsonl"), "w"
@@ -320,7 +328,9 @@ class STORMWikiRunner(Engine):
                     call.pop(
                         "kwargs"
                     )  # All kwargs are dumped together to run_config.json.
-                f.write(json.dumps(call, indent=4) + "\n")
+                # print("call object:", call)
+                # print("Type of call:", type(call))
+                f.write(json.dumps(call, indent=4, default=custom_default) + "\n")
 
     def _load_information_table_from_local_fs(self, information_table_local_path):
         assert os.path.exists(information_table_local_path), makeStringRed(

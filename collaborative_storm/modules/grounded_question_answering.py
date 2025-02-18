@@ -52,7 +52,7 @@ class AnswerQuestionModule(dspy.Module):
         self,
         retriever: dspy.Retrieve,
         max_search_queries: int,
-        question_answering_lm: Union[dspy.dsp.LM, dspy.dsp.HFModel],
+        question_answering_lm: Union[dspy.LM],
         logging_wrapper: LoggingWrapper,
     ):
         super().__init__()

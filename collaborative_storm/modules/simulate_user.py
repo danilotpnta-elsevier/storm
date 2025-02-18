@@ -7,7 +7,7 @@ from ...storm_wiki.modules.knowledge_curation import AskQuestionWithPersona
 
 
 class GenSimulatedUserUtterance(dspy.Module):
-    def __init__(self, engine: Union[dspy.dsp.LM, dspy.dsp.HFModel]):
+    def __init__(self, engine: Union[dspy.LM]):
         self.engine = engine
         self.ask_qeustion = dspy.Predict(AskQuestionWithPersona)
 

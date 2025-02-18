@@ -592,9 +592,9 @@ class ArticleTextProcessing:
 
 class FileIOHelper:
     @staticmethod
-    def dump_json(obj, file_name, encoding="utf-8"):
+    def dump_json(obj, file_name, encoding="utf-8", indent=4):
         with open(file_name, "w", encoding=encoding) as fw:
-            json.dump(obj, fw, default=FileIOHelper.handle_non_serializable)
+            json.dump(obj, fw, indent=indent, default=FileIOHelper.handle_non_serializable)
 
     @staticmethod
     def handle_non_serializable(obj):

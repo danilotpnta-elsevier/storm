@@ -55,12 +55,17 @@ class StormInformationTable(InformationTable):
     would be perspective guided dialogue history.
     """
 
-    def __init__(self, conversations=List[Tuple[str, List[DialogueTurn]]]):
+    def __init__(
+        self,
+        conversations=List[Tuple[str, List[DialogueTurn]]],
+        embedding_model="paraphrase-MiniLM-L6-v2",
+    ):
         super().__init__()
         self.conversations = conversations
         self.url_to_info: Dict[str, Information] = (
             StormInformationTable.construct_url_to_info(self.conversations)
         )
+        self.embedding_model = embedding_model
 
     @staticmethod
     def construct_url_to_info(
@@ -107,7 +112,7 @@ class StormInformationTable(InformationTable):
         return cls(conversations)
 
     def prepare_table_for_retrieval(self):
-        self.encoder = SentenceTransformer("paraphrase-MiniLM-L6-v2")
+        self.encoder = SentenceTransformer(self.embedding_model)
         self.collected_urls = []
         self.collected_snippets = []
         for url, information in self.url_to_info.items():

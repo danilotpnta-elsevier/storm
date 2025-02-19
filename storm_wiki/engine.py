@@ -176,6 +176,12 @@ class STORMWikiRunnerArguments:
             "Consider reducing it if keep getting 'Exceed rate limit' error when calling LM API."
         },
     )
+    embedding_model: str = field(
+        default="paraphrase-MiniLM-L6-v2",
+        metadata={
+            "help": "Embedding model used for the StormInformationTable to store the information collected during KnowledgeCuration stage."
+        },
+    )
 
 
 class STORMWikiRunner(Engine):
@@ -201,6 +207,7 @@ class STORMWikiRunner(Engine):
             search_top_k=self.args.search_top_k,
             max_conv_turn=self.args.max_conv_turn,
             max_thread_num=self.args.max_thread_num,
+            embedding_model=self.args.embedding_model,
         )
         self.storm_outline_generation_module = StormOutlineGenerationModule(
             outline_gen_lm=self.lm_configs.outline_gen_lm

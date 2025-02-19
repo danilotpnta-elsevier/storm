@@ -260,6 +260,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
         search_top_k: int,
         max_conv_turn: int,
         max_thread_num: int,
+        embedding_model: str,
     ):
         """
         Store args and finish initialization.
@@ -278,6 +279,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             search_top_k=search_top_k,
             max_turn=max_conv_turn,
         )
+        self.embedding_model = embedding_model
 
     def _get_considered_personas(self, topic: str, max_num_persona) -> List[str]:
         return self.persona_generator.generate_persona(
@@ -385,7 +387,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             callback_handler=callback_handler,
         )
 
-        information_table = StormInformationTable(conversations)
+        information_table = StormInformationTable(conversations, self.embedding_model)
         callback_handler.on_information_gathering_end()
         if return_conversation_log:
             return information_table, StormInformationTable.construct_log_dict(

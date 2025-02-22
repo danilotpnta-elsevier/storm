@@ -184,6 +184,14 @@ class STORMWikiRunnerArguments:
             "help": "Embedding model used for the StormInformationTable to store the information collected during KnowledgeCuration stage."
         },
     )
+    seed: Optional[int] = field(
+        default=None,
+        metadata={"help": "Random seed for deterministic execution"},
+    )
+    
+    def is_deterministic(self):
+        """Check if deterministic mode is enabled."""
+        return self.seed is not None
 
 
 class STORMWikiRunner(Engine):
@@ -197,6 +205,7 @@ class STORMWikiRunner(Engine):
         self.lm_configs = lm_configs
 
         self.retriever = Retriever(rm=rm, max_thread=self.args.max_thread_num)
+
         storm_persona_generator = StormPersonaGenerator(
             self.lm_configs.question_asker_lm
         )
@@ -210,6 +219,7 @@ class STORMWikiRunner(Engine):
             max_conv_turn=self.args.max_conv_turn,
             max_thread_num=self.args.max_thread_num,
             embedding_model=self.args.embedding_model,
+            seed=self.args.seed,
         )
         self.storm_outline_generation_module = StormOutlineGenerationModule(
             outline_gen_lm=self.lm_configs.outline_gen_lm
@@ -244,6 +254,7 @@ class STORMWikiRunner(Engine):
             )
         )
 
+        print(f"Saving conversation_log.json to {self.article_output_dir}")
         FileIOHelper.dump_json(
             conversation_log,
             os.path.join(self.article_output_dir, "conversation_log.json"),
@@ -411,6 +422,7 @@ class STORMWikiRunner(Engine):
         self.article_dir_name = truncate_filename(
             topic.replace(" ", "_").replace("/", "_")
         )
+        # self.article_dir_name = topic.replace(" ", "_").replace("/", "_")
         self.article_output_dir = os.path.join(
             self.args.output_dir, self.article_dir_name
         )
@@ -422,6 +434,8 @@ class STORMWikiRunner(Engine):
             information_table = self.run_knowledge_curation_module(
                 ground_truth_url=ground_truth_url, callback_handler=callback_handler
             )
+            # import sys
+            # sys.exit()
         # outline generation module
         outline: StormArticle = None
         if do_generate_outline:

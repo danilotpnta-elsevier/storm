@@ -210,6 +210,7 @@ class TopicExpert(dspy.Module):
                 for q in queries.split("\n")
             ]
             queries = queries[: self.max_search_queries]
+            print(f"🔹 Generated queries: {queries}")
             # Search
             searched_results: List[Information] = self.retriever.retrieve(
                 list(set(queries)), exclude_urls=[ground_truth_url]
@@ -261,6 +262,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
         max_conv_turn: int,
         max_thread_num: int,
         embedding_model: str,
+        seed: Optional[int] = None,
     ):
         """
         Store args and finish initialization.
@@ -280,6 +282,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             max_turn=max_conv_turn,
         )
         self.embedding_model = embedding_model
+        self.seed = seed
 
     def _get_considered_personas(self, topic: str, max_num_persona) -> List[str]:
         return self.persona_generator.generate_persona(
@@ -316,34 +319,76 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
         """
 
         conversations = []
+        
+        # # Check if we should use sequential processing (deterministic mode)
+        # if hasattr(self, 'seed') and self.seed is not None:
+        #     print("Entering after the hasattr")
+        #     # Deterministic sequential processing
+        #     sorted_personas = sorted(considered_personas) if considered_personas else [""]
+            
+        #     print(f"Running {len(sorted_personas)} conversations sequentially for deterministic results")
+            
+        #     for persona in sorted_personas:
+        #         print(f"Processing persona: {persona[:30]}..." if len(persona) > 30 else f"Processing persona: {persona}")
+                
+        #         conv = conv_simulator(
+        #             topic=topic,
+        #             ground_truth_url=ground_truth_url,
+        #             persona=persona,
+        #             callback_handler=callback_handler,
+        #         )
+                
+        #         conversations.append(
+        #             (persona, ArticleTextProcessing.clean_up_citation(conv).dlg_history)
+        #         )
+            
+        #     return conversations
+        if self.seed is not None:
+            print(f"🟢 Deterministic Mode (seed={self.seed}): Running sequentially.")
+            # Sort personas so we get stable iteration order
+            sorted_personas = sorted(considered_personas) if considered_personas else [""]
 
-        def run_conv(persona):
-            return conv_simulator(
-                topic=topic,
-                ground_truth_url=ground_truth_url,
-                persona=persona,
-                callback_handler=callback_handler,
-            )
-
-        max_workers = min(self.max_thread_num, len(considered_personas))
-
-        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_persona = {
-                executor.submit(run_conv, persona): persona
-                for persona in considered_personas
-            }
-
-            if streamlit_connection:
-                # Ensure the logging context is correct when connecting with Streamlit frontend.
-                for t in executor._threads:
-                    add_script_run_ctx(t)
-
-            for future in as_completed(future_to_persona):
-                persona = future_to_persona[future]
-                conv = future.result()
+            for persona in sorted_personas:
+                print(f"Processing persona: {persona}")
+                conv = conv_simulator(
+                    topic=topic,
+                    ground_truth_url=ground_truth_url,
+                    persona=persona,
+                    callback_handler=callback_handler,
+                )
                 conversations.append(
                     (persona, ArticleTextProcessing.clean_up_citation(conv).dlg_history)
                 )
+        else:
+            print("🔵 Non-deterministic Mode: Running concurrently.")
+
+            def run_conv(persona):
+                return conv_simulator(
+                    topic=topic,
+                    ground_truth_url=ground_truth_url,
+                    persona=persona,
+                    callback_handler=callback_handler,
+                )
+
+            max_workers = min(self.max_thread_num, len(considered_personas))
+
+            with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+                future_to_persona = {
+                    executor.submit(run_conv, persona): persona
+                    for persona in considered_personas
+                }
+
+                if streamlit_connection:
+                    # Ensure the logging context is correct when connecting with Streamlit frontend.
+                    for t in executor._threads:
+                        add_script_run_ctx(t)
+
+                for future in as_completed(future_to_persona):
+                    persona = future_to_persona[future]
+                    conv = future.result()
+                    conversations.append(
+                        (persona, ArticleTextProcessing.clean_up_citation(conv).dlg_history)
+                    )
 
         return conversations
 

@@ -1,3 +1,4 @@
+# engine.py
 import json
 import logging
 import os
@@ -19,106 +20,14 @@ from ..utils import FileIOHelper, makeStringRed, truncate_filename
 
 
 class STORMWikiLMConfigs(LMConfigs):
-    """Configurations for LLM used in different parts of STORM.
-
-    Given that different parts in STORM framework have different complexity, we use different LLM configurations
-    to achieve a balance between quality and efficiency. If no specific configuration is provided, we use the default
-    setup in the paper.
-    """
+    """Configurations for LLM used in different parts of STORM."""
 
     def __init__(self):
-        self.conv_simulator_lm = (
-            None  # LLM used in conversation simulator except for question asking.
-        )
-        self.question_asker_lm = None  # LLM used in question asking.
-        self.outline_gen_lm = None  # LLM used in outline generation.
-        self.article_gen_lm = None  # LLM used in article generation.
-        self.article_polish_lm = None  # LLM used in article polishing.
-
-    def init_openai_model(
-        self,
-        openai_api_key: str,
-        azure_api_key: str,
-        openai_type: Literal["openai", "azure"],
-        api_base: Optional[str] = None,
-        api_version: Optional[str] = None,
-        temperature: Optional[float] = 1.0,
-        top_p: Optional[float] = 0.9,
-    ):
-        """Legacy: Corresponding to the original setup in the NAACL'24 paper."""
-        azure_kwargs = {
-            "api_key": azure_api_key,
-            "temperature": temperature,
-            "top_p": top_p,
-            "api_base": api_base,
-            "api_version": api_version,
-        }
-
-        openai_kwargs = {
-            "api_key": openai_api_key,
-            "api_provider": "openai",
-            "temperature": temperature,
-            "top_p": top_p,
-            "api_base": None,
-        }
-        if openai_type and openai_type == "openai":
-            self.conv_simulator_lm = OpenAIModel(
-                model="gpt-4o-mini-2024-07-18", max_tokens=500, **openai_kwargs
-            )
-            self.question_asker_lm = OpenAIModel(
-                model="gpt-4o-mini-2024-07-18", max_tokens=500, **openai_kwargs
-            )
-            # 1/12/2024: Update gpt-4 to gpt-4-1106-preview. (Currently keep the original setup when using azure.)
-            self.outline_gen_lm = OpenAIModel(
-                model="gpt-4-0125-preview", max_tokens=400, **openai_kwargs
-            )
-            self.article_gen_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=700, **openai_kwargs
-            )
-            self.article_polish_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=4000, **openai_kwargs
-            )
-        elif openai_type and openai_type == "azure":
-
-            # self.conv_simulator_lm = OpenAIModel(
-            #     model="gpt-4o-mini-2024-07-18", max_tokens=500, **openai_kwargs
-            # )
-
-            self.conv_simulator_lm = (
-                AzureOpenAIModel(  # Changed from OpenAIModel to AzureOpenAIModel
-                    model="gpt-4o-mini-2024-07-18",
-                    max_tokens=500,
-                    **azure_kwargs,
-                    model_type="chat",
-                )
-            )
-
-            self.question_asker_lm = AzureOpenAIModel(
-                model="gpt-4o-mini-2024-07-18",
-                max_tokens=500,
-                **azure_kwargs,
-                model_type="chat",
-            )
-            # use combination of openai and azure-openai as azure-openai does not support gpt-4 in standard deployment
-            self.outline_gen_lm = AzureOpenAIModel(
-                model="gpt-4o", max_tokens=400, **azure_kwargs, model_type="chat"
-            )
-            self.article_gen_lm = AzureOpenAIModel(
-                model="gpt-4o-mini-2024-07-18",
-                max_tokens=700,
-                **azure_kwargs,
-                model_type="chat",
-            )
-            self.article_polish_lm = AzureOpenAIModel(
-                model="gpt-4o-mini-2024-07-18",
-                max_tokens=4000,
-                **azure_kwargs,
-                model_type="chat",
-            )
-        else:
-            logging.warning(
-                "No valid OpenAI API provider is provided. Cannot use default LLM configurations."
-            )
+        self.conv_simulator_lm = None
+        self.question_asker_lm = None
+        self.outline_gen_lm = None
+        self.article_gen_lm = None
+        self.article_polish_lm = None
 
     def set_conv_simulator_lm(self, model: Union[dspy.LM]):
         self.conv_simulator_lm = model
@@ -188,10 +97,6 @@ class STORMWikiRunnerArguments:
         default=None,
         metadata={"help": "Random seed for deterministic execution"},
     )
-    
-    def is_deterministic(self):
-        """Check if deterministic mode is enabled."""
-        return self.seed is not None
 
 
 class STORMWikiRunner(Engine):

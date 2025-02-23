@@ -32,3 +32,11 @@ class BaseCallbackHandler:
     def on_outline_refinement_end(self, outline: str, **kwargs):
         """Run when the outline refinement finishes."""
         pass
+
+    def on_question_generation_start(self, **kwargs):
+        """Run when the question generation process begins."""
+        pass
+
+    def on_question_generation_end(self, **kwargs):
+        """Run when the question generation process ends."""
+        pass

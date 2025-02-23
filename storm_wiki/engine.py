@@ -83,14 +83,16 @@ class STORMWikiLMConfigs(LMConfigs):
             # self.conv_simulator_lm = OpenAIModel(
             #     model="gpt-4o-mini-2024-07-18", max_tokens=500, **openai_kwargs
             # )
-            
-            self.conv_simulator_lm = AzureOpenAIModel(  # Changed from OpenAIModel to AzureOpenAIModel
-                model="gpt-4o-mini-2024-07-18",
-                max_tokens=500,
-                **azure_kwargs,
-                model_type="chat"
+
+            self.conv_simulator_lm = (
+                AzureOpenAIModel(  # Changed from OpenAIModel to AzureOpenAIModel
+                    model="gpt-4o-mini-2024-07-18",
+                    max_tokens=500,
+                    **azure_kwargs,
+                    model_type="chat",
+                )
             )
-            
+
             self.question_asker_lm = AzureOpenAIModel(
                 model="gpt-4o-mini-2024-07-18",
                 max_tokens=500,
@@ -182,6 +184,20 @@ class STORMWikiRunnerArguments:
             "help": "Embedding model used for the StormInformationTable to store the information collected during KnowledgeCuration stage."
         },
     )
+    embedding_model: str = field(
+        default="paraphrase-MiniLM-L6-v2",
+        metadata={
+            "help": "Embedding model used for the StormInformationTable to store the information collected during KnowledgeCuration stage."
+        },
+    )
+    seed: Optional[int] = field(
+        default=None,
+        metadata={"help": "Random seed for deterministic execution"},
+    )
+
+    def is_deterministic(self):
+        """Check if deterministic mode is enabled."""
+        return self.seed is not None
 
 
 class STORMWikiRunner(Engine):
@@ -208,6 +224,7 @@ class STORMWikiRunner(Engine):
             max_conv_turn=self.args.max_conv_turn,
             max_thread_num=self.args.max_thread_num,
             embedding_model=self.args.embedding_model,
+            seed=self.args.seed,
         )
         self.storm_outline_generation_module = StormOutlineGenerationModule(
             outline_gen_lm=self.lm_configs.outline_gen_lm
@@ -242,6 +259,7 @@ class STORMWikiRunner(Engine):
             )
         )
 
+        print(f"Saving conversation_log.json to {self.article_output_dir}")
         FileIOHelper.dump_json(
             conversation_log,
             os.path.join(self.article_output_dir, "conversation_log.json"),
@@ -318,6 +336,14 @@ class STORMWikiRunner(Engine):
             config_log, os.path.join(self.article_output_dir, "run_config.json")
         )
 
+        def custom_default(o):
+            if hasattr(o, "to_dict"):
+                return o.to_dict()
+            try:
+                return o.__dict__
+            except AttributeError:
+                return str(o)
+
         llm_call_history = self.lm_configs.collect_and_reset_lm_history()
         with open(
             os.path.join(self.article_output_dir, "llm_call_history.jsonl"), "w"
@@ -327,7 +353,7 @@ class STORMWikiRunner(Engine):
                     call.pop(
                         "kwargs"
                     )  # All kwargs are dumped together to run_config.json.
-                f.write(json.dumps(call, indent=4) + "\n")
+                f.write(json.dumps(call, indent=4, default=custom_default) + "\n")
 
     def _load_information_table_from_local_fs(self, information_table_local_path):
         assert os.path.exists(information_table_local_path), makeStringRed(

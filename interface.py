@@ -7,6 +7,7 @@ import logging
 import time
 from abc import ABC, abstractmethod
 from collections import OrderedDict
+import copy
 from typing import Dict, List, Optional, Union, TYPE_CHECKING
 
 from .utils import ArticleTextProcessing
@@ -472,7 +473,7 @@ class LMConfigs(ABC):
 
         return model_name_to_usage
 
-    def log(self):
+    def log_v0(self):
 
         return OrderedDict(
             {
@@ -481,6 +482,43 @@ class LMConfigs(ABC):
                 if "_lm" in attr_name and hasattr(getattr(self, attr_name), "kwargs")
             }
         )
+    
+    def _sanitize_kwargs(self, kwargs):
+        """Sanitize sensitive information from kwargs dictionary."""
+        sanitized = copy.deepcopy(kwargs)
+        sensitive_keys = ['api_key', 'apiKey', 'key', 'secret', 'password']
+
+        for key in sensitive_keys:
+            if key in sanitized:
+                sanitized[key] = 'your-api-key'
+        return sanitized
+
+    def log(self):
+        """Log configuration with sanitized sensitive information."""
+        config_dict = OrderedDict()
+
+        for attr_name in self.__dict__:
+            if "_lm" in attr_name and hasattr(getattr(self, attr_name), "kwargs"):
+                model = getattr(self, attr_name)
+                settings = {
+                    **model.kwargs,                    
+                    "model": model.model,              
+                }
+                settings = {k: v for k, v in settings.items() if v is not None}
+                if "api_key" in settings:
+                    settings["api_key"] = "your-api-key"
+                config_dict[attr_name] = settings
+
+        return config_dict
+
+    def debug_print_config(self):
+        """Debug method to safely print current configuration."""
+        config = self.log()
+        print("\nCurrent LM Configurations:")
+        for model_name, settings in config.items():
+            print(f"\n{model_name}:")
+            for key, value in settings.items():
+                print(f"  {key}: {value}")
 
 
 class Engine(ABC):

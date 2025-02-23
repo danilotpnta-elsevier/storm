@@ -198,6 +198,7 @@ class VectorRM(dspy.Retrieve):
         embedding_model: str,
         device: str = "mps",
         k: int = 3,
+        seed: int = None,
     ):
         """
         Params:
@@ -207,6 +208,7 @@ class VectorRM(dspy.Retrieve):
             k: Number of top chunks to retrieve.
         """
         super().__init__(k=k)
+        self.seed = seed
         self.usage = 0
         # check if the collection is provided
         if not collection_name:
@@ -226,6 +228,10 @@ class VectorRM(dspy.Retrieve):
         self.collection_name = collection_name
         self.client = None
         self.qdrant = None
+
+        if self.seed is not None:
+            print(f"Initializing deterministic VectorRM with seed {self.seed}")
+            self._make_deterministic()
 
     def _check_collection(self):
         """
@@ -298,6 +304,58 @@ class VectorRM(dspy.Retrieve):
             int: Number of vectors in the collection.
         """
         return self.qdrant.client.count(collection_name=self.collection_name)
+
+    def _make_deterministic(self):
+        """Configure the retriever for deterministic behavior."""
+        import types
+
+        if not hasattr(self, "_original_forward"):
+            self._original_forward = self.forward
+
+        def deterministic_forward(self, query_or_queries, exclude_urls=None):
+            """Deterministic version of the retrieval method."""
+            queries = (
+                [query_or_queries]
+                if isinstance(query_or_queries, str)
+                else query_or_queries
+            )
+
+            queries = sorted(queries)
+
+            # exclude_key = tuple(sorted(exclude_urls)) if exclude_urls else ()
+            # cache_key = (tuple(queries), exclude_key)
+
+            # if cache_key in self.cache:
+            #     print(f"Using cached retrieval results for {len(queries)} queries")
+            #     return self.cache[cache_key]
+
+            self.usage += len(queries)
+
+            collected_results = []
+            for query in queries:
+                # Skip if Qdrant not initialized
+                if self.qdrant is None:
+                    print("Warning: Qdrant is not initialized")
+                    continue
+
+                related_docs = self.qdrant.similarity_search_with_score(query, k=self.k)
+                related_docs = sorted(
+                    related_docs, key=lambda x: (-x[1], x[0].metadata.get("url", ""))
+                )
+
+                for doc, _ in related_docs:
+                    result = {
+                        "description": doc.metadata.get("description", ""),
+                        "snippets": [doc.page_content],
+                        "title": doc.metadata.get("title", ""),
+                        "url": doc.metadata.get("url", ""),
+                    }
+                    collected_results.append(result)
+
+            # self.cache[cache_key] = collected_results
+            return collected_results
+
+        self.forward = types.MethodType(deterministic_forward, self)
 
     def forward(self, query_or_queries: Union[str, List[str]], exclude_urls: List[str]):
         """

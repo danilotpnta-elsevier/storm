@@ -349,7 +349,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             sorted_personas = sorted(considered_personas) if considered_personas else [""]
 
             for persona in sorted_personas:
-                print(f"Processing persona: {persona}")
+                # print(f"Processing persona: {persona}")
                 conv = conv_simulator(
                     topic=topic,
                     ground_truth_url=ground_truth_url,

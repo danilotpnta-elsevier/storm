@@ -210,7 +210,7 @@ class TopicExpert(dspy.Module):
                 for q in queries.split("\n")
             ]
             queries = queries[: self.max_search_queries]
-            print(f"🔹 Generated queries: {queries}")
+            # print(f"🔹 Generated queries: {queries}")
             # Search
             searched_results: List[Information] = self.retriever.retrieve(
                 list(set(queries)), exclude_urls=[ground_truth_url]

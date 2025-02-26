@@ -32,7 +32,8 @@ class StormArticleGenerationModule(ArticleGenerationModule):
 
     def generate_section(
         self, topic, section_name, information_table, section_outline, section_query
-    ):
+    ):  
+        # section_query is outline as list
         collected_info: List[Information] = []
         if information_table is not None:
             collected_info = information_table.retrieve_information(

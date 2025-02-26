@@ -33,16 +33,19 @@ class ConvSimulator(dspy.Module):
         max_search_queries_per_turn: int,
         search_top_k: int,
         max_turn: int,
+        seed: Optional[int] = None,
     ):
         super().__init__()
-        self.wiki_writer = WikiWriter(engine=question_asker_engine)
+        self.wiki_writer = WikiWriter(engine=question_asker_engine, seed=seed)
         self.topic_expert = TopicExpert(
             engine=topic_expert_engine,
             max_search_queries=max_search_queries_per_turn,
             search_top_k=search_top_k,
             retriever=retriever,
+            seed=seed,
         )
         self.max_turn = max_turn
+        self.seed = seed
 
     def forward(
         self,
@@ -66,6 +69,7 @@ class ConvSimulator(dspy.Module):
                 break
             if user_utterance.startswith("Thank you so much for your help!"):
                 break
+            print("- User utterance: ", user_utterance)
             expert_output = self.topic_expert(
                 topic=topic, question=user_utterance, ground_truth_url=ground_truth_url
             )
@@ -86,11 +90,12 @@ class WikiWriter(dspy.Module):
 
     The asked question will be used to start a next round of information seeking."""
 
-    def __init__(self, engine: Union[dspy.LM]):
+    def __init__(self, engine: Union[dspy.LM], seed: Optional[int] = None):
         super().__init__()
         self.ask_question_with_persona = dspy.ChainOfThought(AskQuestionWithPersona)
         self.ask_question = dspy.ChainOfThought(AskQuestion)
         self.engine = engine
+        self.seed = seed
 
     def forward(
         self,
@@ -112,7 +117,7 @@ class WikiWriter(dspy.Module):
         conv = conv.strip() or "N/A"
         conv = ArticleTextProcessing.limit_word_count_preserve_newline(conv, 2500)
 
-        with dspy.settings.context(lm=self.engine):
+        with dspy.settings.context(lm=self.engine, seed=self.seed):
             if persona is not None and len(persona.strip()) > 0:
                 question = self.ask_question_with_persona(
                     topic=topic, persona=persona, conv=conv
@@ -192,6 +197,7 @@ class TopicExpert(dspy.Module):
         max_search_queries: int,
         search_top_k: int,
         retriever: Retriever,
+        seed: Optional[int] = None,
     ):
         super().__init__()
         self.generate_queries = dspy.Predict(QuestionToQuery)
@@ -200,26 +206,264 @@ class TopicExpert(dspy.Module):
         self.engine = engine
         self.max_search_queries = max_search_queries
         self.search_top_k = search_top_k
+        self.seed = seed
 
     def forward(self, topic: str, question: str, ground_truth_url: str):
-        with dspy.settings.context(lm=self.engine, show_guidelines=False):
-            # Identify: Break down question into queries.
+        # 1. If seed is provided, use it in dspy context.
+        context_kwargs = {"lm": self.engine, "show_guidelines": False}
+        if self.seed is not None:
+            context_kwargs["seed"] = self.seed
+            print(f"[TopicExpert.forward] Using seed={self.seed} -> deterministic mode")
+
+        with dspy.settings.context(**context_kwargs):
+            # 2. Generate queries
+            queries_str = self.generate_queries(topic=topic, question=question).queries
+            raw_queries = [
+                q.replace("-", "").strip().strip('"').strip()
+                for q in queries_str.split("\n")
+            ]
+            raw_queries = raw_queries[: self.max_search_queries]
+
+            # 3. Sort queries only if we have a seed
+            if self.seed is not None:
+                raw_queries = sorted(dict.fromkeys(raw_queries))
+                print(f"[seed={self.seed}] Queries (sorted): {raw_queries}")
+            else:
+                # Non-deterministic dedup
+                raw_queries = list(set(raw_queries))
+
+            # 4. Perform retrieval
+            searched_results = self.retriever.retrieve(
+                query=raw_queries,
+                exclude_urls=[ground_truth_url],
+            )
+            logging.info(f"Retrieved {len(searched_results)} results total.")
+
+            # 5. Sort final results if seed is set
+            if self.seed is not None:
+                # For each result, let's log snippet list before sorting
+                for i, info_obj in enumerate(searched_results):
+                    logging.info(
+                        f"Before sorting, result #{i} URL={info_obj.url}, snippet_count={len(info_obj.snippets)}"
+                    )
+                    for sn_i, snippet in enumerate(info_obj.snippets):
+                        logging.info(f"   snippet[{sn_i}]: {snippet[:80]!r}...")
+
+
+                # Sort each snippet list
+                for info_obj in searched_results:
+                    if info_obj.snippets:
+                        print(f"Before sorting, URL: {info_obj.url}")
+                        print(f"Before sorting, snippets: {info_obj.snippets}")
+                        info_obj.snippets = sorted(info_obj.snippets)
+                        print(f"After sorting, snippets: {info_obj.snippets}")
+
+                # Then sort the entire list, e.g. by (url, snippet[0], etc.)
+                searched_results.sort(
+                    key=lambda info: (
+                        info.url or "",
+                        info.snippets[0] if info.snippets else "",
+                    )
+                )
+
+                # Log the sorted snippet lists
+                for i, info_obj in enumerate(searched_results):
+                    logging.info(
+                        f"After sorting, result #{i} URL={info_obj.url}, snippet_count={len(info_obj.snippets)}"
+                    )
+                    for sn_i, snippet in enumerate(info_obj.snippets):
+                        logging.info(f"   sorted snippet[{sn_i}]: {snippet[:80]!r}...")
+
+            # 6. Build info text, generate an answer
+            if len(searched_results) == 0:
+                answer = "Sorry, I cannot find information for this question."
+            else:
+                info = ""
+                # Let's also log the order in which we use the top_k results
+                top_k_results = searched_results[: self.search_top_k]
+                logging.info(f"Using top {self.search_top_k} results for final answer.")
+                for i, r in enumerate(top_k_results):
+                    logging.info(f"   (rank {i}) -> URL={r.url}")
+                    if r.snippets:
+                        snippet_text = r.snippets[0]
+                        info += f"[{i+1}]: {snippet_text}\n\n"
+                info = ArticleTextProcessing.limit_word_count_preserve_newline(info, 1000)
+
+                try:
+                    answer = self.answer_question(topic=topic, conv=question, info=info).answer
+                    answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(answer)
+                except Exception as e:
+                    logging.error(f"Error in answer generation: {e}")
+                    answer = "Sorry, I cannot answer this question."
+
+        return dspy.Prediction(
+            queries=raw_queries,
+            searched_results=searched_results,
+            answer=answer
+        )
+
+    # def forward(self, topic: str, question: str, ground_truth_url: str):
+    #     seed = getattr(self, "seed", None)
+    #     print("Seed is ", seed)
+    #     if hasattr(self.engine, "kwargs"):
+    #         print("Seed of self.engine is ", self.engine.kwargs.get("seed"))
+
+    #     # Use seed in context if provided
+    #     context_kwargs = {"lm": self.engine, "show_guidelines": False}
+    #     if seed is not None:
+    #         context_kwargs["seed"] = seed
+
+    #     with dspy.settings.context(**context_kwargs):
+    #         # Generate queries
+    #         queries = self.generate_queries(topic=topic, question=question).queries
+    #         queries = [
+    #             q.replace("-", "").strip().strip('"').strip('"').strip()
+    #             for q in queries.split("\n")
+    #         ]
+    #         queries = queries[: self.max_search_queries]
+
+    #         # If seed is set, make queries deterministic
+    #         if seed is not None:
+    #             print(f"[Seed {seed}]: Queries before sorting: {queries}")
+    #             queries = sorted(queries)
+    #             # Maintain deterministic order while deduplicating
+    #             unique_queries = []
+    #             seen = set()
+    #             for q in queries:
+    #                 if q not in seen:
+    #                     seen.add(q)
+    #                     unique_queries.append(q)
+    #             queries = unique_queries
+    #             print(f"[Seed {seed}]: Queries after deduplication: {queries}")
+    #         else:
+    #             # Original behavior - non-deterministic deduplication
+    #             queries = list(set(queries))
+
+    #         # Perform search
+    #         searched_results = self.retriever.retrieve(
+    #             queries, exclude_urls=[ground_truth_url]
+    #         )
+
+    #         if seed is not None:
+    #             print(
+    #                 f"[Seed {seed}]: Search results first URLs: {[r.url for r in searched_results[:3]]}"
+    #             )
+
+    #             # First, sort snippets within each result deterministically.
+    #             for result in searched_results:
+    #                 if hasattr(result, "snippets") and result.snippets:
+    #                     print(
+    #                         f"[Seed {seed}]: Snippets before sorting for result {result.url}: {result.snippets}"
+    #                     )
+    #                     result.snippets = sorted(result.snippets)
+    #                     print(
+    #                         f"[Seed {seed}]: Snippets after sorting for result {result.url}: {result.snippets}"
+    #                     )
+
+    #             # Then sort search results by URL and the (now sorted) snippets.
+    #             searched_results = sorted(
+    #                 searched_results, key=lambda r: (r.url, tuple(r.snippets))
+    #             )
+    #             print(
+    #                 f"[Seed {seed}]: Sorted search results URLs: {[r.url.strip() for r in searched_results]}"
+    #             )
+
+    #         # Process search results
+    #         if len(searched_results) > 0:
+    #             info = ""
+    #             for n, r in enumerate(searched_results):
+    #                 # No need to sort snippets again, they're already sorted if seed is provided
+    #                 info += "\n".join(f"[{n + 1}]: {s}" for s in r.snippets[:1])
+    #                 info += "\n\n"
+
+    #             info = ArticleTextProcessing.limit_word_count_preserve_newline(
+    #                 info, 1000
+    #             )
+
+    #             try:
+    #                 # Use same seed context if provided
+    #                 answer = self.answer_question(
+    #                     topic=topic, conv=question, info=info
+    #                 ).answer
+    #                 answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(
+    #                     answer
+    #                 )
+    #             except Exception as e:
+    #                 logging.error(f"Error occurs when generating answer: {e}")
+    #                 answer = "Sorry, I cannot answer this question. Please ask another question."
+    #         else:
+    #             answer = "Sorry, I cannot find information for this question. Please ask another question."
+
+    #     return dspy.Prediction(
+    #         queries=queries, searched_results=searched_results, answer=answer
+    #     )
+
+    def forward_working_almost(self, topic: str, question: str, ground_truth_url: str):
+        seed = getattr(self, "seed", None)
+        print("Seed is ", seed)
+        if hasattr(self.engine, "kwargs"):
+            print("Seed of self.engine is ", self.engine.kwargs.get("seed"))
+
+        # Use seed in context if provided
+        context_kwargs = {"lm": self.engine, "show_guidelines": False}
+        if seed is not None:
+            context_kwargs["seed"] = seed
+
+        with dspy.settings.context(**context_kwargs):
+            # Generate queries
             queries = self.generate_queries(topic=topic, question=question).queries
             queries = [
                 q.replace("-", "").strip().strip('"').strip('"').strip()
                 for q in queries.split("\n")
             ]
             queries = queries[: self.max_search_queries]
-            # print(f"🔹 Generated queries: {queries}")
-            # Search
-            searched_results: List[Information] = self.retriever.retrieve(
-                list(set(queries)), exclude_urls=[ground_truth_url]
+
+            # If seed is set, make queries deterministic
+            if seed is not None:
+                print(f"[Seed {seed}]: Queries before sorting: {queries}")
+                queries = sorted(queries)
+                # Maintain deterministic order while deduplicating
+                unique_queries = []
+                seen = set()
+                for q in queries:
+                    if q not in seen:
+                        seen.add(q)
+                        unique_queries.append(q)
+                queries = unique_queries
+                print(f"[Seed {seed}]: Queries after deduplication: {queries}")
+            else:
+                # Original behavior - non-deterministic deduplication
+                queries = list(set(queries))
+
+            # Perform search
+            searched_results = self.retriever.retrieve(
+                queries, exclude_urls=[ground_truth_url]
             )
-            # print(f'Entering here: {searched_results}')
+
+            if seed is not None:
+                print(
+                    f"[Seed {seed}]: Search results first URLs: {[r.url for r in searched_results[:3]]}"
+                )
+
+                # The key fix: Sort search results by URL first, then sort snippets within each result
+                searched_results = sorted(
+                    searched_results, key=lambda r: (r.url, tuple(r.snippets))
+                )
+                # searched_results = sorted(searched_results, key=lambda r: r.url)
+
+                # # Pre-process all snippets deterministically
+                # for result in searched_results:
+                #     if hasattr(result, 'snippets') and result.snippets:
+                #         # Sort the snippets within each result
+                #         print(f"[Seed {seed}]: Snippets before sorting: {result.snippets}")
+                #         result.snippets = sorted(result.snippets)
+                #         print(f"[Seed {seed}]: Snippets after sorting: {result.snippets}")
+
+            # Process search results
             if len(searched_results) > 0:
-                # Evaluate: Simplify this part by directly using the top 1 snippet.
                 info = ""
                 for n, r in enumerate(searched_results):
+                    # No need to sort snippets again, they're already sorted if seed is provided
                     info += "\n".join(f"[{n + 1}]: {s}" for s in r.snippets[:1])
                     info += "\n\n"
 
@@ -228,6 +472,7 @@ class TopicExpert(dspy.Module):
                 )
 
                 try:
+                    # Use same seed context if provided
                     answer = self.answer_question(
                         topic=topic, conv=question, info=info
                     ).answer
@@ -238,12 +483,110 @@ class TopicExpert(dspy.Module):
                     logging.error(f"Error occurs when generating answer: {e}")
                     answer = "Sorry, I cannot answer this question. Please ask another question."
             else:
-                # When no information is found, the expert shouldn't hallucinate.
                 answer = "Sorry, I cannot find information for this question. Please ask another question."
 
         return dspy.Prediction(
             queries=queries, searched_results=searched_results, answer=answer
         )
+
+    def forward_(self, topic: str, question: str, ground_truth_url: str):
+        seed = getattr(self, "seed", None)
+        print("Seed is ", seed)
+        print("Seed of self.engine is ", self.engine.kwargs["seed"])
+        with dspy.settings.context(
+            lm=self.engine, show_guidelines=False, seed=self.seed
+        ):
+            # Identify: Break down question into queries.
+            queries = self.generate_queries(topic=topic, question=question).queries
+            queries = [
+                q.replace("-", "").strip().strip('"').strip('"').strip()
+                for q in queries.split("\n")
+            ]
+            queries = queries[: self.max_search_queries]
+            # print(f"🔹 Generated queries: {queries}")
+            # In TopicExpert.forward
+
+            print(f"[Seed {self.seed}]: Queries before sorting: {queries}")
+            # Search
+            if self.seed is not None:
+                queries = sorted(queries)
+                # searched_results = self.retriever.retrieve(queries, exclude_urls=[ground_truth_url])
+                unique_queries = []
+                for q in queries:
+                    if q not in unique_queries:
+                        unique_queries.append(q)
+                searched_results = self.retriever.retrieve(
+                    unique_queries, exclude_urls=[ground_truth_url]
+                )
+                print(
+                    f"[Seed {self.seed}]: Queries after deduplication: {unique_queries}"
+                )
+            else:
+                searched_results: List[Information] = self.retriever.retrieve(
+                    list(set(queries)), exclude_urls=[ground_truth_url]
+                )
+            print(
+                f"[Seed {self.seed}]: Search results first URLs: {[r.url for r in searched_results[:3]]}"
+            )
+
+            if len(searched_results) > 0:
+                # Ensure deterministic order of search results when seed is set
+                if self.seed is not None:
+                    # Sort search results by URL for complete determinism
+                    searched_results = sorted(searched_results, key=lambda r: r.url)
+
+                info = ""
+                for n, r in enumerate(searched_results):
+                    # Ensure deterministic order of snippets when seed is set
+                    if self.seed is not None and r.snippets:
+                        print(
+                            f"[Seed {self.seed}]: Snippets before sorting: {r.snippets}"
+                        )
+                        snippets = sorted(r.snippets)
+                        print(f"[Seed {self.seed}]: Snippets after sorting: {snippets}")
+                    else:
+                        snippets = r.snippets if hasattr(r, "snippets") else []
+
+                    # Use only first snippet from each result
+                    if snippets:
+                        info += f"[{n + 1}]: {snippets[0]}\n\n"
+
+                info = ArticleTextProcessing.limit_word_count_preserve_newline(
+                    info, 1000
+                )
+
+                try:
+                    # Generate answer with same seed context
+                    with dspy.settings.context(lm=self.engine, seed=self.seed):
+                        answer = self.answer_question(
+                            topic=topic, conv=question, info=info
+                        ).answer
+
+                    answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(
+                        answer
+                    )
+
+                    # Optional: Log hash for debugging
+                    if self.seed is not None:
+                        import hashlib
+
+                        answer_hash = hashlib.md5(answer.encode()).hexdigest()
+                        print(f"[Seed {self.seed}]: Answer hash: {answer_hash}")
+
+                except Exception as e:
+                    logging.error(f"Error occurs when generating answer: {e}")
+                    answer = "Sorry, I cannot answer this question. Please ask another question."
+            else:
+                answer = "Sorry, I cannot find information for this question. Please ask another question."
+
+            # Ensure deterministic return order for queries (they might have been modified)
+            # if self.seed is not None:
+            #     # Sort queries one last time to guarantee determinism
+            #     queries = sorted(queries)
+
+            return dspy.Prediction(
+                queries=queries, searched_results=searched_results, answer=answer
+            )
 
 
 class StormKnowledgeCurationModule(KnowledgeCurationModule):
@@ -267,12 +610,14 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
         """
         Store args and finish initialization.
         """
-        self.retriever = retriever
+        super().__init__(retriever)
         self.persona_generator = persona_generator
         self.conv_simulator_lm = conv_simulator_lm
+        self.question_asker_lm = question_asker_lm
+        self.max_search_queries_per_turn = max_search_queries_per_turn
+        self.max_conv_turn = max_conv_turn
         self.search_top_k = search_top_k
         self.max_thread_num = max_thread_num
-        self.retriever = retriever
         self.conv_simulator = ConvSimulator(
             topic_expert_engine=conv_simulator_lm,
             question_asker_engine=question_asker_lm,
@@ -280,6 +625,7 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             max_search_queries_per_turn=max_search_queries_per_turn,
             search_top_k=search_top_k,
             max_turn=max_conv_turn,
+            seed=seed,
         )
         self.embedding_model = embedding_model
         self.seed = seed
@@ -319,34 +665,15 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
         """
 
         conversations = []
-        
-        # # Check if we should use sequential processing (deterministic mode)
-        # if hasattr(self, 'seed') and self.seed is not None:
-        #     print("Entering after the hasattr")
-        #     # Deterministic sequential processing
-        #     sorted_personas = sorted(considered_personas) if considered_personas else [""]
-            
-        #     print(f"Running {len(sorted_personas)} conversations sequentially for deterministic results")
-            
-        #     for persona in sorted_personas:
-        #         print(f"Processing persona: {persona[:30]}..." if len(persona) > 30 else f"Processing persona: {persona}")
-                
-        #         conv = conv_simulator(
-        #             topic=topic,
-        #             ground_truth_url=ground_truth_url,
-        #             persona=persona,
-        #             callback_handler=callback_handler,
-        #         )
-                
-        #         conversations.append(
-        #             (persona, ArticleTextProcessing.clean_up_citation(conv).dlg_history)
-        #         )
-            
-        #     return conversations
+
         if self.seed is not None:
             print(f"🟢 Deterministic Mode (seed={self.seed}): Running sequentially.")
             # Sort personas so we get stable iteration order
-            sorted_personas = sorted(considered_personas) if considered_personas else [""]
+            sorted_personas = (
+                sorted(considered_personas) if considered_personas else [""]
+            )
+
+            print("sorted_personas: ", sorted_personas)
 
             for persona in sorted_personas:
                 # print(f"Processing persona: {persona}")
@@ -372,7 +699,9 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
 
             max_workers = min(self.max_thread_num, len(considered_personas))
 
-            with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            with concurrent.futures.ThreadPoolExecutor(
+                max_workers=max_workers
+            ) as executor:
                 future_to_persona = {
                     executor.submit(run_conv, persona): persona
                     for persona in considered_personas
@@ -387,7 +716,10 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
                     persona = future_to_persona[future]
                     conv = future.result()
                     conversations.append(
-                        (persona, ArticleTextProcessing.clean_up_citation(conv).dlg_history)
+                        (
+                            persona,
+                            ArticleTextProcessing.clean_up_citation(conv).dlg_history,
+                        )
                     )
 
         return conversations

@@ -84,6 +84,11 @@ class Information:
             and set(self.snippets) == set(other.snippets)
             and self._meta_str() == other._meta_str()
         )
+    def __lt__(self, other):
+        """Define ordering for deterministic sorting."""
+        if not isinstance(other, Information):
+            return NotImplemented
+        return self.url < other.url
 
     def __hash__(self):
         return int(

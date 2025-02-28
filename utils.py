@@ -606,7 +606,7 @@ class ArticleTextProcessing:
         )
         for url, index in sorted_url_to_unified_index.items():
             title = url_to_info["url_to_info"][url]["title"]
-            bibliography_list.append(f"[{index}]: [{title}]({url})")
+            bibliography_list.append(f"[{index}]: [{title}]({url}) - {url}")
         bibliography_string = "\n\n".join(bibliography_list)
         return f"\n\n# References\n\n{bibliography_string}"
 

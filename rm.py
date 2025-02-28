@@ -127,6 +127,11 @@ class VectorRM(dspy.Retrieve):
 
         return {"VectorRM": usage}
 
+    def cleanup(self):
+        """Release resources when done with this retriever."""
+        self.client = None
+        self.qdrant = None
+
     def get_vector_count(self):
         """
         Get the count of vectors in the collection.

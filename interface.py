@@ -12,9 +12,52 @@ from typing import Dict, List, Optional, Union, TYPE_CHECKING
 
 from .utils import ArticleTextProcessing
 
+
+COLORS = {
+    "RESET": "\033[0m",
+    "RED": "\033[31m",
+    "GREEN": "\033[32m",
+    "YELLOW": "\033[33m",
+    "BLUE": "\033[34m",
+    "MAGENTA": "\033[35m",
+    "CYAN": "\033[36m",
+    "WHITE": "\033[37m",
+}
+
+LEVEL_COLORS = {
+    logging.DEBUG: COLORS["BLUE"],
+    logging.INFO: COLORS["GREEN"],
+    logging.WARNING: COLORS["YELLOW"],
+    logging.ERROR: COLORS["RED"],
+    logging.CRITICAL: COLORS["MAGENTA"],
+}
+
+
+class ColoredFormatter(logging.Formatter):
+    def format(self, record):
+        color = LEVEL_COLORS.get(record.levelno, COLORS["WHITE"])
+        record.levelname = f"{color}{record.levelname}{COLORS['RESET']}"
+        record.name = f"{COLORS['CYAN']}{record.name}{COLORS['RESET']}"
+        return super().format(record)
+
+
 logging.basicConfig(
     level=logging.INFO, format="%(name)s : %(levelname)-8s : %(message)s"
 )
+
+root_logger = logging.getLogger()
+
+for handler in root_logger.handlers:
+    handler.setFormatter(ColoredFormatter("%(name)s : %(levelname)-8s : %(message)s"))
+
+class ShortNameFilter(logging.Filter):
+    def filter(self, record):
+        record.name = record.name.split(".")[-1]
+        return True
+
+for handler in root_logger.handlers:
+    handler.addFilter(ShortNameFilter())
+
 logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
@@ -84,6 +127,7 @@ class Information:
             and set(self.snippets) == set(other.snippets)
             and self._meta_str() == other._meta_str()
         )
+
     def __lt__(self, other):
         """Define ordering for deterministic sorting."""
         if not isinstance(other, Information):
@@ -487,33 +531,33 @@ class LMConfigs(ABC):
                 if "_lm" in attr_name and hasattr(getattr(self, attr_name), "kwargs")
             }
         )
-    
+
     def _sanitize_kwargs(self, kwargs):
         """Sanitize sensitive information from kwargs dictionary."""
         sanitized = copy.deepcopy(kwargs)
-        sensitive_keys = ['api_key', 'apiKey', 'key', 'secret', 'password']
-        
+        sensitive_keys = ["api_key", "apiKey", "key", "secret", "password"]
+
         for key in sensitive_keys:
             if key in sanitized:
-                sanitized[key] = 'your-api-key'
+                sanitized[key] = "your-api-key"
         return sanitized
 
     def log(self):
         """Log configuration with sanitized sensitive information."""
         config_dict = OrderedDict()
-        
+
         for attr_name in self.__dict__:
             if "_lm" in attr_name and hasattr(getattr(self, attr_name), "kwargs"):
                 model = getattr(self, attr_name)
                 settings = {
-                    **model.kwargs,                    
-                    "model": model.model,              
+                    **model.kwargs,
+                    "model": model.model,
                 }
                 settings = {k: v for k, v in settings.items() if v is not None}
                 if "api_key" in settings:
                     settings["api_key"] = "your-api-key"
                 config_dict[attr_name] = settings
-                
+
         return config_dict
 
     def debug_print_config(self):

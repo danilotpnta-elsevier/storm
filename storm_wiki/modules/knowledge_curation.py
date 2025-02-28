@@ -20,6 +20,8 @@ except ImportError as err:
     streamlit_connection = False
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+logger = logging.getLogger(__name__) 
+logger.propagate = False 
 
 
 class ConvSimulator(dspy.Module):
@@ -65,11 +67,11 @@ class ConvSimulator(dspy.Module):
                 topic=topic, persona=persona, dialogue_turns=dlg_history
             ).question
             if user_utterance == "":
-                logging.error("Simulated Wikipedia writer utterance is empty.")
+                logger.error("Simulated Wikipedia writer utterance is empty.")
                 break
             if user_utterance.startswith("Thank you so much for your help!"):
                 break
-            print("- User utterance: ", user_utterance)
+            logger.info(f"- User utterance: {user_utterance}")
             expert_output = self.topic_expert(
                 topic=topic, question=user_utterance, ground_truth_url=ground_truth_url
             )
@@ -213,7 +215,7 @@ class TopicExpert(dspy.Module):
         context_kwargs = {"lm": self.engine, "show_guidelines": False}
         if self.seed is not None:
             context_kwargs["seed"] = self.seed
-            print(f"[TopicExpert.forward] Using seed={self.seed} -> deterministic mode")
+            logger.info(f"[TopicExpert.forward] Using seed={self.seed} -> deterministic mode")
 
         with dspy.settings.context(**context_kwargs):
             # 2. Generate queries
@@ -227,7 +229,7 @@ class TopicExpert(dspy.Module):
             # 3. Sort queries only if we have a seed
             if self.seed is not None:
                 raw_queries = sorted(dict.fromkeys(raw_queries))
-                print(f"[seed={self.seed}] Queries (sorted): {raw_queries}")
+                logger.info(f"[seed={self.seed}] Queries (sorted): {raw_queries}")
             else:
                 # Non-deterministic dedup
                 raw_queries = list(set(raw_queries))
@@ -237,26 +239,26 @@ class TopicExpert(dspy.Module):
                 query=raw_queries,
                 exclude_urls=[ground_truth_url],
             )
-            logging.info(f"Retrieved {len(searched_results)} results total.")
+            logger.info(f"Retrieved {len(searched_results)} results total.")
 
             # 5. Sort final results if seed is set
             if self.seed is not None:
                 # For each result, let's log snippet list before sorting
                 for i, info_obj in enumerate(searched_results):
-                    logging.info(
+                    logger.info(
                         f"Before sorting, result #{i} URL={info_obj.url}, snippet_count={len(info_obj.snippets)}"
                     )
                     for sn_i, snippet in enumerate(info_obj.snippets):
-                        logging.info(f"   snippet[{sn_i}]: {snippet[:80]!r}...")
+                        logger.info(f"   snippet[{sn_i}]: {snippet[:80]!r}...")
 
 
                 # Sort each snippet list
                 for info_obj in searched_results:
                     if info_obj.snippets:
-                        print(f"Before sorting, URL: {info_obj.url}")
-                        print(f"Before sorting, snippets: {info_obj.snippets}")
+                        logger.info(f"Before sorting, URL: {info_obj.url}")
+                        logger.info(f"Before sorting, snippets: {info_obj.snippets}")
                         info_obj.snippets = sorted(info_obj.snippets)
-                        print(f"After sorting, snippets: {info_obj.snippets}")
+                        logger.info(f"After sorting, snippets: {info_obj.snippets}")
 
                 # Then sort the entire list, e.g. by (url, snippet[0], etc.)
                 searched_results.sort(
@@ -268,11 +270,11 @@ class TopicExpert(dspy.Module):
 
                 # Log the sorted snippet lists
                 for i, info_obj in enumerate(searched_results):
-                    logging.info(
+                    logger.info(
                         f"After sorting, result #{i} URL={info_obj.url}, snippet_count={len(info_obj.snippets)}"
                     )
                     for sn_i, snippet in enumerate(info_obj.snippets):
-                        logging.info(f"   sorted snippet[{sn_i}]: {snippet[:80]!r}...")
+                        logger.info(f"   sorted snippet[{sn_i}]: {snippet[:80]!r}...")
 
             # 6. Build info text, generate an answer
             if len(searched_results) == 0:
@@ -281,9 +283,9 @@ class TopicExpert(dspy.Module):
                 info = ""
                 # Let's also log the order in which we use the top_k results
                 top_k_results = searched_results[: self.search_top_k]
-                logging.info(f"Using top {self.search_top_k} results for final answer.")
+                logger.info(f"Using top {self.search_top_k} results for final answer.")
                 for i, r in enumerate(top_k_results):
-                    logging.info(f"   (rank {i}) -> URL={r.url}")
+                    logger.info(f"   (rank {i}) -> URL={r.url}")
                     if r.snippets:
                         snippet_text = r.snippets[0]
                         info += f"[{i+1}]: {snippet_text}\n\n"
@@ -293,7 +295,7 @@ class TopicExpert(dspy.Module):
                     answer = self.answer_question(topic=topic, conv=question, info=info).answer
                     answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(answer)
                 except Exception as e:
-                    logging.error(f"Error in answer generation: {e}")
+                    logger.error(f"Error in answer generation: {e}")
                     answer = "Sorry, I cannot answer this question."
 
         return dspy.Prediction(
@@ -304,7 +306,7 @@ class TopicExpert(dspy.Module):
 
     # def forward(self, topic: str, question: str, ground_truth_url: str):
     #     seed = getattr(self, "seed", None)
-    #     print("Seed is ", seed)
+    #     logger("Seed is ", seed)
     #     if hasattr(self.engine, "kwargs"):
     #         print("Seed of self.engine is ", self.engine.kwargs.get("seed"))
 
@@ -389,7 +391,7 @@ class TopicExpert(dspy.Module):
     #                     answer
     #                 )
     #             except Exception as e:
-    #                 logging.error(f"Error occurs when generating answer: {e}")
+    #                 logger.error(f"Error occurs when generating answer: {e}")
     #                 answer = "Sorry, I cannot answer this question. Please ask another question."
     #         else:
     #             answer = "Sorry, I cannot find information for this question. Please ask another question."
@@ -400,9 +402,9 @@ class TopicExpert(dspy.Module):
 
     def forward_working_almost(self, topic: str, question: str, ground_truth_url: str):
         seed = getattr(self, "seed", None)
-        print("Seed is ", seed)
+        logger.info("Seed is ", seed)
         if hasattr(self.engine, "kwargs"):
-            print("Seed of self.engine is ", self.engine.kwargs.get("seed"))
+            logger.info("Seed of self.engine is ", self.engine.kwargs.get("seed"))
 
         # Use seed in context if provided
         context_kwargs = {"lm": self.engine, "show_guidelines": False}
@@ -420,7 +422,7 @@ class TopicExpert(dspy.Module):
 
             # If seed is set, make queries deterministic
             if seed is not None:
-                print(f"[Seed {seed}]: Queries before sorting: {queries}")
+                logger.info(f"[Seed {seed}]: Queries before sorting: {queries}")
                 queries = sorted(queries)
                 # Maintain deterministic order while deduplicating
                 unique_queries = []
@@ -430,7 +432,7 @@ class TopicExpert(dspy.Module):
                         seen.add(q)
                         unique_queries.append(q)
                 queries = unique_queries
-                print(f"[Seed {seed}]: Queries after deduplication: {queries}")
+                logger.info(f"[Seed {seed}]: Queries after deduplication: {queries}")
             else:
                 # Original behavior - non-deterministic deduplication
                 queries = list(set(queries))
@@ -441,7 +443,7 @@ class TopicExpert(dspy.Module):
             )
 
             if seed is not None:
-                print(
+                logger.info(
                     f"[Seed {seed}]: Search results first URLs: {[r.url for r in searched_results[:3]]}"
                 )
 
@@ -480,7 +482,7 @@ class TopicExpert(dspy.Module):
                         answer
                     )
                 except Exception as e:
-                    logging.error(f"Error occurs when generating answer: {e}")
+                    logger.error(f"Error occurs when generating answer: {e}")
                     answer = "Sorry, I cannot answer this question. Please ask another question."
             else:
                 answer = "Sorry, I cannot find information for this question. Please ask another question."
@@ -491,8 +493,8 @@ class TopicExpert(dspy.Module):
 
     def forward_(self, topic: str, question: str, ground_truth_url: str):
         seed = getattr(self, "seed", None)
-        print("Seed is ", seed)
-        print("Seed of self.engine is ", self.engine.kwargs["seed"])
+        logger.info("Seed is ", seed)
+        logger.info("Seed of self.engine is ", self.engine.kwargs["seed"])
         with dspy.settings.context(
             lm=self.engine, show_guidelines=False, seed=self.seed
         ):
@@ -503,10 +505,8 @@ class TopicExpert(dspy.Module):
                 for q in queries.split("\n")
             ]
             queries = queries[: self.max_search_queries]
-            # print(f"🔹 Generated queries: {queries}")
-            # In TopicExpert.forward
 
-            print(f"[Seed {self.seed}]: Queries before sorting: {queries}")
+            logger.info(f"[Seed {self.seed}]: Queries before sorting: {queries}")
             # Search
             if self.seed is not None:
                 queries = sorted(queries)
@@ -518,14 +518,14 @@ class TopicExpert(dspy.Module):
                 searched_results = self.retriever.retrieve(
                     unique_queries, exclude_urls=[ground_truth_url]
                 )
-                print(
+                logger.info(
                     f"[Seed {self.seed}]: Queries after deduplication: {unique_queries}"
                 )
             else:
                 searched_results: List[Information] = self.retriever.retrieve(
                     list(set(queries)), exclude_urls=[ground_truth_url]
                 )
-            print(
+            logger.info(
                 f"[Seed {self.seed}]: Search results first URLs: {[r.url for r in searched_results[:3]]}"
             )
 
@@ -539,11 +539,11 @@ class TopicExpert(dspy.Module):
                 for n, r in enumerate(searched_results):
                     # Ensure deterministic order of snippets when seed is set
                     if self.seed is not None and r.snippets:
-                        print(
+                        logger.info(
                             f"[Seed {self.seed}]: Snippets before sorting: {r.snippets}"
                         )
                         snippets = sorted(r.snippets)
-                        print(f"[Seed {self.seed}]: Snippets after sorting: {snippets}")
+                        logger.info(f"[Seed {self.seed}]: Snippets after sorting: {snippets}")
                     else:
                         snippets = r.snippets if hasattr(r, "snippets") else []
 
@@ -571,10 +571,10 @@ class TopicExpert(dspy.Module):
                         import hashlib
 
                         answer_hash = hashlib.md5(answer.encode()).hexdigest()
-                        print(f"[Seed {self.seed}]: Answer hash: {answer_hash}")
+                        logger.info(f"[Seed {self.seed}]: Answer hash: {answer_hash}")
 
                 except Exception as e:
-                    logging.error(f"Error occurs when generating answer: {e}")
+                    logger.error(f"Error occurs when generating answer: {e}")
                     answer = "Sorry, I cannot answer this question. Please ask another question."
             else:
                 answer = "Sorry, I cannot find information for this question. Please ask another question."
@@ -673,10 +673,9 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
                 sorted(considered_personas) if considered_personas else [""]
             )
 
-            print("sorted_personas: ", sorted_personas)
+            logger.info(f"sorted_personas: {sorted_personas}")
 
             for persona in sorted_personas:
-                # print(f"Processing persona: {persona}")
                 conv = conv_simulator(
                     topic=topic,
                     ground_truth_url=ground_truth_url,

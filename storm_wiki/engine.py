@@ -202,12 +202,13 @@ class STORMWikiRunner(Engine):
             article_with_outline=outline,
             callback_handler=callback_handler,
         )
-        draft_article.dump_article_as_plain_text(
-            os.path.join(self.article_output_dir, "storm_gen_article.txt")
-        )
         draft_article.dump_reference_to_file(
             os.path.join(self.article_output_dir, "url_to_info.json")
         )
+        draft_article.dump_article_as_plain_text(
+            os.path.join(self.article_output_dir, "storm_gen_article.txt")
+        )
+
         return draft_article
 
     def run_article_polishing_module(
@@ -219,10 +220,18 @@ class STORMWikiRunner(Engine):
             draft_article=draft_article,
             remove_duplicate=remove_duplicate,
         )
-        FileIOHelper.write_str(
-            polished_article.to_string(),
-            os.path.join(self.article_output_dir, "storm_gen_article_polished.txt"),
+
+        polished_article.dump_reference_to_file(
+            os.path.join(self.article_output_dir, "url_to_info_polished.json")
         )
+        polished_article.dump_article_as_plain_text(
+            os.path.join(self.article_output_dir, "storm_gen_article_polished.txt")
+        )
+
+        # FileIOHelper.write_str(
+        #     polished_article.to_string(),
+        #     os.path.join(self.article_output_dir, "storm_gen_article_polished.txt"),
+        # )
         return polished_article
 
     def post_run(self):

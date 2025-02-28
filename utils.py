@@ -588,6 +588,27 @@ class ArticleTextProcessing:
                 current_path[-1][0]["content"] += line + "\n"
 
         return root["subsections"]
+    
+    @staticmethod
+    def construct_bibliography_from_url_to_info(url_to_info):
+        """
+        Construct a bibliography from the url_to_info dictionary
+
+        Args:
+            url_to_info (dict): A dictionary containing the information of the urls
+
+        Returns:
+            str: A string containing the bibliography
+        """
+        bibliography_list = []
+        sorted_url_to_unified_index = dict(
+            sorted(url_to_info["url_to_unified_index"].items(), key=lambda item: item[1])
+        )
+        for url, index in sorted_url_to_unified_index.items():
+            title = url_to_info["url_to_info"][url]["title"]
+            bibliography_list.append(f"[{index}]: [{title}]({url})")
+        bibliography_string = "\n\n".join(bibliography_list)
+        return f"\n\n# References\n\n{bibliography_string}"
 
 
 class FileIOHelper:

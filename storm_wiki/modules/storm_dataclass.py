@@ -55,29 +55,40 @@ class StormInformationTable(InformationTable):
     would be perspective guided dialogue history.
     """
 
-    def __init__(self, conversations=List[Tuple[str, List[DialogueTurn]]], embedding_model="paraphrase-MiniLM-L6-v2"):
+    def __init__(
+        self,
+        conversations=List[Tuple[str, List[DialogueTurn]]],
+        embedding_model="paraphrase-MiniLM-L6-v2",
+        seed=None,
+    ):
         super().__init__()
         self.conversations = conversations
+        self.seed = seed
         self.url_to_info: Dict[str, Information] = (
-            StormInformationTable.construct_url_to_info(self.conversations)
+            StormInformationTable.construct_url_to_info(self.conversations, self.seed)
         )
         self.embedding_model = embedding_model
 
     @staticmethod
     def construct_url_to_info(
-        conversations: List[Tuple[str, List[DialogueTurn]]]
+        conversations: List[Tuple[str, List[DialogueTurn]]], seed: Optional[int] = None
     ) -> Dict[str, Information]:
         url_to_info = {}
-
+        if seed is not None:
+            conversations = sorted(conversations, key=lambda x: x[0])
         for persona, conv in conversations:
             for turn in conv:
+                if seed is not None and turn.search_results:
+                    turn.search_results.sort(key=lambda x: x.url)
                 for storm_info in turn.search_results:
                     if storm_info.url in url_to_info:
                         url_to_info[storm_info.url].snippets.extend(storm_info.snippets)
                     else:
                         url_to_info[storm_info.url] = storm_info
         for url in url_to_info:
-            url_to_info[url].snippets = list(set(url_to_info[url].snippets))
+            url_to_info[url].snippets = list(dict.fromkeys(url_to_info[url].snippets))
+            if seed is not None:
+                url_to_info[url].snippets.sort()
         return url_to_info
 
     @staticmethod
@@ -129,29 +140,39 @@ class StormInformationTable(InformationTable):
         for query in queries:
             encoded_query = self.encoder.encode(query, show_progress_bar=False)
             sim = cosine_similarity([encoded_query], self.encoded_snippets)[0]
-            sorted_indices = np.argsort(sim)
-            for i in sorted_indices[-search_top_k:][::-1]:
+            if hasattr(self, "seed") and self.seed is not None:
+                pairs = [(sim[i], i) for i in range(len(sim))]
+                pairs.sort(key=lambda x: (-x[0], x[1]))
+                top_indices = [idx for _, idx in pairs[:search_top_k]]
+            else:
+                sorted_indices = np.argsort(sim)
+                top_indices = sorted_indices[-search_top_k:][::-1]
+            for i in top_indices:
                 selected_urls.append(self.collected_urls[i])
                 selected_snippets.append(self.collected_snippets[i])
 
         url_to_snippets = {}
         for url, snippet in zip(selected_urls, selected_snippets):
             if url not in url_to_snippets:
-                url_to_snippets[url] = set()
-            url_to_snippets[url].add(snippet)
+                url_to_snippets[url] = []
+            if snippet not in url_to_snippets[url]:
+                url_to_snippets[url].append(snippet)
 
         selected_url_to_info = {}
         for url in url_to_snippets:
             selected_url_to_info[url] = copy.deepcopy(self.url_to_info[url])
-            selected_url_to_info[url].snippets = list(url_to_snippets[url])
+            if hasattr(self, "seed") and self.seed is not None:
+                url_to_snippets[url].sort()  # Sort snippets for deterministic order
+            selected_url_to_info[url].snippets = url_to_snippets[url]
 
         return list(selected_url_to_info.values())
 
 
 class StormArticle(Article):
-    def __init__(self, topic_name):
+    def __init__(self, topic_name, seed=None):
         super().__init__(topic_name=topic_name)
         self.reference = {"url_to_unified_index": {}, "url_to_info": {}}
+        self.seed = seed 
 
     def find_section(
         self, node: ArticleSectionNode, name: str
@@ -189,6 +210,10 @@ class StormArticle(Article):
                         to its unified citation index in the references.
         """
         citation_idx_mapping = {}
+        if hasattr(self, "seed") and self.seed is not None:
+            # Sort by URL for stable order
+            new_info_list = sorted(new_info_list, key=lambda x: x.url)
+
         for idx, storm_info in enumerate(new_info_list):
             if index_to_keep is not None and idx not in index_to_keep:
                 continue
@@ -201,9 +226,10 @@ class StormArticle(Article):
             else:
                 existing_snippets = self.reference["url_to_info"][url].snippets
                 existing_snippets.extend(storm_info.snippets)
-                self.reference["url_to_info"][url].snippets = list(
-                    set(existing_snippets)
-                )
+                existing_snippets = list(dict.fromkeys(existing_snippets))
+                existing_snippets.sort()
+                self.reference["url_to_info"][url].snippets = existing_snippets
+
             citation_idx_mapping[idx + 1] = self.reference["url_to_unified_index"][
                 url
             ]  # The citation index starts from 1.
@@ -406,7 +432,12 @@ class StormArticle(Article):
 
         pre_order_update_index(self.root)
         # update reference
-        for url in list(self.reference["url_to_unified_index"]):
+        if hasattr(self, 'seed') and self.seed is not None:
+            urls = sorted(list(self.reference["url_to_unified_index"]))
+        else:
+            urls = list(self.reference["url_to_unified_index"])
+
+        for url in urls:
             pre_index = self.reference["url_to_unified_index"][url]
             if pre_index not in ref_index_mapping:
                 del self.reference["url_to_unified_index"][url]
@@ -483,13 +514,17 @@ class StormArticle(Article):
     def dump_reference_to_file(self, file_path):
         self.reference_ = copy.deepcopy(self.reference)
         for url in self.reference_["url_to_info"]:
-            self.reference_["url_to_info"][url] = self.reference_["url_to_info"][url].to_dict()
-        
+            self.reference_["url_to_info"][url] = self.reference_["url_to_info"][
+                url
+            ].to_dict()
+
         FileIOHelper.dump_json(self.reference_, file_path)
 
     def dump_article_as_plain_text(self, file_path):
         text = self.to_string()
-        references_str = ArticleTextProcessing.construct_bibliography_from_url_to_info(self.reference_) 
+        references_str = ArticleTextProcessing.construct_bibliography_from_url_to_info(
+            self.reference_
+        )
         text += references_str
         FileIOHelper.write_str(text, file_path)
 

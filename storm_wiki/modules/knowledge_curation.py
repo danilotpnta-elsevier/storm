@@ -20,8 +20,8 @@ except ImportError as err:
     streamlit_connection = False
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-logger = logging.getLogger(__name__) 
-logger.propagate = False 
+logger = logging.getLogger(__name__)
+logger.propagate = False
 
 
 class ConvSimulator(dspy.Module):
@@ -215,7 +215,9 @@ class TopicExpert(dspy.Module):
         context_kwargs = {"lm": self.engine, "show_guidelines": False}
         if self.seed is not None:
             context_kwargs["seed"] = self.seed
-            logger.info(f"[TopicExpert.forward] Using seed={self.seed} -> deterministic mode")
+            logger.info(
+                f"[TopicExpert.forward] Using seed={self.seed} -> deterministic mode"
+            )
 
         with dspy.settings.context(**context_kwargs):
             # 2. Generate queries
@@ -250,7 +252,6 @@ class TopicExpert(dspy.Module):
                     )
                     for sn_i, snippet in enumerate(info_obj.snippets):
                         logger.info(f"   snippet[{sn_i}]: {snippet[:80]!r}...")
-
 
                 # Sort each snippet list
                 for info_obj in searched_results:
@@ -289,116 +290,24 @@ class TopicExpert(dspy.Module):
                     if r.snippets:
                         snippet_text = r.snippets[0]
                         info += f"[{i+1}]: {snippet_text}\n\n"
-                info = ArticleTextProcessing.limit_word_count_preserve_newline(info, 1000)
+                info = ArticleTextProcessing.limit_word_count_preserve_newline(
+                    info, 1000
+                )
 
                 try:
-                    answer = self.answer_question(topic=topic, conv=question, info=info).answer
-                    answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(answer)
+                    answer = self.answer_question(
+                        topic=topic, conv=question, info=info
+                    ).answer
+                    answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(
+                        answer
+                    )
                 except Exception as e:
                     logger.error(f"Error in answer generation: {e}")
                     answer = "Sorry, I cannot answer this question."
 
         return dspy.Prediction(
-            queries=raw_queries,
-            searched_results=searched_results,
-            answer=answer
+            queries=raw_queries, searched_results=searched_results, answer=answer
         )
-
-    # def forward(self, topic: str, question: str, ground_truth_url: str):
-    #     seed = getattr(self, "seed", None)
-    #     logger("Seed is ", seed)
-    #     if hasattr(self.engine, "kwargs"):
-    #         print("Seed of self.engine is ", self.engine.kwargs.get("seed"))
-
-    #     # Use seed in context if provided
-    #     context_kwargs = {"lm": self.engine, "show_guidelines": False}
-    #     if seed is not None:
-    #         context_kwargs["seed"] = seed
-
-    #     with dspy.settings.context(**context_kwargs):
-    #         # Generate queries
-    #         queries = self.generate_queries(topic=topic, question=question).queries
-    #         queries = [
-    #             q.replace("-", "").strip().strip('"').strip('"').strip()
-    #             for q in queries.split("\n")
-    #         ]
-    #         queries = queries[: self.max_search_queries]
-
-    #         # If seed is set, make queries deterministic
-    #         if seed is not None:
-    #             print(f"[Seed {seed}]: Queries before sorting: {queries}")
-    #             queries = sorted(queries)
-    #             # Maintain deterministic order while deduplicating
-    #             unique_queries = []
-    #             seen = set()
-    #             for q in queries:
-    #                 if q not in seen:
-    #                     seen.add(q)
-    #                     unique_queries.append(q)
-    #             queries = unique_queries
-    #             print(f"[Seed {seed}]: Queries after deduplication: {queries}")
-    #         else:
-    #             # Original behavior - non-deterministic deduplication
-    #             queries = list(set(queries))
-
-    #         # Perform search
-    #         searched_results = self.retriever.retrieve(
-    #             queries, exclude_urls=[ground_truth_url]
-    #         )
-
-    #         if seed is not None:
-    #             print(
-    #                 f"[Seed {seed}]: Search results first URLs: {[r.url for r in searched_results[:3]]}"
-    #             )
-
-    #             # First, sort snippets within each result deterministically.
-    #             for result in searched_results:
-    #                 if hasattr(result, "snippets") and result.snippets:
-    #                     print(
-    #                         f"[Seed {seed}]: Snippets before sorting for result {result.url}: {result.snippets}"
-    #                     )
-    #                     result.snippets = sorted(result.snippets)
-    #                     print(
-    #                         f"[Seed {seed}]: Snippets after sorting for result {result.url}: {result.snippets}"
-    #                     )
-
-    #             # Then sort search results by URL and the (now sorted) snippets.
-    #             searched_results = sorted(
-    #                 searched_results, key=lambda r: (r.url, tuple(r.snippets))
-    #             )
-    #             print(
-    #                 f"[Seed {seed}]: Sorted search results URLs: {[r.url.strip() for r in searched_results]}"
-    #             )
-
-    #         # Process search results
-    #         if len(searched_results) > 0:
-    #             info = ""
-    #             for n, r in enumerate(searched_results):
-    #                 # No need to sort snippets again, they're already sorted if seed is provided
-    #                 info += "\n".join(f"[{n + 1}]: {s}" for s in r.snippets[:1])
-    #                 info += "\n\n"
-
-    #             info = ArticleTextProcessing.limit_word_count_preserve_newline(
-    #                 info, 1000
-    #             )
-
-    #             try:
-    #                 # Use same seed context if provided
-    #                 answer = self.answer_question(
-    #                     topic=topic, conv=question, info=info
-    #                 ).answer
-    #                 answer = ArticleTextProcessing.remove_uncompleted_sentences_with_citations(
-    #                     answer
-    #                 )
-    #             except Exception as e:
-    #                 logger.error(f"Error occurs when generating answer: {e}")
-    #                 answer = "Sorry, I cannot answer this question. Please ask another question."
-    #         else:
-    #             answer = "Sorry, I cannot find information for this question. Please ask another question."
-
-    #     return dspy.Prediction(
-    #         queries=queries, searched_results=searched_results, answer=answer
-    #     )
 
     def forward_working_almost(self, topic: str, question: str, ground_truth_url: str):
         seed = getattr(self, "seed", None)
@@ -543,7 +452,9 @@ class TopicExpert(dspy.Module):
                             f"[Seed {self.seed}]: Snippets before sorting: {r.snippets}"
                         )
                         snippets = sorted(r.snippets)
-                        logger.info(f"[Seed {self.seed}]: Snippets after sorting: {snippets}")
+                        logger.info(
+                            f"[Seed {self.seed}]: Snippets after sorting: {snippets}"
+                        )
                     else:
                         snippets = r.snippets if hasattr(r, "snippets") else []
 
@@ -763,7 +674,9 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             callback_handler=callback_handler,
         )
 
-        information_table = StormInformationTable(conversations, self.embedding_model)
+        information_table = StormInformationTable(
+            conversations, self.embedding_model, self.seed
+        )
         callback_handler.on_information_gathering_end()
         if return_conversation_log:
             return information_table, StormInformationTable.construct_log_dict(

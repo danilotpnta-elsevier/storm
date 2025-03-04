@@ -42,33 +42,7 @@ class CollaborativeStormLMConfigs(LMConfigs):
         temperature: Optional[float] = 1.0,
         top_p: Optional[float] = 0.9,
     ):
-        if lm_type and lm_type == "openai":
-            openai_kwargs = {
-                "api_key": os.getenv("OPENAI_API_KEY"),
-                "api_provider": "openai",
-                "temperature": temperature,
-                "top_p": top_p,
-                "api_base": None,
-            }
-            self.question_answering_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=1000, **openai_kwargs
-            )
-            self.discourse_manage_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=500, **openai_kwargs
-            )
-            self.utterance_polishing_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=2000, **openai_kwargs
-            )
-            self.warmstart_outline_gen_lm = OpenAIModel(
-                model="gpt-4-1106-preview", max_tokens=500, **openai_kwargs
-            )
-            self.question_asking_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=300, **openai_kwargs
-            )
-            self.knowledge_base_lm = OpenAIModel(
-                model="gpt-4o-2024-05-13", max_tokens=1000, **openai_kwargs
-            )
-        elif lm_type and lm_type == "azure":
+        if lm_type and lm_type == "azure":
             azure_kwargs = {
                 "api_key": os.getenv("AZURE_API_KEY"),
                 "temperature": temperature,
@@ -93,48 +67,6 @@ class CollaborativeStormLMConfigs(LMConfigs):
             )
             self.knowledge_base_lm = AzureOpenAIModel(
                 model="gpt-4o", max_tokens=1000, **azure_kwargs, model_type="chat"
-            )
-        elif lm_type and lm_type == "together":
-            together_kwargs = {
-                "api_key": os.getenv("TOGETHER_API_KEY"),
-                "temperature": temperature,
-                "top_p": top_p,
-            }
-            self.question_answering_lm = TogetherClient(
-                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                max_tokens=1000,
-                model_type="chat",
-                **together_kwargs,
-            )
-            self.discourse_manage_lm = TogetherClient(
-                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                max_tokens=500,
-                model_type="chat",
-                **together_kwargs,
-            )
-            self.utterance_polishing_lm = TogetherClient(
-                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                max_tokens=2000,
-                model_type="chat",
-                **together_kwargs,
-            )
-            self.warmstart_outline_gen_lm = TogetherClient(
-                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                max_tokens=500,
-                model_type="chat",
-                **together_kwargs,
-            )
-            self.question_asking_lm = TogetherClient(
-                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                max_tokens=300,
-                model_type="chat",
-                **together_kwargs,
-            )
-            self.knowledge_base_lm = TogetherClient(
-                model="meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-                max_tokens=1000,
-                model_type="chat",
-                **together_kwargs,
             )
         else:
             raise Exception(

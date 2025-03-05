@@ -444,10 +444,7 @@ class CoStormRunner:
         self.lm_config = lm_config
         self.logging_wrapper = logging_wrapper
         self.callback_handler = callback_handler
-        if rm is None:
-            self.rm = BingSearch(k=runner_argument.retrieve_top_k)
-        else:
-            self.rm = rm
+        self.rm = rm
         self.conversation_history = []
         self.warmstart_conv_archive = []
         self.knowledge_base = KnowledgeBase(

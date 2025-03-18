@@ -50,10 +50,12 @@ root_logger = logging.getLogger()
 for handler in root_logger.handlers:
     handler.setFormatter(ColoredFormatter("%(name)s : %(levelname)-8s : %(message)s"))
 
+
 class ShortNameFilter(logging.Filter):
     def filter(self, record):
         record.name = record.name.split(".")[-1]
         return True
+
 
 for handler in root_logger.handlers:
     handler.addFilter(ShortNameFilter())
@@ -310,10 +312,6 @@ class Article(ABC):
 class Retriever:
     """
     An abstract base class for retriever modules. It provides a template for retrieving information based on a query.
-
-    This class should be extended to implement specific retrieval functionalities.
-    Users can design their retriever modules as needed by implementing the retrieve method.
-    The retrieval model/search engine used for each part should be declared with a suffix '_rm' in the attribute name.
     """
 
     def __init__(self, rm: dspy.Retrieve, max_thread: int = 1):
@@ -336,20 +334,21 @@ class Retriever:
         return name_to_usage
 
     def retrieve(
-        self, query: Union[str, List[str]], exclude_urls: List[str] = []
+        self,
+        query: Union[str, List[str]],
+        exclude_urls: List[str] = [],
     ) -> List[Information]:
         queries = query if isinstance(query, list) else [query]
         to_return = []
 
         def process_query(q):
             retrieved_data_list = self.rm(
-                query_or_queries=[q], exclude_urls=exclude_urls
+                query_or_queries=[q],
+                exclude_urls=exclude_urls,
             )
             local_to_return = []
             for data in retrieved_data_list:
                 for i in range(len(data["snippets"])):
-                    # STORM generate the article with citations. We do not consider multi-hop citations.
-                    # Remove citations in the source to avoid confusion.
                     data["snippets"][i] = ArticleTextProcessing.remove_citations(
                         data["snippets"][i]
                     )

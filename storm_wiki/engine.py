@@ -159,8 +159,6 @@ class STORMWikiRunner(Engine):
                 return_conversation_log=True,
             )
         )
-
-        print(f"Saving conversation_log.json to {self.article_output_dir}")
         FileIOHelper.dump_json(
             conversation_log,
             os.path.join(self.article_output_dir, "conversation_log.json"),
@@ -229,10 +227,6 @@ class STORMWikiRunner(Engine):
             os.path.join(self.article_output_dir, "storm_gen_article_polished.txt")
         )
 
-        # FileIOHelper.write_str(
-        #     polished_article.to_string(),
-        #     os.path.join(self.article_output_dir, "storm_gen_article_polished.txt"),
-        # )
         return polished_article
 
     def post_run(self):
@@ -260,11 +254,7 @@ class STORMWikiRunner(Engine):
         ) as f:
             for call in llm_call_history:
                 if "kwargs" in call:
-                    call.pop(
-                        "kwargs"
-                    )  # All kwargs are dumped together to run_config.json.
-                # print("call object:", call)
-                # print("Type of call:", type(call))
+                    call.pop("kwargs")
                 f.write(json.dumps(call, indent=4, default=custom_default) + "\n")
 
     def _load_information_table_from_local_fs(self, information_table_local_path):
@@ -343,15 +333,13 @@ class STORMWikiRunner(Engine):
         )
         os.makedirs(self.article_output_dir, exist_ok=True)
 
-        # research module
+        # Stage 1: Knowledge Curation
         information_table: StormInformationTable = None
         if do_research:
             information_table = self.run_knowledge_curation_module(
                 ground_truth_url=ground_truth_url, callback_handler=callback_handler
             )
-            # import sys
-            # sys.exit()
-        # outline generation module
+        # Stage 2: Outline Generation
         outline: StormArticle = None
         if do_generate_outline:
             # load information table if it's not initialized
@@ -363,7 +351,7 @@ class STORMWikiRunner(Engine):
                 information_table=information_table, callback_handler=callback_handler
             )
 
-        # article generation module
+        # Stage 3: Article Generation
         draft_article: StormArticle = None
         if do_generate_article:
             if information_table is None:
@@ -383,7 +371,7 @@ class STORMWikiRunner(Engine):
                 callback_handler=callback_handler,
             )
 
-        # article polishing module
+        # Stage 4: Article Polishing
         if do_polish_article:
             if draft_article is None:
                 draft_article_path = os.path.join(

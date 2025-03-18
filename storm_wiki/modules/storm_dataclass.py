@@ -119,7 +119,7 @@ class StormInformationTable(InformationTable):
         return cls(conversations)
 
     def prepare_table_for_retrieval(self):
-        self.encoder = SentenceTransformer(self.embedding_model)
+        self.encoder = SentenceTransformer(self.embedding_model, trust_remote_code=True)
         self.collected_urls = []
         self.collected_snippets = []
         for url, information in self.url_to_info.items():

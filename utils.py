@@ -20,7 +20,6 @@ from qdrant_client import QdrantClient, models
 from tqdm import tqdm
 from trafilatura import extract
 
-from .lm import OpenAIModel
 
 logging.getLogger("httpx").setLevel(logging.WARNING)  # Disable INFO logging for httpx.
 

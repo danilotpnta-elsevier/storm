@@ -15,7 +15,7 @@ from .modules.outline_generation import StormOutlineGenerationModule
 from .modules.persona_generator import StormPersonaGenerator
 from .modules.storm_dataclass import StormInformationTable, StormArticle
 from ..interface import Engine, LMConfigs, Retriever
-from ..lm import OpenAIModel, AzureOpenAIModel
+from ..lm import AzureOpenAIModel
 from ..utils import FileIOHelper, makeStringRed, truncate_filename
 
 

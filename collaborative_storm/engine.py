@@ -16,7 +16,7 @@ from .modules.warmstart_hierarchical_chat import WarmStartModule
 from ..dataclass import ConversationTurn, KnowledgeBase
 from ..interface import LMConfigs, Agent
 from ..logging_wrapper import LoggingWrapper
-from ..lm import OpenAIModel, AzureOpenAIModel
+from ..lm import AzureOpenAIModel
 # from ..rm import BingSearch
 
 

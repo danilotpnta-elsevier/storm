@@ -105,26 +105,20 @@ class VectorRM(dspy.Retrieve):
                 f"Collection {self.collection_name} does not exist. Please create the collection first."
             )
 
-    def init_online_vector_db(self, url: str, api_key: str):
-        """
-        Initialize the Qdrant client that is connected to an online vector store with the given URL and API key.
-
-        Args:
-            url (str): URL of the Qdrant server.
-            api_key (str): API key for the Qdrant server.
-        """
-        if api_key is None:
-            if not os.getenv("QDRANT_API_KEY"):
-                raise ValueError("Please provide an api key.")
-            api_key = os.getenv("QDRANT_API_KEY")
-        if url is None:
-            raise ValueError("Please provide a url for the Qdrant server.")
-
+    def init_docker_qdrant(self):
+        """Initialize the Qdrant client that is connected to a Docker instance."""
         try:
-            self.client = QdrantClient(url=url, api_key=api_key)
+            self.client = QdrantClient("localhost", port=6333)
+            self.search_params = models.SearchParams(
+                quantization=models.QuantizationSearchParams(
+                    ignore=False,
+                    rescore=True,
+                    oversampling=1.0,
+                )
+            )
             self._check_collection()
         except Exception as e:
-            raise ValueError(f"Error occurs when connecting to the server: {e}")
+            raise ValueError(f"Error connecting to Docker Qdrant: {e}")
 
     def init_offline_vector_db(self, vector_store_path: str):
         """
@@ -138,6 +132,7 @@ class VectorRM(dspy.Retrieve):
 
         try:
             self.client = QdrantClient(path=vector_store_path)
+            self.search_params = None
             self._check_collection()
         except Exception as e:
             raise ValueError(f"Error occurs when loading the vector store: {e}")
@@ -196,11 +191,16 @@ class VectorRM(dspy.Retrieve):
 
                 if self.filter_condition:
                     related_docs = self.qdrant.similarity_search_with_score(
-                        query=query, k=self.k, filter=self.filter_condition
+                        query=query,
+                        k=self.k,
+                        filter=self.filter_condition,
+                        search_params=self.search_params,
                     )
                 else:
                     related_docs = self.qdrant.similarity_search_with_score(
-                        query, k=self.k
+                        query,
+                        k=self.k,
+                        search_params=self.search_params,
                     )
 
                 related_docs = sorted(
@@ -253,10 +253,17 @@ class VectorRM(dspy.Retrieve):
 
             if self.filter_condition:
                 related_docs = self.qdrant.similarity_search_with_score(
-                    query=query, k=self.k, filter=self.filter_condition
+                    query=query,
+                    k=self.k,
+                    filter=self.filter_condition,
+                    search_params=self.search_params,
                 )
             else:
-                related_docs = self.qdrant.similarity_search_with_score(query, k=self.k)
+                related_docs = self.qdrant.similarity_search_with_score(
+                    query,
+                    k=self.k,
+                    search_params=self.search_params,
+                )
 
             for i in range(len(related_docs)):
                 doc = related_docs[i][0]

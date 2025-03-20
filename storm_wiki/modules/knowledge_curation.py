@@ -12,12 +12,6 @@ from .storm_dataclass import DialogueTurn, StormInformationTable
 from ...interface import KnowledgeCurationModule, Retriever, Information
 from ...utils import ArticleTextProcessing
 
-try:
-    from streamlit.runtime.scriptrunner import add_script_run_ctx
-
-    streamlit_connection = True
-except ImportError as err:
-    streamlit_connection = False
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 logger = logging.getLogger(__name__)
@@ -574,12 +568,36 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
             list of tuples: A list where each tuple contains a persona and its corresponding cleaned
             dialog history (`dlg_history`) from the conversation simulation.
         """
-
         conversations = []
 
+        # if self.seed is not None and self.max_thread_num > 1:
+        #     print(
+        #         f"🟢 Deterministic Mode (seed={self.seed}): Running with ordered parallelism."
+        #     )
+        #     sorted_personas = (
+        #         sorted(considered_personas) if considered_personas else [""]
+        #     )
+
+        #     # logger.info(f"sorted_personas: {sorted_personas}")
+
+        #     max_workers = min(self.max_thread_num, len(sorted_personas))
+
+        #     def run_conv(persona):
+        #         conv = conv_simulator(
+        #             topic=topic,
+        #             ground_truth_url=ground_truth_url,
+        #             persona=persona,
+        #             callback_handler=callback_handler,
+        #         )
+        #         return ArticleTextProcessing.clean_up_citation(conv).dlg_history
+
+        #     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        #         results = list(executor.map(run_conv, sorted_personas))
+        #     conversations = list(zip(sorted_personas, results))
+
+        # if self.seed is not None and self.max_thread_num == 1:
         if self.seed is not None:
             print(f"🟢 Deterministic Mode (seed={self.seed}): Running sequentially.")
-            # Sort personas so we get stable iteration order
             sorted_personas = (
                 sorted(considered_personas) if considered_personas else [""]
             )
@@ -596,7 +614,76 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
                 conversations.append(
                     (persona, ArticleTextProcessing.clean_up_citation(conv).dlg_history)
                 )
-        else:
+
+        # if self.seed is not None and self.max_thread_num > 1:
+        #     print(
+        #         f"🟢 Deterministic Mode (seed={self.seed}): Running with deterministic parallelism."
+        #     )
+        #     sorted_personas = (
+        #         sorted(considered_personas) if considered_personas else [""]
+        #     )
+        #     logger.info(f"sorted_personas: {sorted_personas}")
+
+        #     def process_persona(persona):
+        #         conv = conv_simulator(
+        #             topic=topic,
+        #             ground_truth_url=ground_truth_url,
+        #             persona=persona,
+        #             callback_handler=callback_handler,
+        #         )
+        #         return ArticleTextProcessing.clean_up_citation(conv).dlg_history
+
+        #     max_workers = min(self.max_thread_num, len(sorted_personas))
+        #     with concurrent.futures.ThreadPoolExecutor(
+        #         max_workers=max_workers
+        #     ) as executor:
+        #         results = executor.map(process_persona, sorted_personas)
+        #         conversations = list(zip(sorted_personas, results))
+
+        # Always sort personas in deterministic mode for consistency
+        # if self.seed is not None:
+        #     considered_personas = sorted(considered_personas) if considered_personas else [""]
+        #     logger.info(f"sorted_personas: {considered_personas}")
+        #     print(f"🟢 Deterministic Mode (seed={self.seed}): Running with deterministic parallelism.")
+        # else:
+        #     print("🔵 Non-deterministic Mode: Running concurrently.")
+
+        # conversations = []
+        # max_workers = min(self.max_thread_num, len(considered_personas) or 1)
+
+        # # Use different processing approaches based on determinism requirement
+        # if self.seed is not None:
+        #     # Deterministic processing with proper error handling
+        #     def process_persona(persona):
+        #         try:
+        #             logger.info(f"Processing persona: {persona}")
+        #             start_time = time.time()
+        #             conv = conv_simulator(
+        #                 topic=topic,
+        #                 ground_truth_url=ground_truth_url,
+        #                 persona=persona,
+        #                 callback_handler=callback_handler,
+        #             )
+        #             processed_result = ArticleTextProcessing.clean_up_citation(conv).dlg_history
+        #             elapsed = time.time() - start_time
+        #             logger.info(f"Processed persona '{persona}' in {elapsed:.2f} seconds")
+        #             return processed_result
+        #         except Exception as e:
+        #             logger.error(f"Error processing persona '{persona}': {str(e)}")
+        #             return []  # Return empty result on error
+
+        #     # Process in parallel but maintain deterministic order
+        #     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        #         # Add Streamlit context if needed
+        #         if streamlit_connection:
+        #             for t in executor._threads:
+        #                 add_script_run_ctx(t)
+
+        #         # Use map to preserve input order
+        #         results = list(executor.map(process_persona, considered_personas))
+        #         conversations = list(zip(considered_personas, results))
+
+        if self.seed is None:
             print("🔵 Non-deterministic Mode: Running concurrently.")
 
             def run_conv(persona):
@@ -616,11 +703,6 @@ class StormKnowledgeCurationModule(KnowledgeCurationModule):
                     executor.submit(run_conv, persona): persona
                     for persona in considered_personas
                 }
-
-                if streamlit_connection:
-                    # Ensure the logging context is correct when connecting with Streamlit frontend.
-                    for t in executor._threads:
-                        add_script_run_ctx(t)
 
                 for future in as_completed(future_to_persona):
                     persona = future_to_persona[future]

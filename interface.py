@@ -12,6 +12,8 @@ from typing import Dict, List, Optional, Union, TYPE_CHECKING
 
 from .utils import ArticleTextProcessing
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 
 COLORS = {
     "RESET": "\033[0m",
@@ -366,6 +368,73 @@ class Retriever:
             to_return.extend(result)
 
         return to_return
+
+    def retrieve_new(self, query: Union[str, List[str]], exclude_urls: List[str] = []) -> List[Information]:
+        queries = query if isinstance(query, list) else [query]
+        to_return = []
+
+        def process_query(q):
+            retrieved_data_list = self.rm(query_or_queries=[q], exclude_urls=exclude_urls)
+            local_to_return = []
+            for data in retrieved_data_list:
+                for i in range(len(data["snippets"])):
+                    data["snippets"][i] = ArticleTextProcessing.remove_citations(data["snippets"][i])
+                storm_info = Information.from_dict(data)
+                storm_info.meta["query"] = q
+                local_to_return.append(storm_info)
+            return local_to_return
+
+        with ThreadPoolExecutor(max_workers=self.max_thread) as executor:
+            future_to_query = {executor.submit(process_query, q): q for q in queries}
+
+            for future in as_completed(future_to_query):
+                result = future.result()  
+                to_return.extend(result)
+
+        return to_return
+
+    def retrieve_(
+        self,
+        query: Union[str, List[str]],
+        exclude_urls: List[str] = [],
+    ) -> List[Information]:
+        queries = query if isinstance(query, list) else [query]
+        all_results = []
+
+        def process_query(query_with_index):
+            idx, q = query_with_index
+            # print(f"Processing query {idx}: '{q}'")
+            retrieved_data_list = self.rm(
+                query_or_queries=[q],
+                exclude_urls=exclude_urls,
+            )
+            local_results = []
+            for data in retrieved_data_list:
+                for i in range(len(data["snippets"])):
+                    data["snippets"][i] = ArticleTextProcessing.remove_citations(
+                        data["snippets"][i]
+                    )
+                storm_info = Information.from_dict(data)
+                storm_info.meta["query"] = q
+                storm_info.meta["original_query_index"] = idx
+                local_results.append(storm_info)
+            # print(f"Query {idx} yielded {len(local_results)} results")
+            return local_results
+
+        indexed_queries = list(enumerate(queries))
+
+        # print("using max_thread", self.max_thread)
+        with concurrent.futures.ThreadPoolExecutor(
+            max_workers=self.max_thread
+        ) as executor:
+            results = list(executor.map(process_query, indexed_queries))
+
+        for result_batch in results:
+            all_results.extend(result_batch)
+
+        all_results.sort(key=lambda x: (x.meta.get("original_query_index", 0), x.url))
+
+        return all_results
 
 
 class KnowledgeCurationModule(ABC):

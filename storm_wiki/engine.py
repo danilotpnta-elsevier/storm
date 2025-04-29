@@ -178,12 +178,19 @@ class STORMWikiRunner(Engine):
             return_draft_outline=True,
             callback_handler=callback_handler,
         )
-        outline.dump_outline_to_file(
-            os.path.join(self.article_output_dir, "storm_gen_outline.txt")
-        )
-        draft_outline.dump_outline_to_file(
-            os.path.join(self.article_output_dir, "direct_gen_outline.txt")
-        )
+        for file_end in ['txt', 'md']:
+            outline.dump_outline_to_file(
+                os.path.join(self.article_output_dir, f"storm_gen_outline.{file_end}")
+            )
+            draft_outline.dump_outline_to_file(
+                os.path.join(self.article_output_dir, f"direct_gen_outline.{file_end}")
+            )
+        # outline.dump_outline_to_file(
+        #     os.path.join(self.article_output_dir, "storm_gen_outline.txt")
+        # )
+        # draft_outline.dump_outline_to_file(
+        #     os.path.join(self.article_output_dir, "direct_gen_outline.txt")
+        # )
         return outline
 
     def run_article_generation_module(
@@ -202,9 +209,13 @@ class STORMWikiRunner(Engine):
         draft_article.dump_reference_to_file(
             os.path.join(self.article_output_dir, "url_to_info.json")
         )
-        draft_article.dump_article_as_plain_text(
-            os.path.join(self.article_output_dir, "storm_gen_article.txt")
-        )
+        for file_end in ['txt', 'md']:
+            draft_article.dump_article_as_plain_text(
+                os.path.join(self.article_output_dir, f"storm_gen_article.{file_end}")
+            )
+        # draft_article.dump_article_as_plain_text(
+        #     os.path.join(self.article_output_dir, "storm_gen_article.txt")
+        # )
 
         return draft_article
 
@@ -221,9 +232,13 @@ class STORMWikiRunner(Engine):
         polished_article.dump_reference_to_file(
             os.path.join(self.article_output_dir, "url_to_info_polished.json")
         )
-        polished_article.dump_article_as_plain_text(
-            os.path.join(self.article_output_dir, "storm_gen_article_polished.txt")
-        )
+        for file_end in ['txt', 'md']:
+            polished_article.dump_article_as_plain_text(
+                os.path.join(self.article_output_dir, f"storm_gen_article_polished.{file_end}")
+            )
+        # polished_article.dump_article_as_plain_text(
+        #     os.path.join(self.article_output_dir, "storm_gen_article_polished.txt")
+        # )
 
         return polished_article
 

@@ -1,10 +1,64 @@
-from contextlib import contextmanager
 import time
 import pytz
+import logging
 from datetime import datetime
+from contextlib import contextmanager
 
-# Define California timezone
-CALIFORNIA_TZ = pytz.timezone("America/Los_Angeles")
+AMSTERDAM_TZ = pytz.timezone("Europe/Amsterdam")
+
+COLORS = {
+    "RESET": "\033[0m",
+    "RED": "\033[31m",
+    "GREEN": "\033[32m",
+    "YELLOW": "\033[33m",
+    "BLUE": "\033[34m",
+    "MAGENTA": "\033[35m",
+    "CYAN": "\033[36m",
+    "WHITE": "\033[37m",
+}
+
+LEVEL_COLORS = {
+    logging.DEBUG: COLORS["BLUE"],
+    logging.INFO: COLORS["GREEN"],
+    logging.WARNING: COLORS["YELLOW"],
+    logging.ERROR: COLORS["RED"],
+    logging.CRITICAL: COLORS["MAGENTA"],
+}
+
+
+class ColoredFormatter(logging.Formatter):
+    def format(self, record):
+        color = LEVEL_COLORS.get(record.levelno, COLORS["WHITE"])
+        record.levelname = f"{color}{record.levelname}{COLORS['RESET']}"
+        record.name = f"{COLORS['CYAN']}{record.name}{COLORS['RESET']}"
+        return super().format(record)
+
+
+class ShortNameFilter(logging.Filter):
+    def filter(self, record):
+        record.name = record.name.split(".")[-1]
+        # record.name = record.name
+        return True
+
+
+def setup_logging(level=logging.INFO):
+    """Set up logging with colored output and shortened module names."""
+    logging.basicConfig(level=level, format="%(name)s : %(levelname)-8s : %(message)s")
+
+    root_logger = logging.getLogger()
+
+    for handler in root_logger.handlers:
+        handler.setFormatter(
+            ColoredFormatter("%(name)s : %(levelname)-8s : %(message)s")
+        )
+        handler.addFilter(ShortNameFilter())
+
+    return root_logger
+
+
+def get_logger(name):
+    """Get a logger with the given name."""
+    return logging.getLogger(name)
 
 
 class EventLog:
@@ -32,7 +86,7 @@ class EventLog:
     def get_start_time(self):
         if self.start_time:
             # Format to milliseconds
-            return self.start_time.astimezone(CALIFORNIA_TZ).strftime(
+            return self.start_time.astimezone(AMSTERDAM_TZ).strftime(
                 "%Y-%m-%d %H:%M:%S.%f"
             )[:-3]
         return None
@@ -40,7 +94,7 @@ class EventLog:
     def get_end_time(self):
         if self.end_time:
             # Format to milliseconds
-            return self.end_time.astimezone(CALIFORNIA_TZ).strftime(
+            return self.end_time.astimezone(AMSTERDAM_TZ).strftime(
                 "%Y-%m-%d %H:%M:%S.%f"
             )[:-3]
         return None

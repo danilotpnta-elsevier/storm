@@ -1,4 +1,8 @@
 import os
+
+os.environ["TOKENIZERS_PARALLELISM"] = "true"
+
+import concurrent.futures
 from typing import Union, List
 
 import dspy
@@ -6,6 +10,18 @@ import dspy
 from langchain_qdrant import Qdrant
 from qdrant_client import QdrantClient, models
 from langchain_huggingface import HuggingFaceEmbeddings
+from .logging_wrapper import setup_logging, get_logger
+
+
+setup_logging()
+logger = get_logger(__name__)
+
+import warnings
+
+warnings.filterwarnings(
+    "ignore",
+    message=".*The class `Qdrant` was deprecated.*",
+)
 
 
 class VectorRM(dspy.Retrieve):
@@ -64,8 +80,10 @@ class VectorRM(dspy.Retrieve):
         self.cache = {}
 
         if self.seed is not None:
-            print(f"Initializing deterministic VectorRM with seed {self.seed}")
+            logger.info(f"Initializing deterministic VectorRM with seed {self.seed}")
             self._make_deterministic()
+
+        self.init_docker_qdrant()
 
     def set_filter_by(self, title: str):
         """
@@ -92,8 +110,8 @@ class VectorRM(dspy.Retrieve):
         if self.client is None:
             raise ValueError("Qdrant client is not initialized.")
         if self.client.collection_exists(collection_name=f"{self.collection_name}"):
-            print(
-                f"Collection {self.collection_name} exists. Loading the collection..."
+            logger.info(
+                f"Collection '{self.collection_name}' exists. Loading the collection..."
             )
             self.qdrant = Qdrant(
                 client=self.client,
@@ -107,7 +125,20 @@ class VectorRM(dspy.Retrieve):
 
     def init_docker_qdrant(self):
         """Initialize the Qdrant client that is connected to a Docker instance."""
+        import docker
+
+        client_name = "qdrant"
+
         try:
+            docker_client = docker.from_env()
+            container = docker_client.containers.get(client_name)
+
+            if container.status != "running":
+                logger.info(f"Starting Docker container: {client_name}")
+                container.start()
+            else:
+                logger.info(f"Docker container '{client_name}' is already running.")
+
             self.client = QdrantClient("localhost", port=6333)
             self.search_params = models.SearchParams(
                 quantization=models.QuantizationSearchParams(
@@ -117,8 +148,13 @@ class VectorRM(dspy.Retrieve):
                 )
             )
             self._check_collection()
+
+        except docker.errors.NotFound:
+            raise ValueError(
+                f"Docker container '{client_name}' not found. Please create it first."
+            )
         except Exception as e:
-            raise ValueError(f"Error connecting to Docker Qdrant: {e}")
+            raise ValueError(f"Error initializing Qdrant Docker container: {e}")
 
     def init_offline_vector_db(self, vector_store_path: str):
         """
@@ -182,11 +218,11 @@ class VectorRM(dspy.Retrieve):
                     or "arctic" in self.embedding_model.lower()
                 ):
                     if not query.strip():
-                        print("Empty query received!")
+                        logger.info("Empty query received!")
                     query = self.query_prefix + query
 
                 if self.qdrant is None:
-                    print("Warning: Qdrant is not initialized")
+                    logger.warning("Qdrant is not initialized")
                     continue
 
                 if self.filter_condition:
@@ -207,12 +243,13 @@ class VectorRM(dspy.Retrieve):
                     related_docs, key=lambda x: (-x[1], x[0].metadata.get("url", ""))
                 )
 
-                for doc, _ in related_docs:
+                for doc, score in related_docs:
                     result = {
                         "description": doc.metadata.get("description", ""),
                         "snippets": [doc.page_content],
                         "title": doc.metadata.get("title", ""),
                         "url": doc.metadata.get("url", ""),
+                        "score": score,
                     }
                     collected_results.append(result)
             return collected_results
@@ -223,7 +260,7 @@ class VectorRM(dspy.Retrieve):
         self,
         query_or_queries: Union[str, List[str]],
         exclude_urls: List[str],
-    ):
+    ) -> List[dict]:
         """
         Search in your data for self.k top passages for query or queries.
 
@@ -248,7 +285,7 @@ class VectorRM(dspy.Retrieve):
                 or "arctic" in self.embedding_model.lower()
             ):
                 if not query.strip():
-                    print("Empty query received!")
+                    logger.info("Empty query received!")
                 query = self.query_prefix + query
 
             if self.filter_condition:
@@ -265,15 +302,14 @@ class VectorRM(dspy.Retrieve):
                     search_params=self.search_params,
                 )
 
-            for i in range(len(related_docs)):
-                doc = related_docs[i][0]
-                collected_results.append(
-                    {
-                        "description": doc.metadata["description"],
-                        "snippets": [doc.page_content],
-                        "title": doc.metadata["title"],
-                        "url": doc.metadata["url"],
-                    }
-                )
+            for doc, score in related_docs:
+                result = {
+                    "description": doc.metadata.get("description", ""),
+                    "snippets": [doc.page_content],
+                    "title": doc.metadata.get("title", ""),
+                    "url": doc.metadata.get("url", ""),
+                    "score": score,
+                }
+                collected_results.append(result)
 
         return collected_results

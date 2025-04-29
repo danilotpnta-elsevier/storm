@@ -319,6 +319,7 @@ class Retriever:
     def __init__(self, rm: dspy.Retrieve, max_thread: int = 1):
         self.max_thread = max_thread
         self.rm = rm
+        self._default_k = rm.k
 
     def collect_and_reset_rm_usage(self):
         combined_usage = []
@@ -334,6 +335,10 @@ class Retriever:
                     name_to_usage[model_name] += query_cnt
 
         return name_to_usage
+
+    def __call__(self, *args, top_k: int = None, **kwargs):
+        self.rm.k = top_k if top_k is not None else self._default_k
+        return self.retrieve(*args, **kwargs)
 
     def retrieve(
         self,
@@ -369,6 +374,43 @@ class Retriever:
 
         return to_return
 
+    def print_results(self, search_results):
+        """Print the search results."""
+        query = search_results[0].meta.get("query", "No query provided")
+        print("-" * 40)
+        print("Query: ", query)
+        print("-" * 40)
+
+        for i, info in enumerate(search_results):
+            print(f"\nResult {i+1}:")
+            print("Title:", info.title)
+            print("URL:", info.url)
+            print("Score:", info.score)
+            print("Snippet:", info.snippets)
+            print("-" * 40)
+
+    def save_results_txt(self, search_results, file_path):
+        """Save search_results to a plain-text file in the same printed format."""
+        with open(file_path, "w", encoding="utf-8") as f:
+
+            query = search_results[0].meta.get("query", "No query provided")
+            f.write("-" * 40 + "\n")
+            f.write(f"Query: {query}\n")
+            f.write("-" * 40 + "\n\n")
+
+            for i, info in enumerate(search_results):
+                f.write(f"Result {i+1}:\n")
+                f.write(f"Title: {info.title}\n")
+                f.write(f"URL: {info.url}\n")
+                f.write(f"Score: {info.score}\n")
+                snippets = info.snippets
+                if isinstance(snippets, (list, tuple)):
+                    snippets = " ".join(snippets)
+                f.write(f"Snippet: {snippets}\n")
+                f.write("-" * 40 + "\n\n")
+
+        logger.info(f"Saved {len(search_results)} results to {file_path}")
+        
     def retrieve_new(self, query: Union[str, List[str]], exclude_urls: List[str] = []) -> List[Information]:
         queries = query if isinstance(query, list) else [query]
         to_return = []

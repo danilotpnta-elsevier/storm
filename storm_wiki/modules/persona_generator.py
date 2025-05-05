@@ -65,13 +65,23 @@ class GenPersona(dspy.Signature):
     personas = dspy.OutputField(format=str)
 
 
+class GenPersonaWithoutWikipedia(dspy.Signature):
+    """You need to select a group of Wikipedia editors who will work together to create a comprehensive article on the topic. Each of them represents a different perspective, role, or affiliation related to this topic. For each editor, add a description of what they will focus on.
+    Give your answer in the following format: 1. short summary of editor 1: description\n2. short summary of editor 2: description\n...
+    """
+
+    topic = dspy.InputField(prefix="Topic of interest:", format=str)
+    personas = dspy.OutputField(format=str)
+
+
 class CreateWriterWithPersona(dspy.Module):
     """Discover different perspectives of researching the topic by reading Wikipedia pages of related topics."""
 
     def __init__(self, engine: Union[dspy.LM]):
         super().__init__()
         self.find_related_topic = dspy.ChainOfThought(FindRelatedTopic)
-        self.gen_persona = dspy.ChainOfThought(GenPersona)
+        # self.gen_persona = dspy.ChainOfThought(GenPersona)
+        self.gen_persona = dspy.ChainOfThought(GenPersonaWithoutWikipedia)
         self.engine = engine
 
     def forward(self, topic: str, draft=None):
@@ -92,9 +102,10 @@ class CreateWriterWithPersona(dspy.Module):
                     continue
             if len(examples) == 0:
                 examples.append("N/A")
-            gen_persona_output = self.gen_persona(
-                topic=topic, examples="\n----------\n".join(examples)
-            ).personas
+            # gen_persona_output = self.gen_persona(
+            #     topic=topic, examples="\n----------\n".join(examples)
+            # ).personas
+            gen_persona_output = self.gen_persona(topic=topic).personas
 
         personas = []
         for s in gen_persona_output.split("\n"):

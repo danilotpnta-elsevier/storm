@@ -305,6 +305,7 @@ class STORMWikiRunner(Engine):
         ground_truth_url: str = "",
         do_research: bool = True,
         do_generate_outline: bool = True,
+        do_url_outline_mapping: bool = False,
         do_generate_article: bool = True,
         do_polish_article: bool = True,
         remove_duplicate: bool = False,

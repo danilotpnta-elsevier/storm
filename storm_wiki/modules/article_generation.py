@@ -10,6 +10,7 @@ from .callback import BaseCallbackHandler
 from .storm_dataclass import StormInformationTable, StormArticle
 from ...interface import ArticleGenerationModule, Information
 from ...utils import ArticleTextProcessing
+from pipeline.apollo.src.tools import Retriever
 
 
 class StormArticleGenerationModule(ArticleGenerationModule):
@@ -21,6 +22,7 @@ class StormArticleGenerationModule(ArticleGenerationModule):
     def __init__(
         self,
         article_gen_lm=Union[dspy.LM],
+        retriever: Retriever = None,
         retrieve_top_k: int = 5,
         max_thread_num: int = 10,
     ):
@@ -29,10 +31,11 @@ class StormArticleGenerationModule(ArticleGenerationModule):
         self.article_gen_lm = article_gen_lm
         self.max_thread_num = max_thread_num
         self.section_gen = ConvToSection(engine=self.article_gen_lm)
+        self.retriever = retriever
 
     def generate_section(
         self, topic, section_name, information_table, section_outline, section_query
-    ):  
+    ):
         # section_query is outline as list
         collected_info: List[Information] = []
         if information_table is not None:
@@ -50,6 +53,99 @@ class StormArticleGenerationModule(ArticleGenerationModule):
             "section_content": output.section,
             "collected_info": collected_info,
         }
+
+    def generate_section_oRAG(
+        self,
+        topic,
+        section_name,
+        section_outline,
+        section_query,
+    ):
+        # section_query is outline as list
+        collected_info: List[Information] = []
+        collected_info = self.retriever(
+            query=section_query,
+            top_k=1,
+        )
+        output = self.section_gen(
+            topic=topic,
+            outline=section_outline,
+            section=section_name,
+            collected_info=collected_info,
+        )
+        return {
+            "section_name": section_name,
+            "section_content": output.section,
+            "collected_info": collected_info,
+        }
+
+    def generate_article_oRAG(
+        self,
+        topic: str,
+        article_with_outline: StormArticle,
+    ) -> StormArticle:
+
+        if article_with_outline is None:
+            article_with_outline = StormArticle(topic_name=topic)
+
+        sections_to_write = article_with_outline.get_first_level_section_names()
+
+        section_output_dict_collection = []
+        if len(sections_to_write) == 0:
+            logging.error(
+                f"No outline for {topic}. Will directly search with the topic."
+            )
+            section_output_dict = self.generate_section_oRAG(
+                topic=topic,
+                section_name=topic,
+                section_outline="",
+                section_query=[topic],
+            )
+            section_output_dict_collection = [section_output_dict]
+        else:
+
+            with concurrent.futures.ThreadPoolExecutor(
+                max_workers=self.max_thread_num
+            ) as executor:
+                future_to_sec_title = {}
+                for section_title in sections_to_write:
+                    # We don't want to write a separate introduction section.
+                    if section_title.lower().strip() == "introduction":
+                        continue
+                        # We don't want to write a separate conclusion section.
+                    if section_title.lower().strip().startswith(
+                        "conclusion"
+                    ) or section_title.lower().strip().startswith("summary"):
+                        continue
+                    section_query = article_with_outline.get_outline_as_list(
+                        root_section_name=section_title, add_hashtags=False
+                    )
+                    queries_with_hashtags = article_with_outline.get_outline_as_list(
+                        root_section_name=section_title, add_hashtags=True
+                    )
+                    section_outline = "\n".join(queries_with_hashtags)
+                    future_to_sec_title[
+                        executor.submit(
+                            self.generate_section_oRAG,
+                            topic,
+                            section_title,
+                            section_outline,
+                            section_query,
+                        )
+                    ] = section_title
+
+                for future in as_completed(future_to_sec_title):
+                    section_output_dict_collection.append(future.result())
+
+        article = copy.deepcopy(article_with_outline)
+        for section_output_dict in section_output_dict_collection:
+            article.update_section(
+                parent_section_name=topic,
+                current_section_content=section_output_dict["section_content"],
+                current_section_info_list=section_output_dict["collected_info"],
+            )
+        article.post_processing()
+        return article
 
     def generate_article(
         self,

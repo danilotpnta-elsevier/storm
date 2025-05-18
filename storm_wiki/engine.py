@@ -101,14 +101,25 @@ class STORMWikiRunner(Engine):
     """STORM Wiki pipeline runner."""
 
     def __init__(
-        self, args: STORMWikiRunnerArguments, lm_configs: STORMWikiLMConfigs, rm
+        self,
+        args: STORMWikiRunnerArguments,
+        lm_configs: STORMWikiLMConfigs,
+        rm,
+        draft_dir=None,
     ):
         super().__init__(lm_configs=lm_configs)
         self.args = args
         self.lm_configs = lm_configs
         self.seed = args.seed
 
-        self.retriever = Retriever(rm=rm, max_thread=self.args.max_thread_num)
+        self.retriever = Retriever(
+            rm=rm,
+            max_thread=self.args.max_thread_num,
+        )
+        if draft_dir is not None:
+            self.draft_dir = draft_dir
+        else:
+            self.draft_dir = ""
 
         storm_persona_generator = StormPersonaGenerator(
             self.lm_configs.question_asker_lm
@@ -132,6 +143,7 @@ class STORMWikiRunner(Engine):
             article_gen_lm=self.lm_configs.article_gen_lm,
             retrieve_top_k=self.args.retrieve_top_k,
             max_thread_num=self.args.max_thread_num,
+            retriever=self.retriever,
         )
         self.storm_article_polishing_module = StormArticlePolishingModule(
             article_gen_lm=self.lm_configs.article_gen_lm,
@@ -178,7 +190,7 @@ class STORMWikiRunner(Engine):
             return_draft_outline=True,
             callback_handler=callback_handler,
         )
-        for file_end in ['txt', 'md']:
+        for file_end in ["txt", "md"]:
             outline.dump_outline_to_file(
                 os.path.join(self.article_output_dir, f"storm_gen_outline.{file_end}")
             )
@@ -209,7 +221,7 @@ class STORMWikiRunner(Engine):
         draft_article.dump_reference_to_file(
             os.path.join(self.article_output_dir, "url_to_info.json")
         )
-        for file_end in ['txt', 'md']:
+        for file_end in ["txt", "md"]:
             draft_article.dump_article_as_plain_text(
                 os.path.join(self.article_output_dir, f"storm_gen_article.{file_end}")
             )
@@ -217,6 +229,23 @@ class STORMWikiRunner(Engine):
         #     os.path.join(self.article_output_dir, "storm_gen_article.txt")
         # )
 
+        return draft_article
+
+    def run_article_generation_module_oRAG(
+        self,
+        outline: StormArticle,
+    ) -> StormArticle:
+
+        draft_article = self.storm_article_generation.generate_article_oRAG(
+            topic=self.topic,
+            article_with_outline=outline,
+        )
+        draft_article.dump_reference_to_file(
+            os.path.join(self.draft_article_output_dir, "url_to_info_polished.json")
+        )
+        draft_article.dump_article_as_plain_text(
+            os.path.join(self.draft_article_output_dir, f"oRAG_gen_article_polished.md")
+        )
         return draft_article
 
     def run_article_polishing_module(
@@ -232,9 +261,11 @@ class STORMWikiRunner(Engine):
         polished_article.dump_reference_to_file(
             os.path.join(self.article_output_dir, "url_to_info_polished.json")
         )
-        for file_end in ['txt', 'md']:
+        for file_end in ["txt", "md"]:
             polished_article.dump_article_as_plain_text(
-                os.path.join(self.article_output_dir, f"storm_gen_article_polished.{file_end}")
+                os.path.join(
+                    self.article_output_dir, f"storm_gen_article_polished.{file_end}"
+                )
             )
         # polished_article.dump_article_as_plain_text(
         #     os.path.join(self.article_output_dir, "storm_gen_article_polished.txt")
@@ -303,11 +334,12 @@ class STORMWikiRunner(Engine):
         self,
         topic: str,
         ground_truth_url: str = "",
-        do_research: bool = True,
-        do_generate_outline: bool = True,
+        do_research: bool = False,
+        do_generate_outline: bool = False,
         do_url_outline_mapping: bool = False,
-        do_generate_article: bool = True,
-        do_polish_article: bool = True,
+        do_generate_article: bool = False,
+        do_generate_article_oRAG: bool = True,
+        do_polish_article: bool = False,
         remove_duplicate: bool = False,
         callback_handler: BaseCallbackHandler = BaseCallbackHandler(),
     ):
@@ -332,9 +364,10 @@ class STORMWikiRunner(Engine):
             do_research
             or do_generate_outline
             or do_generate_article
+            or do_generate_article_oRAG
             or do_polish_article
         ), makeStringRed(
-            "No action is specified. Please set at least one of --do-research, --do-generate-outline, --do-generate-article, --do-polish-article"
+            "No action is specified. Please set at least one of --do-research, --do-generate-outline, --do_generate_article_oRAG, --do-generate-article, --do-polish-article"
         )
 
         self.topic = topic
@@ -346,6 +379,11 @@ class STORMWikiRunner(Engine):
             self.args.output_dir, self.article_dir_name
         )
         os.makedirs(self.article_output_dir, exist_ok=True)
+
+        self.draft_article_output_dir = os.path.join(
+            self.args.output_dir, self.article_dir_name, self.draft_dir
+        )
+        os.makedirs(self.draft_article_output_dir, exist_ok=True)
 
         # Stage 1: Knowledge Curation
         information_table: StormInformationTable = None
@@ -367,6 +405,19 @@ class STORMWikiRunner(Engine):
 
         # Stage 3: Article Generation
         draft_article: StormArticle = None
+
+        if do_generate_article_oRAG:
+            if outline is None:
+                outline = self._load_outline_from_local_fs(
+                    topic=topic,
+                    outline_local_path=os.path.join(
+                        self.article_output_dir, "direct_gen_outline.txt"
+                    ),
+                )
+            draft_article = self.run_article_generation_module_oRAG(
+                outline=outline,
+            )
+
         if do_generate_article:
             if information_table is None:
                 information_table = self._load_information_table_from_local_fs(

@@ -65,6 +65,7 @@ class StormArticleGenerationModule(ArticleGenerationModule):
         collected_info: List[Information] = []
         collected_info = self.retriever(
             query=section_query,
+            exclude_urls=[self.ground_truth_url],
             top_k=1,
         )
         output = self.section_gen(
@@ -83,8 +84,10 @@ class StormArticleGenerationModule(ArticleGenerationModule):
         self,
         topic: str,
         article_with_outline: StormArticle,
+        ground_truth_url: str = "",
     ) -> StormArticle:
 
+        self.ground_truth_url = ground_truth_url
         if article_with_outline is None:
             article_with_outline = StormArticle(topic_name=topic)
 
